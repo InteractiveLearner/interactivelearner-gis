@@ -1,0 +1,15 @@
+.leaflet-container {
+    height: 50vh;
+    margin-top: 25px;
+    width: 98%;
+    margin: inherit;
+  }
+
+  .leaflet-control-scale-line{
+    height: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    font: 11px/14px Arial, Helvetica, sans-serif;
+    margin-bottom: 1px;
+    margin-left: 1px;
+  }
