@@ -2,7 +2,7 @@
 
 An environment where anyone can simply learn GIS!
 
-Link: https://InteractiveLearner.github.io 
+Link: https://www.interactivelearner-gis.com/ or https://interactivelearner.github.io
 
 ## How to Contribute
 
