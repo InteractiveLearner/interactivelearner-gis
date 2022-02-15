@@ -1,6 +1,6 @@
 {
-  "homepage": "https://www.interactivelearner-gis.com/",
-  "name": "interactivelearner-gis",
+  "homepage": "https://interactivelearner.github.io",
+  "name": "interactivelearner.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
