@@ -3,8 +3,6 @@ import * as d3 from "d3";
 import { useD3 } from "../hooks/useD3";
 import "../../styles/projection.css";
 
-// TODO: Make mobile friendly 
-
 export default function ProjectionExplorer() {
   const ref = useD3((svg) => {
     var geojson;
@@ -183,7 +181,13 @@ export default function ProjectionExplorer() {
         </div>
       </div>
 
-      <svg ref={ref} width="95%" height="500px">
+      <svg
+        ref={ref}
+        width="95%"
+        height="500px"
+        viewBox="0 0 960 500"
+        preserveAspectRatio="xMidYMid meet"
+      >
         <g className="graticule">
           <path></path>
         </g>
