@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 
-import ProjectionExplorer from "../components/ProjectionExplorer.jsx";
-
-import MainLayout from "../layouts/MainLayout";
-import BreadCrumbs from "../components/BreadCrumbs.jsx";
-
 import { Typography, Container } from "@mui/material";
 
-import Sources from "../components/Sources.jsx";
+import MainLayout from "../layouts/MainLayout";
 
-import EmptyMap from "../components/EmptyMap.jsx";
+import BreadCrumbs from "../components/BreadCrumbs.jsx";
+import Sources from "../components/Sources.jsx";
+import EmptyMap from "../components/maps/EmptyMap.jsx";
+import ProjectionExplorer from "../components/maps/ProjectionExplorer.jsx";
 
 import "../../styles/map.css";
 

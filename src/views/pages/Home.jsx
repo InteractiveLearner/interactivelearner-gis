@@ -23,42 +23,42 @@ const cards = [
     description:
       "Discover map scales and the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
-    img: "../../../public/img/b.jpg",
+    img: img,
     disabled: false,
   },
   {
     title: "Visual Variables and Types of Maps",
     description: "",
     url: "/variables",
-    img: "../../../public/img/b.jpg",
+    img: img,
     disabled: false,
   },
   {
     title: "Classification Schemes",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: "../../../public/img/b.jpg",
+    img: img,
     disabled: true,
   },
   {
     title: "Spatial Autocorrelation Statistics",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: "../../../public/img/b.jpg",
+    img: img,
     disabled: true,
   },
   {
     title: "Lying with Maps",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: "../../../public/img/b.jpg",
+    img: img,
     disabled: true,
   },
   {
     title: "Resources",
     description: "GIS resources recommended by the developer(s) of the site.",
     url: "/resources",
-    img: "../../../public/img/b.jpg",
+    img: img,
     disabled: false,
   },
 ];
@@ -100,7 +100,7 @@ export default function Home() {
               >
                 <CardMedia
                   style={{ padding: "56.25%" }} // 16:9 aspect ratio
-                  image={img}
+                  image={card.img}
                   title="Image title"
                 />
                 <CardContent style={{ flexGrow: 1 }}>

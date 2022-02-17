@@ -14,7 +14,7 @@ export default function Footer() {
         color="text.secondary"
         component="p"
       >
-        View the code on {" "}
+        Contribute on {" "}
         <a
           style={{ color: "inherit" }}
           href="https://github.com/InteractiveLearner/interactivelearner.github.io"

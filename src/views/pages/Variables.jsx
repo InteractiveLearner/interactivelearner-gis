@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
-import MainLayout from "../layouts/MainLayout";
-import BreadCrumbs from "../components/BreadCrumbs.jsx";
-
 import { Typography, Container, CardMedia } from "@mui/material";
 
+import MainLayout from "../layouts/MainLayout";
+
 import Sources from "../components/Sources.jsx";
+import BreadCrumbs from "../components/BreadCrumbs.jsx";
+import EmptyMap from "../components/maps/EmptyMap.jsx";
+import "../../styles/map.css";
 
 const sources = [
   {
@@ -67,6 +69,7 @@ function Variables() {
           Praesent tristique magna sit amet. Consequat mauris nunc congue nisi
           vitae suscipit.
         </div>
+        <EmptyMap />
         <Typography
           variant="h4"
           align="left"

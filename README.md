@@ -1,6 +1,6 @@
 # Interactive Learner
 
-An environment where anyone can simply learn GIS!
+An interactive environment where anyone can easily learn GIS!
 
 Link: https://www.interactivelearner-gis.com/ 
 
@@ -35,11 +35,14 @@ And if time permits:
 
 - [x] Develop homepage by February 11 (includes connection to sub-pages)
 - [ ] Develop projections and scale sub-page by March 4
-- [ ] Develop visual variables and types of maps  sub-page by March 18
-- [ ] Purchase domain and publish website by March 25
+- [ ] Develop visual variables and types of maps sub-page by March 18
+- [x] Purchase domain and publish website by March 25
 - [ ] Project report and presentation by April 1
-- [ ] Reduce use of iframes by May 1
-- [ ] Develop the remaining subpages by August 1
+
+Other goals:
+
+- [ ] Reduce use of iframes
+- [ ] Develop the remaining subpages
 
 ## Tools Used
 
