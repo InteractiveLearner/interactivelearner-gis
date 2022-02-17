@@ -55,7 +55,7 @@ And if time permits:
 
 [Dr. Charles Perin](http://charlesperin.net/)
 
-[Peter Cook of D3 in Depth](https://www.d3indepth.com/)
+Projection explorer from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/)
 
 ## License 
 

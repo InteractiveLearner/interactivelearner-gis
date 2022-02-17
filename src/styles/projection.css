@@ -1,0 +1,51 @@
+#menu {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+#menu .item {
+  margin-bottom: 12px;
+}
+
+#menu .item input {
+  width: 100px;
+}
+
+#menu select {
+  margin-top: 4px;
+}
+
+#menu .item .value {
+  font-weight: bold;
+}
+
+#menu .item span,
+#menu .item input {
+  vertical-align: middle;
+}
+
+#menu .item .low {
+  display: inline-block;
+  width: 30px;
+  text-align: right;
+}
+
+.map path {
+  fill: #87b687;
+  stroke: #777;
+}
+
+.projection-center {
+  fill: red;
+}
+
+.graticule path {
+  fill: none;
+  stroke: #eee;
+}
+
+.circles path {
+  fill: none;
+  stroke: #aaa;
+}

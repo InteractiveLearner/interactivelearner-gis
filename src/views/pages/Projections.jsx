@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import ProjectionExplorer from "../components/ProjectionExplorer.jsx";
+
 import MainLayout from "../layouts/MainLayout";
 import BreadCrumbs from "../components/BreadCrumbs.jsx";
 
@@ -28,6 +30,7 @@ const sources = [
 
 function Projections() {
   const [crumbs, setCrumbs] = useState(["Projections and Scale"]);
+
   return (
     <MainLayout>
       <div>
@@ -71,7 +74,7 @@ function Projections() {
           Praesent tristique magna sit amet. Consequat mauris nunc congue nisi
           vitae suscipit.
         </div>
-
+        <ProjectionExplorer />
         <Typography
           variant="h4"
           align="left"
