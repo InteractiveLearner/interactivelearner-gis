@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import { Link } from "react-router-dom";
 
 import img from "../../img/b.jpg";
+import projection from "../../img/projection.png"
 
 import {
   Typography,
@@ -23,7 +24,7 @@ const cards = [
     description:
       "Discover map scales and the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
-    img: img,
+    img: projection,
     disabled: false,
   },
   {
@@ -99,7 +100,7 @@ export default function Home() {
                 }}
               >
                 <CardMedia
-                  style={{ padding: "56.25%" }} // 16:9 aspect ratio
+                  style={{ padding: "56.25%", justify: "center" }} // 16:9 aspect ratio
                   image={card.img}
                   title="Image title"
                 />
