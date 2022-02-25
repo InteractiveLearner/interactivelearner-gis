@@ -6,7 +6,7 @@ import MainLayout from "../layouts/MainLayout";
 
 import Sources from "../components/Sources.jsx";
 import BreadCrumbs from "../components/BreadCrumbs.jsx";
-import EmptyMap from "../components/maps/EmptyMap.jsx";
+import VisualVariables from "../components/maps/VisualVariables.jsx";
 import "../../styles/map.css";
 
 const sources = [
@@ -69,7 +69,7 @@ function Variables() {
           Praesent tristique magna sit amet. Consequat mauris nunc congue nisi
           vitae suscipit.
         </div>
-        <EmptyMap />
+        <VisualVariables />
         <Typography
           variant="h4"
           align="left"

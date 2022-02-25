@@ -43,6 +43,8 @@ Other goals:
 
 - [ ] Reduce use of iframes
 - [ ] Develop the remaining subpages
+- [ ] Refactor code
+- [ ] Comprehensive documentation
 
 ## Tools Used
 
