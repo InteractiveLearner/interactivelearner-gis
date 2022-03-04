@@ -7,18 +7,14 @@ export default function ProjectionExplorer() {
   const ref = useD3((svg) => {
     var geojson;
     var projectionTypes = [
-      "AzimuthalEqualArea",
-      "AzimuthalEquidistant",
-      "Gnomonic",
-      "Orthographic",
-      "Stereographic",
+      "Azimuthal Equal Area",
+      "Azimuthal Equidistant",
       "Albers",
-      "ConicConformal",
-      "ConicEqualArea",
-      "ConicEquidistant",
+      "Conic Conformal",
+      "Conic Equal Area",
+      "Conic Equidistant",
       "Equirectangular",
-      "Mercator",
-      "TransverseMercator",
+      "Mercator"
     ];
     var projection;
     var geoGenerator = d3.geoPath().projection(projection);
@@ -84,7 +80,7 @@ export default function ProjectionExplorer() {
 
     function update() {
       // Update projection
-      projection = d3["geo" + state.type]();
+      projection = d3["geo" + state.type.replace(/\s/g, '')]();
       geoGenerator.projection(projection);
       projection
         .scale(state.scale)

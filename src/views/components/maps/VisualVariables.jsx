@@ -7,11 +7,22 @@ import {
   GeoJSON,
 } from "react-leaflet";
 
+import L from "leaflet";
+
 import * as features from "../../../data/csds.json";
 import * as lfls from "../../../data/lfls.json";
 import * as roads from "../../../data/roads.json";
 
+import pin from "../../../img/icon.png";
+
 var selected = null;
+
+// Can change color with CSS
+let iconStyle = L.icon({
+    iconSize: [24, 24], // size of the icon
+    iconUrl: pin,
+    color: "green"
+  });
 
 export default class Map extends React.Component {
   defaultStyle = (feature) => {
@@ -65,6 +76,8 @@ export default class Map extends React.Component {
     let lon = library.properties.Lat;
 
     let popupContent = `<p><b>Little Free Library: ${name}</b><br />Latitude: ${lat}<br />Longitude: ${lon}</p>`;
+
+    // layer.setIcon(iconStyle);
 
     layer.bindTooltip(popupContent).openTooltip();
   };
@@ -121,19 +134,22 @@ export default class Map extends React.Component {
             />
           </LayersControl.BaseLayer>
           <LayersControl.Overlay checked name="Little Free Libraries">
-            <GeoJSON data={lfls} onEachFeature={this.onEachLibrary} />
+            <GeoJSON
+              data={lfls}
+              onEachFeature={this.onEachLibrary}
+            />
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Census Subdivisions">
             <GeoJSON
-              style={this.defaultStyle}
               data={features}
+              style={this.defaultStyle}
               onEachFeature={this.onEachCSD}
             />
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Roads">
             <GeoJSON
-              style={this.roadStyle}
               data={roads}
+              style={this.roadStyle}
               onEachFeature={this.onEachRoad}
             />
           </LayersControl.Overlay>

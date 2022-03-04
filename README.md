@@ -8,22 +8,42 @@ or in case I broke something: https://interactivelearner.github.io
 
 ## How to Contribute
 
+### Developers
+
 Create an issue under the issues tab. A GitHub account is required.
 
+### Geographers
+
+Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share.
+
 ## Development
+
+#### Run the Application
 
 ```npm install```
 
 ```npm start ```
 
+#### Build the Application
+
 ```npm run build```
+
+#### Publish the Application to GitHub Pages
 
 ```npm run deploy```
 
 ## Content Plan
 Educational information 
-- [Projections](https://futuremaps.com/blogs/news/top-10-world-map-projections) and [Scale](https://www.geographyrealm.com/map-scale/)
+- Projections and [Scale](https://www.geographyrealm.com/map-scale/)
 - [Visual Variables](https://geography.wisc.edu/cartography/research/publications/Roth_2015_EG.pdf) and [Types of Maps](https://sites.google.com/site/boardinclassrom/map/cartogram-map) 
+  - Cartogram Map
+  - Chorochromatic Map
+  - Choropleth Map
+  - Diagram Map
+  - Dot Map
+  - Flowline Map
+  - Isoline Map
+  - Proportional Map
 
 And if time permits:
 
@@ -62,6 +82,6 @@ Other goals:
 
 Projection explorer from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/)
 
-## License 
+## License (MIT) 
 
-MIT
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code(s).
