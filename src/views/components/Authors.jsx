@@ -1,0 +1,62 @@
+import React from "react";
+
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+} from "@mui/material";
+
+export default function Authors(props) {
+  return (
+    <Container maxWidth="md" style={{ padding: "10px 0" }}>
+      <Typography
+        variant="h4"
+        align="left"
+        color="textPrimary"
+        gutterBottom
+        style={{ paddingLeft: "16px" }}
+      >
+        Authors
+      </Typography>
+      <Grid
+        container
+        spacing={4}
+        style={{ paddingLeft: "16px", paddingTop: "16px" }}
+      >
+        {props.authors.map((card, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4}>
+            <Card
+              style={{
+                flexDirection: "column",
+                height: "100%",
+                display: "flex",
+              }}
+            >
+              <CardContent style={{ flexGrow: 1 }}>
+                <Typography gutterBottom variant="h5">
+                  {card.author}
+                </Typography>
+                <Typography>{card.description}</Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  style={{ background: "#2E3B55" }}
+                  size="small"
+                  color="primary"
+                  href={card.url}
+                  variant="contained"
+                >
+                  View Profile
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
+}

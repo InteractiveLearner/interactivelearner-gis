@@ -4,7 +4,7 @@ import { Container, Typography } from "@mui/material";
 
 export default function Sources(props) {
   return (
-    <Container maxWidth="md" style={{ padding: "20px 0" }}>
+    <Container maxWidth="md" style={{ padding: "10px 0" }}>
       <Typography
         component="h1"
         variant="h4"

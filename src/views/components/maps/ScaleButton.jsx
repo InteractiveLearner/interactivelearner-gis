@@ -9,6 +9,13 @@ class ScaleButton extends React.Component {
     const MapInfo = L.Control.extend({
       onAdd: (map) => {
         const panelDiv = L.DomUtil.create("button", "");
+
+        panelDiv.style.borderRadius = "6px";
+        panelDiv.style.background = "#2E3B55";
+        panelDiv.style.color = "white";
+        panelDiv.style.padding = "8px";
+        panelDiv.style.cursor = "pointer";
+
         this.panelDiv = panelDiv;
 
         panelDiv.innerHTML = this.props.title;
@@ -46,6 +53,3 @@ function withMap(Component) {
 }
 
 export default withMap(ScaleButton);
-
-// https://codesandbox.io/s/react-leaflet-description-button-o66nb?file=/src/Description.js
-// https://github.com/omarkawach/Info-Viz/blob/main/src/components/Map.js

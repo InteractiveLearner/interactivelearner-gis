@@ -14,7 +14,7 @@ export default function ProjectionExplorer() {
       "Conic Equal Area",
       "Conic Equidistant",
       "Equirectangular",
-      "Mercator"
+      "Mercator",
     ];
     var projection;
     var geoGenerator = d3.geoPath().projection(projection);
@@ -80,7 +80,7 @@ export default function ProjectionExplorer() {
 
     function update() {
       // Update projection
-      projection = d3["geo" + state.type.replace(/\s/g, '')]();
+      projection = d3["geo" + state.type.replace(/\s/g, "")]();
       geoGenerator.projection(projection);
       projection
         .scale(state.scale)
@@ -121,7 +121,7 @@ export default function ProjectionExplorer() {
 
   return (
     <>
-      <div className="menu" style={{ paddingLeft: "16px", paddingTop: "16px" }}>
+      <div className="menu" style={{ margin: "inherit" }}>
         <div className="projection-type item">
           <div>
             <select name="type" defaultValue="150"></select>
@@ -129,7 +129,7 @@ export default function ProjectionExplorer() {
         </div>
         <div className="slider item">
           <div className="label">
-            scale (<span className="value">120</span>)
+            Scale (<span className="value">120</span>)
           </div>
           <div>
             <span className="low">0</span>{" "}
@@ -145,7 +145,7 @@ export default function ProjectionExplorer() {
         </div>
         <div className="slider item">
           <div className="label">
-            center (lon) (<span className="value">0</span>)
+            Center - Longitude (<span className="value">0</span>)
           </div>
           <div>
             <span className="low">-180</span>{" "}
@@ -161,7 +161,7 @@ export default function ProjectionExplorer() {
         </div>
         <div className="slider item">
           <div className="label">
-            center (lat) (<span className="value">0</span>)
+            Center - Latitude (<span className="value">0</span>)
           </div>
           <div>
             <span className="low">-90</span>{" "}
@@ -175,22 +175,21 @@ export default function ProjectionExplorer() {
             <span>90</span>
           </div>
         </div>
+        <svg
+          ref={ref}
+          width="95%"
+          height="500px"
+          viewBox="0 0 960 500"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g className="graticule">
+            <path></path>
+          </g>
+          <g className="circles"></g>
+          <g className="map"></g>
+          <circle className="projection-center" r="4"></circle>
+        </svg>
       </div>
-
-      <svg
-        ref={ref}
-        width="95%"
-        height="500px"
-        viewBox="0 0 960 500"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <g className="graticule">
-          <path></path>
-        </g>
-        <g className="circles"></g>
-        <g className="map"></g>
-        <circle className="projection-center" r="4"></circle>
-      </svg>
     </>
   );
 }
