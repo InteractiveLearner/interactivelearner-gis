@@ -33,8 +33,8 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 ```npm run deploy```
 
 ## Content Plan
-Educational information 
-- Projections and [Scale](https://www.geographyrealm.com/map-scale/)
+Educational information
+- Projections and Scale
 - [Visual Variables](https://geography.wisc.edu/cartography/research/publications/Roth_2015_EG.pdf) and [Types of Maps](https://sites.google.com/site/boardinclassrom/map/cartogram-map) 
   - Cartogram Map
   - Chorochromatic Map
@@ -55,7 +55,7 @@ And if time permits:
 
 - [x] Develop homepage by February 11 (includes connection to sub-pages)
 - [ ] Develop projections and scale sub-page by March 4
-- [ ] Develop visual variables and types of maps sub-page by March 18
+- [ ] Develop visual variables and types of maps sub-page by March 25
 - [x] Purchase domain and publish website by March 25
 - [ ] Project report and presentation by April 1
 

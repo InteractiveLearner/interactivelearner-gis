@@ -80,22 +80,23 @@ function Variables() {
           Types of Maps
         </Typography>
         <div style={{ padding: "0px 16px 16px 16px" }}>
-          Get familiar with the UI. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Est ullamcorper eget nulla facilisi etiam dignissim.
-          Interdum consectetur libero id faucibus nisl tincidunt eget. Elit
-          pellentesque habitant morbi tristique senectus et. Commodo odio aenean
-          sed adipiscing diam donec adipiscing tristique. Quisque egestas diam
-          in arcu cursus euismod. Lectus nulla at volutpat diam ut venenatis
-          tellus in metus. Donec pretium vulputate sapien nec sagittis aliquam
-          malesuada bibendum arcu. Vitae auctor eu augue ut lectus arcu. Ipsum
-          dolor sit amet consectetur. Pulvinar pellentesque habitant morbi
-          tristique senectus et netus et. Odio ut enim blandit volutpat maecenas
-          volutpat. Nulla posuere sollicitudin aliquam ultrices sagittis orci a
-          scelerisque purus. Tellus rutrum tellus pellentesque eu tincidunt
-          tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor.
-          Praesent tristique magna sit amet. Consequat mauris nunc congue nisi
-          vitae suscipit.
+          Get familiar with the UI. Mention reference maps. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Est ullamcorper eget
+          nulla facilisi etiam dignissim. Interdum consectetur libero id
+          faucibus nisl tincidunt eget. Elit pellentesque habitant morbi
+          tristique senectus et. Commodo odio aenean sed adipiscing diam donec
+          adipiscing tristique. Quisque egestas diam in arcu cursus euismod.
+          Lectus nulla at volutpat diam ut venenatis tellus in metus. Donec
+          pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu.
+          Vitae auctor eu augue ut lectus arcu. Ipsum dolor sit amet
+          consectetur. Pulvinar pellentesque habitant morbi tristique senectus
+          et netus et. Odio ut enim blandit volutpat maecenas volutpat. Nulla
+          posuere sollicitudin aliquam ultrices sagittis orci a scelerisque
+          purus. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam
+          nulla facilisi. Vulputate enim nulla aliquet porttitor. Praesent
+          tristique magna sit amet. Consequat mauris nunc congue nisi vitae
+          suscipit.
         </div>
         <CardMedia
           component="iframe"
