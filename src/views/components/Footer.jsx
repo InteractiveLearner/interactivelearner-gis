@@ -24,6 +24,14 @@ export default function Footer() {
           GitHub
         </a>
       </Typography>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="text.secondary"
+        component="p"
+      >
+      Copyright ©{" "} Interactive Learner 2022
+      </Typography>
     </Box>
   );
 }

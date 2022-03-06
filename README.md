@@ -82,6 +82,6 @@ Other goals:
 
 Projection explorer from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/)
 
-## License (MIT) 
+## License (GPL) 
 
-A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code(s).
+Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). This project made use of code derived from other GPL-licensed software. To protect against theft and promote free open source software, any developers making use of this repository must release their changes under the same license. 
