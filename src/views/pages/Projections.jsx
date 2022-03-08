@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
-import { Typography, Container, Card, CardContent, Grow } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Card,
+  CardContent,
+  Grow,
+  // createTheme,
+  // ThemeProvider,
+} from "@mui/material";
 
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import FormatSizeOutlinedIcon from "@mui/icons-material/FormatSizeOutlined";
@@ -9,7 +17,7 @@ import FormatListNumberedOutlinedIcon from "@mui/icons-material/FormatListNumber
 
 import MainLayout from "../layouts/MainLayout";
 
-import BreadCrumbs from "../components/BreadCrumbs.jsx";
+import Title from "../components/Title.jsx";
 import Sources from "../components/Sources.jsx";
 import Authors from "../components/Authors.jsx";
 import ScaleMap from "../components/maps/ScaleMap.jsx";
@@ -19,42 +27,53 @@ import "../../styles/map.css";
 
 const sources = [
   {
-    title: "Distortion - The GIS Encyclopedia",
+    title: "Distortion",
+    author: "The GIS Encyclopedia",
     url: "http://wiki.gis.com/wiki/index.php/Distortion#:~:text=There%20are%20four%20main%20types,example%20is%20in%20cylindrical%20projections.",
   },
   {
-    title: "Map Projections and Distortion - Hunter College",
+    title: "Map Projections and Distortion",
+    author: "Hunter College",
     url: "http://www.geography.hunter.cuny.edu/~jochen/gtech361/lectures/lecture04/concepts/Map%20coordinate%20systems/Map%20projections%20and%20distortion.htm",
   },
   {
-    title: "Projections - Intergovernmental Committee on Surveying and Mapping",
+    title: "Projections",
+    author: "Intergovernmental Committee on Surveying and Mapping",
     url: "https://www.icsm.gov.au/education/fundamentals-mapping/projections",
   },
   {
-    title: "Supported Map Projections - ArcMap",
+    title: "Supported Map Projections",
+    author: "ArcMap",
     url: "https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm",
   },
   {
-    title: "Map Scale - Geography Realm",
+    title: "Map Scale",
+    author: "Geography Realm",
     url: "https://www.geographyrealm.com/map-scale/",
   },
   {
-    title: "Map Scale - Geokov",
+    title: "Map Scale",
+    author: "Geokov",
     url: "https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm",
   },
   {
-    title: "Converting Between Scale Types - Metal Detecting World",
+    title: "Converting Between Scale Types",
+    author: "Metal Detecting World",
     url: "https://www.metaldetectingworld.com/convert_map_scale_p1.shtml ",
   },
   {
-    title: "Map Scale, Directions - Western University",
+    title: "Map Scale, Directions",
+    author: "Western University",
     url: "https://instruct.uwo.ca/geog/2240/lecture2.htm",
   },
   {
-    title: "Map Scale Calculator - Map Tools",
+    title: "Map Scale Calculator",
+    author: "Map Tools",
     url: "https://www.maptools.com/scale_calculator",
   },
 ];
+
+// Images: https://gisgeography.com/map-projections/
 
 const authors = [
   {
@@ -69,27 +88,13 @@ function Projections() {
 
   return (
     <MainLayout>
-      <div>
-        <Grow in={true} timeout={1000}>
-          <Container maxWidth="sm" style={{ marginTop: "25px" }}>
-            <Typography
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              {crumbs}
-            </Typography>
-            <BreadCrumbs crumbs={crumbs} />
-          </Container>
-        </Grow>
-      </div>
+      <Title crumbs={crumbs} />
       <Grow in={true} timeout={1000}>
         <Container maxWidth="md" style={{ padding: "20px 0" }}>
           <Typography
             variant="h3"
             align="left"
-            color="textPrimary"
+            color="#457B9D"
             gutterBottom
             style={{ paddingLeft: "16px" }}
           >
@@ -106,7 +111,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="textPrimary"
+                color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
                 <FormatListNumberedOutlinedIcon
@@ -178,7 +183,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="textPrimary"
+                color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
                 <ConstructionOutlinedIcon
@@ -256,7 +261,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="textPrimary"
+                color="#E63946"
                 style={{ paddingBottom: "16px" }}
               >
                 <MapOutlinedIcon
@@ -307,7 +312,7 @@ function Projections() {
           <Typography
             variant="h3"
             align="left"
-            color="textPrimary"
+            color="#457B9D"
             gutterBottom
             style={{ paddingLeft: "16px", paddingTop: "16px" }}
           >
@@ -324,7 +329,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="textPrimary"
+                color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
                 <FormatListNumberedOutlinedIcon
@@ -368,7 +373,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="textPrimary"
+                color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
                 <FormatSizeOutlinedIcon
@@ -403,7 +408,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="textPrimary"
+                color="#E63946"
                 style={{ paddingBottom: "16px" }}
               >
                 <MapOutlinedIcon

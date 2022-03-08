@@ -1,6 +1,14 @@
 import React from "react";
 
-import { Container, Typography, Grow, Card } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Grow,
+  Card,
+  CardContent,
+  Grid,
+  CardActionArea,
+} from "@mui/material";
 
 export default function Sources(props) {
   return (
@@ -10,7 +18,7 @@ export default function Sources(props) {
           component="h1"
           variant="h3"
           align="left"
-          color="textPrimary"
+          color="#457B9D"
           gutterBottom
           style={{ paddingLeft: "16px" }}
         >
@@ -23,21 +31,39 @@ export default function Sources(props) {
             margin: "0px 20px 20px 20px",
           }}
         >
-          {props.sources.map((source, index) => (
-            <div align="left" key={index} style={{ padding: "0 16px 0  16px" }}>
-              {source.title}
-              {": "}
-              <a
-                style={{ color: "inherit" }}
-                href={source.url}
-                target="_blank"
-                rel="noreferrer"
+          {props.sources.map((card, index) => (
+            <Card
+              key={index}
+              style={{
+                flexDirection: "column",
+                height: "100%",
+                display: "flex",
+                margin: "0px 10px 10px 5px",
+              }}
+            >
+              <CardActionArea
+                href={card.url}
+                sx={{
+                  ".MuiCardActionArea-focusHighlight": {
+                    opacity: "0.05",
+                  },
+                }}
               >
-                Link
-              </a>
-            </div>
+                <CardContent style={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h5">
+                    {card.title}
+                  </Typography>
+                  <Typography>{card.author}</Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           ))}
         </Card>
+        <Grid
+          container
+          spacing={4}
+          style={{ paddingLeft: "16px", paddingTop: "16px" }}
+        ></Grid>
       </Container>
     </Grow>
   );

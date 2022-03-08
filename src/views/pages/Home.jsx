@@ -112,7 +112,7 @@ export default function Home() {
                 </CardContent>
                 <CardActions>
                   <Button
-                    style={{ background: "#2E3B55" }}
+                    style={{ background: "#1D3557" }}
                     size="small"
                     color="primary"
                     to={card.url}
