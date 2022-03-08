@@ -1,9 +1,9 @@
 .menu {
-  border-radius: 25px;
+  /* border-radius: 25px; */
   width: 98%;
-  padding-left: 16px;
+  padding-left: 0px;
   padding-top: 16px;
-  border: 2px solid;
+  /* border: 2px solid; */
 }
 
 .menu .item {

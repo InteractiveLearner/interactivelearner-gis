@@ -8,13 +8,15 @@ import {
   CardContent,
   CardActions,
   Button,
+  Grow
 } from "@mui/material";
 
 export default function Authors(props) {
   return (
+    <Grow in={true} timeout={1000}>
     <Container maxWidth="md" style={{ padding: "10px 0" }}>
       <Typography
-        variant="h4"
+        variant="h3"
         align="left"
         color="textPrimary"
         gutterBottom
@@ -58,5 +60,6 @@ export default function Authors(props) {
         ))}
       </Grid>
     </Container>
+    </Grow>
   );
 }

@@ -1,8 +1,8 @@
 .leaflet-container {
     height: 40vh;
-    margin-top: 25px;
-    width: 98%;
-    margin: inherit;
+    /* margin-top: 25px; */
+    /* width: 98%;
+    margin: inherit; */
   }
 
   .leaflet-control-scale-line{
