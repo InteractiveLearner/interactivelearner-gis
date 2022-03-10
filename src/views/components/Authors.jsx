@@ -27,7 +27,7 @@ export default function Authors(props) {
         <Grid
           container
           spacing={4}
-          style={{ paddingLeft: "16px", paddingTop: "16px" }}
+          style={{ paddingLeft: "16px" }}
         >
           {props.authors.map((card, index) => (
             <Grid item key={index} xs={12} sm={6} md={4}>

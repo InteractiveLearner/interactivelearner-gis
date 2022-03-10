@@ -10,7 +10,7 @@ export default function MainLayout({ children }) {
         <React.Fragment>
             <CssBaseline />
             <Header />
-            <main>{children}</main>
+            <main >{children}</main>
             <Footer />
         </React.Fragment>
     );

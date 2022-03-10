@@ -5,7 +5,7 @@ import {
   Container,
   Card,
   CardContent,
-  Grow,
+  Grow
   // createTheme,
   // ThemeProvider,
 } from "@mui/material";
@@ -18,6 +18,7 @@ import FormatListNumberedOutlinedIcon from "@mui/icons-material/FormatListNumber
 import MainLayout from "../layouts/MainLayout";
 
 import Title from "../components/Title.jsx";
+import Pagination from "../components/Pagination.jsx";
 import Sources from "../components/Sources.jsx";
 import Authors from "../components/Authors.jsx";
 import ScaleMap from "../components/maps/ScaleMap.jsx";
@@ -90,7 +91,7 @@ function Projections() {
     <MainLayout>
       <Title crumbs={crumbs} />
       <Grow in={true} timeout={1000}>
-        <Container maxWidth="md" style={{ padding: "20px 0" }}>
+        <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
           <Typography
             variant="h3"
             align="left"
@@ -475,6 +476,7 @@ function Projections() {
             </CardContent>
           </Card>
           <ScaleMap />
+          <Pagination prev={"/"} next={"/variables"}/>
         </Container>
       </Grow>
       <Sources sources={sources} />

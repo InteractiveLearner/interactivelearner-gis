@@ -75,7 +75,7 @@ export default function Home() {
             color="textPrimary"
             gutterBottom
           >
-            Geographic Information Systems
+            Geographic Information Science / Systems
           </Typography>
           <Typography
             variant="h5"
