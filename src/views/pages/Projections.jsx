@@ -5,7 +5,9 @@ import {
   Container,
   Card,
   CardContent,
-  Grow
+  Grow,
+  CardMedia,
+  Box,
   // createTheme,
   // ThemeProvider,
 } from "@mui/material";
@@ -18,11 +20,14 @@ import FormatListNumberedOutlinedIcon from "@mui/icons-material/FormatListNumber
 import MainLayout from "../layouts/MainLayout";
 
 import Title from "../components/Title.jsx";
+import Figure from "../components/Figure.jsx";
 import Pagination from "../components/Pagination.jsx";
 import Sources from "../components/Sources.jsx";
 import Authors from "../components/Authors.jsx";
 import ScaleMap from "../components/maps/ScaleMap.jsx";
 import ProjectionExplorer from "../components/maps/ProjectionExplorer.jsx";
+
+import surfaces from "../../img/projection_surfaces.png";
 
 import "../../styles/map.css";
 
@@ -46,6 +51,11 @@ const sources = [
     title: "Supported Map Projections",
     author: "ArcMap",
     url: "https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm",
+  },
+  {
+    title: "Characteristics of Projections",
+    author: "PennState College of Earth and Mineral Sciences",
+    url: "https://www.e-education.psu.edu/geog486/node/675",
   },
   {
     title: "Map Scale",
@@ -126,13 +136,13 @@ function Projections() {
                 component="p"
                 variant="h5"
               >
-                When it comes to presenting maps to readers, geographers are
-                challenged with selecting a projection based on the map's
-                purpose and location. Projections transform three-dimensional
-                curved surfaces to two-dimensional flat surfaces. Consequently,
-                such transformations cause distortion to the maps. The 4 ways
-                that the relationship between features on a map can be distorted
-                or preserved include:
+                When it comes to presenting maps to readers, geographers must
+                choose a projection that is appropriate for the map's purpose
+                and location. Projections transform three-dimensional curved
+                surfaces to two-dimensional flat surfaces. Consequently, such
+                transformations cause distortion to the maps. The following are
+                the 4 types in which the relationship between features on a map
+                may be distorted or preserved:
               </Typography>
 
               <Typography
@@ -198,10 +208,10 @@ function Projections() {
                 component="p"
                 variant="h5"
               >
-                Another important aspect to consider is the projection technique
-                which impacts the Longitude (vertical lines) and Latitude
-                (horizontal lines) on a map. The 3 main projection techniques
-                are:
+                The projection techniques, which affect the <b>longitude</b>{" "}
+                (vertical lines) and <b>latitude</b> (horizontal lines) on a
+                map, are another significant factor to consider. The following
+                are the 3 primary projection techniques:
               </Typography>
 
               <Typography
@@ -211,6 +221,26 @@ function Projections() {
                 style={{ padding: "16px 0px 0px 0px" }}
               >
                 <ol>
+                  <li>
+                    <b>Cylindrical</b>
+                  </li>
+                  <ul>
+                    <li>
+                      Longitude lines appear straight, equally spaced, and
+                      parallel
+                    </li>
+                    <li>
+                      Latitude lines appear straight, and sometimes not
+                      consistently equally spaced
+                    </li>
+                  </ul>
+                  <li>
+                    <b>Conical</b>
+                  </li>
+                  <ul>
+                    <li>Longitude lines appear as diverging</li>
+                    <li>Latitude lines appear circular around the poles</li>
+                  </ul>
                   <li>
                     <b>Azimuthal (or Planar)</b>
                   </li>
@@ -227,30 +257,11 @@ function Projections() {
                       Latitude lines appear as equally spaced centric circles
                     </li>
                   </ul>
-                  <li>
-                    <b>Conical</b>
-                  </li>
-                  <ul>
-                    <li>Longitude lines appear as diverging</li>
-                    <li>Latitude lines appear circular around the poles</li>
-                  </ul>
-                  <li>
-                    <b>Cylindrical</b>
-                  </li>
-                  <ul>
-                    <li>
-                      Longitude lines appear straight, equally spaced, and
-                      parallel
-                    </li>
-                    <li>
-                      Latitude lines appear straight, and sometimes not
-                      consistently equally spaced
-                    </li>
-                  </ul>
                 </ol>
               </Typography>
             </CardContent>
           </Card>
+          <Figure img={surfaces} />
           <Card
             elevation={3}
             style={{
@@ -276,8 +287,8 @@ function Projections() {
                 component="p"
                 variant="h5"
               >
-                Now that you've gotten familiar with transformations, try out
-                the projection explorer below! Notice that:
+                Try out the projection explorer below now that you've learned
+                about projection types and techniques. Notice the following:
               </Typography>
 
               <Typography
@@ -344,22 +355,22 @@ function Projections() {
                 component="p"
                 variant="h5"
               >
-                As we've learned from transformations, there is no perfect
-                representation of reality in mapping. When you use your favorite
-                navigation service (e.g., Google Maps, Apple Maps, Bing Maps,
-                etc.) to look up addresses or directions, the real world
-                features you see cannot be drawn to their true size. Instead,
-                these navigation services use a <b>graphic scale</b> to
-                represent the measurable relationship between the map and the
-                area observed. Similarly, GIS software such as QGIS and ArcGIS
-                Pro use representative fractions (<b>ratio scale</b>) to
-                represent this relationship. Representative fractions and
-                graphic scales can both be read verbally as a{" "}
-                <b>verbal scale</b>. However, representative fractions differ
-                from graphic scales as representative fractions do not use units
-                (e.g., km, miles, etc.). Regardless of whether someone decides
-                to use representative fractions or graphic scales, the level of
-                detail shown is what matters most.
+                As we've seen with projections, mapping isn't a perfect
+                depiction of reality. When you use your favourite navigation
+                service to look up locations or directions (e.g., Google Maps,
+                Apple Maps, Bing Maps, etc. ), the real-world features you see
+                cannot be drawn to their proper scale. These navigation
+                services, on the other hand, use a <b>graphic scale</b> to
+                indicate the measurable relationship between the map and the
+                area being examined. Similarly, GIS tools such as QGIS and
+                ArcGIS Pro portray this relationship using representative
+                fractions (<b>ratio scale</b>). Verbally, both representative
+                fractions and graphic scales can be read as a{" "}
+                <b>verbal scale</b>. Representative fractions, on the other
+                hand, differ from graphic scales in that they do not employ
+                units (e.g., km, miles, etc.). Regardless of whether
+                representative fractions or graphic scales are used, the level
+                of detail shown is what matters most.
               </Typography>
             </CardContent>
           </Card>
@@ -388,13 +399,11 @@ function Projections() {
                 component="p"
                 variant="h5"
               >
-                The map you see below is a <b>small-scale</b> map of Victoria,
-                BC. The map is considered small-scale due to covering a large
-                geographic area, and showing a low level of detail. If you click
-                the <b>large-scale</b> bottom right button in the map, you will
-                see downtown Victoria with a high level of detail. As a result,
-                you lose sight of municipality names but gain sight of street
-                names and buildings.
+                The level of detail on a map is determined by the scale size. In{" "}
+                <b>small-scale</b> maps, a lot of ground is covered in a large
+                geographic area and at a low level of detail. On the other hand,{" "}
+                <b>large-scale</b> maps cover small geographic areas with a high
+                level of detail.
               </Typography>
             </CardContent>
           </Card>
@@ -423,9 +432,13 @@ function Projections() {
                 component="p"
                 variant="h5"
               >
-                As you play with the interaction below, notice the real world
-                units and length of the graphic scale change (bottom left of the
-                map). Simply put:
+                The map of Victoria, BC below is displayed in small-scale by
+                default. If you click the large-scale bottom-right button on the
+                map, you will get a detailed view of downtown Victoria. As a
+                result, you lose sight of the names of municipalities but gain
+                sight of street names and buildings. Notice how the real-world
+                units and length of the graphic scale (bottom left of the map)
+                vary as you interact with the map.
               </Typography>
 
               <Typography
@@ -434,49 +447,65 @@ function Projections() {
                 variant="h5"
                 style={{ padding: "16px 0px 0px 0px" }}
               >
+                When you select the small-scale button:
                 <ul>
                   <li>
-                    When you select the small-scale button, the graphic scale's
-                    length (or map distance) is approximately 1 centimeter and
-                    it's ground distance is 2.5 kilometers.
-                    <ul>
-                      <li>
-                        Verbally: One centimeter corresponds to 2.5 kilometers
-                      </li>
-                      <li>
-                        As a representative fraction: Convert 2.5 km to 250,000
-                        cm and divide 1 cm by 250,000 cm which gives you
-                        1:250,000 or 1/250,000
-                      </li>
-                    </ul>
+                    The graphic scale's length (or map distance) is
+                    approximately 1 centimeter and it's ground distance is 2
+                    kilometers.
                   </li>
                   <li>
-                    When you select the large-scale button, the graphic scale's
-                    map distance is approximately 1 centimeter and it's ground
-                    distance is 300 meters.
+                    The verbal scale is "One centimeter corresponds to 2
+                    kilometers"
+                  </li>
+                  <li>
+                    The representative fraction is 1:200,000 or 1/200,000
                     <ul>
                       <li>
-                        Verbally: One centimeter corresponds to 300 meters
+                        Calculation: Convert 2 km to 200,000 cm and then divide
+                        1 cm by 200,000 cm
                       </li>
-                      <li>
-                        As a representative fraction: Convert 300 m to 30,000 cm
-                        and divide 1 cm by 30,000 cm which gives you 1:30,000 or
-                        1/30,000
-                      </li>
-                      <ul>
-                        <li>
-                          If the map distance for the large-scale view was 0.75
-                          cm, the representative fraction would be 1:40,000
-                        </li>
-                      </ul>
                     </ul>
                   </li>
+                </ul>
+              </Typography>
+              <Typography
+                color="rgba(0, 0, 0, 0.75)"
+                component="ul"
+                variant="h5"
+                style={{ padding: "16px 0px 0px 0px" }}
+              >
+                When you select the large-scale button:
+                <ul>
+                  <li>
+                    The graphic scale's length is approximately 1 centimeter and
+                    it's ground distance is 300 meters.
+                  </li>
+                  <li>
+                    The verbal scale is "One centimeter corresponds to 300
+                    meters"
+                  </li>
+                  <li>
+                    The representative fraction is 1:30,000 or 1/30,000
+                    <ul>
+                      <li>
+                        Calculation: Convert 300 m to 30,000 cm and then divide
+                        1 cm by 30,000 cm
+                      </li>
+                    </ul>
+                  </li>
+                  <ul>
+                    <li>
+                      If the map distance for the large-scale view was 0.75 cm,
+                      the representative fraction would be 1:40,000
+                    </li>
+                  </ul>
                 </ul>
               </Typography>
             </CardContent>
           </Card>
           <ScaleMap />
-          <Pagination prev={"/"} next={"/variables"}/>
+          <Pagination prev={"/"} next={"/variables"} />
         </Container>
       </Grow>
       <Sources sources={sources} />

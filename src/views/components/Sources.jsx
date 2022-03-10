@@ -38,7 +38,7 @@ export default function Sources(props) {
                 flexDirection: "column",
                 height: "100%",
                 display: "flex",
-                margin: "0px 10px 10px 5px",
+                margin: "0px 10px 10px 10px",
               }}
             >
               <CardActionArea
