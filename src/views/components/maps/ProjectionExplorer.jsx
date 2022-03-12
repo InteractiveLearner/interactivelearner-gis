@@ -16,6 +16,8 @@ export default function ProjectionExplorer() {
       "Conic Equidistant",
       "Equirectangular",
       "Mercator",
+      "TransverseMercator",
+      // What is transverse mercator for?
     ];
     var projection;
     var geoGenerator = d3.geoPath().projection(projection);

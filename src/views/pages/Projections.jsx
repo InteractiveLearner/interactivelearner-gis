@@ -1,26 +1,15 @@
 import React, { useState } from "react";
 
-import {
-  Typography,
-  Container,
-  Card,
-  CardContent,
-  Grow,
-  CardMedia,
-  Box,
-  // createTheme,
-  // ThemeProvider,
-} from "@mui/material";
+import { Typography, Container, Card, CardContent, Grow } from "@mui/material";
 
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import FormatSizeOutlinedIcon from "@mui/icons-material/FormatSizeOutlined";
-import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
-import FormatListNumberedOutlinedIcon from "@mui/icons-material/FormatListNumberedOutlined";
+import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
 
 import MainLayout from "../layouts/MainLayout";
 
 import Title from "../components/Title.jsx";
 import Figure from "../components/Figure.jsx";
+import Question from "../components/Question.jsx";
 import Pagination from "../components/Pagination.jsx";
 import Sources from "../components/Sources.jsx";
 import Authors from "../components/Authors.jsx";
@@ -86,6 +75,62 @@ const sources = [
 
 // Images: https://gisgeography.com/map-projections/
 
+const projectionQuestions = [
+  {
+    question: "The Albers projection uses which technique and type?",
+    answer: "Conical and Equal Area",
+  },
+  {
+    question: "The Equirectangular projection uses which technique and type?",
+    answer: "Cylindrical and Equidistant",
+  },
+  {
+    question: "The Mercator projection uses which technique and type?",
+    answer: "Cylindrical and Conformal",
+  },
+  {
+    question:
+      "The Mercator projection distorts the area of features. Can you identify which features are heavily distorted?",
+    answer: "One example is Greenland appearing much larger than Africa",
+  },
+  {
+    question:
+      "The spherical version of which projection is the de facto standard for web mapping?",
+    answer: "Mercator projection, however non-conformal in this case",
+  },
+];
+
+const scaleQuestions = [
+  {
+    question: "When you select the small-scale button, what is the graphic scale's length (or map distance) and ground distance?",
+    answer: "The map distance is approximately 1 centimeter and the ground distance is 2 kilometers",
+  },
+  {
+    question: "When you select the small-scale button, what is the verbal scale?",
+    answer: '"One centimeter corresponds to 2 kilometers"',
+  },
+  {
+    question: "When you select the small-scale button, what is the ratio scale?",
+    answer: "1:200,000 or 1/200,000.\nCalculation: Convert 2 km to 200,000 cm and then divide 1 cm by 200,000 cm",
+  },
+  {
+    question: "When you select the large-scale button, what is the graphic scale's or map distance and ground distance?",
+    answer: "The map distance is approximately 1 centimeter and the ground distance is 300 meters",
+  },
+  {
+    question: "When you select the large-scale button, what is the verbal scale?",
+    answer: '"One centimeter corresponds to 300 meters"',
+  },
+  {
+    question: "When you select the large-scale button, what is the ratio scale?",
+    answer: "1:30,000 or 1/30,000.\nCalculation: Convert 300 m to 30,000 cm and then divide 1 cm by 30,000 cm",
+  },
+  {
+    question: "If the map distance for the large-scale button's view was 0.75 cm, what would the ratio scale be?",
+    answer: "1:40,000 or 1/40,000",
+  },
+];
+
 const authors = [
   {
     author: "Omar Kawach",
@@ -125,7 +170,7 @@ function Projections() {
                 color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
-                <FormatListNumberedOutlinedIcon
+                <MapOutlinedIcon
                   style={{ minWidth: "20px" }}
                   fontSize={"medium"}
                 />{" "}
@@ -197,7 +242,7 @@ function Projections() {
                 color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
-                <ConstructionOutlinedIcon
+                <MapOutlinedIcon
                   style={{ minWidth: "20px" }}
                   fontSize={"medium"}
                 />{" "}
@@ -276,11 +321,11 @@ function Projections() {
                 color="#E63946"
                 style={{ paddingBottom: "16px" }}
               >
-                <MapOutlinedIcon
+                <MouseOutlinedIcon // Replace with mouse icon
                   style={{ minWidth: "20px" }}
                   fontSize={"medium"}
                 />{" "}
-                Projection Explorer
+                Interaction - Projection Explorer
               </Typography>
               <Typography
                 color="rgba(0, 0, 0, 0.75)"
@@ -288,39 +333,12 @@ function Projections() {
                 variant="h5"
               >
                 Try out the projection explorer below now that you've learned
-                about projection types and techniques. Notice the following:
-              </Typography>
-
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="ol"
-                variant="h5"
-                style={{ padding: "16px 0px 16px 0px" }}
-              >
-                <ul>
-                  <li>The Albers projection is conical and equal-area</li>
-                  <li>
-                    The Equirectangular projection is cylindrical and
-                    equidistant
-                  </li>
-                  <li>The Mercator projection is cylindrical and conformal</li>
-                  <li>
-                    The Mercator projection distorts the area of features which
-                    is why Greenland appears much larger than Africa
-                  </li>
-                </ul>
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                Side note: The spherical version of the Mercator projection is
-                non-conformal and the de facto standard for web mapping.
+                about projection types and techniques.
               </Typography>
             </CardContent>
           </Card>
           <ProjectionExplorer />
+          <Question questions={projectionQuestions} />
           <Typography
             variant="h3"
             align="left"
@@ -344,7 +362,7 @@ function Projections() {
                 color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
-                <FormatListNumberedOutlinedIcon
+                <MapOutlinedIcon
                   style={{ minWidth: "20px" }}
                   fontSize={"medium"}
                 />{" "}
@@ -388,7 +406,7 @@ function Projections() {
                 color="#0096c7"
                 style={{ paddingBottom: "16px" }}
               >
-                <FormatSizeOutlinedIcon
+                <MapOutlinedIcon
                   style={{ minWidth: "20px" }}
                   fontSize={"medium"}
                 />{" "}
@@ -404,6 +422,7 @@ function Projections() {
                 geographic area and at a low level of detail. On the other hand,{" "}
                 <b>large-scale</b> maps cover small geographic areas with a high
                 level of detail.
+                {/* TODO: Add side by side screenshot of small scale vs large scale */}
               </Typography>
             </CardContent>
           </Card>
@@ -421,11 +440,11 @@ function Projections() {
                 color="#E63946"
                 style={{ paddingBottom: "16px" }}
               >
-                <MapOutlinedIcon
+                <MouseOutlinedIcon
                   style={{ minWidth: "20px" }}
                   fontSize={"medium"}
                 />{" "}
-                Scale Map
+                Interaction - Scale Map
               </Typography>
               <Typography
                 color="rgba(0, 0, 0, 0.75)"
@@ -440,71 +459,10 @@ function Projections() {
                 units and length of the graphic scale (bottom left of the map)
                 vary as you interact with the map.
               </Typography>
-
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="ul"
-                variant="h5"
-                style={{ padding: "16px 0px 0px 0px" }}
-              >
-                When you select the small-scale button:
-                <ul>
-                  <li>
-                    The graphic scale's length (or map distance) is
-                    approximately 1 centimeter and it's ground distance is 2
-                    kilometers.
-                  </li>
-                  <li>
-                    The verbal scale is "One centimeter corresponds to 2
-                    kilometers"
-                  </li>
-                  <li>
-                    The representative fraction is 1:200,000 or 1/200,000
-                    <ul>
-                      <li>
-                        Calculation: Convert 2 km to 200,000 cm and then divide
-                        1 cm by 200,000 cm
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="ul"
-                variant="h5"
-                style={{ padding: "16px 0px 0px 0px" }}
-              >
-                When you select the large-scale button:
-                <ul>
-                  <li>
-                    The graphic scale's length is approximately 1 centimeter and
-                    it's ground distance is 300 meters.
-                  </li>
-                  <li>
-                    The verbal scale is "One centimeter corresponds to 300
-                    meters"
-                  </li>
-                  <li>
-                    The representative fraction is 1:30,000 or 1/30,000
-                    <ul>
-                      <li>
-                        Calculation: Convert 300 m to 30,000 cm and then divide
-                        1 cm by 30,000 cm
-                      </li>
-                    </ul>
-                  </li>
-                  <ul>
-                    <li>
-                      If the map distance for the large-scale view was 0.75 cm,
-                      the representative fraction would be 1:40,000
-                    </li>
-                  </ul>
-                </ul>
-              </Typography>
             </CardContent>
           </Card>
           <ScaleMap />
+          <Question questions={scaleQuestions} />
           <Pagination prev={"/"} next={"/variables"} />
         </Container>
       </Grow>
