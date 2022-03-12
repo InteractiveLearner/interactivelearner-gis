@@ -416,11 +416,11 @@ function Projections() {
                 ArcGIS Pro portray this relationship using representative
                 fractions (<b>ratio scale</b>). Verbally, both representative
                 fractions and graphic scales can be read as a{" "}
-                <b>verbal scale</b>. Representative fractions, on the other
-                hand, differ from graphic scales in that they do not employ
-                units (e.g., km, miles, etc.). Regardless of whether
-                representative fractions or graphic scales are used, the level
-                of detail shown is what matters most.
+                <b>verbal scale</b>. However, representative fractions differ
+                from graphic scales in that they do not employ units (e.g., km,
+                miles, etc.). Regardless of whether representative fractions or
+                graphic scales are used, the level of detail shown is what
+                matters most.
               </Typography>
             </CardContent>
           </Card>
@@ -451,10 +451,13 @@ function Projections() {
               >
                 The level of detail on a map is determined by the scale size. In{" "}
                 <b>small-scale</b> maps, a lot of ground is covered in a large
-                geographic area and at a low level of detail. On the other hand,{" "}
+                geographic area and at a low level of detail whereas{" "}
                 <b>large-scale</b> maps cover small geographic areas with a high
-                level of detail.
-                {/* TODO: Add side by side screenshot of small scale vs large scale */}
+                level of detail. In the figure below, the small-scale map of
+                Victoria depicts the entire region, neighborhoods, and major
+                road networks. In contrast, the large-scale map of Victoria
+                depicts the downtown core, street names, more labels and outline
+                of buildings.
               </Typography>
             </CardContent>
           </Card>
@@ -489,12 +492,10 @@ function Projections() {
                 variant="h5"
               >
                 The map of Victoria, BC below is displayed in small-scale by
-                default. If you click the large-scale bottom-right button on the
-                map, you will get a detailed view of downtown Victoria. As a
-                result, you lose sight of the names of municipalities but gain
-                sight of street names and buildings. Notice how the real-world
-                units and length of the graphic scale (bottom left of the map)
-                vary as you interact with the map.
+                default. The buttons to change scale are on the bottom right of
+                the map. Notice how the real-world units and length of the
+                graphic scale (bottom left of the map) vary as you move around
+                and zoom in / out of the map.
               </Typography>
             </CardContent>
           </Card>
