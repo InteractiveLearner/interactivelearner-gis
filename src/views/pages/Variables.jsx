@@ -98,7 +98,7 @@ function Variables() {
           tristique magna sit amet. Consequat mauris nunc congue nisi vitae
           suscipit.
         </div>
-        <CardMedia
+        {/* <CardMedia
           component="iframe"
           title="isu map"
           style={{ margin: "inherit", width: "97%" }}
@@ -106,7 +106,7 @@ function Variables() {
           // width: "80%",
           // margin: "auto"
           image="https://isu-ubc.github.io/clinic-mapping-2/"
-        />
+        /> */}
       </Container>
       <Sources sources={sources} />
     </MainLayout>

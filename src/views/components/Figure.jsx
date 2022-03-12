@@ -7,7 +7,7 @@ export default function Footer(props) {
     <Card
       elevation={3}
       style={{
-        padding: "0px 8px 8px 8px",
+        padding: "8px 8px 8px 8px",
         margin: "0px 20px 20px 20px",
       }}
     >
@@ -26,14 +26,19 @@ export default function Footer(props) {
             variant="subtitle2"
             sx={{ typography: { sm: "h6", xs: "subtitle2" } }}
           >
-            Cylinder, Cone, and Plane
+            {props.title}
           </Typography>
-          <Typography variant="caption">
-            Credit: PennState licensed under{" "}
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-              CC BY-ND 2.0
-            </a>
-          </Typography>
+          {(() => {
+            if (props.credit !== "") {
+              return (
+                <Typography variant="caption">
+                  <a href={props.url} style={{ color: "black" }}>
+                    {props.credit}
+                  </a>
+                </Typography>
+              );
+            }
+          })()}
         </Box>
       </Box>
     </Card>

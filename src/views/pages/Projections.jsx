@@ -17,6 +17,7 @@ import ScaleMap from "../components/maps/ScaleMap.jsx";
 import ProjectionExplorer from "../components/maps/ProjectionExplorer.jsx";
 
 import surfaces from "../../img/projection_surfaces.png";
+import scaleImg from "../../img/scale.png";
 
 import "../../styles/map.css";
 
@@ -102,32 +103,58 @@ const projectionQuestions = [
 
 const scaleQuestions = [
   {
-    question: "When you select the small-scale button, what is the graphic scale's length (or map distance) and ground distance?",
-    answer: "The map distance is approximately 1 centimeter and the ground distance is 2 kilometers",
+    question:
+      "When you select the small-scale button, what is the graphic scale's length (or map distance) and ground distance?",
+    answer:
+      "The map distance is approximately 1 centimeter and the ground distance is 2 kilometers",
   },
   {
-    question: "When you select the small-scale button, what is the verbal scale?",
+    question:
+      "When you select the small-scale button, what is the verbal scale?",
     answer: '"One centimeter corresponds to 2 kilometers"',
   },
   {
-    question: "When you select the small-scale button, what is the ratio scale?",
-    answer: "1:200,000 or 1/200,000.\nCalculation: Convert 2 km to 200,000 cm and then divide 1 cm by 200,000 cm",
+    question:
+      "When you select the small-scale button, what is the ratio scale?",
+    answer:
+      "1:200,000 or 1/200,000.\nCalculation: Convert 2 km to 200,000 cm and then divide 1 cm by 200,000 cm",
   },
   {
-    question: "When you select the large-scale button, what is the graphic scale's or map distance and ground distance?",
-    answer: "The map distance is approximately 1 centimeter and the ground distance is 300 meters",
+    question:
+      "When you select the large-scale button, what is the graphic scale's or map distance and ground distance?",
+    answer:
+      "The map distance is approximately 1 centimeter and the ground distance is 300 meters",
   },
   {
-    question: "When you select the large-scale button, what is the verbal scale?",
+    question:
+      "When you select the large-scale button, what is the verbal scale?",
     answer: '"One centimeter corresponds to 300 meters"',
   },
   {
-    question: "When you select the large-scale button, what is the ratio scale?",
-    answer: "1:30,000 or 1/30,000.\nCalculation: Convert 300 m to 30,000 cm and then divide 1 cm by 30,000 cm",
+    question:
+      "When you select the large-scale button, what is the ratio scale?",
+    answer:
+      "1:30,000 or 1/30,000.\nCalculation: Convert 300 m to 30,000 cm and then divide 1 cm by 30,000 cm",
   },
   {
-    question: "If the map distance for the large-scale button's view was 0.75 cm, what would the ratio scale be?",
+    question:
+      "If the map distance for the large-scale button's view was 0.75 cm, what would the ratio scale be?",
     answer: "1:40,000 or 1/40,000",
+  },
+];
+
+const figures = [
+  {
+    img: surfaces,
+    title: "Cylinder, Cone, and Plane",
+    credit: "Credit: PennState licensed under CC BY-ND 2.0",
+    url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  },
+  {
+    img: scaleImg,
+    title: "Small Scale versus Large Scale Victoria, BC",
+    credit: "",
+    url: "",
   },
 ];
 
@@ -306,7 +333,12 @@ function Projections() {
               </Typography>
             </CardContent>
           </Card>
-          <Figure img={surfaces} />
+          <Figure
+            img={figures[0].img}
+            title={figures[0].title}
+            credit={figures[0].credit}
+            url={figures[0].url}
+          />
           <Card
             elevation={3}
             style={{
@@ -426,6 +458,11 @@ function Projections() {
               </Typography>
             </CardContent>
           </Card>
+          <Figure
+            img={figures[1].img}
+            title={figures[1].title}
+            credit={figures[1].credit}
+          />
           <Card
             elevation={3}
             style={{
