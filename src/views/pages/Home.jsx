@@ -93,6 +93,7 @@ export default function Home() {
             // Space on device
             <Grid item key={index} xs={12} sm={6} md={4}>
               <Card
+                elevation={3}
                 style={{
                   flexDirection: "column",
                   height: "100%",
@@ -112,7 +113,7 @@ export default function Home() {
                 </CardContent>
                 <CardActions>
                   <Button
-                    style={{ background: "#1D3557" }}
+                    style={{ background: "#283618" }}
                     size="small"
                     color="primary"
                     to={card.url}

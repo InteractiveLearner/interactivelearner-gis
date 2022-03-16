@@ -18,7 +18,7 @@ export default function Authors(props) {
         <Typography
           variant="h3"
           align="left"
-          color="#457B9D"
+          color="#606c38"
           gutterBottom
           style={{ paddingLeft: "16px" }}
         >
@@ -47,7 +47,7 @@ export default function Authors(props) {
                 </CardContent>
                 <CardActions>
                   <Button
-                    style={{ background: "#1D3557" }}
+                    style={{ background: "#283618" }}
                     size="small"
                     color="primary"
                     href={card.url}

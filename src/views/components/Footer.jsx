@@ -4,7 +4,7 @@ import { Typography, Box } from "@mui/material";
 
 export default function Footer() {
   return (
-    <Box sx={{ backgroundColor: "#f8f9fa", p: 6 }} component="footer">
+    <Box sx={{ backgroundColor: "#f0ead2", p: 6 }} component="footer">
       <Typography variant="h6" align="center" gutterBottom>
         Interactive Learner
       </Typography>
@@ -30,7 +30,7 @@ export default function Footer() {
         color="text.secondary"
         component="p"
       >
-      Copyright ©{" "} Interactive Learner 2022
+      Copyright ©{" "} Interactive Learner GIS 2022
       </Typography>
     </Box>
   );

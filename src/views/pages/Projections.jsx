@@ -177,7 +177,7 @@ function Projections() {
           <Typography
             variant="h3"
             align="left"
-            color="#457B9D"
+            color="#606c38"
             gutterBottom
             style={{ paddingLeft: "16px" }}
           >
@@ -194,7 +194,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="#0096c7"
+                color="#bc6c25"
                 style={{ paddingBottom: "16px" }}
               >
                 <MapOutlinedIcon
@@ -266,7 +266,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="#0096c7"
+                color="#bc6c25"
                 style={{ paddingBottom: "16px" }}
               >
                 <MapOutlinedIcon
@@ -350,7 +350,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="#E63946"
+                color="#dda15e"
                 style={{ paddingBottom: "16px" }}
               >
                 <MouseOutlinedIcon // Replace with mouse icon
@@ -374,7 +374,7 @@ function Projections() {
           <Typography
             variant="h3"
             align="left"
-            color="#457B9D"
+            color="#606c38"
             gutterBottom
             style={{ paddingLeft: "16px", paddingTop: "16px" }}
           >
@@ -391,7 +391,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="#0096c7"
+                color="#bc6c25"
                 style={{ paddingBottom: "16px" }}
               >
                 <MapOutlinedIcon
@@ -435,7 +435,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="#0096c7"
+                color="#bc6c25"
                 style={{ paddingBottom: "16px" }}
               >
                 <MapOutlinedIcon
@@ -477,7 +477,7 @@ function Projections() {
               <Typography
                 variant="h4"
                 align="left"
-                color="#E63946"
+                color="#dda15e"
                 style={{ paddingBottom: "16px" }}
               >
                 <MouseOutlinedIcon
@@ -501,7 +501,7 @@ function Projections() {
           </Card>
           <ScaleMap />
           <Question questions={scaleQuestions} />
-          <Pagination prev={"/"} next={"/variables"} />
+          {/* <Pagination prev={"/"} next={"/variables"} /> */}
         </Container>
       </Grow>
       <Sources sources={sources} />
