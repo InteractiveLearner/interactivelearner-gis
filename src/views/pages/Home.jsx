@@ -29,9 +29,9 @@ const cards = [
     disabled: false,
   },
   {
-    title: "Visual Variables and Types of Maps",
-    description: "Learn how visual marks and channels allow geographers to produce thematic maps",
-    url: "/variables",
+    title: "Visual Encoding and Types of Maps",
+    description: "Learn how visual marks and channels allow geographers to produce thematic maps.",
+    url: "/visual",
     img: vizvars,
     disabled: false,
   },
