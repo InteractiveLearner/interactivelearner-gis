@@ -1,12 +1,15 @@
 import React from "react";
+
+import { Card, Grow } from "@mui/material";
+
 import {
   MapContainer,
   TileLayer,
   LayersControl,
   ScaleControl,
 } from "react-leaflet";
+
 import ScaleButton from "./ScaleButton.jsx";
-import { Card, Grow } from "@mui/material";
 
 export default class Map extends React.Component {
   render() {

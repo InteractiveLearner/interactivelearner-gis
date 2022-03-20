@@ -24,14 +24,11 @@ export default function Authors(props) {
         >
           Authors
         </Typography>
-        <Grid
-          container
-          spacing={4}
-          style={{ paddingLeft: "16px" }}
-        >
+        <Grid container spacing={4} style={{ paddingLeft: "16px" }}>
           {props.authors.map((card, index) => (
             <Grid item key={index} xs={12} sm={6} md={4}>
               <Card
+                elevation={3}
                 style={{
                   flexDirection: "column",
                   height: "100%",

@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
-import { Typography, Container, Card, CardContent, Grow } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Card,
+  CardContent,
+  Grow,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
@@ -10,7 +18,6 @@ import MainLayout from "../layouts/MainLayout";
 import Title from "../components/Title.jsx";
 import Figure from "../components/Figure.jsx";
 import Question from "../components/Question.jsx";
-import Pagination from "../components/Pagination.jsx";
 import Sources from "../components/Sources.jsx";
 import Authors from "../components/Authors.jsx";
 import ScaleMap from "../components/maps/ScaleMap.jsx";
@@ -19,7 +26,27 @@ import ProjectionExplorer from "../components/maps/ProjectionExplorer.jsx";
 import surfaces from "../../img/projection_surfaces.png";
 import scaleImg from "../../img/scale.png";
 
-import "../../styles/map.css";
+const theme = createTheme({
+  header: {
+    color: "#606c38",
+    paddingLeft: "16px",
+  },
+  contentHeader: {
+    color: "#bc6c25",
+    paddingBottom: "8px",
+  },
+  card: {
+    padding: "0px 16px 16px 16px",
+    margin: "0px 20px 20px 20px",
+  },
+  content: {
+    color: "rgba(0, 0, 0, 0.75)",
+  },
+  contentBullets: {
+    color: "rgba(0, 0, 0, 0.75)",
+    padding: "16px 0px 0px 0px",
+  },
+});
 
 const sources = [
   {
@@ -73,8 +100,6 @@ const sources = [
     url: "https://www.maptools.com/scale_calculator",
   },
 ];
-
-// Images: https://gisgeography.com/map-projections/
 
 const projectionQuestions = [
   {
@@ -161,7 +186,7 @@ const figures = [
 const authors = [
   {
     author: "Omar Kawach",
-    description: "Developer of Interactive Learner",
+    description: "Developer of Interactive Learner GIS",
     url: "https://github.com/omarkawach",
   },
 ];
@@ -172,338 +197,235 @@ function Projections() {
   return (
     <MainLayout>
       <Title crumbs={crumbs} />
-      <Grow in={true} timeout={1000}>
-        <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
-          <Typography
-            variant="h3"
-            align="left"
-            color="#606c38"
-            gutterBottom
-            style={{ paddingLeft: "16px" }}
-          >
-            Projections
-          </Typography>
-          <Card
-            elevation={3}
-            style={{
-              padding: "0px 16px 16px 16px",
-              margin: "0px 20px 20px 20px",
-            }}
-          >
-            <CardContent>
-              <Typography
-                variant="h4"
-                align="left"
-                color="#bc6c25"
-                style={{ paddingBottom: "16px" }}
-              >
-                <MapOutlinedIcon
-                  style={{ minWidth: "20px" }}
-                  fontSize={"medium"}
-                />{" "}
-                Projection Types
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                When it comes to presenting maps to readers, geographers must
-                choose a projection that is appropriate for the map's purpose
-                and location. Projections transform three-dimensional curved
-                surfaces to two-dimensional flat surfaces. Consequently, such
-                transformations cause distortion to the maps. The following are
-                the 4 types in which the relationship between features on a map
-                may be distorted or preserved:
-              </Typography>
+      <ThemeProvider theme={theme}>
+        <Grow in={true} timeout={1000}>
+          <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Projections
+            </Typography>
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Projection Types
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  When it comes to presenting maps to readers, geographers must
+                  choose a projection that is appropriate for the map's purpose
+                  and location. Projections transform three-dimensional curved
+                  surfaces to two-dimensional flat surfaces. Consequently, such
+                  transformations cause distortion to the maps. The following
+                  are the 4 types in which the relationship between features on
+                  a map may be distorted or preserved:
+                </Typography>
 
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="ol"
-                variant="h5"
-                style={{ padding: "16px 0px 0px 0px" }}
-              >
-                <ol>
-                  <li>
-                    <b>Distance (Equidistant)</b>
-                  </li>
-                  <ul>
-                    <li>Preserves distance between features</li>
-                  </ul>
-                  <li>
-                    <b>True Direction (Azimuth)</b>
-                  </li>
-                  <ul>
-                    <li>Preserves direction between features</li>
-                    <li>Measured in degrees (°)</li>
-                  </ul>
-                  <li>
-                    <b>Shape / Angle (Conformal)</b>
-                  </li>
-                  <ul>
-                    <li>Cannot preserve shape and area at the same time</li>
-                    <li>Continents distorted</li>
-                  </ul>
-                  <li>
-                    <b>Area (Equal-Area)</b>
-                  </li>
-                  <ul>
-                    <li>Distorts distance and shape</li>
-                    <li>Preserves features to their exact size</li>
-                  </ul>
-                </ol>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card
-            elevation={3}
-            style={{
-              padding: "0px 16px 16px 16px",
-              margin: "0px 20px 20px 20px",
-            }}
-          >
-            <CardContent>
-              <Typography
-                variant="h4"
-                align="left"
-                color="#bc6c25"
-                style={{ paddingBottom: "16px" }}
-              >
-                <MapOutlinedIcon
-                  style={{ minWidth: "20px" }}
-                  fontSize={"medium"}
-                />{" "}
-                Projection Techniques
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                The projection techniques, which affect the <b>longitude</b>{" "}
-                (vertical lines) and <b>latitude</b> (horizontal lines) on a
-                map, are another significant factor to consider. The following
-                are the 3 primary projection techniques:
-              </Typography>
+                <Typography
+                  component="ol"
+                  variant="h5"
+                  sx={theme.contentBullets}
+                >
+                  <ol>
+                    <li>
+                      <b>Distance (Equidistant)</b>
+                    </li>
+                    <ul>
+                      <li>Preserves distance between features</li>
+                    </ul>
+                    <li>
+                      <b>True Direction (Azimuth)</b>
+                    </li>
+                    <ul>
+                      <li>Preserves direction between features</li>
+                      <li>Measured in degrees (°)</li>
+                    </ul>
+                    <li>
+                      <b>Shape / Angle (Conformal)</b>
+                    </li>
+                    <ul>
+                      <li>Cannot preserve shape and area at the same time</li>
+                      <li>Continents distorted</li>
+                    </ul>
+                    <li>
+                      <b>Area (Equal-Area)</b>
+                    </li>
+                    <ul>
+                      <li>Distorts distance and shape</li>
+                      <li>Preserves features to their exact size</li>
+                    </ul>
+                  </ol>
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Projection Techniques
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  The projection techniques, which affect the <b>longitude</b>{" "}
+                  (vertical lines) and <b>latitude</b> (horizontal lines) on a
+                  map, are another significant factor to consider. The following
+                  are the 3 primary projection techniques:
+                </Typography>
 
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="ol"
-                variant="h5"
-                style={{ padding: "16px 0px 0px 0px" }}
-              >
-                <ol>
-                  <li>
-                    <b>Cylindrical</b>
-                  </li>
-                  <ul>
+                <Typography
+                  component="ol"
+                  variant="h5"
+                  sx={theme.contentBullets}
+                >
+                  <ol>
                     <li>
-                      Longitude lines appear straight, equally spaced, and
-                      parallel
+                      <b>Cylindrical</b>
                     </li>
+                    <ul>
+                      <li>
+                        Longitude lines appear straight, equally spaced, and
+                        parallel
+                      </li>
+                      <li>
+                        Latitude lines appear straight, and sometimes not
+                        consistently equally spaced
+                      </li>
+                    </ul>
                     <li>
-                      Latitude lines appear straight, and sometimes not
-                      consistently equally spaced
+                      <b>Conical</b>
                     </li>
-                  </ul>
-                  <li>
-                    <b>Conical</b>
-                  </li>
-                  <ul>
-                    <li>Longitude lines appear as diverging</li>
-                    <li>Latitude lines appear circular around the poles</li>
-                  </ul>
-                  <li>
-                    <b>Azimuthal (or Planar)</b>
-                  </li>
-                  <ul>
+                    <ul>
+                      <li>Longitude lines appear as diverging</li>
+                      <li>Latitude lines appear circular around the poles</li>
+                    </ul>
                     <li>
-                      Increasingly distorted from the centre point (typically
-                      the South or North Pole as the centre point)
+                      <b>Azimuthal (or Planar)</b>
                     </li>
-                    <li>
-                      Longitude lines appear equally spaced and straight which
-                      become increasingly radiant
-                    </li>
-                    <li>
-                      Latitude lines appear as equally spaced centric circles
-                    </li>
-                  </ul>
-                </ol>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Figure
-            img={figures[0].img}
-            title={figures[0].title}
-            credit={figures[0].credit}
-            url={figures[0].url}
-          />
-          <Card
-            elevation={3}
-            style={{
-              padding: "0px 16px 16px 16px",
-              margin: "0px 20px 20px 20px",
-            }}
-          >
-            <CardContent>
-              <Typography
-                variant="h4"
-                align="left"
-                color="#dda15e"
-                style={{ paddingBottom: "16px" }}
-              >
-                <MouseOutlinedIcon // Replace with mouse icon
-                  style={{ minWidth: "20px" }}
-                  fontSize={"medium"}
-                />{" "}
-                Interaction - Projection Explorer
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                Try out the projection explorer below now that you've learned
-                about projection types and techniques.
-              </Typography>
-            </CardContent>
-          </Card>
-          <ProjectionExplorer />
-          <Question questions={projectionQuestions} />
-          <Typography
-            variant="h3"
-            align="left"
-            color="#606c38"
-            gutterBottom
-            style={{ paddingLeft: "16px", paddingTop: "16px" }}
-          >
-            Scale
-          </Typography>
-          <Card
-            elevation={3}
-            style={{
-              padding: "0px 16px 16px 16px",
-              margin: "0px 20px 20px 20px",
-            }}
-          >
-            <CardContent>
-              <Typography
-                variant="h4"
-                align="left"
-                color="#bc6c25"
-                style={{ paddingBottom: "16px" }}
-              >
-                <MapOutlinedIcon
-                  style={{ minWidth: "20px" }}
-                  fontSize={"medium"}
-                />{" "}
-                Scale Types
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                As we've seen with projections, mapping isn't a perfect
-                depiction of reality. When you use your favourite navigation
-                service to look up locations or directions (e.g., Google Maps,
-                Apple Maps, Bing Maps, etc. ), the real-world features you see
-                cannot be drawn to their proper scale. These navigation
-                services, on the other hand, use a <b>graphic scale</b> to
-                indicate the measurable relationship between the map and the
-                area being examined. Similarly, GIS tools such as QGIS and
-                ArcGIS Pro portray this relationship using representative
-                fractions (<b>ratio scale</b>). Verbally, both representative
-                fractions and graphic scales can be read as a{" "}
-                <b>verbal scale</b>. However, representative fractions differ
-                from graphic scales in that they do not employ units (e.g., km,
-                miles, etc.). Regardless of whether representative fractions or
-                graphic scales are used, the level of detail shown is what
-                matters most.
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card
-            elevation={3}
-            style={{
-              padding: "0px 16px 16px 16px",
-              margin: "0px 20px 20px 20px",
-            }}
-          >
-            <CardContent>
-              <Typography
-                variant="h4"
-                align="left"
-                color="#bc6c25"
-                style={{ paddingBottom: "16px" }}
-              >
-                <MapOutlinedIcon
-                  style={{ minWidth: "20px" }}
-                  fontSize={"medium"}
-                />{" "}
-                Scale Sizes
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                The level of detail on a map is determined by the scale size. In{" "}
-                <b>small-scale</b> maps, a lot of ground is covered in a large
-                geographic area and at a low level of detail whereas{" "}
-                <b>large-scale</b> maps cover small geographic areas with a high
-                level of detail. In the figure below, the small-scale map of
-                Victoria depicts the entire region, neighborhoods, and major
-                road networks. In contrast, the large-scale map of Victoria
-                depicts the downtown core, street names, more labels and outline
-                of buildings.
-              </Typography>
-            </CardContent>
-          </Card>
-          <Figure
-            img={figures[1].img}
-            title={figures[1].title}
-            credit={figures[1].credit}
-          />
-          <Card
-            elevation={3}
-            style={{
-              padding: "0px 16px 16px 16px",
-              margin: "0px 20px 20px 20px",
-            }}
-          >
-            <CardContent>
-              <Typography
-                variant="h4"
-                align="left"
-                color="#dda15e"
-                style={{ paddingBottom: "16px" }}
-              >
-                <MouseOutlinedIcon
-                  style={{ minWidth: "20px" }}
-                  fontSize={"medium"}
-                />{" "}
-                Interaction - Scale Map
-              </Typography>
-              <Typography
-                color="rgba(0, 0, 0, 0.75)"
-                component="p"
-                variant="h5"
-              >
-                The map of Victoria, BC below is displayed in small-scale by
-                default. The buttons to change scale are on the bottom right of
-                the map. Notice how the real-world units and length of the
-                graphic scale (bottom left of the map) vary as you move around
-                and zoom in / out of the map.
-              </Typography>
-            </CardContent>
-          </Card>
-          <ScaleMap />
-          <Question questions={scaleQuestions} />
-          {/* <Pagination prev={"/"} next={"/variables"} /> */}
-        </Container>
-      </Grow>
+                    <ul>
+                      <li>
+                        Increasingly distorted from the centre point (typically
+                        the South or North Pole as the centre point)
+                      </li>
+                      <li>
+                        Longitude lines appear equally spaced and straight which
+                        become increasingly radiant
+                      </li>
+                      <li>
+                        Latitude lines appear as equally spaced centric circles
+                      </li>
+                    </ul>
+                  </ol>
+                </Typography>
+              </CardContent>
+            </Card>
+            <Figure
+              img={figures[0].img}
+              title={figures[0].title}
+              credit={figures[0].credit}
+              url={figures[0].url}
+            />
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MouseOutlinedIcon // Replace with mouse icon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Interaction - Projection Explorer
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  Try out the projection explorer below now that you've learned
+                  about projection types and techniques.
+                </Typography>
+              </CardContent>
+            </Card>
+            <ProjectionExplorer />
+            <Question questions={projectionQuestions} />
+            <Typography variant="h3" gutterBottom sx={theme.header}>
+              Scale
+            </Typography>
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Scale Types
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  As we've seen with projections, mapping isn't a perfect
+                  depiction of reality. When you use your favourite navigation
+                  service to look up locations or directions (e.g., Google Maps,
+                  Apple Maps, Bing Maps, etc. ), the real-world features you see
+                  cannot be drawn to their proper scale. These navigation
+                  services, on the other hand, use a <b>graphic scale</b> to
+                  indicate the measurable relationship between the map and the
+                  area being examined. Similarly, GIS tools such as QGIS and
+                  ArcGIS Pro portray this relationship using representative
+                  fractions (<b>ratio scale</b>). Verbally, both representative
+                  fractions and graphic scales can be read as a{" "}
+                  <b>verbal scale</b>. However, representative fractions differ
+                  from graphic scales in that they do not employ units (e.g.,
+                  km, miles, etc.). Regardless of whether representative
+                  fractions or graphic scales are used, the level of detail
+                  shown is what matters most.
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Scale Sizes
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  The level of detail on a map is determined by the scale size.
+                  In <b>small-scale</b> maps, a lot of ground is covered in a
+                  large geographic area and at a low level of detail whereas{" "}
+                  <b>large-scale</b> maps cover small geographic areas with a
+                  high level of detail. In the figure below, the small-scale map
+                  of Victoria depicts the entire region, neighborhoods, and
+                  major road networks. In contrast, the large-scale map of
+                  Victoria depicts the downtown core, street names, more labels
+                  and outline of buildings.
+                </Typography>
+              </CardContent>
+            </Card>
+            <Figure
+              img={figures[1].img}
+              title={figures[1].title}
+              credit={figures[1].credit}
+            />
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MouseOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Interaction - Scale Map
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  The map of Victoria, BC below is displayed in small-scale by
+                  default. The buttons to change scale are on the bottom right
+                  of the map. Notice how the real-world units and length of the
+                  graphic scale (bottom left of the map) vary as you move around
+                  and zoom in / out of the map.
+                </Typography>
+              </CardContent>
+            </Card>
+            <ScaleMap />
+            <Question questions={scaleQuestions} />
+          </Container>
+        </Grow>
+      </ThemeProvider>
       <Sources sources={sources} />
       <Authors authors={authors} />
     </MainLayout>

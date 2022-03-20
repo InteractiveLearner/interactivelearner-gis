@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Box sx={{ backgroundColor: "#f0ead2", p: 6 }} component="footer">
       <Typography variant="h6" align="center" gutterBottom>
-        Interactive Learner
+        Interactive Learner - GIS
       </Typography>
       <Typography
         variant="subtitle1"

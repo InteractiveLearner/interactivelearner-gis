@@ -86,3 +86,9 @@ Projection explorer from [D3 in Depth](https://www.d3indepth.com/) by [Peter Coo
 ## License (GPL) 
 
 Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). This project made use of code derived from other GPL-licensed software. To protect against theft and promote free open source software, any developers making use of this repository must release their changes under the same license. 
+
+## Dataset Sources
+
+**[Hospitals from Open Ottawa](https://open.ottawa.ca/datasets/b769ce497f2540aa962e602c983994d6_0?geometry=-76.050%2C45.348%2C-75.396%2C45.433)**
+
+**[Road Network Files from Statistics Canada](https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm)**

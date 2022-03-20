@@ -44,7 +44,7 @@ export default class Questions extends React.Component {
           <Typography
             variant="h4"
             align="left"
-            color="#dda15e"
+            color="#bc6c25"
             style={{ paddingBottom: "16px" }}
           >
             <SchoolIcon style={{ minWidth: "20px" }} fontSize={"medium"} /> Test

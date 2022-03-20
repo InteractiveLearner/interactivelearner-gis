@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import { Link } from "react-router-dom";
 
 import img from "../../img/b.jpg";
+import vizvars from "../../img/vizvars.png";
 import projection from "../../img/projection.png"
 
 import {
@@ -29,9 +30,9 @@ const cards = [
   },
   {
     title: "Visual Variables and Types of Maps",
-    description: "",
+    description: "Learn how visual marks and channels allow geographers to produce thematic maps",
     url: "/variables",
-    img: img,
+    img: vizvars,
     disabled: false,
   },
   {

@@ -1,22 +1,71 @@
 import React, { useState } from "react";
 
-import { Typography, Container, CardMedia } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Card,
+  CardContent,
+  CardMedia,
+  Grow,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
+
+import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
 
 import MainLayout from "../layouts/MainLayout";
 
+import Title from "../components/Title.jsx";
+import Figure from "../components/Figure.jsx";
 import Sources from "../components/Sources.jsx";
-import BreadCrumbs from "../components/BreadCrumbs.jsx";
 import VisualVariables from "../components/maps/VisualVariables.jsx";
+
+import marks from "../../img/marks.png";
+
 import "../../styles/map.css";
+
+const theme = createTheme({
+  header: {
+    color: "#606c38",
+    paddingLeft: "16px",
+  },
+  contentHeader: {
+    color: "#bc6c25",
+    paddingBottom: "8px",
+  },
+  card: {
+    padding: "0px 16px 16px 16px",
+    margin: "0px 20px 20px 20px",
+  },
+  content: {
+    color: "rgba(0, 0, 0, 0.75)",
+  },
+  contentBullets: {
+    color: "rgba(0, 0, 0, 0.75)",
+    padding: "16px 0px 0px 0px",
+  },
+});
+
+const figures = [
+  {
+    img: marks,
+    title: "Types of Marks",
+    credit: "Credit: Tamara Munzner licensed under CC BY-ND 4.0",
+    url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  },
+];
 
 const sources = [
   {
-    title: "Source",
-    url: "https://www.google.ca/",
+    title: "Visualization Analysis and Design",
+    author: "Tamara Munzner",
+    url: "https://www.cs.ubc.ca/~tmm/vadbook/",
   },
   {
-    title: "Source",
-    url: "https://www.google.ca/",
+    title: "Visual Representation from Semiology of Graphics by J. Bertin",
+    author: "Sheelagh Carpendale",
+    url: "https://innovis.cpsc.ucalgary.ca/innovis/uploads/Courses/InformationVisualizationDetails/09Bertin.pdf",
   },
   {
     title: "Source",
@@ -28,77 +77,72 @@ function Variables() {
   const [crumbs, setCrumbs] = useState(["Visual Variables and Types of Maps"]);
   return (
     <MainLayout>
-      <div>
-        <Container maxWidth="sm" style={{ marginTop: "25px" }}>
-          <Typography
-            variant="h2"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            {crumbs}
-          </Typography>
-          <BreadCrumbs crumbs={crumbs} />
-        </Container>
-      </div>
-      <Container maxWidth="md" style={{ padding: "20px 0" }}>
-        <Typography
-          variant="h4"
-          align="left"
-          color="textPrimary"
-          gutterBottom
-          style={{ paddingLeft: "16px" }}
-        >
-          Visual Variables
-        </Typography>
-        <div style={{ padding: "0px 16px 16px 16px" }}>
-          Jacques Bertin Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Est ullamcorper eget nulla facilisi etiam dignissim. Interdum
-          consectetur libero id faucibus nisl tincidunt eget. Elit pellentesque
-          habitant morbi tristique senectus et. Commodo odio aenean sed
-          adipiscing diam donec adipiscing tristique. Quisque egestas diam in
-          arcu cursus euismod. Lectus nulla at volutpat diam ut venenatis tellus
-          in metus. Donec pretium vulputate sapien nec sagittis aliquam
-          malesuada bibendum arcu. Vitae auctor eu augue ut lectus arcu. Ipsum
-          dolor sit amet consectetur. Pulvinar pellentesque habitant morbi
-          tristique senectus et netus et. Odio ut enim blandit volutpat maecenas
-          volutpat. Nulla posuere sollicitudin aliquam ultrices sagittis orci a
-          scelerisque purus. Tellus rutrum tellus pellentesque eu tincidunt
-          tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor.
-          Praesent tristique magna sit amet. Consequat mauris nunc congue nisi
-          vitae suscipit.
-        </div>
-        <VisualVariables />
-        <Typography
-          variant="h4"
-          align="left"
-          color="textPrimary"
-          gutterBottom
-          style={{ paddingLeft: "16px", paddingTop: "16px" }}
-        >
-          Types of Maps
-        </Typography>
-        <div style={{ padding: "0px 16px 16px 16px" }}>
-          Get familiar with the UI. Mention reference maps. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Est ullamcorper eget
-          nulla facilisi etiam dignissim. Interdum consectetur libero id
-          faucibus nisl tincidunt eget. Elit pellentesque habitant morbi
-          tristique senectus et. Commodo odio aenean sed adipiscing diam donec
-          adipiscing tristique. Quisque egestas diam in arcu cursus euismod.
-          Lectus nulla at volutpat diam ut venenatis tellus in metus. Donec
-          pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu.
-          Vitae auctor eu augue ut lectus arcu. Ipsum dolor sit amet
-          consectetur. Pulvinar pellentesque habitant morbi tristique senectus
-          et netus et. Odio ut enim blandit volutpat maecenas volutpat. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a scelerisque
-          purus. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam
-          nulla facilisi. Vulputate enim nulla aliquet porttitor. Praesent
-          tristique magna sit amet. Consequat mauris nunc congue nisi vitae
-          suscipit.
-        </div>
-        {/* <CardMedia
+      <Title crumbs={crumbs} />
+      <ThemeProvider theme={theme}>
+        <Grow in={true} timeout={1000}>
+          <Container maxWidth="md" style={{ padding: "20px 0" }}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Visual Variables
+            </Typography>
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Marks
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  French Cartographer Jacques Bertin introduced the main building blocks of visual variables 
+                  in his book <i>Semiology of Graphics</i>
+                  
+                  In geography, points represent location. Points have
+                  {/* Jacques Bertin */}
+                </Typography>
+              </CardContent>
+            </Card>
+            <Figure
+              img={figures[0].img}
+              title={figures[0].title}
+              credit={figures[0].credit}
+              url={figures[0].url}
+            />
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Channels
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  Content
+                  {/* Jacques Bertin */}
+                </Typography>
+              </CardContent>
+            </Card>
+            <VisualVariables />
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Types of Maps
+            </Typography>
+            <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Title
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  Content
+                  {/* Mention Reference maps. */}
+                </Typography>
+              </CardContent>
+            </Card>
+            {/* <CardMedia
           component="iframe"
           title="isu map"
           style={{ margin: "inherit", width: "97%" }}
@@ -107,7 +151,9 @@ function Variables() {
           // margin: "auto"
           image="https://isu-ubc.github.io/clinic-mapping-2/"
         /> */}
-      </Container>
+          </Container>
+        </Grow>
+      </ThemeProvider>
       <Sources sources={sources} />
     </MainLayout>
   );

@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Card, Grow } from "@mui/material";
+
 import {
   MapContainer,
   TileLayer,
@@ -9,25 +12,27 @@ import {
 
 import L from "leaflet";
 
-import * as features from "../../../data/csds.json";
-import * as lfls from "../../../data/lfls.json";
-import * as roads from "../../../data/roads.json";
+import * as features from "../../../data/Wards.json";
+import * as hospitals from "../../../data/Hospitals.json";
+import * as roads from "../../../data/Highways.json";
 
 import pin from "../../../img/icon.png";
+
+import IconButton from "./IconButton.jsx";
 
 var selected = null;
 
 // Can change color with CSS
 let iconStyle = L.icon({
-    iconSize: [24, 24], // size of the icon
-    iconUrl: pin,
-    color: "green"
-  });
+  iconSize: [24, 24], // size of the icon
+  // iconUrl: pin,
+  color: "green",
+});
 
 export default class Map extends React.Component {
   defaultStyle = (feature) => {
     return {
-      fillColor: "#54c5d5",
+      fillColor: "#f1faee",
       weight: 1,
       opacity: 1,
       color: "black",
@@ -45,37 +50,32 @@ export default class Map extends React.Component {
   };
   roadStyle = () => {
     return {
-      fillColor: "#78716e",
-      weight: 6,
+      weight: 4,
       opacity: 1,
-      color: "black",
+      color: "#bb3e03",
       fillOpacity: 0.6,
     };
   };
-  onEachCSD = (csd, layer) => {
-    let name = csd.properties["Census subdivision name"];
-    let area = csd.properties["Land Area Sq Km"];
-    let lfls = csd.properties["LFL_count"];
-    let pop = csd.properties["Pop Total 2016"];
+  onEachWard = (ward, layer) => {
+    let name = ward.properties["WARD_NAME_"];
+    let num = ward.properties["WARD_NUM"];
+    let area = ward.properties["Shape_Area"];
 
     let popupContent = `<div class='info leaflet-control'>`;
-    popupContent += `<h2><span>Census Subdivision: ${name}</span></h2>`;
+    popupContent += `<h2><span>Ward: ${name}</span></h2>`;
+    popupContent += `<h3><span>Ward Number: ${num}</span></h3>`;
     popupContent += `<h3><span>Land Area (Sq Km): ${area}</span></h3>`;
-    popupContent += `<h3><span>Number of Little Free Libraries: ${lfls}</span></h3>`;
-    popupContent += `<h3><span>Population: ${pop}</span></h3>`;
     popupContent += `</div>`;
 
     layer.bindTooltip(popupContent).openTooltip();
 
     layer.on({ click: this.clicked.bind(this) });
   };
-  onEachLibrary = (library, layer) => {
-    let name = library.properties.Name;
-    // Whoops looks like the file has lon / lat mixed
-    let lat = library.properties.Lon;
-    let lon = library.properties.Lat;
+  onEachHospital = (hospital, layer) => {
+    let name = hospital.properties.NAME;
+    let addr = hospital.properties.ADDRESS;
 
-    let popupContent = `<p><b>Little Free Library: ${name}</b><br />Latitude: ${lat}<br />Longitude: ${lon}</p>`;
+    let popupContent = `<p><b>Hospital: ${name}</b><br />Address: ${addr}<br /></p>`;
 
     // layer.setIcon(iconStyle);
 
@@ -121,41 +121,52 @@ export default class Map extends React.Component {
   };
   render() {
     return (
-      <MapContainer
-        center={[48.62872144016674, -123.43758478519236]}
-        zoom={11}
-        scrollWheelZoom={true}
-      >
-        <LayersControl position="topright">
-          <LayersControl.BaseLayer checked name="OpenStreetMap">
-            <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      <Grow in={true} timeout={1000}>
+        <Card
+          elevation={3}
+          style={{
+            margin: "0px 20px 20px 20px",
+          }}
+        >
+          <MapContainer
+            center={[45.279716962875604, -75.78658103340784]}
+            zoom={9}
+            scrollWheelZoom={true}
+          >
+            <LayersControl position="topright">
+              <LayersControl.BaseLayer checked name="OpenStreetMap">
+                <TileLayer
+                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+              </LayersControl.BaseLayer>
+              <LayersControl.Overlay checked name="Hospitals">
+                <GeoJSON data={hospitals} onEachFeature={this.onEachHospital} />
+              </LayersControl.Overlay>
+              <LayersControl.Overlay checked name="Wards">
+                <GeoJSON
+                  data={features}
+                  style={this.defaultStyle}
+                  onEachFeature={this.onEachWard}
+                />
+              </LayersControl.Overlay>
+              <LayersControl.Overlay checked name="Roads">
+                <GeoJSON
+                  data={roads}
+                  style={this.roadStyle}
+                  onEachFeature={this.onEachRoad}
+                />
+              </LayersControl.Overlay>
+            </LayersControl>
+            <ScaleControl position="bottomleft" />
+            <IconButton
+              title={"Change Icon Style"}
+              center={[45.279716962875604, -75.78658103340784]}
+              zoom={15}
             />
-          </LayersControl.BaseLayer>
-          <LayersControl.Overlay checked name="Little Free Libraries">
-            <GeoJSON
-              data={lfls}
-              onEachFeature={this.onEachLibrary}
-            />
-          </LayersControl.Overlay>
-          <LayersControl.Overlay checked name="Census Subdivisions">
-            <GeoJSON
-              data={features}
-              style={this.defaultStyle}
-              onEachFeature={this.onEachCSD}
-            />
-          </LayersControl.Overlay>
-          <LayersControl.Overlay checked name="Roads">
-            <GeoJSON
-              data={roads}
-              style={this.roadStyle}
-              onEachFeature={this.onEachRoad}
-            />
-          </LayersControl.Overlay>
-        </LayersControl>
-        <ScaleControl position="bottomleft" />
-      </MapContainer>
+          </MapContainer>
+        </Card>
+      </Grow>
     );
   }
 }
