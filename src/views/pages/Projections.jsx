@@ -366,8 +366,8 @@ function Projections() {
                   indicate the measurable relationship between the map and the
                   area being examined. Similarly, GIS tools such as QGIS and
                   ArcGIS Pro portray this relationship using representative
-                  fractions (<b>ratio scale</b>). Verbally, both representative
-                  fractions and graphic scales can be read as a{" "}
+                  fractions (<b>ratio scale</b>). Both representative fractions
+                  and graphic scales can be read aloud as a{" "}
                   <b>verbal scale</b>. However, representative fractions differ
                   from graphic scales in that they do not employ units (e.g.,
                   km, miles, etc.). Regardless of whether representative
@@ -413,7 +413,7 @@ function Projections() {
                   Interaction - Scale Map
                 </Typography>
                 <Typography component="p" variant="h5" sx={theme.content}>
-                  The map of Victoria, BC below is displayed in small-scale by
+                  The view of Victoria, BC below is displayed in small-scale by
                   default. The buttons to change scale are on the bottom right
                   of the map. Notice how the real-world units and length of the
                   graphic scale (bottom left of the map) vary as you move around
