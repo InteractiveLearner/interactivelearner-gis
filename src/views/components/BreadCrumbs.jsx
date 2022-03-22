@@ -10,10 +10,16 @@ export default function BreadCrumbs(props) {
       aria-label="breadcrumb"
       style={{ display: "flex", justifyContent: "center" }}
     >
-      <Link underline="hover" to="/" style={{ textDecoration: 'none', color:"#283618" }}>
+      <Link
+        underline="hover"
+        to="/"
+        style={{ textDecoration: "none", color: "#283618" }}
+      >
         Home
       </Link>
-      <Typography color="text.primary">{props.crumbs}</Typography>
+      <Typography sx={{ typography: { sm: "body1", xs: "body2" } }}>
+        {props.crumbs}
+      </Typography>
     </Breadcrumbs>
   );
 }

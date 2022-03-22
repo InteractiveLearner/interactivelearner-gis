@@ -71,7 +71,7 @@ export default function Home() {
       <div>
         <Container maxWidth="sm" style={{ marginTop: "25px" }}>
           <Typography
-            variant="h2"
+            sx={{typography: { sm: "h2", xs: "h4" } }}
             align="center"
             color="textPrimary"
             gutterBottom
@@ -79,7 +79,7 @@ export default function Home() {
             Geographic Information Science / Systems
           </Typography>
           <Typography
-            variant="h5"
+            sx={{typography: { sm: "h5", xs: "body1" } }}
             align="center"
             color="textSecondary"
             paragraph

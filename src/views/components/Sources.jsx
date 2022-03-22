@@ -8,63 +8,77 @@ import {
   CardContent,
   Grid,
   CardActionArea,
+  ThemeProvider,
+  createTheme,
 } from "@mui/material";
+
+const theme = createTheme({
+  header: {
+    color: "#606c38",
+    paddingLeft: "16px",
+    typography: { sm: "h3", xs: "h5" },
+  },
+  author: {
+    typography: { sm: "body1", xs: "body2" },
+  },
+  card: {
+    padding: "0px 16px 16px 16px",
+    margin: "0px 20px 20px 20px",
+    minWidth: "20px",
+  },
+  title: {
+    typography: { sm: "h6", xs: "subtitle2" },
+  },
+});
 
 export default function Sources(props) {
   return (
-    <Grow in={true} timeout={1000}>
-      <Container maxWidth="md" style={{ padding: "10px 0" }}>
-        <Typography
-          component="h1"
-          variant="h3"
-          align="left"
-          color="#606c38"
-          gutterBottom
-          style={{ paddingLeft: "16px" }}
-        >
-          Sources
-        </Typography>
-        <Card
-          elevation={3}
-          style={{
-            padding: "16px 16px 16px 16px",
-            margin: "0px 20px 20px 20px",
-          }}
-        >
-          {props.sources.map((card, index) => (
-            <Card
-              key={index}
-              style={{
-                flexDirection: "column",
-                height: "100%",
-                display: "flex",
-                margin: "0px 10px 10px 10px",
-              }}
-            >
-              <CardActionArea
-                href={card.url}
-                sx={{
-                  ".MuiCardActionArea-focusHighlight": {
-                    opacity: "0.05",
-                  },
+    <ThemeProvider theme={theme}>
+      <Grow in={true} timeout={1000}>
+        <Container maxWidth="md" style={{ padding: "10px 0" }}>
+          <Typography sx={theme.header} gutterBottom>
+            Sources
+          </Typography>
+          <Grid container spacing={4} style={{ padding: "16px" }}>
+            {props.sources.map((card, index) => (
+              <Grid
+                item
+                key={index}
+                xs={12}
+                sm={6}
+                md={4}
+                style={{
+                  paddingTop: "8px",
                 }}
               >
-                <CardContent style={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5">
-                    {card.title}
-                  </Typography>
-                  <Typography>{card.author}</Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          ))}
-        </Card>
-        <Grid
-          container
-          spacing={4}
-          style={{ paddingLeft: "16px", paddingTop: "16px" }}
-        ></Grid>
-      </Container>
-    </Grow>
+                <Card
+                  key={index}
+                  style={{
+                    height: "100%",
+                    display: "flex",
+                  }}
+                >
+                  <CardActionArea
+                    href={card.url}
+                    sx={{
+                      ".MuiCardActionArea-focusHighlight": {
+                        opacity: "0.05",
+                      },
+                    }}
+                  >
+                    <CardContent style={{ flexGrow: 1 }}>
+                      <Typography gutterBottom sx={theme.title}>
+                        {card.title}
+                      </Typography>
+                      <Typography sx={theme.author}>{card.author}</Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Grow>
+    </ThemeProvider>
   );
 }

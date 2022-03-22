@@ -20,6 +20,7 @@ import Figure from "../components/Figure.jsx";
 import Question from "../components/Question.jsx";
 import Sources from "../components/Sources.jsx";
 import Authors from "../components/Authors.jsx";
+
 import ScaleMap from "../components/maps/ScaleMap.jsx";
 import ProjectionExplorer from "../components/maps/ProjectionExplorer.jsx";
 
@@ -30,21 +31,33 @@ const theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
+    typography: { sm: "h3", xs: "h5" },
   },
   contentHeader: {
     color: "#bc6c25",
-    paddingBottom: "8px",
+    paddingBottom: { sm: "8px", xs: "0px" },
+    typography: { sm: "h4", xs: "h6" },
   },
   card: {
-    padding: "0px 16px 16px 16px",
+    padding: "8px 16px 0px 16px",
     margin: "0px 20px 20px 20px",
+  },
+  cardContent: {
+    padding: "0px 0px 8px 0px",
   },
   content: {
     color: "rgba(0, 0, 0, 0.75)",
+    typography: { sm: "h5", xs: "body1" },
   },
   contentBullets: {
     color: "rgba(0, 0, 0, 0.75)",
-    padding: "16px 0px 0px 0px",
+    padding: "16px 0px 16px 0px",
+    typography: { sm: "h5", xs: "body1" },
+  },
+  icon: {
+    verticalAlign: { sm: "middle", xs: "middle" },
+    paddingBottom: { sm: "5px", xs: "2.5px" },
+    fontSize: { sm: "inherit", xs: "inherit" }
   },
 });
 
@@ -200,19 +213,15 @@ function Projections() {
       <ThemeProvider theme={theme}>
         <Grow in={true} timeout={1000}>
           <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
-            <Typography gutterBottom variant="h3" sx={theme.header}>
+            <Typography gutterBottom sx={theme.header}>
               Projections
             </Typography>
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Projection Types
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MapOutlinedIcon sx={theme.icon} /> Projection Types
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   When it comes to presenting maps to readers, geographers must
                   choose a projection that is appropriate for the map's purpose
                   and location. Projections transform three-dimensional curved
@@ -224,7 +233,6 @@ function Projections() {
 
                 <Typography
                   component="ol"
-                  variant="h5"
                   sx={theme.contentBullets}
                 >
                   <ol>
@@ -260,15 +268,11 @@ function Projections() {
               </CardContent>
             </Card>
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Projection Techniques
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MapOutlinedIcon sx={theme.icon} /> Projection Techniques
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   The projection techniques, which affect the <b>longitude</b>{" "}
                   (vertical lines) and <b>latitude</b> (horizontal lines) on a
                   map, are another significant factor to consider. The following
@@ -277,7 +281,6 @@ function Projections() {
 
                 <Typography
                   component="ol"
-                  variant="h5"
                   sx={theme.contentBullets}
                 >
                   <ol>
@@ -328,15 +331,14 @@ function Projections() {
               url={figures[0].url}
             />
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
                   <MouseOutlinedIcon // Replace with mouse icon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
+                    sx={theme.icon}
                   />{" "}
-                  Interaction - Projection Explorer
+                  Projection Explorer
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   Try out the projection explorer below now that you've learned
                   about projection types and techniques.
                 </Typography>
@@ -344,19 +346,15 @@ function Projections() {
             </Card>
             <ProjectionExplorer />
             <Question questions={projectionQuestions} />
-            <Typography variant="h3" gutterBottom sx={theme.header}>
+            <Typography gutterBottom sx={theme.header}>
               Scale
             </Typography>
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Scale Types
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MapOutlinedIcon sx={theme.icon} /> Scale Types
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   As we've seen with projections, mapping isn't a perfect
                   depiction of reality. When you use your favourite navigation
                   service to look up locations or directions (e.g., Google Maps,
@@ -367,25 +365,21 @@ function Projections() {
                   area being examined. Similarly, GIS tools such as QGIS and
                   ArcGIS Pro portray this relationship using representative
                   fractions (<b>ratio scale</b>). Both representative fractions
-                  and graphic scales can be read aloud as a{" "}
-                  <b>verbal scale</b>. However, representative fractions differ
-                  from graphic scales in that they do not employ units (e.g.,
-                  km, miles, etc.). Regardless of whether representative
-                  fractions or graphic scales are used, the level of detail
-                  shown is what matters most.
+                  and graphic scales can be read aloud as a <b>verbal scale</b>.
+                  However, representative fractions differ from graphic scales
+                  in that they do not employ units (e.g., km, miles, etc.).
+                  Regardless of whether representative fractions or graphic
+                  scales are used, the level of detail shown is what matters
+                  most.
                 </Typography>
               </CardContent>
             </Card>
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Scale Sizes
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MapOutlinedIcon sx={theme.icon} /> Scale Sizes
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   The level of detail on a map is determined by the scale size.
                   In <b>small-scale</b> maps, a lot of ground is covered in a
                   large geographic area and at a low level of detail whereas{" "}
@@ -404,15 +398,11 @@ function Projections() {
               credit={figures[1].credit}
             />
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MouseOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Interaction - Scale Map
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MouseOutlinedIcon sx={theme.icon} /> Scale Map
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   The view of Victoria, BC below is displayed in small-scale by
                   default. The buttons to change scale are on the bottom right
                   of the map. Notice how the real-world units and length of the

@@ -19,6 +19,8 @@ import MainLayout from "../layouts/MainLayout";
 import Title from "../components/Title.jsx";
 import Figure from "../components/Figure.jsx";
 import Sources from "../components/Sources.jsx";
+import Authors from "../components/Authors.jsx";
+
 import VisualVariables from "../components/maps/VisualVariables.jsx";
 
 import marks from "../../img/marks.png";
@@ -30,21 +32,34 @@ const theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
+    typography: { sm: "h3", xs: "h5" },
   },
   contentHeader: {
     color: "#bc6c25",
     paddingBottom: "8px",
+    typography: { sm: "h4", xs: "h6" },
   },
   card: {
-    padding: "0px 16px 16px 16px",
+    padding: "8px 16px 0px 16px",
     margin: "0px 20px 20px 20px",
+  },
+  cardContent: {
+    padding: "0px 0px 8px 0px",
   },
   content: {
     color: "rgba(0, 0, 0, 0.75)",
+    typography: { sm: "h5", xs: "body1" },
   },
   contentBullets: {
     color: "rgba(0, 0, 0, 0.75)",
     padding: "16px 0px 16px 0px",
+    typography: { sm: "h5", xs: "body1" },
+  },
+  icon: {
+    verticalAlign: { sm: "middle", xs: "middle" },
+    paddingBottom: { sm: "5px", xs: "2.5px" },
+    fontSize: { sm: "inherit", xs: "inherit" },
+    minWidth: "20px",
   },
 });
 
@@ -74,6 +89,19 @@ const sources = [
     author: "Sheelagh Carpendale",
     url: "https://innovis.cpsc.ucalgary.ca/innovis/uploads/Courses/InformationVisualizationDetails/09Bertin.pdf",
   },
+  {
+    title: "Geometric Primitive",
+    author: "Wikipedia",
+    url: "https://en.wikipedia.org/wiki/Geometric_primitive",
+  },
+];
+
+const authors = [
+  {
+    author: "Omar Kawach",
+    description: "Developer of Interactive Learner GIS",
+    url: "https://github.com/omarkawach",
+  },
 ];
 
 function Visual() {
@@ -84,36 +112,33 @@ function Visual() {
       <ThemeProvider theme={theme}>
         <Grow in={true} timeout={1000}>
           <Container maxWidth="md" style={{ padding: "20px 0" }}>
-            <Typography gutterBottom variant="h3" sx={theme.header}>
+            <Typography gutterBottom sx={theme.header}>
               Visual Encoding
             </Typography>
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Marks and Channels
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MapOutlinedIcon sx={theme.icon} /> Marks and Channels
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   Cartography is considered a graphical form of communication.
                   Communicating with maps would not be possible without the main
                   building blocks for visual encoding. The main building blocks
                   for visual encoding are <b>marks</b> and <b>channels</b>.
-                  Marks are made up of:
+                  Marks are a set of geometric primitives made up of:
                 </Typography>
-                <Typography
-                  component="ol"
-                  variant="h5"
-                  sx={theme.contentBullets}
-                >
+                <Typography component="ol" sx={theme.contentBullets}>
                   <ol>
                     <li>
                       <b>Points</b>
                     </li>
                     <ul>
-                      <li>Text</li>
+                      <li>Represent location information</li>
+                      <ul>
+                        <li>X, Y coordinates</li>
+                        <li>Latitude, longitude coordinates</li>
+                        <li>Addresses</li>
+                      </ul>
                     </ul>
                     <li>
                       <b>Lines</b>
@@ -129,14 +154,11 @@ function Visual() {
                     </ul>
                   </ol>
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
-                  And channels are made up of:
+                <Typography component="p" sx={theme.content}>
+                  And channels that make up the mark's appearance are composed
+                  of:
                 </Typography>
-                <Typography
-                  component="ol"
-                  variant="h5"
-                  sx={theme.contentBullets}
-                >
+                <Typography component="ol" sx={theme.contentBullets}>
                   <ol>
                     <li>
                       <b>Position</b>
@@ -199,19 +221,15 @@ function Visual() {
               </CardContent>
             </Card> */}
             <VisualVariables />
-            <Typography gutterBottom variant="h3" sx={theme.header}>
+            <Typography gutterBottom sx={theme.header}>
               Types of Maps
             </Typography>
             <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Title
+              <CardContent sx={theme.cardContent}>
+                <Typography sx={theme.contentHeader}>
+                  <MapOutlinedIcon sx={theme.icon} /> Title
                 </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
+                <Typography component="p" sx={theme.content}>
                   Content
                   {/* Mention Reference maps. */}
                 </Typography>
@@ -230,6 +248,7 @@ function Visual() {
         </Grow>
       </ThemeProvider>
       <Sources sources={sources} />
+      <Authors authors={authors} />
     </MainLayout>
   );
 }
