@@ -3,40 +3,34 @@ import React from "react";
 import {
   Container,
   Typography,
-  Grow,
   Card,
   CardContent,
   Grid,
   CardActionArea,
   ThemeProvider,
   createTheme,
+  responsiveFontSizes,
 } from "@mui/material";
 
-const theme = createTheme({
+let theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
-    typography: { sm: "h3", xs: "h5" },
-  },
-  author: {
-    typography: { sm: "body1", xs: "body2" },
   },
   card: {
     padding: "0px 16px 16px 16px",
     margin: "0px 20px 20px 20px",
     minWidth: "20px",
   },
-  title: {
-    typography: { sm: "h6", xs: "subtitle2" },
-  },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default function Sources(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Grow in={true} timeout={1000}>
         <Container maxWidth="md" style={{ padding: "10px 0" }}>
-          <Typography sx={theme.header} gutterBottom>
+          <Typography variant="h3" sx={theme.header} gutterBottom>
             Sources
           </Typography>
           <Grid container spacing={4} style={{ padding: "16px" }}>
@@ -67,10 +61,10 @@ export default function Sources(props) {
                     }}
                   >
                     <CardContent style={{ flexGrow: 1 }}>
-                      <Typography gutterBottom sx={theme.title}>
+                      <Typography gutterBottom variant="h6">
                         {card.title}
                       </Typography>
-                      <Typography sx={theme.author}>{card.author}</Typography>
+                      <Typography variant="body1">{card.author}</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
@@ -78,7 +72,6 @@ export default function Sources(props) {
             ))}
           </Grid>
         </Container>
-      </Grow>
     </ThemeProvider>
   );
 }

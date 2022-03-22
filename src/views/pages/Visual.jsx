@@ -6,9 +6,9 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Grow,
   ThemeProvider,
   createTheme,
+  responsiveFontSizes,
 } from "@mui/material";
 
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
@@ -28,16 +28,14 @@ import channels from "../../img/channels.png";
 
 import "../../styles/map.css";
 
-const theme = createTheme({
+let theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
-    typography: { sm: "h3", xs: "h5" },
   },
   contentHeader: {
     color: "#bc6c25",
     paddingBottom: "8px",
-    typography: { sm: "h4", xs: "h6" },
   },
   card: {
     padding: "8px 16px 0px 16px",
@@ -48,20 +46,19 @@ const theme = createTheme({
   },
   content: {
     color: "rgba(0, 0, 0, 0.75)",
-    typography: { sm: "h5", xs: "body1" },
   },
   contentBullets: {
     color: "rgba(0, 0, 0, 0.75)",
     padding: "16px 0px 16px 0px",
-    typography: { sm: "h5", xs: "body1" },
   },
   icon: {
-    verticalAlign: { sm: "middle", xs: "middle" },
-    paddingBottom: { sm: "5px", xs: "2.5px" },
-    fontSize: { sm: "inherit", xs: "inherit" },
-    minWidth: "20px",
+    verticalAlign: "middle",
+    paddingBottom: "5px",
+    fontSize: "inherit",
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const figures = [
   {
@@ -110,24 +107,27 @@ function Visual() {
     <MainLayout>
       <Title crumbs={crumbs} />
       <ThemeProvider theme={theme}>
-        <Grow in={true} timeout={1000}>
           <Container maxWidth="md" style={{ padding: "20px 0" }}>
-            <Typography gutterBottom sx={theme.header}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
               Visual Encoding
             </Typography>
             <Card elevation={3} sx={theme.card}>
               <CardContent sx={theme.cardContent}>
-                <Typography sx={theme.contentHeader}>
+                <Typography variant="h4" sx={theme.contentHeader}>
                   <MapOutlinedIcon sx={theme.icon} /> Marks and Channels
                 </Typography>
-                <Typography component="p" sx={theme.content}>
+                <Typography component="p" variant="h5" sx={theme.content}>
                   Cartography is considered a graphical form of communication.
                   Communicating with maps would not be possible without the main
                   building blocks for visual encoding. The main building blocks
                   for visual encoding are <b>marks</b> and <b>channels</b>.
                   Marks are a set of geometric primitives made up of:
                 </Typography>
-                <Typography component="ol" sx={theme.contentBullets}>
+                <Typography
+                  component="ol"
+                  variant="h5"
+                  sx={theme.contentBullets}
+                >
                   <ol>
                     <li>
                       <b>Points</b>
@@ -154,11 +154,15 @@ function Visual() {
                     </ul>
                   </ol>
                 </Typography>
-                <Typography component="p" sx={theme.content}>
+                <Typography component="p" variant="h5" sx={theme.content}>
                   And channels that make up the mark's appearance are composed
                   of:
                 </Typography>
-                <Typography component="ol" sx={theme.contentBullets}>
+                <Typography
+                  component="ol"
+                  variant="h5"
+                  sx={theme.contentBullets}
+                >
                   <ol>
                     <li>
                       <b>Position</b>
@@ -221,15 +225,15 @@ function Visual() {
               </CardContent>
             </Card> */}
             <VisualVariables />
-            <Typography gutterBottom sx={theme.header}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
               Types of Maps
             </Typography>
             <Card elevation={3} sx={theme.card}>
               <CardContent sx={theme.cardContent}>
-                <Typography sx={theme.contentHeader}>
+                <Typography variant="h4" sx={theme.contentHeader}>
                   <MapOutlinedIcon sx={theme.icon} /> Title
                 </Typography>
-                <Typography component="p" sx={theme.content}>
+                <Typography component="p" variant="h5" sx={theme.content}>
                   Content
                   {/* Mention Reference maps. */}
                 </Typography>
@@ -245,7 +249,6 @@ function Visual() {
           image="https://isu-ubc.github.io/clinic-mapping-2/"
         /> */}
           </Container>
-        </Grow>
       </ThemeProvider>
       <Sources sources={sources} />
       <Authors authors={authors} />

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import img from "../../img/b.jpg";
 import vizvars from "../../img/vizvars.png";
-import projection from "../../img/projection.png"
+import projection from "../../img/projection.png";
 
 import {
   Typography,
@@ -17,7 +17,14 @@ import {
   CardMedia,
   Grid,
   Container,
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
 } from "@mui/material";
+
+let theme = createTheme();
+
+theme = responsiveFontSizes(theme);
 
 const cards = [
   {
@@ -30,7 +37,8 @@ const cards = [
   },
   {
     title: "Visual Encoding and Types of Maps",
-    description: "Learn how visual marks and channels allow geographers to produce thematic maps.",
+    description:
+      "Learn how visual marks and channels allow geographers to produce thematic maps.",
     url: "/visual",
     img: vizvars,
     disabled: false,
@@ -68,68 +76,70 @@ const cards = [
 export default function Home() {
   return (
     <MainLayout>
-      <div>
-        <Container maxWidth="sm" style={{ marginTop: "25px" }}>
-          <Typography
-            sx={{typography: { sm: "h2", xs: "h4" } }}
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            Geographic Information Science / Systems
-          </Typography>
-          <Typography
-            sx={{typography: { sm: "h5", xs: "body1" } }}
-            align="center"
-            color="textSecondary"
-            paragraph
-          >
-            View any of the topics below to learn about GIS!
-          </Typography>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Container maxWidth="sm" style={{ marginTop: "25px" }}>
+            <Typography
+              variant="h2"
+              align="center"
+              color="textPrimary"
+              gutterBottom
+            >
+              Geographic Information Science / Systems
+            </Typography>
+            <Typography
+              variant="h5"
+              align="center"
+              color="textSecondary"
+              paragraph
+            >
+              View any of the topics below to learn about GIS!
+            </Typography>
+          </Container>
+        </div>
+        <Container maxWidth="md" style={{ padding: "20px 0" }}>
+          <Grid container spacing={4} style={{ padding: "16px" }}>
+            {cards.map((card, index) => (
+              // Space on device
+              <Grid item key={index} xs={12} sm={6} md={4}>
+                <Card
+                  elevation={3}
+                  style={{
+                    flexDirection: "column",
+                    height: "100%",
+                    display: "flex",
+                  }}
+                >
+                  <CardMedia
+                    style={{ padding: "56.25%", justify: "center" }} // 16:9 aspect ratio
+                    image={card.img}
+                    title="Image title"
+                  />
+                  <CardContent style={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5">
+                      {card.title}
+                    </Typography>
+                    <Typography>{card.description}</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      style={{ background: "#283618" }}
+                      size="small"
+                      color="primary"
+                      to={card.url}
+                      component={Link}
+                      variant="contained"
+                      disabled={card.disabled}
+                    >
+                      View
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
-      </div>
-      <Container maxWidth="md" style={{ padding: "20px 0" }}>
-        <Grid container spacing={4} style={{ padding: "16px" }}>
-          {cards.map((card, index) => (
-            // Space on device
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <Card
-                elevation={3}
-                style={{
-                  flexDirection: "column",
-                  height: "100%",
-                  display: "flex",
-                }}
-              >
-                <CardMedia
-                  style={{ padding: "56.25%", justify: "center" }} // 16:9 aspect ratio
-                  image={card.img}
-                  title="Image title"
-                />
-                <CardContent style={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5">
-                    {card.title}
-                  </Typography>
-                  <Typography>{card.description}</Typography>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    style={{ background: "#283618" }}
-                    size="small"
-                    color="primary"
-                    to={card.url}
-                    component={Link}
-                    variant="contained"
-                    disabled={card.disabled}
-                  >
-                    View
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      </ThemeProvider>
     </MainLayout>
   );
 }

@@ -7,15 +7,15 @@ import {
   CardActionArea,
   ThemeProvider,
   createTheme,
+  responsiveFontSizes,
 } from "@mui/material";
 
 import SchoolIcon from "@mui/icons-material/School";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
-const theme = createTheme({
+let theme = createTheme({
   contentHeader: {
     color: "#bc6c25",
-    typography: { sm: "h4", xs: "h6" },
   },
   card: {
     padding: "8px 16px 0px 16px",
@@ -26,19 +26,16 @@ const theme = createTheme({
   },
   content: {
     color: "rgba(0, 0, 0, 1)",
-    typography: { sm: "h5", xs: "subtitle2" },
     paddingTop: "5px",
   },
-  answer: {
-    typography: { sm: "body1", xs: "body2" },
-  },
   icon: {
-    verticalAlign: { sm: "middle", xs: "middle" },
-    paddingBottom: { sm: "5px", xs: "2.5px" },
-    fontSize: { sm: "inherit", xs: "inherit" },
-    minWidth: "20px",
+    verticalAlign: "middle",
+    paddingBottom: "5px",
+    fontSize: "inherit",
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default class Questions extends React.Component {
   constructor(props) {
@@ -56,7 +53,7 @@ export default class Questions extends React.Component {
     let temp = this.state.answersHidden;
 
     temp[index] = (
-      <Typography sx={theme.answer}>
+      <Typography variant="body1">
         {this.props.questions[index].answer}
       </Typography>
     );
@@ -69,7 +66,7 @@ export default class Questions extends React.Component {
       <ThemeProvider theme={theme}>
         <Card elevation={3} sx={theme.card}>
           <CardContent sx={theme.cardContent}>
-            <Typography align="left" sx={theme.contentHeader}>
+            <Typography align="left" variant="h4" sx={theme.contentHeader}>
               <SchoolIcon sx={theme.icon} /> Test Your Knowledge
             </Typography>
             {this.props.questions.map((card, index) => (
@@ -78,6 +75,7 @@ export default class Questions extends React.Component {
                   gutterBottom
                   component="p"
                   fontWeight="bold"
+                  variant="body1"
                   sx={theme.content}
                 >
                   {card.question}

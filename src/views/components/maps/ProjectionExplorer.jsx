@@ -2,7 +2,7 @@ import React from "react";
 import * as d3 from "d3";
 import { useD3 } from "../../hooks/useD3";
 import "../../../styles/projection.css";
-import { Card, Grow } from "@mui/material";
+import { Card} from "@mui/material";
 
 export default function ProjectionExplorer() {
   const ref = useD3((svg) => {
@@ -124,7 +124,6 @@ export default function ProjectionExplorer() {
 
   return (
     <>
-      <Grow in={true} timeout={1000}>
         <Card
           elevation={3}
           style={{
@@ -202,7 +201,6 @@ export default function ProjectionExplorer() {
             </svg>
           </div>
         </Card>
-      </Grow>
     </>
   );
 }

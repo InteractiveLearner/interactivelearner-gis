@@ -8,16 +8,15 @@ import {
   CardContent,
   CardActions,
   Button,
-  Grow,
   ThemeProvider,
   createTheme,
+  responsiveFontSizes
 } from "@mui/material";
 
-const theme = createTheme({
+let theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
-    typography: { sm: "h3", xs: "h5" },
   },
   card: {
     flexDirection: "column",
@@ -28,20 +27,15 @@ const theme = createTheme({
   cardContent: {
     padding: "8px 0px 8px 8px",
   },
-  author: {
-    typography: { sm: "h6", xs: "subtitle2" },
-  },
-  description: {
-    typography: { sm: "body1", xs: "body2" },
-  },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default function Authors(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Grow in={true} timeout={1000}>
         <Container maxWidth="md" style={{ padding: "10px 0" }}>
-          <Typography sx={theme.header} gutterBottom>
+          <Typography variant="h3" sx={theme.header} gutterBottom>
             Authors
           </Typography>
           <Grid container spacing={4} style={{ paddingLeft: "16px" }}>
@@ -49,10 +43,10 @@ export default function Authors(props) {
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card elevation={3} sx={theme.card}>
                   <CardContent sx={theme.cardContent} style={{ flexGrow: 1 }}>
-                    <Typography gutterBottom sx={theme.author}>
+                    <Typography gutterBottom variant="h6">
                       {card.author}
                     </Typography>
-                    <Typography sx={theme.description}>{card.description}</Typography>
+                    <Typography variant="body1">{card.description}</Typography>
                   </CardContent>
                   <CardActions>
                     <Button
@@ -70,7 +64,6 @@ export default function Authors(props) {
             ))}
           </Grid>
         </Container>
-      </Grow>
     </ThemeProvider>
   );
 }

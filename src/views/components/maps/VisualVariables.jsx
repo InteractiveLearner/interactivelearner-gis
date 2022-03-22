@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, Grow } from "@mui/material";
+import { Card } from "@mui/material";
 
 import {
   MapContainer,
@@ -121,7 +121,6 @@ export default class Map extends React.Component {
   };
   render() {
     return (
-      <Grow in={true} timeout={1000}>
         <Card
           elevation={3}
           style={{
@@ -166,7 +165,6 @@ export default class Map extends React.Component {
             />
           </MapContainer>
         </Card>
-      </Grow>
     );
   }
 }

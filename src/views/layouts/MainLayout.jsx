@@ -1,17 +1,18 @@
 import React from "react";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, Grow } from "@mui/material";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function MainLayout({ children }) {
-
-    return (
-        <React.Fragment>
-            <CssBaseline />
-            <Header />
-            <main >{children}</main>
-            <Footer />
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Header />
+      <Grow in={true} timeout={1000}>
+        <main>{children}</main>
+      </Grow>
+      <Footer />
+    </React.Fragment>
+  );
 }

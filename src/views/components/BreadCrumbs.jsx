@@ -2,24 +2,34 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { Breadcrumbs, Typography } from "@mui/material";
+import {
+  Breadcrumbs,
+  Typography,
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material";
+
+let theme = createTheme();
+
+theme = responsiveFontSizes(theme);
 
 export default function BreadCrumbs(props) {
   return (
-    <Breadcrumbs
-      aria-label="breadcrumb"
-      style={{ display: "flex", justifyContent: "center" }}
-    >
-      <Link
-        underline="hover"
-        to="/"
-        style={{ textDecoration: "none", color: "#283618" }}
+    <ThemeProvider theme={theme}>
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{ display: "flex", justifyContent: "center" }}
       >
-        Home
-      </Link>
-      <Typography sx={{ typography: { sm: "body1", xs: "body2" } }}>
-        {props.crumbs}
-      </Typography>
-    </Breadcrumbs>
+        <Link
+          underline="hover"
+          to="/"
+          style={{ textDecoration: "none", color: "#283618" }}
+        >
+          Home
+        </Link>
+        <Typography>{props.crumbs}</Typography>
+      </Breadcrumbs>
+    </ThemeProvider>
   );
 }
