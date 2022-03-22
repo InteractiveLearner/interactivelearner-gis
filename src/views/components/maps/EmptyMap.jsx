@@ -1,5 +1,10 @@
 import React from "react";
-import { MapContainer, TileLayer, LayersControl, ScaleControl } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  LayersControl,
+  ScaleControl,
+} from "react-leaflet";
 
 export default class Map extends React.Component {
   render() {
