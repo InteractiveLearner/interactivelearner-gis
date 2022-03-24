@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Typography, Container } from "@mui/material";
 
@@ -23,7 +23,6 @@ const sources = [
 ];
 
 function TemplatePage() {
-  const [crumbs, setCrumbs] = useState(["TemplatePage"]);
   return (
     <MainLayout>
       <div>
@@ -34,9 +33,9 @@ function TemplatePage() {
             color="textPrimary"
             gutterBottom
           >
-            {crumbs}
+            TemplatePage
           </Typography>
-          <BreadCrumbs crumbs={crumbs} />
+          <BreadCrumbs crumbs={"TemplatePage"} />
         </Container>
       </div>
       <Container maxWidth="md" style={{ padding: "20px 0" }}>

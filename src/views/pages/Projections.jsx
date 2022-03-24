@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import {
   Typography,
@@ -203,11 +203,9 @@ const authors = [
 ];
 
 function Projections() {
-  const [crumbs, setCrumbs] = useState(["Projections and Scale"]);
-
   return (
     <MainLayout>
-      <Title crumbs={crumbs} />
+      <Title crumbs={"Projections and Scale"} />
       <ThemeProvider theme={theme}>
         {/* Remove transitions for mobile users */}
         <Container maxWidth="md" style={{ padding: "20px 0 0" }}>

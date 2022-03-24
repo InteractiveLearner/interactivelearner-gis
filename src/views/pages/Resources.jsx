@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Typography, Container } from "@mui/material";
 
@@ -23,7 +23,6 @@ const sources = [
 ];
 
 function Resources() {
-  const [crumbs, setCrumbs] = useState(["Resources"]);
   return (
     <MainLayout>
       <div>
@@ -34,9 +33,9 @@ function Resources() {
             color="textPrimary"
             gutterBottom
           >
-            {crumbs}
+            Resources
           </Typography>
-          <BreadCrumbs crumbs={crumbs} />
+          <BreadCrumbs crumbs={"Resources"} />
         </Container>
       </div>
       <Container maxWidth="md" style={{ padding: "20px 0" }}>

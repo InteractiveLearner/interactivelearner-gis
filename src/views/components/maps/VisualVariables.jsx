@@ -20,7 +20,7 @@ import pin from "../../../img/icon.png";
 
 import IconButton from "./IconButton.jsx";
 
-var selected = null;
+// var selected = null;
 
 // Can change color with CSS
 let iconStyle = L.icon({
@@ -61,15 +61,13 @@ export default class Map extends React.Component {
     let num = ward.properties["WARD_NUM"];
     let area = ward.properties["Shape_Area"];
 
-    let popupContent = `<div class='info leaflet-control'>`;
-    popupContent += `<h2><span>Ward: ${name}</span></h2>`;
-    popupContent += `<h3><span>Ward Number: ${num}</span></h3>`;
-    popupContent += `<h3><span>Land Area (Sq Km): ${area}</span></h3>`;
-    popupContent += `</div>`;
+    let popupContent = `<p><b>Ward: ${name}</b><br />
+                              Ward Number: ${num}<br />
+                              Land Area: ${area}</p>`;
 
     layer.bindTooltip(popupContent).openTooltip();
 
-    layer.on({ click: this.clicked.bind(this) });
+    // layer.on({ click: this.clicked.bind(this) });
   };
   onEachHospital = (hospital, layer) => {
     let name = hospital.properties.NAME;
@@ -82,43 +80,44 @@ export default class Map extends React.Component {
     layer.bindTooltip(popupContent).openTooltip();
   };
   onEachRoad = (road, layer) => {
-    let name = road.properties.L_STNAME_C;
-    let roadclass = road.properties.ROADCLASS;
-    let pavedstatus = road.properties.PAVSTATUS;
-    let shapelength = road.properties.Shape_Length;
+    let name = road.properties.TO_RD_NAME;
+    let type = road.properties.SUBCLASS;
+    let ownership = road.properties.OWNERSHIP;
+    let shapeLength = road.properties.Shape_Leng;
 
     let popupContent = `<p><b>Name: ${name}</b><br />
-                            Road Class: ${roadclass}<br />
-                            Paved Status: ${pavedstatus}<br />
-                            Road Length: ${shapelength}</p>`;
+                            Road Class: ${type}<br />
+                            Ownership: ${ownership}<br />
+                            Road Length: ${shapeLength}</p>`;
 
     layer.bindTooltip(popupContent).openTooltip();
   };
-  clicked = (ev) => {
-    let oldSelected = selected;
-    selected = ev.target;
+  // TODO: No longer CSD data, update code
+  // clicked = (ev) => {
+  //   let oldSelected = selected;
+  //   selected = ev.target;
 
-    // If there is no previously selected feature, style the current selection
-    if (oldSelected === null) {
-      selected.setStyle(this.highlightStyle(selected.feature));
-    }
-    // Un-highlight the re-selected feature
-    else if (
-      oldSelected.feature.properties["Census subdivision name"] ===
-      selected.feature.properties["Census subdivision name"]
-    ) {
-      selected.setStyle(this.defaultStyle(selected.feature));
-      selected = null;
-    }
-    // Un-highlight the old selected feature and highlight the new one
-    else if (
-      oldSelected.feature.properties["Census subdivision name"] !==
-      selected.feature.properties["Census subdivision name"]
-    ) {
-      oldSelected.setStyle(this.defaultStyle(oldSelected.feature));
-      selected.setStyle(this.highlightStyle(selected.feature));
-    }
-  };
+  //   // If there is no previously selected feature, style the current selection
+  //   if (oldSelected === null) {
+  //     selected.setStyle(this.highlightStyle(selected.feature));
+  //   }
+  //   // Un-highlight the re-selected feature
+  //   else if (
+  //     oldSelected.feature.properties["..."] ===
+  //     selected.feature.properties["..."]
+  //   ) {
+  //     selected.setStyle(this.defaultStyle(selected.feature));
+  //     selected = null;
+  //   }
+  //   // Un-highlight the old selected feature and highlight the new one
+  //   else if (
+  //     oldSelected.feature.properties["..."] !==
+  //     selected.feature.properties["..."]
+  //   ) {
+  //     oldSelected.setStyle(this.defaultStyle(oldSelected.feature));
+  //     selected.setStyle(this.highlightStyle(selected.feature));
+  //   }
+  // };
   render() {
     return (
       <Card
