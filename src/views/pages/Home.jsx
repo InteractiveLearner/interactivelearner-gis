@@ -4,7 +4,7 @@ import MainLayout from "../layouts/MainLayout";
 
 import { Link } from "react-router-dom";
 
-import img from "../../img/b.jpg";
+import img from "../../img/construction.png";
 import vizvars from "../../img/vizvars.png";
 import projection from "../../img/projection.png";
 
