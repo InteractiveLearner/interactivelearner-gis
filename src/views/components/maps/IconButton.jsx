@@ -2,9 +2,16 @@ import React from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
 
-class ScaleButton extends React.Component {
-  panelDiv;
+import pin from "../../../img/pin.png";
+import icon from "../../../img/icon.png";
+import pie from "../../../img/pie.png";
+import hospital from "../../../img/hospital.png";
 
+let options = [pin, icon, pie, hospital];
+
+let current = 1;
+
+class ScaleButton extends React.Component {
   createControl() {
     const MapInfo = L.Control.extend({
       onAdd: (map) => {
@@ -13,7 +20,7 @@ class ScaleButton extends React.Component {
         panelDiv.style.borderRadius = "6px";
         panelDiv.style.background = "#283618";
         panelDiv.style.color = "white";
-        panelDiv.style.padding = "8px";
+        panelDiv.style.padding = "12px";
         panelDiv.style.cursor = "pointer";
 
         this.panelDiv = panelDiv;
@@ -21,7 +28,19 @@ class ScaleButton extends React.Component {
         panelDiv.innerHTML = this.props.title;
 
         panelDiv.addEventListener("click", () => {
-          map.setView(this.props.center, this.props.zoom);
+          if (current === 4) current = 0;
+
+          this.props.data.forEach((layer) => {
+            layer.setIcon(
+              L.icon({
+                iconSize: [38, 38], // size of the icon
+                iconUrl: options[current],
+                color: "green",
+              })
+            );
+          });
+
+          current += 1;
         });
 
         return panelDiv;

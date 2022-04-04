@@ -5,6 +5,7 @@ import {
   Container,
   Card,
   CardContent,
+  CardMedia,
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
@@ -84,8 +85,23 @@ const figures = [
 
 const encodingQuestions = [
   {
+    question:
+      "When you hovered over a hospital, was the location information represented as an address or latitude, longitude coordinate? ",
+    answer: "Address",
+  },
+  {
+    question:
+      "When you hovered over a ward, was the size represented as a length, area, or volume? ",
+    answer: "Area",
+  },
+  {
+    question:
+      "When you hovered over a highway, was the size represented as a length, area, or volume? ",
+    answer: "Length",
+  },
+  {
     question: "The Hospitals dataset possesses which mark and channels?",
-    answer: "Point, Position, Color Hue, and Shape",
+    answer: "Point, Position, Color, and Shape",
   },
   {
     question: "The Wards dataset possesses which mark and channels?",
@@ -94,6 +110,11 @@ const encodingQuestions = [
   {
     question: "The Roads dataset possesses which mark and channels?",
     answer: "Line,",
+  },
+  {
+    question:
+      "Though a hospital could change in shape an infinite number of times, how many shape styles did you count in the Visually Encoded Map? ",
+    answer: "4",
   },
 ];
 
@@ -128,6 +149,11 @@ const sources = [
     title: "Visual Variables",
     author: "infovis-wiki",
     url: "https://infovis-wiki.net/wiki/Visual_Variables",
+  },
+  {
+    title: "Thematic Map",
+    author: "Statistics Canada",
+    url: "https://www150.statcan.gc.ca/n1/pub/92-195-x/2011001/other-autre/theme/def-eng.htm#archived",
   },
 ];
 
@@ -177,6 +203,7 @@ function Visual() {
                         A single point with latitude, longitude coordinates
                         (geographic coordinate system)
                       </li>
+                      <li>A single point with an address</li>
                       <li>E.g., Houses, hospitals, restaurants, etc.</li>
                     </ul>
                   </ul>
@@ -303,7 +330,7 @@ function Visual() {
               <Typography component="p" variant="h5" sx={theme.content}>
                 Now that you have learned about visual encoding, interact with
                 the map below to discover which marks and channels are shown and
-                the information they possess. 
+                the information they possess.
                 {/* Mention change icon style button */}
               </Typography>
             </CardContent>
@@ -316,15 +343,28 @@ function Visual() {
           <Card elevation={3} sx={theme.card}>
             <CardContent sx={theme.cardContent}>
               <Typography variant="h4" sx={theme.contentHeader}>
-                <MapOutlinedIcon sx={theme.icon} /> Reference Maps and Thematic
-                Maps
+                <MapOutlinedIcon sx={theme.icon} /> Reference Maps
+              </Typography>
+              <Typography component="p" variant="h5" sx={theme.content}>
+                The Scale Map you had seen in the{" "}
+                <a href="https://www.interactivelearner-gis.com/#/projections">
+                  Projections and Scales
+                </a>{" "}
+                chapter only showed the location and names of features.
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card elevation={3} sx={theme.card}>
+            <CardContent sx={theme.cardContent}>
+              <Typography variant="h4" sx={theme.contentHeader}>
+                <MapOutlinedIcon sx={theme.icon} /> Thematic Maps
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
                 Content
                 {/* When to use which channel? Expressiveness vs effectiveness */}
-                {/* Mention Reference maps. */}
                 {/* Data Types */}
                 {/* Mixing of visual variables / channels */}
+                {/* Multivariate Maps */}
               </Typography>
             </CardContent>
           </Card>
@@ -335,6 +375,20 @@ function Visual() {
             url={figures[2].url}
           />
           <Question questions={typesQuestions} />
+          {/* <Card elevation={3} sx={theme.card}>
+              <CardContent>
+                <Typography variant="h4" sx={theme.contentHeader}>
+                  <MapOutlinedIcon
+                    style={{ minWidth: "20px" }}
+                    fontSize={"medium"}
+                  />{" "}
+                  Color
+                </Typography>
+                <Typography component="p" variant="h5" sx={theme.content}>
+                  Content
+                </Typography>
+              </CardContent>
+            </Card> */}
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

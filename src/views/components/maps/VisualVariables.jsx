@@ -16,32 +16,16 @@ import * as features from "../../../data/Wards.json";
 import * as hospitals from "../../../data/Hospitals.json";
 import * as roads from "../../../data/Highways.json";
 
-import pin from "../../../img/icon.png";
-
 import IconButton from "./IconButton.jsx";
 
-// var selected = null;
+import pin from "../../../img/pin.png";
 
-// Can change color with CSS
-let iconStyle = L.icon({
-  iconSize: [24, 24], // size of the icon
-  // iconUrl: pin,
-  color: "green",
-});
+let pointsCollection = [];
 
 export default class Map extends React.Component {
   defaultStyle = (feature) => {
     return {
       fillColor: "#f1faee",
-      weight: 1,
-      opacity: 1,
-      color: "black",
-      fillOpacity: 0.6,
-    };
-  };
-  highlightStyle = () => {
-    return {
-      fillColor: "#78716e",
       weight: 1,
       opacity: 1,
       color: "black",
@@ -66,8 +50,6 @@ export default class Map extends React.Component {
                               Land Area: ${area}</p>`;
 
     layer.bindTooltip(popupContent).openTooltip();
-
-    // layer.on({ click: this.clicked.bind(this) });
   };
   onEachHospital = (hospital, layer) => {
     let name = hospital.properties.NAME;
@@ -75,7 +57,15 @@ export default class Map extends React.Component {
 
     let popupContent = `<p><b>Hospital: ${name}</b><br />Address: ${addr}<br /></p>`;
 
-    // layer.setIcon(iconStyle);
+    pointsCollection.push(layer);
+
+    layer.setIcon(
+      L.icon({
+        iconSize: [38, 38], // size of the icon
+        iconUrl: pin,
+        color: "green",
+      })
+    );
 
     layer.bindTooltip(popupContent).openTooltip();
   };
@@ -92,32 +82,6 @@ export default class Map extends React.Component {
 
     layer.bindTooltip(popupContent).openTooltip();
   };
-  // TODO: No longer CSD data, update code
-  // clicked = (ev) => {
-  //   let oldSelected = selected;
-  //   selected = ev.target;
-
-  //   // If there is no previously selected feature, style the current selection
-  //   if (oldSelected === null) {
-  //     selected.setStyle(this.highlightStyle(selected.feature));
-  //   }
-  //   // Un-highlight the re-selected feature
-  //   else if (
-  //     oldSelected.feature.properties["..."] ===
-  //     selected.feature.properties["..."]
-  //   ) {
-  //     selected.setStyle(this.defaultStyle(selected.feature));
-  //     selected = null;
-  //   }
-  //   // Un-highlight the old selected feature and highlight the new one
-  //   else if (
-  //     oldSelected.feature.properties["..."] !==
-  //     selected.feature.properties["..."]
-  //   ) {
-  //     oldSelected.setStyle(this.defaultStyle(oldSelected.feature));
-  //     selected.setStyle(this.highlightStyle(selected.feature));
-  //   }
-  // };
   render() {
     return (
       <Card
@@ -158,9 +122,10 @@ export default class Map extends React.Component {
           </LayersControl>
           <ScaleControl position="bottomleft" />
           <IconButton
-            title={"Change Icon Style"}
+            title={"Change Shape Style"}
             center={[45.279716962875604, -75.78658103340784]}
             zoom={15}
+            data={pointsCollection}
           />
         </MapContainer>
       </Card>

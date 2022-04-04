@@ -69,7 +69,7 @@ const cards = [
     description: "GIS resources recommended by the developer(s) of the site.",
     url: "/resources",
     img: img,
-    disabled: false,
+    disabled: true,
   },
 ];
 
@@ -113,7 +113,7 @@ export default function Home() {
                   <CardMedia
                     style={{ padding: "56.25%", justify: "center" }} // 16:9 aspect ratio
                     image={card.img}
-                    title="Image title"
+                    title={card.title + "image"}
                   />
                   <CardContent style={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5">

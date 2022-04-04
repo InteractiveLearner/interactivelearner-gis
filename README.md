@@ -54,16 +54,16 @@ And if time permits:
 ## Timeline
 
 - [x] Develop homepage by February 11 (includes connection to sub-pages)
-- [x] Develop projections and scale sub-page by March 4
-- [ ] Develop visual encodings and types of maps sub-page by March 25
+- [x] Develop projections and scale chapter by March 4
 - [x] Purchase domain and publish website by March 25
-- [ ] Project Report by April 15
+- [ ] Develop visual encodings and types of maps chapter by April 7
+- [ ] Project Report by April 20
 - [ ] Develop classification schemes sub-page by April 31
 
 Other goals:
 
-- [ ] Reduce use of iframes
-- [ ] Develop the remaining subpages
+- [ ] Navigation to section on a page
+- [ ] Develop the remaining chapters
 - [ ] Refactor code
 - [ ] Comprehensive documentation
 
@@ -77,9 +77,10 @@ Other goals:
 - [NodeJS](https://nodejs.org/en/)
 - [GitHub Pages](https://pages.github.com/)
 - [GeoPandas](https://geopandas.org/en/stable/)
+  
 ## Credits and Acknowledgements
 
-[Dr. Charles Perin](http://charlesperin.net/)
+Project Supervisor [Dr. Charles Perin](http://charlesperin.net/)
 
 Projection explorer from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/)
 
@@ -92,3 +93,7 @@ Released under the [GNU General Public License, version 3](https://opensource.or
 **[Hospitals from Open Ottawa](https://open.ottawa.ca/datasets/b769ce497f2540aa962e602c983994d6_0?geometry=-76.050%2C45.348%2C-75.396%2C45.433)**
 
 **[Road Network Files from Statistics Canada](https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm)**
+
+## Icons
+
+[SeekPNG](https://www.seekpng.com/ks/clipart/)
