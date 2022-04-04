@@ -365,6 +365,7 @@ function Visual() {
                 {/* Data Types */}
                 {/* Mixing of visual variables / channels */}
                 {/* Multivariate Maps */}
+                {/* Show a collection of maps and ask users to identify each theme */ }
               </Typography>
             </CardContent>
           </Card>
@@ -389,6 +390,17 @@ function Visual() {
                 </Typography>
               </CardContent>
             </Card> */}
+            <CardMedia
+          component="iframe"
+          title="isu map"
+          style={{ margin: "inherit", width: "97%" }}
+          height={500}
+          // width: "80%",
+          // margin: "auto"
+          
+          image="https://omarkawach.maps.arcgis.com/apps/instant/basic/index.html?appid=de956853f5e746f39465a008681eb2ee"
+        />
+            {/* "//omarkawach.maps.arcgis.com/apps/Embed/index.html?webmap=0c4de08e4ebe417fb0b4addb92c85f4e&extent=-180,24.8287,9.818,78.8322&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light" */}
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />
