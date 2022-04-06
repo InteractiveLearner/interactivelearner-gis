@@ -114,7 +114,7 @@ const encodingQuestions = [
   {
     question:
       "Though a hospital could change in shape an infinite number of times, how many shape styles did you count in the Visually Encoded Map? ",
-    answer: "4",
+    answer: "4 (on desktop browsers)",
   },
 ];
 
@@ -346,11 +346,15 @@ function Visual() {
                 <MapOutlinedIcon sx={theme.icon} /> Reference Maps
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                The Scale Map you had seen in the{" "}
+                <b>Reference maps</b> serve a general purpose. You come across
+                them quite often in the form of transit maps, topographic maps,
+                road maps, hiking trail maps, etc. The Scale Map you had seen in
+                the{" "}
                 <a href="https://www.interactivelearner-gis.com/#/projections">
                   Projections and Scales
                 </a>{" "}
-                chapter only showed the location and names of features.
+                chapter is considered a reference map since it had no intended
+                theme and only showed the location and names of features.
               </Typography>
             </CardContent>
           </Card>
@@ -360,12 +364,82 @@ function Visual() {
                 <MapOutlinedIcon sx={theme.icon} /> Thematic Maps
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                Content
+                The aim of <b>thematic maps</b> is to convey information via the
+                use of a theme or multiple themes. Therefore, unlike reference
+                maps, thematic maps serve a special purpose. One special purpose
+                could be exploratory data analysis to reveal patterns and
+                relations in the spatial data. The theme(s) of a thematic map is
+                made up of a combination of marks, channels, quantitative and /
+                or qualitative data and maybe even a base map acting as a
+                locational reference.
+                {/* Maps transform from simple layers */}
                 {/* When to use which channel? Expressiveness vs effectiveness */}
                 {/* Data Types */}
                 {/* Mixing of visual variables / channels */}
                 {/* Multivariate Maps */}
-                {/* Show a collection of maps and ask users to identify each theme */ }
+                {/* Show a collection of maps and ask users to identify each theme */}
+                <br></br>
+                <br></br>
+                The <b>expressiveness types</b> and <b>effectiveness ranks</b>{" "}
+                principles are connected to the channel selections in thematic
+                mapping. The expressiveness types principle aims to assign the
+                ideal channel to a given data type. The effectiveness ranks
+                principle simply states that not all channels are equal, some
+                channels take priority over others.
+                <br></br>
+                <br></br>
+                With all this background in mind, we will go over a few thematic
+                map types:
+              </Typography>
+
+              <Typography component="ol" variant="h5" sx={theme.contentBullets}>
+                <ol>
+                  <li>
+                    <b>Chorochromatic Maps</b>
+                  </li>
+                  <ul>
+                    <li>Qualitative</li>
+                    <li>Data type: categorical / nominal</li>
+                  </ul>
+                  <li>
+                    <b>Choropleth Maps</b>
+                  </li>
+                  <ul>
+                    <li>Quantitative</li>
+                    <li>Data type: ordinal, interval or ratio</li>
+                  </ul>
+                  <li>
+                    <b>Diagram Maps</b>
+                  </li>
+                  <ul>
+                    <li>Quantitative</li>
+                    <ul>
+                      <li>And sometimes qualitative</li>
+                    </ul>
+                    <li>Data type: ordinal, interval or ratio</li>
+                  </ul>
+                  <li>
+                    <b>Dot Density Maps</b>
+                  </li>
+                  <ul>
+                    <li>Quantitative</li>
+                    <li>Data type: ordinal, interval or ratio</li>
+                  </ul>
+                  <li>
+                    <b>Proportional Symbol Maps</b>
+                  </li>
+                  <ul>
+                    <li>Quantitative</li>
+                    <li>Data type: ordinal, interval or ratio</li>
+                  </ul>
+                  <li>
+                    <b>Graduated Symbol Maps</b>
+                  </li>
+                  <ul>
+                    <li>Quantitative</li>
+                    <li>Data type: ordinal, interval or ratio</li>
+                  </ul>
+                </ol>
               </Typography>
             </CardContent>
           </Card>
@@ -375,32 +449,50 @@ function Visual() {
             credit={figures[2].credit}
             url={figures[2].url}
           />
+          <Card elevation={3} sx={theme.card}>
+            <CardContent sx={theme.cardContent}>
+              <Typography variant="h4" sx={theme.contentHeader}>
+                <MouseOutlinedIcon // Replace with mouse icon
+                  sx={theme.icon}
+                />{" "}
+                Exploration of Thematic Maps
+              </Typography>
+              <Typography component="p" variant="h5" sx={theme.content}>
+                Now that you have learned about types of maps and how they are
+                designed, it is your turn to explore them. Here are some tips:
+              </Typography>
+              <Typography component="ol" variant="h5" sx={theme.contentBullets}>
+                <ul>
+                  <li>
+                    Can you identify which channels were used in the making of
+                    each thematic map? The Channel Ranking figure may prove
+                    useful.
+                  </li>
+                  <li>
+                    The dot density maps's view is set to <i>World</i>. Notice
+                    how as you zoom in to a <i>Continent</i> or <i>Country</i>{" "}
+                    level, the dots begin to represent a different number of
+                    people.
+                  </li>
+                </ul>
+              </Typography>
+            </CardContent>
+          </Card>
+          <CardMedia
+            component="iframe"
+            title="Dot Density Map"
+            style={{
+              margin: "auto",
+              marginBottom: "20px",
+              width: "95%",
+              border: 0,
+            }}
+            height={500}
+            image="https://omarkawach.maps.arcgis.com/apps/instant/basic/index.html?appid=de956853f5e746f39465a008681eb2ee"
+          />
+          {/* Ask Users to Identify each thematic map */}
+          {/* Watch as the dots in the dot density map represent a different number of people */}
           <Question questions={typesQuestions} />
-          {/* <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Color
-                </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
-                  Content
-                </Typography>
-              </CardContent>
-            </Card> */}
-            <CardMedia
-          component="iframe"
-          title="isu map"
-          style={{ margin: "inherit", width: "97%" }}
-          height={500}
-          // width: "80%",
-          // margin: "auto"
-          
-          image="https://omarkawach.maps.arcgis.com/apps/instant/basic/index.html?appid=de956853f5e746f39465a008681eb2ee"
-        />
-            {/* "//omarkawach.maps.arcgis.com/apps/Embed/index.html?webmap=0c4de08e4ebe417fb0b4addb92c85f4e&extent=-180,24.8287,9.818,78.8322&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light" */}
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

@@ -36,7 +36,6 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 Educational information
 - [Projections and Scale](https://www.interactivelearner-gis.com/#/projections)
 - [Visual Encoding](https://geography.wisc.edu/cartography/research/publications/Roth_2015_EG.pdf) and [Types of Maps](https://sites.google.com/site/boardinclassrom/map/cartogram-map) 
-  - Cartogram Map
   - Chorochromatic Map
   - Choropleth Map
   - Diagram Map
@@ -66,6 +65,10 @@ Other goals:
 - [ ] Develop the remaining chapters
 - [ ] Refactor code
 - [ ] Comprehensive documentation
+- [ ] Table of contents
+- [ ] Pagination
+- [ ] Styling for desktop and mobile
+- [ ] Light and dark theme
 
 ## Tools Used
 
