@@ -97,6 +97,8 @@ Released under the [GNU General Public License, version 3](https://opensource.or
 
 **[Road Network Files from Statistics Canada](https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm)**
 
+**[Health Authority Boundaries](https://catalogue.data.gov.bc.ca/dataset/health-authority-boundaries)**
+
 ## Icons
 
 [SeekPNG](https://www.seekpng.com/ks/clipart/)

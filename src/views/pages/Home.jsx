@@ -93,7 +93,8 @@ export default function Home() {
               color="textSecondary"
               paragraph
             >
-              View any of the topics below to learn about GIS!
+              View any of the topics below to learn about GIS! Disclaimer: The
+              entire site is under ongoing development. However, feedback is still welcome. 
             </Typography>
           </Container>
         </div>

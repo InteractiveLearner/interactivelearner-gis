@@ -155,6 +155,11 @@ const sources = [
     author: "Statistics Canada",
     url: "https://www150.statcan.gc.ca/n1/pub/92-195-x/2011001/other-autre/theme/def-eng.htm#archived",
   },
+  {
+    title: "Map",
+    author: "วราภรณ์ มูลวงศ์",
+    url: "https://sites.google.com/site/boardinclassrom/map/chorochromatic-map",
+  },
 ];
 
 const authors = [
@@ -305,20 +310,6 @@ function Visual() {
             credit={figures[1].credit}
             url={figures[1].url}
           />
-          {/* <Card elevation={3} sx={theme.card}>
-              <CardContent>
-                <Typography variant="h4" sx={theme.contentHeader}>
-                  <MapOutlinedIcon
-                    style={{ minWidth: "20px" }}
-                    fontSize={"medium"}
-                  />{" "}
-                  Color
-                </Typography>
-                <Typography component="p" variant="h5" sx={theme.content}>
-                  Content
-                </Typography>
-              </CardContent>
-            </Card> */}
           <Card elevation={3} sx={theme.card}>
             <CardContent sx={theme.cardContent}>
               <Typography variant="h4" sx={theme.contentHeader}>
@@ -328,10 +319,10 @@ function Visual() {
                 Visually Encoded Map
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                Now that you have learned about visual encoding, interact with
-                the map below to discover which marks and channels are shown and
-                the information they possess.
-                {/* Mention change icon style button */}
+                Now that you've learned about visual encoding, play around with
+                the map below to see which marks and channels are displayed, as
+                well as the data they contain. You can alter the style of the
+                points by pressing the bottom-right button.
               </Typography>
             </CardContent>
           </Card>
@@ -346,14 +337,16 @@ function Visual() {
                 <MapOutlinedIcon sx={theme.icon} /> Reference Maps
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                <b>Reference maps</b> serve a general purpose. You come across
-                them quite often in the form of transit maps, topographic maps,
-                road maps, hiking trail maps, etc. The Scale Map you had seen in
-                the{" "}
-                <a href="https://www.interactivelearner-gis.com/#/projections">
+                <b>Reference maps</b> serve a general purpose. They can be found
+                in the form of transit maps, topographic maps, road maps, hiking
+                trail maps, and so on. The Scale Map you saw in the{" "}
+                <a
+                  style={{ textDecoration: "none", color: "#dda15e" }}
+                  href="https://www.interactivelearner-gis.com/#/projections"
+                >
                   Projections and Scales
                 </a>{" "}
-                chapter is considered a reference map since it had no intended
+                chapter is considered a reference map because it had no intended
                 theme and only showed the location and names of features.
               </Typography>
             </CardContent>
@@ -364,28 +357,21 @@ function Visual() {
                 <MapOutlinedIcon sx={theme.icon} /> Thematic Maps
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                The aim of <b>thematic maps</b> is to convey information via the
-                use of a theme or multiple themes. Therefore, unlike reference
-                maps, thematic maps serve a special purpose. One special purpose
-                could be exploratory data analysis to reveal patterns and
-                relations in the spatial data. The theme(s) of a thematic map is
-                made up of a combination of marks, channels, quantitative and /
-                or qualitative data and maybe even a base map acting as a
-                locational reference.
-                {/* Maps transform from simple layers */}
-                {/* When to use which channel? Expressiveness vs effectiveness */}
-                {/* Data Types */}
-                {/* Mixing of visual variables / channels */}
-                {/* Multivariate Maps */}
-                {/* Show a collection of maps and ask users to identify each theme */}
+                <b>Thematic maps</b>, unlike reference maps, serve a special
+                purpose. Exploratory data analysis, for example, could be used
+                to uncover patterns and relationships in spatial data. A
+                thematic map's theme(s) are made up of a mix of marks, channels,
+                quantitative and/or qualitative data, and sometimes even a base
+                map that serves as a point of reference.
                 <br></br>
                 <br></br>
-                The <b>expressiveness types</b> and <b>effectiveness ranks</b>{" "}
-                principles are connected to the channel selections in thematic
-                mapping. The expressiveness types principle aims to assign the
-                ideal channel to a given data type. The effectiveness ranks
-                principle simply states that not all channels are equal, some
-                channels take priority over others.
+                Thematic mapping channel selections are linked to the{" "}
+                <b>expressiveness types</b> and
+                <b>effectiveness ranks</b> principles. The expressiveness types
+                principle seeks to match a data type with the appropriate
+                channel. The effectiveness ranks principle simply argues that
+                not all channels are created equal, and that certain channels
+                have a higher importance than others.
                 <br></br>
                 <br></br>
                 With all this background in mind, we will go over a few thematic
@@ -398,13 +384,19 @@ function Visual() {
                     <b>Chorochromatic Maps</b>
                   </li>
                   <ul>
+                    <li>Useful when there is no data hierarchy</li>
                     <li>Qualitative</li>
                     <li>Data type: categorical / nominal</li>
+                    <li>
+                      E.g., Identifying city zoning, water resource regions, and
+                      land cover types
+                    </li>
                   </ul>
                   <li>
                     <b>Choropleth Maps</b>
                   </li>
                   <ul>
+                    <li>Useful when you want to show variability in data</li>
                     <li>Quantitative</li>
                     <li>Data type: ordinal, interval or ratio</li>
                   </ul>
@@ -441,6 +433,10 @@ function Visual() {
                   </ul>
                 </ol>
               </Typography>
+              <Typography component="p" variant="h5" sx={theme.content}>
+                Thematic map types can also be combined to form{" "}
+                <b>multivariate maps</b>.
+              </Typography>
             </CardContent>
           </Card>
           <Figure
@@ -458,21 +454,22 @@ function Visual() {
                 Exploration of Thematic Maps
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                Now that you have learned about types of maps and how they are
-                designed, it is your turn to explore them. Here are some tips:
+                Now that you've learned about the many types of maps and how
+                they're designed, it's time to go exploring. Here are some
+                suggestions:
               </Typography>
               <Typography component="ol" variant="h5" sx={theme.contentBullets}>
                 <ul>
                   <li>
-                    Can you identify which channels were used in the making of
-                    each thematic map? The Channel Ranking figure may prove
+                    Can you identify which channels were used to create each of
+                    the thematic maps? The Channel Ranking figure could be
                     useful.
                   </li>
                   <li>
-                    The dot density maps's view is set to <i>World</i>. Notice
-                    how as you zoom in to a <i>Continent</i> or <i>Country</i>{" "}
-                    level, the dots begin to represent a different number of
-                    people.
+                    The dot density maps's view is set to <i>World</i>. people.
+                    Notice how the dots begin to indicate a different number of
+                    people when you zoom in to a <i>Continent</i> or{" "}
+                    <i>Country</i> level.
                   </li>
                 </ul>
               </Typography>
@@ -487,8 +484,20 @@ function Visual() {
               width: "95%",
               border: 0,
             }}
+            height={600}
+            image="https://arcg.is/1HrKjq"
+          />
+          <CardMedia
+            component="iframe"
+            title="Dot Density Map"
+            style={{
+              margin: "auto",
+              marginBottom: "20px",
+              width: "95%",
+              border: 0,
+            }}
             height={500}
-            image="https://omarkawach.maps.arcgis.com/apps/instant/basic/index.html?appid=de956853f5e746f39465a008681eb2ee"
+            image="https://arcg.is/yLTWH0"
           />
           {/* Ask Users to Identify each thematic map */}
           {/* Watch as the dots in the dot density map represent a different number of people */}
