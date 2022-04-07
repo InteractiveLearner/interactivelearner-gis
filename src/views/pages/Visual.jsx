@@ -388,109 +388,6 @@ function Visual() {
                 data type with the appropriate channel. The effectiveness ranks
                 principle simply argues that not all channels are created equal,
                 and that certain channels have a higher importance than others.
-                <br></br>
-                <br></br>
-                With all this background in mind, we will go over a few thematic
-                map types:
-              </Typography>
-
-              <Typography component="ol" variant="h5" sx={theme.contentBullets}>
-                <ol>
-                  <li>
-                    <b>Chorochromatic Maps</b>
-                  </li>
-                  <ul>
-                    <li>Useful when there is no data hierarchy</li>
-                    <li>Qualitative</li>
-                    <li>Data type: categorical / nominal</li>
-                    <li>
-                      E.g., Identifying city zoning, water resource regions, and
-                      land cover types
-                    </li>
-                  </ul>
-                  <li>
-                    <b>Choropleth Maps</b>
-                  </li>
-                  <ul>
-                    <li>
-                      Useful when there is a need to show variability in data
-                    </li>
-                    <li>Statistical normalization may be required</li>
-                    <li>A single classification scheme must be selected</li>
-                    <li>Quantitative</li>
-                    <li>Data type: ordinal, interval or ratio</li>
-                    <li>
-                      E.g., Mapping of population density, GDP per capita, and
-                      DUIs per 10,000 persons
-                    </li>
-                  </ul>
-                  <li>
-                    <b>Diagram Symbol Maps</b>
-                  </li>
-                  <ul>
-                    <li>
-                      Useful for displaying a relationship between variables /
-                      attributes
-                    </li>
-                    <li>Quantitative</li>
-                    <ul>
-                      <li>And sometimes qualitative</li>
-                    </ul>
-                    <li>Data type: nominal, ordinal, interval or ratio</li>
-                    <li>
-                      E.g., Comparing the number of post-secondary graduates by
-                      gender in each US State by use of a bar chart
-                    </li>
-                  </ul>
-                  <li>
-                    <b>Dot Density Maps</b>
-                  </li>
-                  <ul>
-                    <li>
-                      Useful for depicting the geographic distribution of a
-                      variable / attribute
-                    </li>
-                    <li>
-                      Many dots within a geographic region, each portraying q
-                      quantity
-                    </li>
-                    <li>Quantitative</li>
-                    <li>Data type: ordinal, interval or ratio</li>
-                    <li>E.g., Number of people within each US state</li>
-                  </ul>
-                  <li>
-                    <b>Proportional Symbol Maps</b>
-                  </li>
-                  <ul>
-                    <li>
-                      Size of a single dot within a geographic region based on
-                      the absolute magnitude of a quantity
-                    </li>
-                    <li>Quantitative</li>
-                    <li>Data type: ordinal, interval or ratio</li>
-                  </ul>
-                  <li>
-                    <b>Graduated Symbol Maps</b>
-                  </li>
-                  <ul>
-                    <li>
-                      Size of a single dot within a geographic region based on
-                      the class of a quantity
-                    </li>
-                    <li>Quantitative</li>
-                    <li>Data type: ordinal, interval or ratio</li>
-                    <li>
-                      E.g., When you want a choropleth map, but the area
-                      attribute is not necessary
-                    </li>
-                  </ul>
-                  <li>
-                    <b>Multivariate Maps</b>
-                  </li>
-                  <ul>
-                    <li>Combination of two or more themes</li>
-                  </ul>
-                </ol>
               </Typography>
             </CardContent>
           </Card>
@@ -506,12 +403,12 @@ function Visual() {
                 <MouseOutlinedIcon // Replace with mouse icon
                   sx={theme.icon}
                 />{" "}
-                Exploration of Thematic Maps
+                Exploration of Thematic Map Types
               </Typography>
               <Typography component="p" variant="h5" sx={theme.content}>
-                Now that you've learned about the many types of maps and how
-                they're designed, it's time to go exploring. Here are some
-                suggestions:
+                Now that you've learned how thematic maps are designed, it is
+                time to explore and learn about the types of thematic maps. Here
+                are some suggestions to consider as you explore:
               </Typography>
               <Typography component="ol" variant="h5" sx={theme.contentBullets}>
                 <ul>
@@ -530,9 +427,9 @@ function Visual() {
                     There is no diagram symbol map below. However, an example
                     can still be seen on this page. Did you notice that pie
                     charts were one of the hospital shape styles in the Visually
-                    Encoded Map? Despite the fact that the pie charts contain
-                    meaningless data, they could, for example, represent each
-                    hospital's budget categories.
+                    Encoded Map? Despite the fact that the pie charts in the
+                    Visually Encoded Map contain meaningless data, they could,
+                    for example, represent each hospital's budget categories.
                   </li>
                 </ul>
               </Typography>
@@ -547,32 +444,8 @@ function Visual() {
               width: "95%",
               border: 0,
             }}
-            height={800}
-            image="https://arcg.is/0jezuq"
-          />
-          <CardMedia
-            component="iframe"
-            title="Choropleth Map"
-            style={{
-              margin: "auto",
-              marginBottom: "20px",
-              width: "95%",
-              border: 0,
-            }}
-            height={600}
-            image="https://arcg.is/1GPHW50"
-          />
-          <CardMedia
-            component="iframe"
-            title="Dot Density Map"
-            style={{
-              margin: "auto",
-              marginBottom: "20px",
-              width: "95%",
-              border: 0,
-            }}
-            height={500}
-            image="https://arcg.is/yLTWH0"
+            height={1000}
+            image="https://arcg.is/19vjX50"
           />
           <Question questions={typesQuestions} />
         </Container>
