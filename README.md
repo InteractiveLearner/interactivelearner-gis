@@ -33,22 +33,18 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 ```npm run deploy```
 
 ## Content Plan
-Educational information
-- [Projections and Scale](https://www.interactivelearner-gis.com/#/projections)
-- [Visual Encoding](https://geography.wisc.edu/cartography/research/publications/Roth_2015_EG.pdf) and [Types of Maps](https://sites.google.com/site/boardinclassrom/map/cartogram-map) 
-  - Chorochromatic Map
-  - Choropleth Map
-  - Diagram Map
-  - Dot Map
-  - Flowline Map
-  - Isoline Map
-  - Proportional Map
 
-And if time permits:
+- [Projections and Scale](https://www.interactivelearner-gis.com/#/projections)
+  - Contributors:
+- [Visual Encoding and Types of Maps](https://www.interactivelearner-gis.com/#/visual)
+  - Contributors:
+
+In the future:
 
 - [Classification Types](https://doc.arcgis.com/en/power-bi/design/classification-types.htm)
 - [Spatial Autocorrelation Statistics](https://www.sciencedirect.com/topics/computer-science/spatial-autocorrelation)
 - [Lying with Maps](https://open.lib.umn.edu/mapping/chapter/7-lying-with-maps/)
+- Resources
 
 ## Timeline
 
@@ -80,6 +76,8 @@ Other goals:
 - [NodeJS](https://nodejs.org/en/)
 - [GitHub Pages](https://pages.github.com/)
 - [GeoPandas](https://geopandas.org/en/stable/)
+- [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview)
+- [ArcGIS Online Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm)
   
 ## Credits and Acknowledgements
 
@@ -97,8 +95,12 @@ Released under the [GNU General Public License, version 3](https://opensource.or
 
 **[Road Network Files from Statistics Canada](https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm)**
 
-**[Health Authority Boundaries](https://catalogue.data.gov.bc.ca/dataset/health-authority-boundaries)**
+**[Health Authority Boundaries from BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/health-authority-boundaries)**
+
+**[Ottawa Wards from Open Ottawa](https://open.ottawa.ca/datasets/wards/explore?location=45.242656%2C-75.800844%2C0.90)**
+
+**[2016 Census Wards from Open Ottawa](https://open.ottawa.ca/documents/2016-census-ward-data-1/about)**
 
 ## Icons
 
-[SeekPNG](https://www.seekpng.com/ks/clipart/)
+**[SeekPNG](https://www.seekpng.com/ks/clipart/)**

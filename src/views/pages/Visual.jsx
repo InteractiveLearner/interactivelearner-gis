@@ -120,12 +120,21 @@ const encodingQuestions = [
 
 const typesQuestions = [
   {
-    question: "Q",
-    answer: "A",
+    question:
+      "Based on the chorochromatic map, how many health authorities are there in British Columbia?",
+    answer: "5",
   },
   {
-    question: "Q",
-    answer: "A",
+    question: "Which channel is the chorochromatic map using?",
+    answer: "Identity - Color Hue",
+  },
+  {
+    question: "What is the meaning of the darkest colour in the choropleth map scale?",
+    answer: "The darkest colour represents the highest population density in Ottawa",
+  },
+  {
+    question: "At the Country level, how many people does a dot represent in the dot density map?",
+    answer: "1 dot = 17,500 people",
   },
 ];
 
@@ -159,6 +168,11 @@ const sources = [
     title: "Map",
     author: "วราภรณ์ มูลวงศ์",
     url: "https://sites.google.com/site/boardinclassrom/map/chorochromatic-map",
+  },
+  {
+    title: "Dot Distribution vs Graduated Symbols vs Proportional Symbol Maps",
+    author: "GISGeography",
+    url: "https://gisgeography.com/dot-distribution-graduated-symbols-proportional-symbol-maps/#:~:text=While%20proportional%20symbol%20maps%20scale,population%20into%204%20separate%20classes.",
   },
 ];
 
@@ -366,12 +380,11 @@ function Visual() {
                 <br></br>
                 <br></br>
                 Thematic mapping channel selections are linked to the{" "}
-                <b>expressiveness types</b> and
-                <b>effectiveness ranks</b> principles. The expressiveness types
-                principle seeks to match a data type with the appropriate
-                channel. The effectiveness ranks principle simply argues that
-                not all channels are created equal, and that certain channels
-                have a higher importance than others.
+                <b>expressiveness types</b> and <b>effectiveness ranks</b>{" "}
+                principles. The expressiveness types principle seeks to match a
+                data type with the appropriate channel. The effectiveness ranks
+                principle simply argues that not all channels are created equal,
+                and that certain channels have a higher importance than others.
                 <br></br>
                 <br></br>
                 With all this background in mind, we will go over a few thematic
@@ -396,31 +409,60 @@ function Visual() {
                     <b>Choropleth Maps</b>
                   </li>
                   <ul>
-                    <li>Useful when you want to show variability in data</li>
+                    <li>
+                      Useful when there is a need to show variability in data
+                    </li>
+                    <li>Statistical normalization may be required</li>
+                    <li>A single classification scheme must be selected</li>
                     <li>Quantitative</li>
                     <li>Data type: ordinal, interval or ratio</li>
+                    <li>
+                      E.g., Mapping of population density, GDP per capita, and
+                      DUIs per 10,000 persons
+                    </li>
                   </ul>
                   <li>
-                    <b>Diagram Maps</b>
+                    <b>Diagram Symbol Maps</b>
                   </li>
                   <ul>
+                    <li>
+                      Useful for displaying a relationship between variables /
+                      attributes
+                    </li>
                     <li>Quantitative</li>
                     <ul>
                       <li>And sometimes qualitative</li>
                     </ul>
-                    <li>Data type: ordinal, interval or ratio</li>
+                    <li>Data type: nominal, ordinal, interval or ratio</li>
+                    <li>
+                      E.g., Comparing the number of post-secondary graduates by
+                      gender in each US State by use of a bar chart
+                    </li>
                   </ul>
                   <li>
                     <b>Dot Density Maps</b>
                   </li>
                   <ul>
+                    <li>
+                      Useful for depicting the geographic distribution of a
+                      variable / attribute
+                    </li>
+                    <li>
+                      Many dots within a geographic region, each portraying q
+                      quantity
+                    </li>
                     <li>Quantitative</li>
                     <li>Data type: ordinal, interval or ratio</li>
+                    <li>E.g., Number of people within each US state</li>
                   </ul>
                   <li>
                     <b>Proportional Symbol Maps</b>
                   </li>
                   <ul>
+                    <li>
+                      Size of a single dot within a geographic region based on
+                      the absolute magnitude of a quantity
+                    </li>
                     <li>Quantitative</li>
                     <li>Data type: ordinal, interval or ratio</li>
                   </ul>
@@ -428,14 +470,24 @@ function Visual() {
                     <b>Graduated Symbol Maps</b>
                   </li>
                   <ul>
+                    <li>
+                      Size of a single dot within a geographic region based on
+                      the class of a quantity
+                    </li>
                     <li>Quantitative</li>
                     <li>Data type: ordinal, interval or ratio</li>
+                    <li>
+                      E.g., When you want a choropleth map, but the area
+                      attribute is not necessary
+                    </li>
+                  </ul>
+                  <li>
+                    <b>Multivariate Maps</b>
+                  </li>
+                  <ul>
+                    <li>Combination of two or more themes</li>
                   </ul>
                 </ol>
-              </Typography>
-              <Typography component="p" variant="h5" sx={theme.content}>
-                Thematic map types can also be combined to form{" "}
-                <b>multivariate maps</b>.
               </Typography>
             </CardContent>
           </Card>
@@ -471,13 +523,21 @@ function Visual() {
                     people when you zoom in to a <i>Continent</i> or{" "}
                     <i>Country</i> level.
                   </li>
+                  <li>
+                    There is no diagram symbol map below. However, an example
+                    can still be seen on this page. Did you notice that pie
+                    charts were one of the hospital shape styles in the Visually
+                    Encoded Map? Despite the fact that the pie charts contain
+                    meaningless data, they could, for example, represent each
+                    hospital's budget categories.
+                  </li>
                 </ul>
               </Typography>
             </CardContent>
           </Card>
           <CardMedia
             component="iframe"
-            title="Dot Density Map"
+            title="Chorochromatic Map"
             style={{
               margin: "auto",
               marginBottom: "20px",
@@ -486,6 +546,18 @@ function Visual() {
             }}
             height={600}
             image="https://arcg.is/1HrKjq"
+          />
+          <CardMedia
+            component="iframe"
+            title="Choropleth Map"
+            style={{
+              margin: "auto",
+              marginBottom: "20px",
+              width: "95%",
+              border: 0,
+            }}
+            height={600}
+            image="https://arcg.is/1GPHW50"
           />
           <CardMedia
             component="iframe"
@@ -499,8 +571,42 @@ function Visual() {
             height={500}
             image="https://arcg.is/yLTWH0"
           />
-          {/* Ask Users to Identify each thematic map */}
-          {/* Watch as the dots in the dot density map represent a different number of people */}
+          <CardMedia
+            component="iframe"
+            title="Proportional Symbol Map"
+            style={{
+              margin: "auto",
+              marginBottom: "20px",
+              width: "95%",
+              border: 0,
+            }}
+            height={600}
+            image="https://arcg.is/0nqTKj"
+          />
+          <CardMedia
+            component="iframe"
+            title="Graduated Symbol Map"
+            style={{
+              margin: "auto",
+              marginBottom: "20px",
+              width: "95%",
+              border: 0,
+            }}
+            height={600}
+            image="https://arcg.is/G111f"
+          />
+          <CardMedia
+            component="iframe"
+            title="Multivariate  Map"
+            style={{
+              margin: "auto",
+              marginBottom: "20px",
+              width: "95%",
+              border: 0,
+            }}
+            height={800}
+            image="https://arcg.is/0jezuq"
+          />
           <Question questions={typesQuestions} />
         </Container>
       </ThemeProvider>
