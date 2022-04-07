@@ -129,11 +129,14 @@ const typesQuestions = [
     answer: "Identity - Color Hue",
   },
   {
-    question: "What is the meaning of the darkest colour in the choropleth map scale?",
-    answer: "The darkest colour represents the highest population density in Ottawa",
+    question:
+      "What is the meaning of the darkest colour in the choropleth map scale?",
+    answer:
+      "The darkest colour represents the highest population density in Ottawa",
   },
   {
-    question: "At the Country level, how many people does a dot represent in the dot density map?",
+    question:
+      "At the Country level, how many people does a dot represent in the dot density map?",
     answer: "1 dot = 17,500 people",
   },
 ];
@@ -544,8 +547,8 @@ function Visual() {
               width: "95%",
               border: 0,
             }}
-            height={600}
-            image="https://arcg.is/1HrKjq"
+            height={800}
+            image="https://arcg.is/0jezuq"
           />
           <CardMedia
             component="iframe"
@@ -570,42 +573,6 @@ function Visual() {
             }}
             height={500}
             image="https://arcg.is/yLTWH0"
-          />
-          <CardMedia
-            component="iframe"
-            title="Proportional Symbol Map"
-            style={{
-              margin: "auto",
-              marginBottom: "20px",
-              width: "95%",
-              border: 0,
-            }}
-            height={600}
-            image="https://arcg.is/0nqTKj"
-          />
-          <CardMedia
-            component="iframe"
-            title="Graduated Symbol Map"
-            style={{
-              margin: "auto",
-              marginBottom: "20px",
-              width: "95%",
-              border: 0,
-            }}
-            height={600}
-            image="https://arcg.is/G111f"
-          />
-          <CardMedia
-            component="iframe"
-            title="Multivariate  Map"
-            style={{
-              margin: "auto",
-              marginBottom: "20px",
-              width: "95%",
-              border: 0,
-            }}
-            height={800}
-            image="https://arcg.is/0jezuq"
           />
           <Question questions={typesQuestions} />
         </Container>
