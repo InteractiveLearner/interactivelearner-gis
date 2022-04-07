@@ -1,16 +1,30 @@
-# Interactive Learner
+# Interactive Learner GIS
 
-An interactive environment where anyone can easily learn GIS!
+Your one-stop shop for all things GIS! Easily learn about GIS in an interactive environment. 
 
 Link: https://www.interactivelearner-gis.com/ 
 
-or in case I broke something: https://interactivelearner.github.io
+## Content Plan (Ongoing)
+
+Have a chapter idea? Look below on how to contribute. 
+
+- [Projections and Scale](https://www.interactivelearner-gis.com/#/projections)
+- [Visual Encoding and Types of Maps](https://www.interactivelearner-gis.com/#/visual)
+- Classification Schemes
+- Spatial Autocorrelation Statistics
+- Lying with Maps
+- GIS Data Types
+- Spatial Analysis
+- Web GIS
+- Geometric Primitives
+- Relational Databases
+- Resources
 
 ## How to Contribute
 
 ### Developers
 
-Create an issue under the issues tab. A GitHub account is required.
+Create an issue and / or make a pull request. A GitHub account is required.
 
 ### Geographers
 
@@ -31,40 +45,6 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 #### Publish the Application to GitHub Pages
 
 ```npm run deploy```
-
-## Content Plan
-
-- [Projections and Scale](https://www.interactivelearner-gis.com/#/projections)
-  - Contributors:
-- [Visual Encoding and Types of Maps](https://www.interactivelearner-gis.com/#/visual)
-  - Contributors:
-
-In the future:
-
-- [Classification Types](https://doc.arcgis.com/en/power-bi/design/classification-types.htm)
-- [Spatial Autocorrelation Statistics](https://www.sciencedirect.com/topics/computer-science/spatial-autocorrelation)
-- [Lying with Maps](https://open.lib.umn.edu/mapping/chapter/7-lying-with-maps/)
-- Resources
-
-## Timeline
-
-- [x] Develop homepage by February 11 (includes connection to sub-pages)
-- [x] Develop projections and scale chapter by March 4
-- [x] Purchase domain and publish website by March 25
-- [ ] Develop visual encodings and types of maps chapter by April 7
-- [ ] Project Report by April 20
-- [ ] Develop classification schemes sub-page by April 31
-
-Other goals:
-
-- [ ] Navigation to section on a page
-- [ ] Develop the remaining chapters
-- [ ] Refactor code
-- [ ] Comprehensive documentation
-- [ ] Table of contents
-- [ ] Pagination
-- [ ] Styling for desktop and mobile
-- [ ] Light and dark theme
 
 ## Tools Used
 

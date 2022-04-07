@@ -10,19 +10,24 @@ import projection from "../../img/projection.png";
 
 import {
   Typography,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
   CardMedia,
-  Grid,
   Container,
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  ListItemButton,
+  Checkbox,
 } from "@mui/material";
 
-let theme = createTheme();
+let theme = createTheme({
+  header: {
+    color: "#606c38",
+  },
+});
 
 theme = responsiveFontSizes(theme);
 
@@ -74,6 +79,21 @@ const cards = [
 ];
 
 export default function Home() {
+  const [checked, setChecked] = React.useState([-1]);
+
+  const handleToggle = (value) => () => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+  };
+
   return (
     <MainLayout>
       <ThemeProvider theme={theme}>
@@ -93,52 +113,87 @@ export default function Home() {
               color="textSecondary"
               paragraph
             >
-              View any of the topics below to learn about GIS! Disclaimer: The
-              entire site is under ongoing development. However, feedback is still welcome. 
+              View any of the topics below to learn about GIS!{" "}
+              <b>Disclaimer:</b> The entire site is under ongoing development.
+              However, feedback is still welcome.
             </Typography>
           </Container>
         </div>
-        <Container maxWidth="md" style={{ padding: "20px 0" }}>
-          <Grid container spacing={4} style={{ padding: "16px" }}>
-            {cards.map((card, index) => (
-              // Space on device
-              <Grid item key={index} xs={12} sm={6} md={4}>
-                <Card
-                  elevation={3}
-                  style={{
-                    flexDirection: "column",
-                    height: "100%",
-                    display: "flex",
+
+        <Container maxWidth="md" style={{ padding: "20px" }}>
+          <Typography gutterBottom variant="h3" sx={theme.header}>
+            Topics
+          </Typography>
+          <List
+            dense
+            sx={{
+              width: "100%",
+              maxWidth: "100%",
+              bgcolor: "background.paper",
+              borderStyle: "groove",
+              padding: "0",
+            }}
+          >
+            {[0, 1, 2, 3, 4, 5].map((value) => {
+              const labelId = `checkbox-list-secondary-label-${value}`;
+
+              return (
+                <ListItem
+                  key={value}
+                  secondaryAction={
+                    <Checkbox
+                      edge="end"
+                      style={{ color: "#283618" }}
+                      onChange={handleToggle(value)}
+                      checked={checked.indexOf(value) !== -1}
+                      inputProps={{ "aria-labelledby": labelId }}
+                      disabled={cards[value].disabled}
+                    />
+                  }
+                  disablePadding
+                  sx={{
+                    borderStyle: "groove",
                   }}
                 >
-                  <CardMedia
-                    style={{ padding: "56.25%", justify: "center" }} // 16:9 aspect ratio
-                    image={card.img}
-                    title={card.title + "image"}
-                  />
-                  <CardContent style={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5">
-                      {card.title}
-                    </Typography>
-                    <Typography>{card.description}</Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      style={{ background: "#283618" }}
-                      size="small"
-                      color="primary"
-                      to={card.url}
-                      component={Link}
-                      variant="contained"
-                      disabled={card.disabled}
-                    >
-                      View
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+                  <ListItemButton
+                    to={cards[value].url}
+                    component={Link}
+                    variant="contained"
+                    disabled={cards[value].disabled}
+                    sx={{
+                      "&:hover": {
+                        opacity: "0.8",
+                      },
+                    }}
+                  >
+                    <ListItemAvatar>
+                      <CardMedia
+                        style={{ padding: "56.25%", width: "100px" }} // 16:9 aspect ratio
+                        image={cards[value].img}
+                        title={cards[value].title + "image"}
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      style={{ padding: "25px" }}
+                      id={labelId}
+                      primary={cards[value].title}
+                      secondary={
+                        <React.Fragment>
+                          <Typography
+                            sx={{ display: "inline" }}
+                            component="span"
+                            variant="body2"
+                            color="text.primary"
+                          ></Typography>
+                          {cards[value].description}
+                        </React.Fragment>
+                      }
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
         </Container>
       </ThemeProvider>
     </MainLayout>
