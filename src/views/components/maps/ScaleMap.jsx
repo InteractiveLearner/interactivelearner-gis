@@ -14,13 +14,7 @@ import ScaleButton from "./ScaleButton.jsx";
 export default class Map extends React.Component {
   render() {
     return (
-      <Card
-        elevation={3}
-        style={{
-          // padding: "0px 16px 16px 16px",
-          margin: "0px 20px 20px 20px",
-        }}
-      >
+      <Card elevation={3}>
         <MapContainer
           center={[48.42829687325907, -123.3656709938676]}
           zoom={12}

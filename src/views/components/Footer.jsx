@@ -10,7 +10,7 @@ import {
 
 let theme = createTheme({
   box: {
-    backgroundColor: "#f0ead2",
+    backgroundColor: "#e5e5e5",
     p: 6,
   },
 });

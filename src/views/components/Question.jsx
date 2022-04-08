@@ -8,9 +8,11 @@ import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  Snackbar,
+  SnackbarContent,
+  Slide,
 } from "@mui/material";
 
-import SchoolIcon from "@mui/icons-material/School";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
 let theme = createTheme({
@@ -20,6 +22,7 @@ let theme = createTheme({
   card: {
     padding: "8px 16px 0px 16px",
     margin: "0px 20px 20px 20px",
+    border: 1,
   },
   cardContent: {
     padding: "8px 0px 8px 0px",
@@ -42,6 +45,8 @@ export default class Questions extends React.Component {
     super(props);
     this.state = {
       answersHidden: [],
+      open: false,
+      solved: 0,
     };
 
     for (let index = 0; index < this.props.questions.length; index++) {
@@ -51,6 +56,7 @@ export default class Questions extends React.Component {
 
   showAnswer = (index) => {
     let temp = this.state.answersHidden;
+    let score = this.state.solved + 1;
 
     temp[index] = (
       <Typography variant="body1">
@@ -59,53 +65,63 @@ export default class Questions extends React.Component {
     );
 
     this.setState({ answersHidden: temp });
+
+    this.setState({ solved: score });
+
+    if (this.props.questions.length - 1 === this.state.solved) {
+      this.setState({ open: true });
+    }
   };
 
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Card elevation={3} sx={theme.card}>
-          <CardContent sx={theme.cardContent}>
-            <Typography align="left" variant="h4" sx={theme.contentHeader}>
-              <SchoolIcon sx={theme.icon} /> Test Your Knowledge
+        {this.props.questions.map((card, index) => (
+          <div key={index}>
+            <Typography
+              gutterBottom
+              component="p"
+              fontWeight="bold"
+              variant="body1"
+              sx={theme.content}
+            >
+              {card.question}
             </Typography>
-            {this.props.questions.map((card, index) => (
-              <div key={index}>
-                <Typography
-                  gutterBottom
-                  component="p"
-                  fontWeight="bold"
-                  variant="body1"
-                  sx={theme.content}
+            <Card elevation={3}>
+              <CardActionArea
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  this.showAnswer(index);
+                }}
+                sx={{
+                  ".MuiCardActionArea-focusHighlight": {
+                    opacity: "0.025",
+                  },
+                }}
+              >
+                <CardContent
+                  sx={theme.cardContent}
+                  align="center"
+                  style={{ flexGrow: 1 }}
                 >
-                  {card.question}
-                </Typography>
-                <Card elevation={3}>
-                  <CardActionArea
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      this.showAnswer(index);
-                    }}
-                    sx={{
-                      ".MuiCardActionArea-focusHighlight": {
-                        opacity: "0.025",
-                      },
-                    }}
-                  >
-                    <CardContent
-                      sx={theme.cardContent}
-                      align="center"
-                      style={{ flexGrow: 1 }}
-                    >
-                      {this.state.answersHidden[index]}
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+                  {this.state.answersHidden[index]}
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </div>
+        ))}
+        <Snackbar
+          open={this.state.open}
+          autoHideDuration={5000}
+          onClose={() => this.setState({ open: false })}
+          TransitionComponent={(props) => <Slide {...props} direction="left" />}
+        >
+          <SnackbarContent
+            sx={{ backgroundColor: "#283618" }}
+            message="Congratulations on completing Test Your Knowledge!"
+          />
+        </Snackbar>
       </ThemeProvider>
     );
   }

@@ -42,6 +42,7 @@ let theme = createTheme({
   card: {
     padding: "8px 16px 0px 16px",
     margin: "0px 20px 20px 20px",
+    border: 1
   },
   cardContent: {
     padding: "0px 0px 8px 0px",

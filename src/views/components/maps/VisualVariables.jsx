@@ -89,6 +89,7 @@ export default class Map extends React.Component {
         style={{
           margin: "0px 20px 20px 20px",
         }}
+        sx={{border: 1}}
       >
         <MapContainer
           center={[45.279716962875604, -75.78658103340784]}

@@ -22,7 +22,7 @@ let theme = createTheme({
     flexDirection: "column",
     display: "flex",
     padding: "0px 6px 6px 6px",
-    margin: "0px 20px 20px 0px",
+    margin: "0px 20px 20px 0px"
   },
   cardContent: {
     padding: "8px 0px 8px 8px",

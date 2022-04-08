@@ -20,7 +20,7 @@ import {
   ListItemText,
   ListItemAvatar,
   ListItemButton,
-  Checkbox,
+  Checkbox
 } from "@mui/material";
 
 let theme = createTheme({
@@ -130,8 +130,8 @@ export default function Home() {
               width: "100%",
               maxWidth: "100%",
               bgcolor: "background.paper",
-              borderStyle: "groove",
               padding: "0",
+              border: 1,
             }}
           >
             {[0, 1, 2, 3, 4, 5].map((value) => {
@@ -152,7 +152,7 @@ export default function Home() {
                   }
                   disablePadding
                   sx={{
-                    borderStyle: "groove",
+                    borderBottom: 1,
                   }}
                 >
                   <ListItemButton

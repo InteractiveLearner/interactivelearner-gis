@@ -29,49 +29,50 @@ theme = responsiveFontSizes(theme);
 export default function Sources(props) {
   return (
     <ThemeProvider theme={theme}>
-        <Container maxWidth="md" style={{ padding: "10px 0" }}>
-          <Typography variant="h3" sx={theme.header} gutterBottom>
-            Sources
-          </Typography>
-          <Grid container spacing={4} style={{ padding: "16px" }}>
-            {props.sources.map((card, index) => (
-              <Grid
-                item
+      <Container maxWidth="md" style={{ padding: "10px 0" }}>
+        <Typography variant="h3" sx={theme.header} gutterBottom>
+          Sources
+        </Typography>
+        <Grid container spacing={4} style={{ padding: "16px" }}>
+          {props.sources.map((card, index) => (
+            <Grid
+              item
+              key={index}
+              xs={12}
+              sm={6}
+              md={4}
+              style={{
+                paddingTop: "8px",
+              }}
+            >
+              <Card
                 key={index}
-                xs={12}
-                sm={6}
-                md={4}
                 style={{
-                  paddingTop: "8px",
+                  height: "100%",
+                  display: "flex",
                 }}
+                sx={{ border: 1 }}
               >
-                <Card
-                  key={index}
-                  style={{
-                    height: "100%",
-                    display: "flex",
+                <CardActionArea
+                  href={card.url}
+                  sx={{
+                    ".MuiCardActionArea-focusHighlight": {
+                      opacity: "0.05",
+                    },
                   }}
                 >
-                  <CardActionArea
-                    href={card.url}
-                    sx={{
-                      ".MuiCardActionArea-focusHighlight": {
-                        opacity: "0.05",
-                      },
-                    }}
-                  >
-                    <CardContent style={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h6">
-                        {card.title}
-                      </Typography>
-                      <Typography variant="body1">{card.author}</Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+                  <CardContent style={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h6">
+                      {card.title}
+                    </Typography>
+                    <Typography variant="body1">{card.author}</Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </ThemeProvider>
   );
 }

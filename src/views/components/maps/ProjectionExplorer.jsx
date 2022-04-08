@@ -124,83 +124,75 @@ export default function ProjectionExplorer() {
 
   return (
     <>
-      <Card
-        elevation={3}
-        style={{
-          padding: "0px 16px 0px 16px",
-          margin: "0px 20px 20px 20px",
-        }}
-      >
-        <div className="menu" style={{ margin: "inherit" }}>
-          <div className="projection-type item">
-            <div>
-              <select name="type" defaultValue="150"></select>
-            </div>
+      <div className="menu" style={{ margin: "inherit" }}>
+        <div className="projection-type item">
+          <div>
+            <select name="type" defaultValue="150"></select>
           </div>
-          <div className="slider item">
-            <div className="label">
-              Scale (<span className="value">120</span>)
-            </div>
-            <div>
-              <span className="low">0</span>{" "}
-              <input
-                type="range"
-                name="scale"
-                min="0"
-                max="400"
-                defaultValue="120"
-              />{" "}
-              <span>400</span>
-            </div>
-          </div>
-          <div className="slider item">
-            <div className="label">
-              Center - Longitude (<span className="value">0</span>)
-            </div>
-            <div>
-              <span className="low">-180</span>{" "}
-              <input
-                type="range"
-                name="centerLon"
-                min="-180"
-                max="180"
-                defaultValue="0"
-              />{" "}
-              <span>180</span>
-            </div>
-          </div>
-          <div className="slider item">
-            <div className="label">
-              Center - Latitude (<span className="value">0</span>)
-            </div>
-            <div>
-              <span className="low">-90</span>{" "}
-              <input
-                type="range"
-                name="centerLat"
-                min="-90"
-                max="90"
-                defaultValue="0"
-              />{" "}
-              <span>90</span>
-            </div>
-          </div>
-          <svg
-            ref={ref}
-            width="95%"
-            height="500px"
-            viewBox="0 0 960 500"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <g className="graticule">
-              <path></path>
-            </g>
-            <g className="circles"></g>
-            <g className="map"></g>
-            <circle className="projection-center" r="4"></circle>
-          </svg>
         </div>
-      </Card>
+        <div className="slider item">
+          <div className="label">
+            Scale (<span className="value">120</span>)
+          </div>
+          <div>
+            <span className="low">0</span>{" "}
+            <input
+              type="range"
+              name="scale"
+              min="0"
+              max="400"
+              defaultValue="120"
+            />{" "}
+            <span>400</span>
+          </div>
+        </div>
+        <div className="slider item">
+          <div className="label">
+            Center - Longitude (<span className="value">0</span>)
+          </div>
+          <div>
+            <span className="low">-180</span>{" "}
+            <input
+              type="range"
+              name="centerLon"
+              min="-180"
+              max="180"
+              defaultValue="0"
+            />{" "}
+            <span>180</span>
+          </div>
+        </div>
+        <div className="slider item">
+          <div className="label">
+            Center - Latitude (<span className="value">0</span>)
+          </div>
+          <div>
+            <span className="low">-90</span>{" "}
+            <input
+              type="range"
+              name="centerLat"
+              min="-90"
+              max="90"
+              defaultValue="0"
+            />{" "}
+            <span>90</span>
+          </div>
+        </div>
+        <svg
+          ref={ref}
+          width="95%"
+          height="500px"
+          viewBox="0 0 960 500"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g className="graticule">
+            <path></path>
+          </g>
+          <g className="circles"></g>
+          <g className="map"></g>
+          <circle className="projection-center" r="4"></circle>
+        </svg>
+      </div>
     </>
   );
 }
