@@ -3,19 +3,21 @@ import React from "react";
 import {
   Container,
   Typography,
-  Card,
-  CardContent,
-  Grid,
-  CardActionArea,
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+  ListItemAvatar,
 } from "@mui/material";
+
+import LanguageIcon from "@mui/icons-material/Language";
 
 let theme = createTheme({
   header: {
     color: "#606c38",
-    paddingLeft: "16px",
   },
   card: {
     padding: "0px 16px 16px 16px",
@@ -29,49 +31,45 @@ theme = responsiveFontSizes(theme);
 export default function Sources(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="md" style={{ padding: "10px 0" }}>
+      <Container maxWidth="md" style={{ padding: "20px" }}>
         <Typography variant="h3" sx={theme.header} gutterBottom>
           Sources
         </Typography>
-        <Grid container spacing={4} style={{ padding: "16px" }}>
+        <List
+          dense
+          sx={{
+            width: "100%",
+            maxWidth: "100%",
+            bgcolor: "background.paper",
+            padding: "0",
+            border: 1,
+          }}
+        >
           {props.sources.map((card, index) => (
-            <Grid
-              item
+            <ListItem
               key={index}
-              xs={12}
-              sm={6}
-              md={4}
-              style={{
-                paddingTop: "8px",
+              sx={{
+                borderBottom: 1,
               }}
             >
-              <Card
-                key={index}
-                style={{
-                  height: "100%",
-                  display: "flex",
+              <ListItemButton
+                component="a"
+                href={card.url}
+                variant="contained"
+                sx={{
+                  "&:hover": {
+                    opacity: "0.8",
+                  },
                 }}
-                sx={{ border: 1 }}
               >
-                <CardActionArea
-                  href={card.url}
-                  sx={{
-                    ".MuiCardActionArea-focusHighlight": {
-                      opacity: "0.05",
-                    },
-                  }}
-                >
-                  <CardContent style={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h6">
-                      {card.title}
-                    </Typography>
-                    <Typography variant="body1">{card.author}</Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
+                <ListItemAvatar>
+                  <LanguageIcon />
+                </ListItemAvatar>
+                <ListItemText primary={card.title} secondary={card.author} />
+              </ListItemButton>
+            </ListItem>
           ))}
-        </Grid>
+        </List>
       </Container>
     </ThemeProvider>
   );

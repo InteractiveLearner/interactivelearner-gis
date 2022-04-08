@@ -12,8 +12,7 @@ import {
 
 let theme = createTheme({
   card: {
-    padding: "8px 8px 8px 8px",
-    margin: "0px 20px 20px 20px"
+    padding: "8px 8px 8px 8px"
   },
   box: {
     bottom: 0,

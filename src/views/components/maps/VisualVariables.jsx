@@ -84,13 +84,7 @@ export default class Map extends React.Component {
   };
   render() {
     return (
-      <Card
-        elevation={3}
-        style={{
-          margin: "0px 20px 20px 20px",
-        }}
-        sx={{border: 1}}
-      >
+      <Card elevation={3}>
         <MapContainer
           center={[45.279716962875604, -75.78658103340784]}
           zoom={9}

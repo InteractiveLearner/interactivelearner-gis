@@ -3,11 +3,10 @@ import React from "react";
 import {
   Typography,
   Container,
-  Card,
-  CardContent,
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  Checkbox,
 } from "@mui/material";
 
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
@@ -52,7 +51,7 @@ let theme = createTheme({
   contentBullets: {
     color: "rgba(0, 0, 0, 0.75)",
     padding: "0px 0px 16px 0px",
-  }
+  },
 });
 
 theme = responsiveFontSizes(theme);
@@ -410,18 +409,51 @@ const authors = [
 ];
 
 export default function Projections() {
+  const [checked, setChecked] = React.useState([-1]);
+
+  const handleToggle = (value) => () => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+  };
   return (
     <MainLayout>
       <Title crumbs={"Projections and Scale"} />
       <ThemeProvider theme={theme}>
         <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
-          <Typography gutterBottom variant="h3" sx={theme.header}>
-            Projections
-          </Typography>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Projections
+            </Typography>
+            <Checkbox
+              edge="end"
+              style={{ color: "#283618", width: "85px" }}
+              onChange={handleToggle(0)}
+              checked={checked.indexOf(0) !== -1}
+              sx={{ marginLeft: "auto" }}
+            />
+          </div>
+
           <ContentBuilder topics={projectionTopic} />
-          <Typography gutterBottom variant="h3" sx={theme.header}>
-            Scale
-          </Typography>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Scale
+            </Typography>
+            <Checkbox
+              edge="end"
+              style={{ color: "#283618", width: "85px" }}
+              onChange={handleToggle(1)}
+              checked={checked.indexOf(1) !== -1}
+              sx={{ marginLeft: "auto" }}
+            />
+          </div>
           <ContentBuilder topics={scaleTopic} />
         </Container>
       </ThemeProvider>
