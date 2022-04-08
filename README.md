@@ -1,4 +1,4 @@
-<img src="../interactivelearner.github.io/build/logo192.png" width="192px" height="192px" />
+<img src="https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/public/logo192.png" width="192px" height="192px" />
 
 # Interactive Learner GIS
 
