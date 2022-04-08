@@ -1,12 +1,6 @@
 import React from "react";
 
-import MainLayout from "../layouts/MainLayout";
-
 import { Link } from "react-router-dom";
-
-import img from "../../img/construction.png";
-import vizvars from "../../img/vizvars.png";
-import projection from "../../img/projection.png";
 
 import {
   Typography,
@@ -20,8 +14,14 @@ import {
   ListItemText,
   ListItemAvatar,
   ListItemButton,
-  Checkbox
+  Checkbox,
 } from "@mui/material";
+
+import MainLayout from "../layouts/MainLayout";
+
+import img from "../../assets/images/construction.png";
+import vizvars from "../../assets/images/vizvars.png";
+import projection from "../../assets/images/projection.png";
 
 let theme = createTheme({
   header: {

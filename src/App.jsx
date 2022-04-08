@@ -5,9 +5,10 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./views/pages/Home.jsx";
 import Projections from "./views/pages/Projections.jsx";
 import Visual from "./views/pages/Visual.jsx";
-import Resources from "./views/pages/Resources.jsx";
+import TemplatePage from "./views/pages/TemplatePage.jsx";
 import NotFound from "./views/pages/NotFound.jsx";
-import ScrollToTop from "./views/components/ScrollToTop.jsx";
+
+import ScrollToTop from "./utils/ScrollToTop.jsx";
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
         <Route exact path="*" element={<NotFound />} />
         <Route exact path="/projections" element={<Projections />} />
         <Route exact path="/visual" element={<Visual />} />
-        <Route exact path="/resources" element={<Resources />} />
+        <Route exact path="/template" element={<TemplatePage />} />
       </Routes>
     </Router>
   );

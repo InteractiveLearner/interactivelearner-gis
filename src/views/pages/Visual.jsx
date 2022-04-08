@@ -16,18 +16,18 @@ import SchoolIcon from "@mui/icons-material/School";
 
 import MainLayout from "../layouts/MainLayout";
 
-import Title from "../components/Title.jsx";
-import ContentBuilder from "../components/ContentBuilder.jsx";
-import Figure from "../components/Figure.jsx";
-import Question from "../components/Question.jsx";
-import Sources from "../components/Sources.jsx";
-import Authors from "../components/Authors.jsx";
+import Title from "../../components/Title.jsx";
+import ContentBuilder from "../../components/ContentBuilder.jsx";
+import Figure from "../../components/Figure.jsx";
+import Question from "../../components/Question.jsx";
+import Sources from "../../components/Sources.jsx";
+import Authors from "../../components/Authors.jsx";
 
-import VisualVariables from "../components/maps/VisualVariables.jsx";
+import VisualVariables from "../../maps/VisualVariables.jsx";
 
-import marks from "../../img/marks.png";
-import channels from "../../img/channels.png";
-import datatype from "../../img/datatype.png";
+import marks from "../../assets/images/marks.png";
+import channels from "../../assets/images/channels.png";
+import datatype from "../../assets/images/datatype.png";
 
 import "../../styles/map.css";
 

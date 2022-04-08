@@ -15,18 +15,18 @@ import SchoolIcon from "@mui/icons-material/School";
 
 import MainLayout from "../layouts/MainLayout";
 
-import Title from "../components/Title.jsx";
-import ContentBuilder from "../components/ContentBuilder.jsx";
-import Figure from "../components/Figure.jsx";
-import Question from "../components/Question.jsx";
-import Sources from "../components/Sources.jsx";
-import Authors from "../components/Authors.jsx";
+import Title from "../../components/Title.jsx";
+import ContentBuilder from "../../components/ContentBuilder.jsx";
+import Figure from "../../components/Figure.jsx";
+import Question from "../../components/Question.jsx";
+import Sources from "../../components/Sources.jsx";
+import Authors from "../../components/Authors.jsx";
 
-import ScaleMap from "../components/maps/ScaleMap.jsx";
-import ProjectionExplorer from "../components/maps/ProjectionExplorer.jsx";
+import ScaleMap from "../../maps/ScaleMap.jsx";
+import ProjectionExplorer from "../../maps/ProjectionExplorer.jsx";
 
-import surfaces from "../../img/projection_surfaces.png";
-import scaleImg from "../../img/scale.png";
+import surfaces from "../../assets/images/projection_surfaces.png";
+import scaleImg from "../../assets/images/scale.png";
 
 let theme = createTheme({
   header: {
