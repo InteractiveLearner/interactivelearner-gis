@@ -1,8 +1,14 @@
+<img src="../interactivelearner.github.io/build/logo192.png" width="192px" height="192px" />
+
 # Interactive Learner GIS
+
+[![Issues Open](https://img.shields.io/github/issues/InteractiveLearner/interactivelearner.github.io?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) [![Project License](https://img.shields.io/github/license/InteractiveLearner/interactivelearner.github.io?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/LICENSE)
 
 Your one-stop shop for all things GIS! Easily learn about GIS in an interactive environment. 
 
-Link: https://www.interactivelearner-gis.com/ 
+# Demo
+
+**[Link](https://www.interactivelearner-gis.com/ )**
 
 ## Content Plan (Ongoing)
 
@@ -17,7 +23,7 @@ Have a chapter idea? Look below on how to contribute.
 - Spatial Analysis
 - Web GIS
 - Geometric Primitives
-- Relational Databases
+- Geodatabases
 - Resources
 
 ## How to Contribute
@@ -26,44 +32,60 @@ Have a chapter idea? Look below on how to contribute.
 
 Create an issue and / or make a pull request. A GitHub account is required.
 
+##### Clone the Application
+
+```
+git clone https://github.com/InteractiveLearner/interactivelearner.github.io.git
+```
+
+##### Run the Application
+
+```
+npm install
+npm start 
+```
+
+##### Build the Application
+
+```
+npm run build
+```
+
+##### Publish the Application to GitHub Pages
+
+```
+npm run deploy
+```
+
 ### Geographers
 
 Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share.
 
-## Development
+## Technologies
 
-#### Run the Application
-
-```npm install```
-
-```npm start ```
-
-#### Build the Application
-
-```npm run build```
-
-#### Publish the Application to GitHub Pages
-
-```npm run deploy```
-
-## Tools Used
-
+### Basic
+- [GitHub Pages](https://pages.github.com/)
+### Web Design
 - [React](https://reactjs.org/)
 - [Material UI](https://mui.com/)
-- [MUI Album layout](https://mui.com/getting-started/templates/album/)
 - [React Router](https://reactrouter.com/)
-- [React Leaflet](https://react-leaflet.js.org/)
 - [NodeJS](https://nodejs.org/en/)
-- [GitHub Pages](https://pages.github.com/)
+
+### Geospatial
 - [GeoPandas](https://geopandas.org/en/stable/)
+- [React Leaflet](https://react-leaflet.js.org/)
 - [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview)
 - [ArcGIS Online Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm)
+
+## Author
+
+[Omar Kawach](https://github.com/omarkawach)
   
 ## Credits and Acknowledgements
 
-Project Supervisor [Dr. Charles Perin](http://charlesperin.net/)
+Under the supervision of [Dr. Charles Perin](http://charlesperin.net/), I developed this website for my capstone project at the [University of Victoria](https://www.uvic.ca/).
 
-Projection explorer from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/)
+Projection explorer taken from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/) and converted to JSX. 
 
 ## License (GPL) 
 
@@ -75,11 +97,11 @@ Released under the [GNU General Public License, version 3](https://opensource.or
 
 **[Road Network Files from Statistics Canada](https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm)**
 
-**[Health Authority Boundaries from BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/health-authority-boundaries)**
-
 **[Ottawa Wards from Open Ottawa](https://open.ottawa.ca/datasets/wards/explore?location=45.242656%2C-75.800844%2C0.90)**
 
-**[2016 Census Wards from Open Ottawa](https://open.ottawa.ca/documents/2016-census-ward-data-1/about)**
+**[Health Authority Boundaries from BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/health-authority-boundaries)**
+
+**[2016 Census Wards Excel from Open Ottawa](https://open.ottawa.ca/documents/2016-census-ward-data-1/about)**
 
 ## Icons
 
