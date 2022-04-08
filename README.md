@@ -6,7 +6,7 @@
 
 Your one-stop shop for all things GIS! Easily learn about GIS in an interactive environment. 
 
-# Demo
+## Demo
 
 **[Link](https://www.interactivelearner-gis.com/ )**
 
