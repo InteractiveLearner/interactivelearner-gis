@@ -13,30 +13,44 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Failed to load resource: the server responded with a status of 504 () favicon -->
-    <link rel="shortcut icon" href="#">
-    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
-    
-    <!-- Verification -->
-    <!-- <meta name="google-site-verification" content="rGtCWgNz493g9zMLokbID0wxeP58x9hL8M_7jX8A2dI" /> -->
+    <link rel="shortcut icon" href="./favicon.ico" />
 
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <!-- Google Analytics to count site visits -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2V1T0B047F"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-2V1T0B047F");
+    </script>
 
     <title>Interactive Learner GIS</title>
   </head>
   <body>
-
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div style="background-color: #e5e5e5" id="root"></div>
     <html style="background-color: #e5e5e5"></html>
