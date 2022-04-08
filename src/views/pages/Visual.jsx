@@ -3,12 +3,11 @@ import React from "react";
 import {
   Typography,
   Container,
-  Card,
-  CardContent,
   CardMedia,
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  Checkbox,
 } from "@mui/material";
 
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
@@ -36,10 +35,6 @@ let theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
-  },
-  contentHeader: {
-    color: "#bc6c25",
-    paddingBottom: "8px",
   },
   card: {
     padding: "8px 16px 0px 16px",
@@ -488,19 +483,50 @@ const authors = [
 ];
 
 function Visual() {
+  const [checked, setChecked] = React.useState([-1]);
+
+  const handleToggle = (value) => () => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+  };
   return (
     <MainLayout>
       <Title crumbs={"Visual Encoding and Types of Maps"} />
       <ThemeProvider theme={theme}>
-        <Container maxWidth="md" style={{ padding: "20px 0" }}>
-          <Typography gutterBottom variant="h3" sx={theme.header}>
-            Visual Encoding
-          </Typography>
+        <Container maxWidth="md" style={{ padding: "20px 0px 0px 0px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Visual Encoding
+            </Typography>
+            <Checkbox
+              edge="end"
+              style={{ color: "#283618", width: "85px" }}
+              onChange={handleToggle(0)}
+              checked={checked.indexOf(0) !== -1}
+              sx={{ marginLeft: "auto" }}
+            />
+          </div>
           <ContentBuilder topics={encodingTopic} />
-
-          <Typography gutterBottom variant="h3" sx={theme.header}>
-            Types of Maps
-          </Typography>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Types of Maps
+            </Typography>
+            <Checkbox
+              edge="end"
+              style={{ color: "#283618", width: "85px" }}
+              onChange={handleToggle(1)}
+              checked={checked.indexOf(1) !== -1}
+              sx={{ marginLeft: "auto" }}
+            />
+          </div>
           <ContentBuilder topics={typesTopic} />
         </Container>
       </ThemeProvider>

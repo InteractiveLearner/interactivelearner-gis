@@ -31,7 +31,7 @@ theme = responsiveFontSizes(theme);
 export default function Sources(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="md" style={{ padding: "20px" }}>
+      <Container maxWidth="md" style={{ padding: "0px 20px 20px 20px" }}>
         <Typography variant="h3" sx={theme.header} gutterBottom>
           Sources
         </Typography>

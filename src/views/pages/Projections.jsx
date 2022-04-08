@@ -33,9 +33,6 @@ let theme = createTheme({
     color: "#606c38",
     paddingLeft: "16px",
   },
-  contentHeader: {
-    color: "#bc6c25",
-  },
   card: {
     padding: "8px 16px 0px 16px",
     margin: "0px 20px 20px 20px",
