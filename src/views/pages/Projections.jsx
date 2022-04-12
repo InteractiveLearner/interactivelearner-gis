@@ -28,6 +28,16 @@ import ProjectionExplorer from "../../maps/ProjectionExplorer.jsx";
 import surfaces from "../../assets/images/projection_surfaces.png";
 import scaleImg from "../../assets/images/scale.png";
 
+import Parser from "../../utils/mdParser.jsx";
+import readme from "../../utils/projections.mdx";
+
+import Post from "../../utils/projections.mdx";
+
+import {compile} from "@mdx-js/mdx";
+import { MDXProvider } from "@mdx-js/react";
+
+// https://www.youtube.com/watch?v=pQDh_82-MXs
+
 let theme = createTheme({
   header: {
     color: "#606c38",
@@ -405,8 +415,19 @@ const authors = [
   },
 ];
 
+const components = {
+  h1: (props) => <h1 style={{ color: "tomato" }} {...props} />,
+};
+
+
+
+
+
+export let Thing = () => <>Post</>
+
 export default function Projections() {
   const [checked, setChecked] = React.useState([-1]);
+  const [Content, setContent] = React.useState("");
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -420,11 +441,28 @@ export default function Projections() {
 
     setChecked(newChecked);
   };
+
+  // fetch(readme)
+  //   .then((response) => response.text())
+  //   .then((text) => setContent(text));
+  React.useEffect(() => {
+    async function main() {
+      await fetch(readme)
+        .then((response) => response.text())
+        .then((text) => setContent(text));
+    }
+    main();
+
+
+  }, []);
+
   return (
     <MainLayout>
       <Title crumbs={"Projections and Scale"} />
       <ThemeProvider theme={theme}>
         <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
+          <MDXProvider components={components}>{Thing = String(Content)}</MDXProvider>
+          {/* {content} */}
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <Typography gutterBottom variant="h3" sx={theme.header}>
               Projections

@@ -65,6 +65,7 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ### Basic
 - [GitHub Pages](https://pages.github.com/)
+- [Markdown for JSX (MDX)](https://mdxjs.com/)
 ### Web Design
 - [React](https://reactjs.org/)
 - [Material UI](https://mui.com/)
