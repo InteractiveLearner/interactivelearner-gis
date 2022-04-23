@@ -105,41 +105,54 @@ export default class Questions extends React.Component {
         <div style={theme.confetti}>
           <Confetti active={this.state.celebrate} config={config} />
         </div>
-        {this.props.questions.map((card, index) => (
-          <div key={index}>
+        <Card elevation={3} sx={theme.card}>
+          <CardContent>
             <Typography
-              gutterBottom
-              component="p"
-              fontWeight="bold"
-              variant="body1"
-              sx={theme.content}
+              variant="h4"
+              align="left"
+              color="#bc6c25"
+              style={{ paddingBottom: "16px" }}
             >
-              {card.question}
+              {/* <SchoolIcon style={{ minWidth: "20px" }} fontSize={"medium"} />  */}
+              Test Your Knowledge
             </Typography>
-            <Card elevation={3}>
-              <CardActionArea
-                onClick={(e) => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  this.showAnswer(index);
-                }}
-                sx={{
-                  ".MuiCardActionArea-focusHighlight": {
-                    opacity: "0.025",
-                  },
-                }}
-              >
-                <CardContent
-                  sx={theme.cardContent}
-                  align="center"
-                  style={{ flexGrow: 1 }}
+            {this.props.questions.map((card, index) => (
+              <div key={index}>
+                <Typography
+                  gutterBottom
+                  component="p"
+                  fontWeight="bold"
+                  variant="body1"
+                  sx={theme.content}
                 >
-                  {this.state.answersHidden[index]}
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </div>
-        ))}
+                  {card.question}
+                </Typography>
+                <Card elevation={3}>
+                  <CardActionArea
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      this.showAnswer(index);
+                    }}
+                    sx={{
+                      ".MuiCardActionArea-focusHighlight": {
+                        opacity: "0.025",
+                      },
+                    }}
+                  >
+                    <CardContent
+                      sx={theme.cardContent}
+                      align="center"
+                      style={{ flexGrow: 1 }}
+                    >
+                      {this.state.answersHidden[index]}
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
         <Snackbar
           anchorOrigin={{ vertical: "top", horizontal: "left" }}
           open={this.state.open}
