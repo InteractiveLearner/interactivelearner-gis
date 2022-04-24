@@ -8,12 +8,12 @@ import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
-  Snackbar,
-  SnackbarContent,
-  Slide,
+  // Snackbar,
+  // SnackbarContent,
+  // Slide,
 } from "@mui/material";
 
-import Confetti from "react-dom-confetti";
+// import Confetti from "react-dom-confetti";
 
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
@@ -39,9 +39,7 @@ let theme = createTheme({
     fontSize: "inherit",
   },
   confetti: {
-    width: "100px",
-    height: "100px",
-    position: "absolute",
+    position: "relative",
     top: 0,
     bottom: 0,
     left: 0,
@@ -52,16 +50,16 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const config = {
-  angle: 90,
-  spread: 360,
-  startVelocity: 40,
-  elementCount: 70,
-  dragFriction: 0.12,
-  duration: 3000,
-  stagger: 3,
-  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
-};
+// const config = {
+//   angle: 90,
+//   spread: 360,
+//   startVelocity: 40,
+//   elementCount: 70,
+//   dragFriction: 0.12,
+//   duration: 3000,
+//   stagger: 3,
+//   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+// };
 
 export default class Questions extends React.Component {
   constructor(props) {
@@ -70,7 +68,7 @@ export default class Questions extends React.Component {
       answersHidden: [],
       open: false,
       solved: 0,
-      celebrate: false,
+      // celebrate: false,
     };
 
     for (let index = 0; index < this.props.questions.length; index++) {
@@ -95,16 +93,16 @@ export default class Questions extends React.Component {
     if (this.props.questions.length - 1 === this.state.solved) {
       this.setState({ open: true });
 
-      this.setState({ celebrate: true });
+      // this.setState({ celebrate: true });
     }
   };
 
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div style={theme.confetti}>
+        {/* <div style={theme.confetti}>
           <Confetti active={this.state.celebrate} config={config} />
-        </div>
+        </div> */}
         <Card elevation={3} sx={theme.card}>
           <CardContent>
             {this.props.questions.map((card, index) => (
@@ -144,7 +142,7 @@ export default class Questions extends React.Component {
             ))}
           </CardContent>
         </Card>
-        <Snackbar
+        {/* <Snackbar
           anchorOrigin={{ vertical: "top", horizontal: "left" }}
           open={this.state.open}
           autoHideDuration={3000}
@@ -155,7 +153,7 @@ export default class Questions extends React.Component {
             sx={{ backgroundColor: "#283618" }}
             message="Congratulations on completing Test Your Knowledge!"
           />
-        </Snackbar>
+        </Snackbar> */}
       </ThemeProvider>
     );
   }

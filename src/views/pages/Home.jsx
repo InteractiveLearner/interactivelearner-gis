@@ -31,7 +31,7 @@ const cards = [
   {
     title: "Projections",
     description:
-      "Discover map scales and the projections that convert curved 3D surfaces to flat 2D surfaces. ",
+      "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
     img: require("../../assets/images/projection.png"),
     disabled: false,
@@ -39,16 +39,16 @@ const cards = [
   {
     title: "Scale",
     description:
-      "Discover map scales and the projections that convert curved 3D surfaces to flat 2D surfaces. ",
+      "Explore how map scale can be used to hide and show details on a map.",
 
     url: "/scale",
-    img: require("../../assets/images/scale.png"),
+    img: require("../../assets/images/construction.png"),
     disabled: false,
   },
   {
     title: "Visual Encoding",
     description:
-      "Learn how visual marks and channels allow geographers to produce thematic maps.",
+      "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
     img: require("../../assets/images/vizvars.png"),
@@ -57,10 +57,10 @@ const cards = [
   {
     title: "Types of Maps",
     description:
-      "Learn how visual marks and channels allow geographers to produce thematic maps.",
+      "Find out how visual encoding allows geographers to produce thematic maps.",
 
     url: "/thematic",
-    img: require("../../assets/images/vizvars.png"),
+    img: require("../../assets/images/construction.png"),
     disabled: false,
   },
   {
@@ -182,15 +182,15 @@ export default function Home() {
                       padding: 0,
                     }}
                   >
-                    {/* <ListItemAvatar>
+                    <ListItemAvatar>
                       <CardMedia
                         style={{ padding: "56.25%", width: "100px" }} // 16:9 aspect ratio
                         image={cards[value].img}
                         title={cards[value].title + "image"}
                       />
-                    </ListItemAvatar> */}
+                    </ListItemAvatar>
                     <ListItemText
-                      style={{ padding: "25px" }}
+                      style={{ padding: "0px 0px 0px 25px" }}
                       id={labelId}
                       primary={cards[value].title}
                       secondary={
