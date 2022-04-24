@@ -14,10 +14,10 @@ Your one-stop shop for all things GIS! Easily learn about GIS in an interactive 
 
 Have a chapter idea? Look below on how to contribute. 
 
-- Projections
-- Scale
-- Visual Encoding
-- Types of Maps
+- [Projections](https://www.interactivelearner-gis.com/#/projections)
+- [Scale](https://www.interactivelearner-gis.com/#/scale)
+- [Visual Encoding](https://www.interactivelearner-gis.com/#/visual)
+- [Types of Maps](https://www.interactivelearner-gis.com/#/thematic)
 - Classification Schemes
 - Spatial Autocorrelation Statistics
 - Lying with Maps
@@ -30,9 +30,13 @@ Have a chapter idea? Look below on how to contribute.
 
 ## How to Contribute
 
-### Developers
+### Developers and Content Writers
 
 Create an issue and / or make a pull request. A GitHub account is required.
+
+##### Get Familiar with the Workflow
+
+See the **[Template Page](https://www.interactivelearner-gis.com/#/template)** for instructions.
 
 ##### Clone the Application
 
@@ -59,20 +63,15 @@ npm run build
 npm run deploy
 ```
 
-### Content Writers
-
-Create or edit Markdown files in the ```Content``` folder.
-
-See the **[Template Page](https://www.interactivelearner-gis.com/#/template)** for further instructions.
-
 ### Other Contributors 
 
-Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share.
+Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share. If you do not have a GitHub account, I can upload and credit you for any content you wish to contribute. 
 
 ## Technologies
 
 ### Basic
 - [GitHub Pages](https://pages.github.com/)
+- [Markdown](https://daringfireball.net/projects/markdown/)
 - [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
 - [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 
@@ -113,6 +112,8 @@ Released under the [GNU General Public License, version 3](https://opensource.or
 **[Health Authority Boundaries from BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/health-authority-boundaries)**
 
 **[2016 Census Wards Excel from Open Ottawa](https://open.ottawa.ca/documents/2016-census-ward-data-1/about)**
+
+**[State Population Totals for 2010-2019 from the United States Census Bureau]()**
 
 ## Icons
 

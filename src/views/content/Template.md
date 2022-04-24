@@ -1,10 +1,24 @@
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+# How to Contribute
 
+Contributing will require knowledge in [Markdown](https://daringfireball.net/projects/markdown/) and / or [JSX](https://reactjs.org/docs/introducing-jsx.html) as this is how Interactive Learner's content is built.
+
+**Markdown:**
+
+The [/content](https://github.com/InteractiveLearner/interactivelearner.github.io/tree/main/src/views/content) folder is where you will find each topic of Interactive Learner.
+
+Editing an existing topic is simply done by making changes to the markdown and submitting a pull request.
+
+Adding a new topic is a bit trickier. Each topic need's it's own file in the [Pages](https://github.com/InteractiveLearner/interactivelearner.github.io/tree/main/src/views/pages) folder. Each topic also needs to be routed in [App.jsx](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/App.jsx) and added as a card in [Home.jsx](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/views/pages/Home.jsx).
+
+**JSX:**
+
+All new React components used in a markdown file must be added to the overrides section of the [Content Builder](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/components/ContentBuilder.jsx) component.
+
+**Note:** All this information is also available in [plaintext](https://www.interactivelearner-gis.com/static/media/Template.39c2294bb6f605fe9646.md).
+
+*Thank you for supporting this project!*
+
+# Available Markdown and JSX:
 
 ## Horizontal Rules
 
@@ -13,6 +27,15 @@ ___
 ---
 
 ***
+
+## Headings
+
+# h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
 
 ## Emphasis
 
@@ -87,6 +110,8 @@ Interactive Learner &copy;
 <CardMedia url={https://en.wikipedia.org/wiki/Multivariate_map} height={600}>
 
 ## Code
+
+```sudo apt get```
 
 <SyntaxHighlighter language="plaintext">(num) => num + 1</SyntaxHighlighter>
 
