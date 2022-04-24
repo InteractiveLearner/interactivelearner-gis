@@ -57,7 +57,13 @@ npm run build
 npm run deploy
 ```
 
-### Geographers
+### Content Writers
+
+Create or edit Markdown files in the ```Content``` folder.
+
+See the **[Template Page](https://www.interactivelearner-gis.com/#/template)** for further instructions.
+
+### Other Contributors 
 
 Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share.
 
@@ -65,7 +71,8 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ### Basic
 - [GitHub Pages](https://pages.github.com/)
-- [Markdown for JSX (MDX)](https://mdxjs.com/)
+- [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 ### Web Design
 - [React](https://reactjs.org/)
 - [Material UI](https://mui.com/)

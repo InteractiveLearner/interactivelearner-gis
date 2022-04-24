@@ -28,11 +28,11 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
    - Longitude lines appear equally spaced and straight which become increasingly radiant
    - Latitude lines appear as equally spaced centric circles
 
-<Figure img={projection_surfaces.png} title={Cylinder, Cone, and Plane} credit={Credit: PennState licensed under CC BY-ND 2.0} url={https://creativecommons.org/licenses/by-nc-sa/4.0/} />
+<ContentFigure img={projection_surfaces.png} title={Cylinder, Cone, and Plane} credit={Credit: PennState licensed under CC BY-ND 2.0} url={https://creativecommons.org/licenses/by-nc-sa/4.0/} />
 
 <br>
 
-# Interaction
+# Projection Explorer
 
 Try out the projection explorer below now that you've learned about projection types and techniques.
 

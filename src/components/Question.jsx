@@ -107,15 +107,6 @@ export default class Questions extends React.Component {
         </div>
         <Card elevation={3} sx={theme.card}>
           <CardContent>
-            <Typography
-              variant="h4"
-              align="left"
-              color="#bc6c25"
-              style={{ paddingBottom: "16px" }}
-            >
-              {/* <SchoolIcon style={{ minWidth: "20px" }} fontSize={"medium"} />  */}
-              Test Your Knowledge
-            </Typography>
             {this.props.questions.map((card, index) => (
               <div key={index}>
                 <Typography

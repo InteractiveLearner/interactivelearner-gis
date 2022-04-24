@@ -6,7 +6,7 @@ As we've seen with projections, mapping isn't a perfect depiction of reality. Wh
 
 The level of detail on a map is determined by the scale size. In **small-scale** maps, a lot of ground is covered in a large geographic area and at a low level of detail whereas **large-scale** maps cover small geographic areas with a high level of detail. In the figure below, the small-scale map of Victoria depicts the entire region, neighborhoods, and major road networks. In contrast, the large-scale map of Victoria depicts the downtown core, street names, more labels and outline of buildings.
 
-<Figure img={scale.png} title={Small Scale versus Large Scale Victoria, BC} />
+<ContentFigure img={scale.png} title={Small Scale versus Large Scale Victoria, BC} />
 
 <br>
 
