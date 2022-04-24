@@ -16,7 +16,7 @@ import Question from "../../components/Question.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/VisualEncoding.md";
+import md from "../content/MapTypes.md";
 
 let theme = createTheme({
   header: {
@@ -27,38 +27,26 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const encodingQuestions = [
+const typesQuestions = [
   {
     question:
-      "When you hovered over a hospital, was the location information represented as an address or latitude, longitude coordinate? ",
-    answer: "Address",
+      "Based on the chorochromatic map, how many health authorities are there in British Columbia?",
+    answer: "5",
   },
   {
-    question:
-      "When you hovered over a ward, was the size represented as a length, area, or volume? ",
-    answer: "Area",
-  },
-  {
-    question:
-      "When you hovered over a highway, was the size represented as a length, area, or volume? ",
-    answer: "Length",
-  },
-  {
-    question: "The Hospitals dataset possesses which mark and channels?",
-    answer: "Point, Position, Color, and Shape",
-  },
-  {
-    question: "The Wards dataset possesses which mark and channels?",
-    answer: "Area,",
-  },
-  {
-    question: "The Roads dataset possesses which mark and channels?",
-    answer: "Line,",
+    question: "Which channel is the chorochromatic map using?",
+    answer: "Identity - Color Hue",
   },
   {
     question:
-      "Though a hospital could change in shape an infinite number of times, how many shape styles did you count in the Visually Encoded Map? ",
-    answer: "4 (on desktop browsers)",
+      "What is the meaning of the darkest colour in the choropleth map scale?",
+    answer:
+      "The darkest colour represents the highest population density in Ottawa",
+  },
+  {
+    question:
+      "At the Country level, how many people does a dot represent in the dot density map?",
+    answer: "1 dot = 17,500 people",
   },
 ];
 
@@ -108,7 +96,7 @@ const authors = [
   },
 ];
 
-export default function Visual() {
+export default function MapTypes() {
   return (
     <MainLayout>
       <Title crumbs={"Visual Encoding"} />
@@ -123,7 +111,7 @@ export default function Visual() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={encodingQuestions} />
+          <Question questions={typesQuestions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

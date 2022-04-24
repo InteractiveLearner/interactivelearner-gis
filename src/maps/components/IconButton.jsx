@@ -2,10 +2,10 @@ import React from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
 
-import pin from "../assets/icons/pin.png";
-import icon from "../assets/icons/icon.png";
-import pie from "../assets/icons/pie.png";
-import hospital from "../assets/icons/hospital.png";
+import pin from "../../assets/icons/pin.png";
+import icon from "../../assets/icons/icon.png";
+import pie from "../../assets/icons/pie.png";
+import hospital from "../../assets/icons/hospital.png";
 
 let options = [pin, icon, pie, hospital];
 

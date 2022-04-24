@@ -16,7 +16,7 @@ import * as features from "../data/Wards.json";
 import * as hospitals from "../data/Hospitals.json";
 import * as roads from "../data/Highways.json";
 
-import IconButton from "./IconButton.jsx";
+import IconButton from "./components/IconButton.jsx";
 
 import pin from "../assets/icons/pin.png";
 

@@ -9,7 +9,7 @@ import {
   ScaleControl,
 } from "react-leaflet";
 
-import ScaleButton from "./ScaleButton.jsx";
+import ScaleButton from "./components/ScaleButton.jsx";
 
 export default class Map extends React.Component {
   render() {

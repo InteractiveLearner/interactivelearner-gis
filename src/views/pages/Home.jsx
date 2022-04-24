@@ -19,10 +19,6 @@ import {
 
 import MainLayout from "../layouts/MainLayout";
 
-import img from "../../assets/images/construction.png";
-import vizvars from "../../assets/images/vizvars.png";
-import projection from "../../assets/images/projection.png";
-
 let theme = createTheme({
   header: {
     color: "#606c38",
@@ -33,47 +29,66 @@ theme = responsiveFontSizes(theme);
 
 const cards = [
   {
-    title: "Projections and Scale",
+    title: "Projections",
     description:
-      "Discover map scales and the projections that convert curved 3D surfaces to flat 2D surfaces. ",
+      "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
-    img: projection,
+    img: require("../../assets/images/projection.png"),
     disabled: false,
   },
   {
-    title: "Visual Encoding and Types of Maps",
+    title: "Scale",
     description:
-      "Learn how visual marks and channels allow geographers to produce thematic maps.",
+      "Explore how map scale can be used to hide and show details on a map.",
+
+    url: "/scale",
+    img: require("../../assets/images/construction.png"),
+    disabled: false,
+  },
+  {
+    title: "Visual Encoding",
+    description:
+      "Learn about the main building blocks of visual encoding.",
+
     url: "/visual",
-    img: vizvars,
+    img: require("../../assets/images/vizvars.png"),
+    disabled: false,
+  },
+  {
+    title: "Types of Maps",
+    description:
+      "Find out how visual encoding allows geographers to produce thematic maps.",
+
+    url: "/thematic",
+    img: require("../../assets/images/construction.png"),
     disabled: false,
   },
   {
     title: "Classification Schemes",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: img,
+    img: require("../../assets/images/construction.png"),
     disabled: true,
   },
   {
     title: "Spatial Autocorrelation Statistics",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: img,
+    img: require("../../assets/images/construction.png"),
     disabled: true,
   },
   {
     title: "Lying with Maps",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: img,
+    img: require("../../assets/images/construction.png"),
     disabled: true,
   },
   {
     title: "Resources",
     description: "GIS resources recommended by the developer(s) of the site.",
     url: "/resources",
-    img: img,
+    img: require("../../assets/images/construction.png"),
     disabled: true,
   },
 ];
@@ -134,7 +149,7 @@ export default function Home() {
               border: 1,
             }}
           >
-            {[0, 1, 2, 3, 4, 5].map((value) => {
+            {[0, 1, 2, 3, 4, 5, 6, 7].map((value) => {
               const labelId = `checkbox-list-secondary-label-${value}`;
 
               return (
@@ -164,6 +179,7 @@ export default function Home() {
                       "&:hover": {
                         opacity: "0.8",
                       },
+                      padding: 0,
                     }}
                   >
                     <ListItemAvatar>
@@ -174,7 +190,7 @@ export default function Home() {
                       />
                     </ListItemAvatar>
                     <ListItemText
-                      style={{ padding: "25px" }}
+                      style={{ padding: "0px 0px 0px 25px" }}
                       id={labelId}
                       primary={cards[value].title}
                       secondary={

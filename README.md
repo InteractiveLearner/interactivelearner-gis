@@ -14,8 +14,10 @@ Your one-stop shop for all things GIS! Easily learn about GIS in an interactive 
 
 Have a chapter idea? Look below on how to contribute. 
 
-- [Projections and Scale](https://www.interactivelearner-gis.com/#/projections)
-- [Visual Encoding and Types of Maps](https://www.interactivelearner-gis.com/#/visual)
+- Projections
+- Scale
+- Visual Encoding
+- Types of Maps
 - Classification Schemes
 - Spatial Autocorrelation Statistics
 - Lying with Maps
@@ -57,7 +59,13 @@ npm run build
 npm run deploy
 ```
 
-### Geographers
+### Content Writers
+
+Create or edit Markdown files in the ```Content``` folder.
+
+See the **[Template Page](https://www.interactivelearner-gis.com/#/template)** for further instructions.
+
+### Other Contributors 
 
 Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share.
 
@@ -65,6 +73,9 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ### Basic
 - [GitHub Pages](https://pages.github.com/)
+- [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+
 ### Web Design
 - [React](https://reactjs.org/)
 - [Material UI](https://mui.com/)
