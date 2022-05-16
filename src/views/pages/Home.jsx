@@ -33,7 +33,7 @@ const cards = [
     description:
       "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
-    img: require("../../assets/images/projection.png"),
+    img: require("../../assets/homepage/projection.png"),
     disabled: false,
   },
   {
@@ -42,7 +42,7 @@ const cards = [
       "Explore how map scale can be used to hide and show details on a map.",
 
     url: "/scale",
-    img: require("../../assets/images/construction.png"),
+    img: require("../../assets/homepage/scale.png"),
     disabled: false,
   },
   {
@@ -51,7 +51,7 @@ const cards = [
       "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
-    img: require("../../assets/images/vizvars.png"),
+    img: require("../../assets/homepage/visualencoding.png"),
     disabled: false,
   },
   {
@@ -60,35 +60,35 @@ const cards = [
       "Find out how visual encoding allows geographers to produce thematic maps.",
 
     url: "/thematic",
-    img: require("../../assets/images/construction.png"),
+    img: require("../../assets/homepage/typesofmaps.png"),
     disabled: false,
   },
   {
     title: "Classification Schemes",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: require("../../assets/images/construction.png"),
+    img: require("../../assets/homepage/construction.png"),
     disabled: true,
   },
   {
     title: "Spatial Autocorrelation Statistics",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: require("../../assets/images/construction.png"),
+    img: require("../../assets/homepage/construction.png"),
     disabled: true,
   },
   {
     title: "Lying with Maps",
     description: "Under ongoing development. Come back another time.",
     url: "/",
-    img: require("../../assets/images/construction.png"),
+    img: require("../../assets/homepage/construction.png"),
     disabled: true,
   },
   {
     title: "Resources",
     description: "GIS resources recommended by the developer(s) of the site.",
     url: "/resources",
-    img: require("../../assets/images/construction.png"),
+    img: require("../../assets/homepage/construction.png"),
     disabled: true,
   },
 ];

@@ -47,14 +47,14 @@ const encodingQuestions = [
     question: "The Hospitals dataset possesses which mark and channels?",
     answer: "Point, Position, Color, and Shape",
   },
-  {
-    question: "The Wards dataset possesses which mark and channels?",
-    answer: "Area,",
-  },
-  {
-    question: "The Roads dataset possesses which mark and channels?",
-    answer: "Line,",
-  },
+  // {
+  //   question: "The Wards dataset possesses which mark and channels?",
+  //   answer: "Area,",
+  // },
+  // {
+  //   question: "The Roads dataset possesses which mark and channels?",
+  //   answer: "Line,",
+  // },
   {
     question:
       "Though a hospital could change in shape an infinite number of times, how many shape styles did you count in the Visually Encoded Map? ",
@@ -82,22 +82,7 @@ const sources = [
     title: "Visual Variables",
     author: "infovis-wiki",
     url: "https://infovis-wiki.net/wiki/Visual_Variables",
-  },
-  {
-    title: "Thematic Map",
-    author: "Statistics Canada",
-    url: "https://www150.statcan.gc.ca/n1/pub/92-195-x/2011001/other-autre/theme/def-eng.htm#archived",
-  },
-  {
-    title: "Map",
-    author: "วราภรณ์ มูลวงศ์",
-    url: "https://sites.google.com/site/boardinclassrom/map/chorochromatic-map",
-  },
-  {
-    title: "Dot Distribution vs Graduated Symbols vs Proportional Symbol Maps",
-    author: "GISGeography",
-    url: "https://gisgeography.com/dot-distribution-graduated-symbols-proportional-symbol-maps/#:~:text=While%20proportional%20symbol%20maps%20scale,population%20into%204%20separate%20classes.",
-  },
+  }
 ];
 
 const authors = [
