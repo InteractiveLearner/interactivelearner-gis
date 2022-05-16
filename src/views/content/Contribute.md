@@ -142,19 +142,19 @@ def main():
 
 Figure with no title and no credit
 
-<ContentFigure img={projection.png} />
+<ContentFigure img={construction.png} />
 
 <br>
 
 Figure with title and no credit
 
-<ContentFigure img={projection.png} title={Projection} />
+<ContentFigure img={construction.png} title={Under Construction} />
 
 <br>
 
 Figure with title and credit
 
-<ContentFigure img={projection.png} title={Projection} credit={Credit: Omar Kawach} url={https://duckduckgo.com/}/>
+<ContentFigure img={construction.png} title={Under Construction} credit={Credit: Omar Kawach} url={https://duckduckgo.com/}/>
 
 ## TODO
   - Solve error with components in syntax highlighter
