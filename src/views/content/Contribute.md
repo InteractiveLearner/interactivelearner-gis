@@ -1,4 +1,4 @@
-# How to Contribute
+# Background
 
 Contributing will require knowledge in [Markdown](https://daringfireball.net/projects/markdown/) and / or [JSX](https://reactjs.org/docs/introducing-jsx.html) as this is how Interactive Learner's content is built.
 
@@ -14,11 +14,13 @@ Adding a new topic is a bit trickier. Each topic need's it's own file in the [Pa
 
 All new React components used in a markdown file must be added to the overrides section of the [Content Builder](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/components/ContentBuilder.jsx) component.
 
-**Note:** All this information is also available in [plaintext](https://www.interactivelearner-gis.com/static/media/Template.39c2294bb6f605fe9646.md).
+**Note:** All this information is available in [plaintext](https://raw.githubusercontent.com/InteractiveLearner/interactivelearner.github.io/main/src/views/content/Template.md) so that you may copy and paste snippets into markdown files.
+
+More details are available on [the site's GitHub repository](https://github.com/InteractiveLearner/interactivelearner.github.io).
 
 *Thank you for supporting this project!*
 
-# Available Markdown and JSX:
+# Available Markdown and JSX for You:
 
 ## Horizontal Rules
 
@@ -46,6 +48,10 @@ __This is bold text__
 *This is italic text*
 
 _This is italic text_
+
+***This is italic and bold text***
+
+___This is italic and bold text___
 
 ~~Strikethrough~~
 
@@ -76,6 +82,12 @@ Start numbering with offset:
 57. foo
 1. bar
 
+Todo list
+
+[x] Wake up <br />
+[ ] Eat peanut butter <br />
+[ ] Sleep
+
 ## Math
 
 This text is &le; than this text.
@@ -99,7 +111,13 @@ Interactive Learner &copy;
 
 ## Links
 
-[link text](https://duckduckgo.com/)
+[link](https://duckduckgo.com/)
+
+*[link](https://duckduckgo.com/)*
+
+**[link](https://duckduckgo.com/)**
+
+***[link](https://duckduckgo.com/)***
 
 ## Maps
 
@@ -115,53 +133,26 @@ Interactive Learner &copy;
 
 <SyntaxHighlighter language="plaintext">(num) => num + 1</SyntaxHighlighter>
 
-<SyntaxHighlighter language="javascript">
-function createStyleObject(classNames, style) {
-  return classNames.reduce((styleObject, className) => {
-    return {...styleObject, ...style[className]};
-  }, {});
-}
-
-function createClassNameString(classNames) {
-  return classNames.join(' ');
-}
-
-// this comment is here to demonstrate an extremely long line length, well beyond what you should probably allow in your own code, though sometimes you'll be highlighting code you can't refactor, which is unfortunate but should be handled gracefully
-
-function createChildren(style, useInlineStyles) {
-  let childrenCount = 0;
-  return children => {
-    childrenCount += 1;
-    return children.map((child, i) => createElement({
-      node: child,
-      style,
-      useInlineStyles,
-      key:"code-segment-${childrenCount}-${i}"
-    }));
-  }
-}
-
-function createElement({ node, style, useInlineStyles, key }) {
-  const { properties, type, tagName, value } = node;
-  if (type === "text") {
-    return value;
-  } else if (tagName) {
-    const TagName = tagName;
-    const childrenCreator = createChildren(style, useInlineStyles);
-    const props = (
-      useInlineStyles
-      ? { style: createStyleObject(properties.className, style) }
-      : { className: createClassNameString(properties.className) }
-    );
-    const children = childrenCreator(node.children);
-    return <TagName key={key} {...props}>{children}</TagName>;
-  }
-}
+<SyntaxHighlighter language="python">
+def main():
+    print("Hello World!")
 </SyntaxHighlighter>
 
-## Images and Figures
+## Figures
 
-![Projection](projection.png)
+Figure with no title and no credit
+
+<ContentFigure img={projection.png} />
+
+<br>
+
+Figure with title and no credit
+
+<ContentFigure img={projection.png} title={Projection} />
+
+<br>
+
+Figure with title and credit
 
 <ContentFigure img={projection.png} title={Projection} credit={Credit: Omar Kawach} url={https://duckduckgo.com/}/>
 

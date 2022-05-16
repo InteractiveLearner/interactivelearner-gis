@@ -30,7 +30,23 @@ export default function Footer() {
           color="text.secondary"
           component="p"
         >
-          Contribute on{" "}
+          Learn how to {" "}
+          <a
+            style={{ color: "inherit" }}
+            href="https://www.interactivelearner-gis.com/#/contribute"
+            target="_blank"
+            rel="noreferrer"
+          >
+            contribute
+          </a>
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="text.secondary"
+          component="p"
+        >
+          Source code available on{" "}
           <a
             style={{ color: "inherit" }}
             href="https://github.com/InteractiveLearner/interactivelearner.github.io"

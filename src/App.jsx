@@ -7,7 +7,7 @@ import Projections from "./views/pages/Projections.jsx";
 import Scale from "./views/pages/Scale.jsx";
 import VisualEncoding from "./views/pages/Visual.jsx";
 import MapTypes from "./views/pages/MapTypes.jsx";
-import TemplatePage from "./views/pages/TemplatePage.jsx";
+import Contribute from "./views/pages/Contribute.jsx";
 import NotFound from "./views/pages/NotFound.jsx";
 
 import ScrollToTop from "./utils/ScrollToTop.jsx";
@@ -23,7 +23,7 @@ export default function App() {
         <Route exact path="/scale" element={<Scale />} />
         <Route exact path="/visual" element={<VisualEncoding />} />
         <Route exact path="/thematic" element={<MapTypes />} />
-        <Route exact path="/template" element={<TemplatePage />} />
+        <Route exact path="/contribute" element={<Contribute />} />
       </Routes>
     </Router>
   );

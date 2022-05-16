@@ -10,9 +10,12 @@ Your one-stop shop for all things GIS! Easily learn about GIS in an interactive 
 
 **[Link](https://www.interactivelearner-gis.com/ )**
 
-## Content Plan (Ongoing)
+## Motivation
+Mapmakers use maps as a form of graphical communication. Map readers (such as yourself) vary in levels of map literacy. To bridge the gap between mapmakers and map readers, the site aims to promote map literacy and critical thinking by concentrating on improving map reader spatial inquiry competencies in an interactive / storytelling self-paced GIS learning environment. The site is meant to be open source and act as a knowledge base that contributors can build upon. 
 
-Have a chapter idea? Look below on how to contribute. 
+## Curriculum (ongoing)
+
+Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner.github.io#how-to-contribute). 
 
 - [Projections](https://www.interactivelearner-gis.com/#/projections)
 - [Scale](https://www.interactivelearner-gis.com/#/scale)
@@ -36,7 +39,7 @@ Create an issue and / or make a pull request. A GitHub account is required.
 
 ##### Get Familiar with the Workflow
 
-See the **[Template Page](https://www.interactivelearner-gis.com/#/template)** for instructions.
+See the **[Contribute Page](https://www.interactivelearner-gis.com/#/contribute)** for instructions.
 
 ##### Clone the Application
 
@@ -72,14 +75,14 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 ### Basic
 - [GitHub Pages](https://pages.github.com/)
 - [Markdown](https://daringfireball.net/projects/markdown/)
-- [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
-- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 
 ### Web Design
 - [React](https://reactjs.org/)
 - [Material UI](https://mui.com/)
 - [React Router](https://reactrouter.com/)
 - [NodeJS](https://nodejs.org/en/)
+- [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 
 ### Geospatial
 - [GeoPandas](https://geopandas.org/en/stable/)

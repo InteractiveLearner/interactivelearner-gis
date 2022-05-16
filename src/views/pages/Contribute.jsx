@@ -16,7 +16,7 @@ import Question from "../../components/Question.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/Template.md";
+import md from "../content/Contribute.md";
 
 let theme = createTheme({
   header: {
@@ -58,11 +58,11 @@ const authors = [
 export default function Resources() {
   return (
     <MainLayout>
-      <Title crumbs={"Template Page"} />
+      <Title crumbs={"Contribute"} />
       <ThemeProvider theme={theme}>
         <Container maxWidth="md" style={{ padding: "20px 0px 0px 0px" }}>
           <Typography gutterBottom variant="h3" sx={theme.header}>
-            Title
+            How to Contribute
           </Typography>
           <ContentBuilder Content={md} />
           <Typography gutterBottom variant="h3" sx={theme.header}>
