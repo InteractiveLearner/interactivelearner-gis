@@ -14,7 +14,7 @@ import {
   ListItemText,
   ListItemAvatar,
   ListItemButton,
-  Checkbox,
+  // Checkbox,
 } from "@mui/material";
 
 import MainLayout from "../layouts/MainLayout";
@@ -47,8 +47,7 @@ const cards = [
   },
   {
     title: "Visual Encoding",
-    description:
-      "Learn about the main building blocks of visual encoding.",
+    description: "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
     img: require("../../assets/homepage/visualencoding.png"),
@@ -94,20 +93,21 @@ const cards = [
 ];
 
 export default function Home() {
-  const [checked, setChecked] = React.useState([-1]);
+  /* Disable checkboxes for now. Awaiting progress report functionality. */
+  // const [checked, setChecked] = React.useState([-1]);
 
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+  // const handleToggle = (value) => () => {
+  //   const currentIndex = checked.indexOf(value);
+  //   const newChecked = [...checked];
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+  //   if (currentIndex === -1) {
+  //     newChecked.push(value);
+  //   } else {
+  //     newChecked.splice(currentIndex, 1);
+  //   }
 
-    setChecked(newChecked);
-  };
+  //   setChecked(newChecked);
+  // };
 
   return (
     <MainLayout>
@@ -130,7 +130,7 @@ export default function Home() {
             >
               View any of the topics below to learn about GIS!{" "}
               <b>Disclaimer:</b> The entire site is under ongoing development.
-              However, feedback is still welcome.
+              Feedback is welcome.
             </Typography>
           </Container>
         </div>
@@ -149,32 +149,32 @@ export default function Home() {
               border: 1,
             }}
           >
-            {[0, 1, 2, 3, 4, 5, 6, 7].map((value) => {
-              const labelId = `checkbox-list-secondary-label-${value}`;
+            {cards.map((card, index) => {
+              const labelId = `checkbox-list-secondary-label-${index}`;
 
               return (
                 <ListItem
-                  key={value}
-                  secondaryAction={
-                    <Checkbox
-                      edge="end"
-                      style={{ color: "#283618" }}
-                      onChange={handleToggle(value)}
-                      checked={checked.indexOf(value) !== -1}
-                      inputProps={{ "aria-labelledby": labelId }}
-                      disabled={cards[value].disabled}
-                    />
-                  }
+                  key={index}
+                  // secondaryAction={
+                  //   <Checkbox
+                  //     edge="end"
+                  //     style={{ color: "#283618" }}
+                  //     onChange={handleToggle(index)}
+                  //     checked={checked.indexOf(index) !== -1}
+                  //     inputProps={{ "aria-labelledby": labelId }}
+                  //     disabled={card.disabled}
+                  //   />
+                  // }
                   disablePadding
                   sx={{
                     borderBottom: 1,
                   }}
                 >
                   <ListItemButton
-                    to={cards[value].url}
+                    to={card.url}
                     component={Link}
                     variant="contained"
-                    disabled={cards[value].disabled}
+                    disabled={card.disabled}
                     sx={{
                       "&:hover": {
                         opacity: "0.8",
@@ -185,14 +185,14 @@ export default function Home() {
                     <ListItemAvatar>
                       <CardMedia
                         style={{ padding: "56.25%", width: "100px" }} // 16:9 aspect ratio
-                        image={cards[value].img}
-                        title={cards[value].title + "image"}
+                        image={card.img}
+                        title={card.title + "image"}
                       />
                     </ListItemAvatar>
                     <ListItemText
                       style={{ padding: "0px 0px 0px 25px" }}
                       id={labelId}
-                      primary={cards[value].title}
+                      primary={card.title}
                       secondary={
                         <React.Fragment>
                           <Typography
@@ -201,7 +201,7 @@ export default function Home() {
                             variant="body2"
                             color="text.primary"
                           ></Typography>
-                          {cards[value].description}
+                          {card.description}
                         </React.Fragment>
                       }
                     />

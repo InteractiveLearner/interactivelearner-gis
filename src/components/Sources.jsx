@@ -1,3 +1,6 @@
+/**
+ * The Sources.jsx is for referencing material used for a chapter.
+ */
 import React from "react";
 
 import {

@@ -1,3 +1,7 @@
+/**
+ * EmptyMap.jsx is meant as a template so you can build
+ * your own React Leaflet map into the site
+ */
 import React from "react";
 import {
   MapContainer,

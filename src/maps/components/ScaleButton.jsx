@@ -1,3 +1,6 @@
+/**
+ * ScaleButton.jsx for changing zoom levels on a map
+ */
 import React from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";

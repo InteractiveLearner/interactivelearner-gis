@@ -1,3 +1,9 @@
+/**
+ * Question.jsx is meant to test user knowledge. Eventually, the
+ * goal is to have a more complex quiz system to gauge learning. 
+ * Some examples I like are https://github.com/flynnstone9/Quizlet
+ * and https://github.com/sridharbandi/react-quiz which use JSON files.
+ */
 import React from "react";
 
 import {

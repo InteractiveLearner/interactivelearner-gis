@@ -1,3 +1,4 @@
+/* Authors.jsx is used for displaying a card for each author */
 import React from "react";
 
 import {

@@ -27,7 +27,7 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const typesQuestions = [
+const questions = [
   {
     question:
       "Based on the chorochromatic map, how many health authorities are there in British Columbia?",
@@ -105,13 +105,12 @@ export default function MapTypes() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-
           <ContentBuilder Content={md} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={typesQuestions} />
+          <Question questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

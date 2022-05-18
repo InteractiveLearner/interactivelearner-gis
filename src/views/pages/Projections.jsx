@@ -27,7 +27,7 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const projectionQuestions = [
+const questions = [
   {
     question: "The Albers projection uses which technique and type?",
     answer: "Conical and Equal Area",
@@ -97,14 +97,12 @@ export default function Projections() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-
           <ContentBuilder Content={md} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-
-          <Question questions={projectionQuestions} />
+          <Question questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

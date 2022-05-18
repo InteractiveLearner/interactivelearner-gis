@@ -1,3 +1,7 @@
+/**
+ * Pagination.jsx is not ready yet but the plan is to use it
+ * for navigating between chapters. 
+ */
 import React from "react";
 
 import { Link } from "react-router-dom";

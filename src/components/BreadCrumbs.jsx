@@ -1,3 +1,7 @@
+/**
+ * BreadCrumbs.jsx tells users the page's location 
+ * in terms of the website hierarchy
+ */ 
 import React from "react";
 
 import { Link } from "react-router-dom";

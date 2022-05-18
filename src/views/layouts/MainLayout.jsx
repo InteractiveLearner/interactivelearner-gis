@@ -1,3 +1,8 @@
+/**
+ * The layout for every page. There should be a header,
+ * components (children), transition (grow) of components 
+ * and footer.
+ */
 import React from "react";
 
 import { CssBaseline, Grow } from "@mui/material";

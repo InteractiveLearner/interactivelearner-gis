@@ -1,3 +1,7 @@
+/**
+ * 404 Page when users navigate to a page that
+ * does not exist
+ */
 import React from "react";
 
 import { Link } from "react-router-dom";

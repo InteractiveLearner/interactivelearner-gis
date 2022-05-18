@@ -1,3 +1,8 @@
+/**
+ * Header.jsx displays information at the top of the page. 
+ * Right now only the site name is there, but eventually the
+ * plan is to access grades and progress reports from the <AppBar>
+ */
 import React from "react";
 
 import { Public } from "@mui/icons-material";

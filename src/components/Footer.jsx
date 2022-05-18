@@ -1,3 +1,7 @@
+/**
+ * Footer.jsx replaces the HTML <footer> tag for one
+ * built using Material UI.
+ */
 import React from "react";
 
 import {

@@ -1,3 +1,6 @@
+/**
+ * Scroll to the top of a page once routed
+ */
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 

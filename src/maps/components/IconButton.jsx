@@ -1,3 +1,6 @@
+/**
+ * IconButton.jsx to add a button to the map that changes icons
+ */
 import React from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";

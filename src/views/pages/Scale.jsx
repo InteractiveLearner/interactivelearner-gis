@@ -27,7 +27,7 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const scaleQuestions = [
+const questions = [
   {
     question:
       "When you select the small-scale button, what is the graphic scale's length (or map distance) and ground distance?",
@@ -114,14 +114,12 @@ export default function Scale() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-
           <ContentBuilder Content={md} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-
-          <Question questions={scaleQuestions} />
+          <Question questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

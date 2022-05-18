@@ -1,3 +1,9 @@
+/**
+ * ContentBuilder.jsx is used for the "Learn and Interact"
+ * section of each chapter. This component reads and formats markdown files 
+ * that may also possess JSX and any additional overrides.
+ */
+
 import React from "react";
 
 import {
@@ -78,6 +84,8 @@ export default function ContentBuilder(props) {
                 component: VisualVariables,
               },
               ContentFigure: (props) => {
+                // All images used must be saved locally. 
+                // See the contribution page on the site.
                 return (
                   <ContentFigure
                     img={require("../assets/images/" + props.img)}
@@ -102,7 +110,8 @@ export default function ContentBuilder(props) {
                 );
               },
               img: (props) => {
-                // All images used must be saved locally
+                // All images used must be saved locally. 
+                // See the contribution page on the site.
                 return (
                   <img
                     src={require("../assets/images/" + props.src)}
@@ -133,6 +142,7 @@ export default function ContentBuilder(props) {
               },
             },
             namedCodesToUnicode: {
+              // Add more unicode here
               le: "\u2264",
               ge: "\u2265",
               copy: "\u00A9",

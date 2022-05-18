@@ -1,3 +1,10 @@
+# Pages
+
+## Basic Template
+
+Anytime you want to add a new page, it should follow this format. 
+
+```
 import React from "react";
 
 import {
@@ -16,7 +23,7 @@ import Question from "../../components/Question.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/Contribute.md";
+import md from "../content/NameOfFile.md";
 
 let theme = createTheme({
   header: {
@@ -27,23 +34,18 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const questions = [
+const questions = [ 
   {
-    question: "Question",
-    answer: "Answer",
+    question: "Q",
+    answer: "A",
   },
 ];
 
 const sources = [
   {
-    title: "markdown-it demo",
-    author: "markdown-it",
-    url: "https://markdown-it.github.io/",
-  },
-  {
-    title: "React Syntax Highlighter Demo",
-    author: "React Syntax Highlighter",
-    url: "https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/",
+    title: "",
+    author: "",
+    url: "link here",
   },
 ];
 
@@ -55,21 +57,21 @@ const authors = [
   },
 ];
 
-export default function Resources() {
+export default function ComponentName() {
   return (
     <MainLayout>
-      <Title crumbs={"Contribute"} />
+      <Title crumbs={"ComponentName"} />
       <ThemeProvider theme={theme}>
-        <Container maxWidth="md" style={{ padding: "20px 0px 0px 0px" }}>
+        <Container maxWidth="md" style={{ padding: "20px 0 0" }}>
           <Typography gutterBottom variant="h3" sx={theme.header}>
-            How to Contribute
+            Learn and Interact
           </Typography>
           <ContentBuilder Content={md} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={questions} />
+          <Question questions={projectionQuestions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />
@@ -77,3 +79,4 @@ export default function Resources() {
     </MainLayout>
   );
 }
+```

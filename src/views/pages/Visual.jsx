@@ -27,7 +27,7 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const encodingQuestions = [
+const questions = [
   {
     question:
       "When you hovered over a hospital, was the location information represented as an address or latitude, longitude coordinate? ",
@@ -102,13 +102,12 @@ export default function Visual() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-
           <ContentBuilder Content={md} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={encodingQuestions} />
+          <Question questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

@@ -140,6 +140,8 @@ def main():
 
 ## Figures
 
+Images must be saved to the [```/images```](https://github.com/InteractiveLearner/interactivelearner.github.io/tree/main/src/assets/images) folder.
+
 Figure with no title and no credit
 
 <ContentFigure img={construction.png} />

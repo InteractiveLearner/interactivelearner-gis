@@ -8,28 +8,46 @@ Your one-stop shop for all things GIS! Easily learn about GIS in an interactive 
 
 ## Demo
 
-**[Link](https://www.interactivelearner-gis.com/ )**
+**[Live Link](https://www.interactivelearner-gis.com/ )**
 
 ## Motivation
 Mapmakers use maps as a form of graphical communication. Map readers (such as yourself) vary in levels of map literacy. To bridge the gap between mapmakers and map readers, the site aims to promote map literacy and critical thinking by concentrating on improving map reader spatial inquiry competencies in an interactive / storytelling self-paced GIS learning environment. The site is meant to be open source and act as a knowledge base that contributors can build upon. 
+
+## Join the Community
+
+**[Discord Invite](https://discord.gg/vvJdQTVXRk)**
 
 ## Curriculum (ongoing)
 
 Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner.github.io#how-to-contribute). 
 
-- [Projections](https://www.interactivelearner-gis.com/#/projections)
-- [Scale](https://www.interactivelearner-gis.com/#/scale)
-- [Visual Encoding](https://www.interactivelearner-gis.com/#/visual)
-- [Types of Maps](https://www.interactivelearner-gis.com/#/thematic)
-- Classification Schemes
-- Spatial Autocorrelation Statistics
-- Lying with Maps
-- GIS Data Types
-- Spatial Analysis
-- Web GIS
-- Geometric Primitives
-- Geodatabases
-- Resources
+The incomplete chapters are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) tab under the *Content* label. 
+
+- [x] [Projections](https://www.interactivelearner-gis.com/#/projections)
+- [x] [Scale](https://www.interactivelearner-gis.com/#/scale)
+- [x] [Visual Encoding](https://www.interactivelearner-gis.com/#/visual)
+- [x] [Types of Maps](https://www.interactivelearner-gis.com/#/thematic)
+- [ ] Classification Schemes
+- [ ] Spatial Autocorrelation Statistics
+- [ ] Lying with Maps
+- [ ] GIS Data Types
+- [ ] Spatial Analysis
+- [ ] Web GIS
+- [ ] Geometric Primitives
+- [ ] Geodatabases
+- [ ] Resources
+
+## Planned Features for a Better Learning Experience
+
+The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) tab under the *Enhancement* label. 
+
+- [ ] Implement report system using local storage to track user progress
+- [ ] Grade tracking system to assess learning (also local storage)
+- [ ] Support multiple languages
+- [ ] Pagination
+- [ ] Table of contents
+- [ ] Confetti after quiz completion
+- [ ] Consistent styling between desktop and mobile
 
 ## How to Contribute
 
@@ -93,6 +111,10 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 ## Author
 
 [Omar Kawach](https://github.com/omarkawach)
+
+## Contributors
+
+Your name here!
   
 ## Credits and Acknowledgements
 

@@ -1,3 +1,4 @@
+/* Title.jsx is a basic title with some theming */
 import React from "react";
 
 import BreadCrumbs from "../components/BreadCrumbs.jsx";
