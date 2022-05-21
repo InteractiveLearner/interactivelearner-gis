@@ -159,6 +159,7 @@ export default function Quiz(props) {
                   setCurrentQuestion(0);
                   setScore(0);
                   setActiveStep(0);
+                  setAnswersSelected(new Array(numQuestions).fill(0));
                 }}
                 variant="contained"
               >
