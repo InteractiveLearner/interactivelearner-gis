@@ -12,11 +12,12 @@ import MainLayout from "../layouts/MainLayout";
 
 import Title from "../../components/Title.jsx";
 import ContentBuilder from "../../components/ContentBuilder.jsx";
-import Question from "../../components/Question.jsx";
+import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/MapTypes.md";
+import content from "../content/MapTypes.md";
+import questions from "../questions/MapTypes.json";
 
 let theme = createTheme({
   header: {
@@ -26,29 +27,6 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
-
-const questions = [
-  {
-    question:
-      "Based on the chorochromatic map, how many health authorities are there in British Columbia?",
-    answer: "5",
-  },
-  {
-    question: "Which channel is the chorochromatic map using?",
-    answer: "Identity - Color Hue",
-  },
-  {
-    question:
-      "What is the meaning of the darkest colour in the choropleth map scale?",
-    answer:
-      "The darkest colour represents the highest population density in Ottawa",
-  },
-  {
-    question:
-      "At the Country level, how many people does a dot represent in the dot density map?",
-    answer: "1 dot = 17,500 people",
-  },
-];
 
 const sources = [
   {
@@ -105,12 +83,12 @@ export default function MapTypes() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-          <ContentBuilder Content={md} />
+          <ContentBuilder Content={content} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={questions} />
+          <Quiz questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

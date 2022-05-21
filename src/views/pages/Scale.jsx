@@ -12,11 +12,12 @@ import MainLayout from "../layouts/MainLayout";
 
 import Title from "../../components/Title.jsx";
 import ContentBuilder from "../../components/ContentBuilder.jsx";
-import Question from "../../components/Question.jsx";
+import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/Scale.md";
+import content from "../content/Scale.md";
+import questions from "../questions/Scale.json";
 
 let theme = createTheme({
   header: {
@@ -26,48 +27,6 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
-
-const questions = [
-  {
-    question:
-      "When you select the small-scale button, what is the graphic scale's length (or map distance) and ground distance?",
-    answer:
-      "The map distance is approximately 1 centimeter and the ground distance is 2 kilometers",
-  },
-  {
-    question:
-      "When you select the small-scale button, what is the verbal scale?",
-    answer: '"One centimeter corresponds to 2 kilometers"',
-  },
-  {
-    question:
-      "When you select the small-scale button, what is the ratio scale?",
-    answer:
-      "1:200,000 or 1/200,000.\nCalculation: Convert 2 km to 200,000 cm and then divide 1 cm by 200,000 cm",
-  },
-  {
-    question:
-      "When you select the large-scale button, what is the graphic scale's or map distance and ground distance?",
-    answer:
-      "The map distance is approximately 1 centimeter and the ground distance is 300 meters",
-  },
-  {
-    question:
-      "When you select the large-scale button, what is the verbal scale?",
-    answer: '"One centimeter corresponds to 300 meters"',
-  },
-  {
-    question:
-      "When you select the large-scale button, what is the ratio scale?",
-    answer:
-      "1:30,000 or 1/30,000.\nCalculation: Convert 300 m to 30,000 cm and then divide 1 cm by 30,000 cm",
-  },
-  {
-    question:
-      "If the map distance for the large-scale button's view was 0.75 cm, what would the ratio scale be?",
-    answer: "1:40,000 or 1/40,000",
-  },
-];
 
 const sources = [
   {
@@ -114,12 +73,12 @@ export default function Scale() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-          <ContentBuilder Content={md} />
+          <ContentBuilder Content={content} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={questions} />
+          <Quiz questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

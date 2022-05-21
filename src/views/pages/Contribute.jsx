@@ -12,7 +12,7 @@ import MainLayout from "../layouts/MainLayout";
 
 import Title from "../../components/Title.jsx";
 import ContentBuilder from "../../components/ContentBuilder.jsx";
-import Question from "../../components/Question.jsx";
+import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
@@ -26,13 +26,6 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
-
-const questions = [
-  {
-    question: "Question",
-    answer: "Answer",
-  },
-];
 
 const sources = [
   {
@@ -66,10 +59,6 @@ export default function Resources() {
           </Typography>
           <ContentBuilder Content={md} />
 
-          <Typography gutterBottom variant="h3" sx={theme.header}>
-            Test Your Knowledge
-          </Typography>
-          <Question questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

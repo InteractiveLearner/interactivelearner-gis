@@ -12,11 +12,12 @@ import MainLayout from "../layouts/MainLayout";
 
 import Title from "../../components/Title.jsx";
 import ContentBuilder from "../../components/ContentBuilder.jsx";
-import Question from "../../components/Question.jsx";
+import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/Projections.md";
+import content from "../content/Projections.md";
+import questions from "../questions/Projections.json";
 
 let theme = createTheme({
   header: {
@@ -27,30 +28,7 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const questions = [
-  {
-    question: "The Albers projection uses which technique and type?",
-    answer: "Conical and Equal Area",
-  },
-  {
-    question: "The Equirectangular projection uses which technique and type?",
-    answer: "Cylindrical and Equidistant",
-  },
-  {
-    question: "The Mercator projection uses which technique and type?",
-    answer: "Cylindrical and Conformal",
-  },
-  {
-    question:
-      "The Mercator projection distorts the area of features. Can you identify which features are heavily distorted?",
-    answer: "One example is Greenland appearing much larger than Africa",
-  },
-  {
-    question:
-      "The spherical version of which projection is the de facto standard for web mapping?",
-    answer: "Mercator projection, however non-conformal in this case",
-  },
-];
+// Add true or false question
 
 const sources = [
   {
@@ -97,12 +75,12 @@ export default function Projections() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-          <ContentBuilder Content={md} />
+          <ContentBuilder Content={content} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={questions} />
+          <Quiz questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />

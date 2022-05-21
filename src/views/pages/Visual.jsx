@@ -12,11 +12,12 @@ import MainLayout from "../layouts/MainLayout";
 
 import Title from "../../components/Title.jsx";
 import ContentBuilder from "../../components/ContentBuilder.jsx";
-import Question from "../../components/Question.jsx";
+import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import md from "../content/VisualEncoding.md";
+import content from "../content/VisualEncoding.md";
+import questions from "../questions/VisualEncoding.json";
 
 let theme = createTheme({
   header: {
@@ -26,41 +27,6 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
-
-const questions = [
-  {
-    question:
-      "When you hovered over a hospital, was the location information represented as an address or latitude, longitude coordinate? ",
-    answer: "Address",
-  },
-  {
-    question:
-      "When you hovered over a ward, was the size represented as a length, area, or volume? ",
-    answer: "Area",
-  },
-  {
-    question:
-      "When you hovered over a highway, was the size represented as a length, area, or volume? ",
-    answer: "Length",
-  },
-  {
-    question: "The Hospitals dataset possesses which mark and channels?",
-    answer: "Point, Position, Color, and Shape",
-  },
-  // {
-  //   question: "The Wards dataset possesses which mark and channels?",
-  //   answer: "Area,",
-  // },
-  // {
-  //   question: "The Roads dataset possesses which mark and channels?",
-  //   answer: "Line,",
-  // },
-  {
-    question:
-      "Though a hospital could change in shape an infinite number of times, how many shape styles did you count in the Visually Encoded Map? ",
-    answer: "4 (on desktop browsers)",
-  },
-];
 
 const sources = [
   {
@@ -102,12 +68,12 @@ export default function Visual() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-          <ContentBuilder Content={md} />
+          <ContentBuilder Content={content} />
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
           </Typography>
-          <Question questions={questions} />
+          <Quiz questions={questions} />
         </Container>
       </ThemeProvider>
       <Sources sources={sources} />
