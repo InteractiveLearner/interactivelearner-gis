@@ -13,10 +13,6 @@ Your one-stop shop for all things GIS! Easily learn about GIS in an interactive 
 ## Motivation
 Mapmakers use maps as a form of graphical communication. Map readers (such as yourself) vary in levels of map literacy. To bridge the gap between mapmakers and map readers, the site aims to promote map literacy and critical thinking by concentrating on improving map reader spatial inquiry competencies in an interactive / storytelling self-paced GIS learning environment. The site is meant to be open source and act as a knowledge base that contributors can build upon. 
 
-## Join the Community
-
-**[Discord Invite](https://discord.gg/vvJdQTVXRk)**
-
 ## Curriculum (ongoing)
 
 Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner.github.io#how-to-contribute). 
