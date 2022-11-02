@@ -18,8 +18,6 @@ import {
   // Slide,
 } from "@mui/material";
 
-// import Confetti from "react-dom-confetti";
-
 let theme = createTheme({
   contentHeader: {
     color: "#bc6c25",
@@ -40,14 +38,6 @@ let theme = createTheme({
     verticalAlign: "middle",
     paddingBottom: "5px",
     fontSize: "inherit",
-  },
-  confetti: {
-    position: "relative",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    margin: "auto",
   },
 });
 
@@ -122,9 +112,6 @@ export default function Quiz(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <div style={theme.confetti}>
-          <Confetti active={this.state.celebrate} config={config} />
-        </div> */}
       <Card elevation={3} sx={theme.card}>
         <CardContent>
           {showScore ? (
@@ -149,7 +136,7 @@ export default function Quiz(props) {
               </Typography>
               {renderResultsData()}
               <Button
-                style={{ background: "#283618", marginTop: "10px" }}
+                style={{ background: "#152403", marginTop: "10px" }}
                 size="small"
                 color="primary"
                 onClick={(e) => {
@@ -242,19 +229,6 @@ export default function Quiz(props) {
           )}
         </CardContent>
       </Card>
-
-      {/* <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "left" }}
-          open={this.state.open}
-          autoHideDuration={3000}
-          onClose={() => this.setState({ open: false })}
-          TransitionComponent={(props) => <Slide {...props} direction="left" />}
-        >
-          <SnackbarContent
-            sx={{ backgroundColor: "#283618" }}
-            message="Congratulations on completing Test Your Knowledge!"
-          />
-        </Snackbar> */}
     </ThemeProvider>
   );
 }

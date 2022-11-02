@@ -23,7 +23,7 @@ theme = responsiveFontSizes(theme);
 export default function Header() {
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="relative" style={{ background: "#283618" }}>
+      <AppBar position="relative" style={{ background: "#152403" }}>
         <Toolbar>
           <Public style={{ minWidth: "40px" }} />
           <Typography variant="h6"> Interactive Learner GIS</Typography>

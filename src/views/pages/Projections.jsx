@@ -28,8 +28,6 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-// Add true or false question
-
 const sources = [
   {
     title: "Distortion",

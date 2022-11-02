@@ -158,7 +158,4 @@ Figure with title and credit
 
 <ContentFigure img={construction.png} title={Under Construction} credit={Credit: Omar Kawach} url={https://duckduckgo.com/}/>
 
-## TODO
-  - Solve error with components in syntax highlighter
-  - Add more math functions
-  - Add more unicode symbols
+<br>

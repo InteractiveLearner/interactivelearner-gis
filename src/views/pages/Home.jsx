@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import {
   Typography,
-  CardMedia,
+  Box,
   Container,
   ThemeProvider,
   createTheme,
@@ -12,9 +12,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemAvatar,
   ListItemButton,
-  // Checkbox,
 } from "@mui/material";
 
 import MainLayout from "../layouts/MainLayout";
@@ -33,7 +31,6 @@ const cards = [
     description:
       "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
-    img: require("../../assets/homepage/projection.png"),
     disabled: false,
   },
   {
@@ -42,7 +39,6 @@ const cards = [
       "Explore how map scale can be used to hide and show details on a map.",
 
     url: "/scale",
-    img: require("../../assets/homepage/scale.png"),
     disabled: false,
   },
   {
@@ -50,7 +46,6 @@ const cards = [
     description: "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
-    img: require("../../assets/homepage/visualencoding.png"),
     disabled: false,
   },
   {
@@ -59,81 +54,33 @@ const cards = [
       "Find out how visual encoding allows geographers to produce thematic maps.",
 
     url: "/thematic",
-    img: require("../../assets/homepage/typesofmaps.png"),
     disabled: false,
-  },
-  {
-    title: "Classification Schemes",
-    description: "Under ongoing development. Come back another time.",
-    url: "/",
-    img: require("../../assets/homepage/construction.png"),
-    disabled: true,
-  },
-  {
-    title: "Spatial Autocorrelation Statistics",
-    description: "Under ongoing development. Come back another time.",
-    url: "/",
-    img: require("../../assets/homepage/construction.png"),
-    disabled: true,
-  },
-  {
-    title: "Lying with Maps",
-    description: "Under ongoing development. Come back another time.",
-    url: "/",
-    img: require("../../assets/homepage/construction.png"),
-    disabled: true,
   },
   {
     title: "Resources",
     description: "GIS resources recommended by the developer(s) of the site.",
     url: "/resources",
-    img: require("../../assets/homepage/construction.png"),
     disabled: true,
   },
 ];
 
 export default function Home() {
-  /* Disable checkboxes for now. Awaiting progress report functionality. */
-  // const [checked, setChecked] = React.useState([-1]);
-
-  // const handleToggle = (value) => () => {
-  //   const currentIndex = checked.indexOf(value);
-  //   const newChecked = [...checked];
-
-  //   if (currentIndex === -1) {
-  //     newChecked.push(value);
-  //   } else {
-  //     newChecked.splice(currentIndex, 1);
-  //   }
-
-  //   setChecked(newChecked);
-  // };
-
   return (
     <MainLayout>
       <ThemeProvider theme={theme}>
-        <div>
-          <Container maxWidth="sm" style={{ marginTop: "25px" }}>
-            <Typography
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              Geographic Information Science / Systems
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              View any of the topics below to learn about GIS!{" "}
-              <b>Disclaimer:</b> The entire site is under ongoing development.
-              Feedback is welcome.
-            </Typography>
-          </Container>
-        </div>
+        <Container maxWidth="md" style={{ marginTop: "25px" }}>
+          <Box
+            component="img"
+            display="flex"
+            style={{ margin: "auto", paddingBottom: "10px" }}
+            alt="The house from the offer."
+            src={require("../../assets/logo.png")}
+          />
+          <Typography variant="h5" align="center" color="textSecondary">
+            Welcome to Interactive Learner GIS, where you can easily learn about
+            Geographic Information Science / Systems (GIS).
+          </Typography>
+        </Container>
 
         <Container maxWidth="md" style={{ padding: "20px" }}>
           <Typography gutterBottom variant="h3" sx={theme.header}>
@@ -155,19 +102,9 @@ export default function Home() {
               return (
                 <ListItem
                   key={index}
-                  // secondaryAction={
-                  //   <Checkbox
-                  //     edge="end"
-                  //     style={{ color: "#283618" }}
-                  //     onChange={handleToggle(index)}
-                  //     checked={checked.indexOf(index) !== -1}
-                  //     inputProps={{ "aria-labelledby": labelId }}
-                  //     disabled={card.disabled}
-                  //   />
-                  // }
                   disablePadding
                   sx={{
-                    borderBottom: 1,
+                    borderBottom: index === cards.length - 1 ? 0 : 1,
                   }}
                 >
                   <ListItemButton
@@ -182,17 +119,16 @@ export default function Home() {
                       padding: 0,
                     }}
                   >
-                    <ListItemAvatar>
-                      <CardMedia
-                        style={{ padding: "56.25%", width: "100px" }} // 16:9 aspect ratio
-                        image={card.img}
-                        title={card.title + "image"}
-                      />
-                    </ListItemAvatar>
                     <ListItemText
-                      style={{ padding: "0px 0px 0px 25px" }}
+                      style={{ padding: "0px 15px 0px 20px" }}
                       id={labelId}
-                      primary={card.title}
+                      primary={
+                        <React.Fragment>
+                          <Typography variant="h5" color="text.secondary">
+                            {card.title}
+                          </Typography>
+                        </React.Fragment>
+                      }
                       secondary={
                         <React.Fragment>
                           <Typography
@@ -200,8 +136,9 @@ export default function Home() {
                             component="span"
                             variant="body2"
                             color="text.primary"
-                          ></Typography>
-                          {card.description}
+                          >
+                            {card.description}
+                          </Typography>
                         </React.Fragment>
                       }
                     />

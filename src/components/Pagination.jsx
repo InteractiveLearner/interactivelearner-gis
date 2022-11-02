@@ -27,7 +27,7 @@ export default function Pagination(props) {
       <Button
         variant="contained"
         color="primary"
-        style={{ backgroundColor: "#283618" }}
+        style={{ backgroundColor: "#152403" }}
         to={props.prev}
         component={Link}
         startIcon={
@@ -43,7 +43,7 @@ export default function Pagination(props) {
       <Button
         variant="contained"
         color="primary"
-        style={{ backgroundColor: "#283618" }}
+        style={{ backgroundColor: "#152403" }}
         to={props.next}
         component={Link}
         endIcon={

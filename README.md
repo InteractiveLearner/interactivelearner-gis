@@ -42,7 +42,6 @@ The incomplete features are mentioned in the [Issues](https://github.com/Interac
 - [ ] Support multiple languages
 - [ ] Pagination
 - [ ] Table of contents
-- [ ] Confetti after quiz completion
 - [ ] Consistent styling between desktop and mobile
 
 ## How to Contribute
