@@ -11,7 +11,9 @@ import {
   responsiveFontSizes,
 } from "@mui/material";
 
-let theme = createTheme();
+let theme = createTheme({
+  container: { marginTop: "25px" },
+});
 
 theme = responsiveFontSizes(theme);
 
@@ -19,17 +21,17 @@ export default function Title(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-          <Container maxWidth="sm" style={{ marginTop: "25px" }}>
-            <Typography
-              align="center"
-              color="textPrimary"
-              gutterBottom
-              variant="h2"
-            >
-              {props.crumbs}
-            </Typography>
-            <BreadCrumbs crumbs={props.crumbs} />
-          </Container>
+        <Container maxWidth="sm" sx={theme.container}>
+          <Typography
+            align="center"
+            color="textPrimary"
+            gutterBottom
+            variant="h2"
+          >
+            {props.crumbs}
+          </Typography>
+          <BreadCrumbs crumbs={props.crumbs} />
+        </Container>
       </ThemeProvider>
     </div>
   );

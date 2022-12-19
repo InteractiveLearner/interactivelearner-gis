@@ -28,6 +28,7 @@ import EmptyMap from "../maps/EmptyMap.jsx";
 import ProjectionExplorer from "../maps/ProjectionExplorer.jsx";
 import ScaleMap from "../maps/ScaleMap.jsx";
 import VisualVariables from "../maps/VisualVariables.jsx";
+// import PortalMap from "../maps/PortalMap.jsx";
 
 let theme = createTheme({
   header: {
@@ -54,7 +55,7 @@ export default function ContentBuilder(props) {
 
   fetch(props.Content)
     .then((response) => response.text())
-    .then((text) => setContent(text));
+    .then((text) => setContent(text)); 
 
   return (
     <ThemeProvider theme={theme}>
@@ -83,6 +84,9 @@ export default function ContentBuilder(props) {
               VisualVariables: {
                 component: VisualVariables,
               },
+              // PortalMap: {
+              //   component: PortalMap,
+              // },
               ContentFigure: (props) => {
                 // All images used must be saved locally. 
                 // See the contribution page on the site.

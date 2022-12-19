@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import {
   Typography,
-  Box,
+  Card,
   Container,
   ThemeProvider,
   createTheme,
@@ -13,17 +13,11 @@ import {
   ListItem,
   ListItemText,
   ListItemButton,
+  ListItemAvatar,
+  Avatar,
 } from "@mui/material";
 
 import MainLayout from "../layouts/MainLayout";
-
-let theme = createTheme({
-  header: {
-    color: "#606c38",
-  },
-});
-
-theme = responsiveFontSizes(theme);
 
 const cards = [
   {
@@ -31,7 +25,6 @@ const cards = [
     description:
       "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
-    disabled: false,
   },
   {
     title: "Scale",
@@ -39,14 +32,12 @@ const cards = [
       "Explore how map scale can be used to hide and show details on a map.",
 
     url: "/scale",
-    disabled: false,
   },
   {
     title: "Visual Encoding",
     description: "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
-    disabled: false,
   },
   {
     title: "Types of Maps",
@@ -54,99 +45,110 @@ const cards = [
       "Find out how visual encoding allows geographers to produce thematic maps.",
 
     url: "/thematic",
-    disabled: false,
   },
-  {
-    title: "Resources",
-    description: "GIS resources recommended by the developer(s) of the site.",
-    url: "/resources",
-    disabled: true,
-  },
+  // {
+  //   title: "Resources",
+  //   description: "GIS resources recommended by the contributors of the site.",
+  //   url: "/resources",
+  // },
 ];
+
+let theme = createTheme({
+  header: {
+    color: "#606c38",
+    marginTop: "8px",
+  },
+  card: {
+    padding: "0px 16px 16px 16px",
+    margin: "auto",
+    border: 1,
+  },
+  container: {
+    padding: "20px",
+  },
+  list: {
+    width: "100%",
+    maxWidth: "100%",
+    bgcolor: "background.paper",
+    padding: "0",
+  },
+  listItemButton: {
+    "&:hover": {
+      opacity: "0.8",
+    },
+    padding: 0,
+  },
+  avatar: { background: "transparent" },
+});
+
+theme = responsiveFontSizes(theme);
 
 export default function Home() {
   return (
     <MainLayout>
       <ThemeProvider theme={theme}>
-        <Container maxWidth="md" style={{ marginTop: "25px" }}>
-          <Box
-            component="img"
-            display="flex"
-            style={{ margin: "auto", paddingBottom: "10px" }}
-            alt="The house from the offer."
-            src={require("../../assets/logo.png")}
-          />
-          <Typography variant="h5" align="center" color="textSecondary">
-            Welcome to Interactive Learner GIS, where you can easily learn about
-            Geographic Information Science / Systems (GIS).
-          </Typography>
-        </Container>
+        <Container maxWidth="md" sx={theme.container}>
+          <Card elevation={3} sx={theme.card}>
+            <Typography gutterBottom variant="h2" sx={theme.header}>
+              Welcome!
+            </Typography>
 
-        <Container maxWidth="md" style={{ padding: "20px" }}>
-          <Typography gutterBottom variant="h3" sx={theme.header}>
-            Topics
-          </Typography>
-          <List
-            dense
-            sx={{
-              width: "100%",
-              maxWidth: "100%",
-              bgcolor: "background.paper",
-              padding: "0",
-              border: 1,
-            }}
-          >
-            {cards.map((card, index) => {
-              const labelId = `checkbox-list-secondary-label-${index}`;
+            <Typography variant="h5" color="textSecondary">
+              The goal of Interactive Learner GIS is to give readers a fun
+              environment to develop, refresh or improve their map literacy. The
+              content of this website aims to follow a standard geography
+              curriculum. Map scale, projections, coordinate systems, spatial
+              analysis, relational databases, thematic maps, and spatial
+              statistics are some common courses you'd find in such a
+              cirriculum.
+            </Typography>
 
-              return (
-                <ListItem
-                  key={index}
-                  disablePadding
-                  sx={{
-                    borderBottom: index === cards.length - 1 ? 0 : 1,
-                  }}
-                >
-                  <ListItemButton
-                    to={card.url}
-                    component={Link}
-                    variant="contained"
-                    disabled={card.disabled}
-                    sx={{
-                      "&:hover": {
-                        opacity: "0.8",
-                      },
-                      padding: 0,
-                    }}
-                  >
-                    <ListItemText
-                      style={{ padding: "0px 15px 0px 20px" }}
-                      id={labelId}
-                      primary={
-                        <React.Fragment>
-                          <Typography variant="h5" color="text.secondary">
-                            {card.title}
-                          </Typography>
-                        </React.Fragment>
-                      }
-                      secondary={
-                        <React.Fragment>
-                          <Typography
-                            sx={{ display: "inline" }}
-                            component="span"
-                            variant="body2"
-                            color="text.primary"
-                          >
-                            {card.description}
-                          </Typography>
-                        </React.Fragment>
-                      }
-                    />
-                  </ListItemButton>
-                </ListItem>
-              );
-            })}
-          </List>
+            <Typography gutterBottom variant="h3" sx={theme.header}>
+              Topics
+            </Typography>
+
+            <List dense sx={theme.list}>
+              {cards.map((card, index) => {
+                const labelId = `checkbox-list-secondary-label-${index}`;
+
+                return (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton
+                      to={card.url}
+                      component={Link}
+                      variant="contained"
+                      sx={theme.listItemButton}
+                    >
+                      <ListItemAvatar>
+                        <Avatar sx={theme.avatar}>&#128218;</Avatar>
+                      </ListItemAvatar>
+                      <ListItemText
+                        id={labelId}
+                        primary={
+                          <React.Fragment>
+                            <Typography variant="h5" color="text.secondary">
+                              {card.title}
+                            </Typography>
+                          </React.Fragment>
+                        }
+                        secondary={
+                          <React.Fragment>
+                            <Typography
+                              component="span"
+                              variant="body2"
+                              color="text.primary"
+                            >
+                              {card.description}
+                            </Typography>
+                          </React.Fragment>
+                        }
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                );
+              })}
+            </List>
+          </Card>
         </Container>
       </ThemeProvider>
     </MainLayout>

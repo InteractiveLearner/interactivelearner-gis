@@ -5,6 +5,7 @@ import React from "react";
 
 import {
   Container,
+  Card,
   Typography,
   ThemeProvider,
   createTheme,
@@ -14,9 +15,8 @@ import {
   ListItemText,
   ListItemButton,
   ListItemAvatar,
+  Avatar,
 } from "@mui/material";
-
-import LanguageIcon from "@mui/icons-material/Language";
 
 let theme = createTheme({
   header: {
@@ -27,6 +27,23 @@ let theme = createTheme({
     margin: "0px 20px 20px 20px",
     minWidth: "20px",
   },
+  container: {
+    padding: "0px 20px 20px 20px",
+  },
+  list: {
+    width: "100%",
+    maxWidth: "100%",
+    bgcolor: "background.paper",
+    padding: "0",
+    border: 1,
+    borderRadius: "5px",
+  },
+  listItemButton: {
+    "&:hover": {
+      opacity: "0.8",
+    },
+  },
+  avatar: { background: "transparent" },
 });
 
 theme = responsiveFontSizes(theme);
@@ -34,45 +51,35 @@ theme = responsiveFontSizes(theme);
 export default function Sources(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="md" style={{ padding: "0px 20px 20px 20px" }}>
+      <Container maxWidth="md" sx={theme.container}>
         <Typography variant="h3" sx={theme.header} gutterBottom>
           Sources
         </Typography>
-        <List
-          dense
-          sx={{
-            width: "100%",
-            maxWidth: "100%",
-            bgcolor: "background.paper",
-            padding: "0",
-            border: 1,
-          }}
-        >
-          {props.sources.map((card, index) => (
-            <ListItem
-              key={index}
-              sx={{
-                borderBottom: 1,
-              }}
-            >
-              <ListItemButton
-                component="a"
-                href={card.url}
-                variant="contained"
+        <Card elevation={3}>
+          <List dense sx={theme.list}>
+            {props.sources.map((card, index) => (
+              <ListItem
+                key={index}
+                disablePadding
                 sx={{
-                  "&:hover": {
-                    opacity: "0.8",
-                  },
+                  borderBottom: index === props.sources.length - 1 ? 0 : 1,
                 }}
               >
-                <ListItemAvatar>
-                  <LanguageIcon />
-                </ListItemAvatar>
-                <ListItemText primary={card.title} secondary={card.author} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+                <ListItemButton
+                  component="a"
+                  href={card.url}
+                  variant="contained"
+                  sx={theme.listItemButton}
+                >
+                  <ListItemAvatar>
+                    <Avatar sx={theme.avatar}>&#128214;</Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary={card.title} secondary={card.author} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Card>
       </Container>
     </ThemeProvider>
   );
