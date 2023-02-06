@@ -3,48 +3,33 @@
   "name": "interactivelearner.github.io",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@arcgis/core": "^4.25.1",
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "latest",
-    "@mui/material": "latest",
-    "@mui/styles": "latest",
-    "d3": "latest",
-    "leaflet": "1.7.1",
-    "markdown-to-jsx": "latest",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-leaflet": "^3.2.5",
-    "react-router-dom": "latest",
-    "react-scripts": "^5.0.1",
-    "react-syntax-highlighter": "latest"
-  },
+  "type": "module",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mdx-js/react": "^2.2.1",
+    "@mdx-js/rollup": "^2.2.1",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.7",
+    "d3": "^7.8.2",
+    "leaflet": "^1.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.0",
+    "react-router-dom": "^6.8.1-pre.0"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
+    "vite": "^4.1.0"
   }
 }

@@ -6,23 +6,29 @@ import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  Card
 } from "@mui/material";
 
 import MainLayout from "../layouts/MainLayout";
 
 import Title from "../../components/Title.jsx";
-import ContentBuilder from "../../components/ContentBuilder.jsx";
 import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
 
-import content from "../content/VisualEncoding.md";
+import { MDXProvider } from "@mdx-js/react";
+import Content from "../content/VisualEncoding.mdx";
 import questions from "../questions/VisualEncoding.json";
 
 let theme = createTheme({
   header: {
     color: "#606c38",
     paddingLeft: "16px",
+  },
+  card: {
+    padding: "8px 16px 0px 16px",
+    margin: "0px 20px 20px 20px",
+    border: 1,
   },
 });
 
@@ -68,7 +74,12 @@ export default function Visual() {
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Learn and Interact
           </Typography>
-          <ContentBuilder Content={content} />
+          
+          <Card elevation={3} sx={theme.card}>
+            <MDXProvider>
+              <Content />
+            </MDXProvider>
+          </Card>
 
           <Typography gutterBottom variant="h3" sx={theme.header}>
             Test Your Knowledge
