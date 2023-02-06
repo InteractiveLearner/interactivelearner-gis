@@ -19,7 +19,6 @@ export default class Map extends React.Component {
           center={[48.42829687325907, -123.3656709938676]}
           zoom={12}
           scrollWheelZoom={true}
-          // style={{ minHeight: "50vh", minWidth: "100vw" }}
         >
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="OpenStreetMap">
