@@ -1,3 +1,8 @@
+import ContentFigure from "../../components/Figure.jsx";
+import { CardMedia } from "@mui/material";
+import constructionImg from "../../assets/images/construction.png";
+import EmptyMap from "../../maps/EmptyMap.jsx";
+
 # Background
 
 Contributing will require knowledge in [Markdown](https://daringfireball.net/projects/markdown/) and / or [JSX](https://reactjs.org/docs/introducing-jsx.html) as this is how Interactive Learner's content is built.
@@ -10,48 +15,45 @@ Editing an existing topic is simply done by making changes to the markdown and s
 
 Adding a new topic is a bit trickier. Each topic need's it's own file in the [Pages](https://github.com/InteractiveLearner/interactivelearner.github.io/tree/main/src/views/pages) folder. Each topic also needs to be routed in [App.jsx](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/App.jsx) and added as a card in [Home.jsx](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/views/pages/Home.jsx).
 
-**JSX:**
-
-All new React components used in a markdown file must be added to the overrides section of the [Content Builder](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/src/components/ContentBuilder.jsx) component.
-
-**Note:** All this information is available in [plaintext](https://raw.githubusercontent.com/InteractiveLearner/interactivelearner.github.io/main/src/views/content/Contribute.mdx) so that you may copy and paste snippets into markdown files.
-
-More details are available on [the site's GitHub repository](https://github.com/InteractiveLearner/interactivelearner.github.io).
-
-*Thank you for supporting this project!*
+_Thank you for supporting this project!_
 
 # Available Markdown and JSX for You:
 
 ## Horizontal Rules
 
-___
+---
 
 ---
 
-***
+---
 
 ## Headings
 
 # h1 Heading
+
 ## h2 Heading
+
 ### h3 Heading
+
 #### h4 Heading
+
 ##### h5 Heading
+
 ###### h6 Heading
 
 ## Emphasis
 
 **This is bold text**
 
-__This is bold text__
-
-*This is italic text*
+**This is bold text**
 
 _This is italic text_
 
-***This is italic and bold text***
+_This is italic text_
 
-___This is italic and bold text___
+**_This is italic and bold text_**
+
+**_This is italic and bold text_**
 
 ~~Strikethrough~~
 
@@ -59,13 +61,13 @@ ___This is italic and bold text___
 
 Unordered
 
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
+- Create a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
   - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
+    - Ac tristique libero volutpat at
+    * Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit
-+ Very easy!
+- Very easy!
 
 Ordered
 
@@ -73,9 +75,8 @@ Ordered
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
+4. You can use sequential numbers...
+5. ...or keep all the numbers as `1.`
 
 Start numbering with offset:
 
@@ -104,58 +105,63 @@ Interactive Learner &copy;
 
 ## Tables
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
 
 ## Links
 
 [link](https://duckduckgo.com/)
 
-*[link](https://duckduckgo.com/)*
+_[link](https://duckduckgo.com/)_
 
 **[link](https://duckduckgo.com/)**
 
-***[link](https://duckduckgo.com/)***
+**_[link](https://duckduckgo.com/)_**
 
 ## Maps
 
-<EmptyMap/>
+<EmptyMap />
 
 ## Iframes
 
-<CardMedia url={https://en.wikipedia.org/wiki/Multivariate_map} height={600}>
+<CardMedia
+  url={"https://en.wikipedia.org/wiki/Multivariate_map"}
+  height={600}
+/>
 
 ## Code
 
-```sudo apt get```
+`sudo apt get`
 
-<SyntaxHighlighter language="plaintext">(num) => num + 1</SyntaxHighlighter>
-
-<SyntaxHighlighter language="python">
-def main():
-    print("Hello World!")
-</SyntaxHighlighter>
+```jsx
+console.log("hello")
+```
 
 ## Figures
 
-Images must be saved to the [```/images```](https://github.com/InteractiveLearner/interactivelearner.github.io/tree/main/src/assets/images) folder.
+Images must be saved to the [`/images`](https://github.com/InteractiveLearner/interactivelearner.github.io/tree/main/src/assets/images) folder.
 
 Figure with no title and no credit
 
-<ContentFigure img={construction.png} />
+<ContentFigure img={constructionImg} />
 
-<br>
+<br></br>
 
 Figure with title and no credit
 
-<ContentFigure img={construction.png} title={Under Construction} />
+<ContentFigure img={constructionImg} title={"Under Construction"} />
 
-<br>
+<br></br>
 
 Figure with title and credit
 
-<ContentFigure img={construction.png} title={Under Construction} credit={Credit: Omar Kawach} url={https://duckduckgo.com/}/>
+<ContentFigure
+  img={constructionImg}
+  title={"Under Construction"}
+  credit={"Credit: Omar Kawach"}
+  url={"https://duckduckgo.com/"}
+/>
 
-<br>
+<br></br>
