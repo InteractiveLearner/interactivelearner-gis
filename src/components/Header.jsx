@@ -24,7 +24,7 @@ let theme = createTheme({
     textDecoration: "none",
   },
   background: {
-    background: "#152403",
+    background: "#0a0908",
   },
   icon: {
     minWidth: "40px",

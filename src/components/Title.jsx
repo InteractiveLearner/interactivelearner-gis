@@ -21,7 +21,7 @@ export default function Title(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Container maxWidth="sm" sx={theme.container}>
+        <Container maxWidth="lg" sx={theme.container}>
           <Typography
             align="center"
             color="textPrimary"

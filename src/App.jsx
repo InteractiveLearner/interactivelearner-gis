@@ -11,13 +11,9 @@ import VisualEncoding from "./views/pages/Visual.jsx";
 import MapTypes from "./views/pages/MapTypes.jsx";
 import NotFound from "./views/pages/NotFound.jsx";
 
-/* Functionality for scrolling to the top of the page when routed */
-import ScrollToTop from "./utils/ScrollToTop.jsx";
-
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="*" element={<NotFound />} />

@@ -14,7 +14,6 @@ import {
 
 let theme = createTheme({
   box: {
-    backgroundColor: "#e5e5e5",
     p: 6,
   },
 });
@@ -50,7 +49,7 @@ export default function Footer() {
           color="text.secondary"
           component="p"
         >
-          Copyright © Interactive Learner GIS 2022
+          Copyright © Interactive Learner GIS 2023
         </Typography>
       </Box>
     </ThemeProvider>

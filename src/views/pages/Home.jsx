@@ -7,8 +7,6 @@ import {
   Card,
   Container,
   ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
   List,
   ListItem,
   ListItemText,
@@ -18,6 +16,8 @@ import {
 } from "@mui/material";
 
 import MainLayout from "../layouts/MainLayout";
+
+import { themeMUI } from "../../styles/themeMUI";
 
 const cards = [
   {
@@ -34,13 +34,13 @@ const cards = [
     url: "/scale",
   },
   {
-    title: "Visual Encoding",
+    title: "Visual encoding",
     description: "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
   },
   {
-    title: "Types of Maps",
+    title: "Types of maps",
     description:
       "Find out how visual encoding allows geographers to produce thematic maps.",
 
@@ -53,43 +53,13 @@ const cards = [
   // },
 ];
 
-let theme = createTheme({
-  header: {
-    color: "#606c38",
-    marginTop: "8px",
-  },
-  card: {
-    padding: "0px 16px 16px 16px",
-    margin: "auto",
-    border: 1,
-  },
-  container: {
-    padding: "20px",
-  },
-  list: {
-    width: "100%",
-    maxWidth: "100%",
-    bgcolor: "background.paper",
-    padding: "0",
-  },
-  listItemButton: {
-    "&:hover": {
-      opacity: "0.8",
-    },
-    padding: 0,
-  },
-  avatar: { background: "transparent" },
-});
-
-theme = responsiveFontSizes(theme);
-
 export default function Home() {
   return (
     <MainLayout>
-      <ThemeProvider theme={theme}>
-        <Container maxWidth="md" sx={theme.container}>
-          <Card elevation={3} sx={theme.card}>
-            <Typography gutterBottom variant="h2" sx={theme.header}>
+      <ThemeProvider theme={themeMUI}>
+        <Container maxWidth="lg" sx={themeMUI.container}>
+          <Card elevation={3} sx={themeMUI.homeCard}>
+            <Typography gutterBottom variant="h2" sx={themeMUI.homeHeader}>
               Welcome!
             </Typography>
 
@@ -103,11 +73,11 @@ export default function Home() {
               cirriculum.
             </Typography>
 
-            <Typography gutterBottom variant="h3" sx={theme.header}>
-              Topics
+            <Typography gutterBottom variant="h3" sx={themeMUI.homeHeader}>
+              What would you like to learn today?
             </Typography>
 
-            <List dense sx={theme.list}>
+            <List dense sx={themeMUI.list}>
               {cards.map((card, index) => {
                 const labelId = `checkbox-list-secondary-label-${index}`;
 
@@ -117,10 +87,10 @@ export default function Home() {
                       to={card.url}
                       component={Link}
                       variant="contained"
-                      sx={theme.listItemButton}
+                      sx={themeMUI.listItemButton}
                     >
                       <ListItemAvatar>
-                        <Avatar sx={theme.avatar}>&#128218;</Avatar>
+                        <Avatar sx={themeMUI.avatar}>&#128218;</Avatar>
                       </ListItemAvatar>
                       <ListItemText
                         id={labelId}

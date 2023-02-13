@@ -31,3 +31,9 @@ node_modules
 # Temp
 /src/maps/ModuleArcGIS.jsx
 /src/maps/PortalMap.jsx
+src/views/content/Classification.mdx
+src/views/content/DataTypes.mdx
+src/views/content/Primitives.mdx
+src/views/content/RelationalDatabases.mdx
+src/views/content/Statistics.mdx
+src/views/content/Techniques.mdx

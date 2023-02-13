@@ -20,7 +20,7 @@ import {
 
 let theme = createTheme({
   header: {
-    color: "#606c38",
+    color: "#0a0908",
   },
   card: {
     padding: "0px 16px 16px 16px",
@@ -51,7 +51,7 @@ theme = responsiveFontSizes(theme);
 export default function Sources(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="md" sx={theme.container}>
+      <Container maxWidth="lg" sx={theme.container}>
         <Typography variant="h3" sx={theme.header} gutterBottom>
           Sources
         </Typography>

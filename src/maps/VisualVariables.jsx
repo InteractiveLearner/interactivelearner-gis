@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Card } from "@mui/material";
-
 import {
   MapContainer,
   TileLayer,
@@ -84,46 +82,44 @@ export default class Map extends React.Component {
   };
   render() {
     return (
-      <Card elevation={3}>
-        <MapContainer
+      <MapContainer
+        center={[45.279716962875604, -75.78658103340784]}
+        zoom={9}
+        scrollWheelZoom={true}
+      >
+        <LayersControl position="topright">
+          <LayersControl.BaseLayer checked name="OpenStreetMap">
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          </LayersControl.BaseLayer>
+          <LayersControl.Overlay checked name="Hospitals">
+            <GeoJSON data={hospitals} onEachFeature={this.onEachHospital} />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay checked name="Wards">
+            <GeoJSON
+              data={features}
+              style={this.defaultStyle}
+              onEachFeature={this.onEachWard}
+            />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay checked name="Roads">
+            <GeoJSON
+              data={roads}
+              style={this.roadStyle}
+              onEachFeature={this.onEachRoad}
+            />
+          </LayersControl.Overlay>
+        </LayersControl>
+        <ScaleControl position="bottomleft" />
+        <IconButton
+          title={"Change Shape Style"}
           center={[45.279716962875604, -75.78658103340784]}
-          zoom={9}
-          scrollWheelZoom={true}
-        >
-          <LayersControl position="topright">
-            <LayersControl.BaseLayer checked name="OpenStreetMap">
-              <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-            </LayersControl.BaseLayer>
-            <LayersControl.Overlay checked name="Hospitals">
-              <GeoJSON data={hospitals} onEachFeature={this.onEachHospital} />
-            </LayersControl.Overlay>
-            <LayersControl.Overlay checked name="Wards">
-              <GeoJSON
-                data={features}
-                style={this.defaultStyle}
-                onEachFeature={this.onEachWard}
-              />
-            </LayersControl.Overlay>
-            <LayersControl.Overlay checked name="Roads">
-              <GeoJSON
-                data={roads}
-                style={this.roadStyle}
-                onEachFeature={this.onEachRoad}
-              />
-            </LayersControl.Overlay>
-          </LayersControl>
-          <ScaleControl position="bottomleft" />
-          <IconButton
-            title={"Change Shape Style"}
-            center={[45.279716962875604, -75.78658103340784]}
-            zoom={15}
-            data={pointsCollection}
-          />
-        </MapContainer>
-      </Card>
+          zoom={15}
+          data={pointsCollection}
+        />
+      </MapContainer>
     );
   }
 }

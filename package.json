@@ -18,12 +18,14 @@
     "@mdx-js/rollup": "^2.2.1",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.7",
+    "@theme-ui/mdx": "^0.15.5",
     "d3": "^7.8.2",
     "leaflet": "^1.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.0",
-    "react-router-dom": "^6.8.1-pre.0"
+    "react-router-dom": "^6.8.1-pre.0",
+    "theme-ui": "^0.15.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

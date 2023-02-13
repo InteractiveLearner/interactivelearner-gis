@@ -3,10 +3,8 @@ import React from "react";
 import {
   Typography,
   Container,
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-  Card
+  ThemeProvider as ThemeProviderMUI,
+  Card,
 } from "@mui/material";
 
 import MainLayout from "../layouts/MainLayout";
@@ -15,24 +13,14 @@ import Title from "../../components/Title.jsx";
 import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Authors from "../../components/Authors.jsx";
+import questions from "../questions/VisualEncoding.json";
+import { themeMUI } from "../../styles/themeMUI";
 
 import { MDXProvider } from "@mdx-js/react";
+import { useThemedStylesWithMdx } from "@theme-ui/mdx";
+import { ThemeProvider } from "theme-ui";
+import { themeMDX } from "../../styles/themeMDX";
 import Content from "../content/VisualEncoding.mdx";
-import questions from "../questions/VisualEncoding.json";
-
-let theme = createTheme({
-  header: {
-    color: "#606c38",
-    paddingLeft: "16px",
-  },
-  card: {
-    padding: "8px 16px 0px 16px",
-    margin: "0px 20px 20px 20px",
-    border: 1,
-  },
-});
-
-theme = responsiveFontSizes(theme);
 
 const sources = [
   {
@@ -54,7 +42,7 @@ const sources = [
     title: "Visual Variables",
     author: "infovis-wiki",
     url: "https://infovis-wiki.net/wiki/Visual_Variables",
-  }
+  },
 ];
 
 const authors = [
@@ -69,24 +57,26 @@ export default function Visual() {
   return (
     <MainLayout>
       <Title crumbs={"Visual Encoding"} />
-      <ThemeProvider theme={theme}>
-        <Container maxWidth="md" style={{ padding: "20px 0px 0px 0px" }}>
-          <Typography gutterBottom variant="h3" sx={theme.header}>
+      <ThemeProviderMUI theme={themeMUI}>
+        <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
+          <Typography gutterBottom variant="h3" sx={themeMUI.header}>
             Learn and Interact
           </Typography>
-          
-          <Card elevation={3} sx={theme.card}>
-            <MDXProvider>
-              <Content />
-            </MDXProvider>
+
+          <Card elevation={3} sx={themeMUI.card}>
+            <ThemeProvider theme={themeMDX}>
+              <MDXProvider components={useThemedStylesWithMdx()}>
+                <Content />
+              </MDXProvider>
+            </ThemeProvider>
           </Card>
 
-          <Typography gutterBottom variant="h3" sx={theme.header}>
+          <Typography gutterBottom variant="h3" sx={themeMUI.header}>
             Test Your Knowledge
           </Typography>
           <Quiz questions={questions} />
         </Container>
-      </ThemeProvider>
+      </ThemeProviderMUI>
       <Sources sources={sources} />
       <Authors authors={authors} />
     </MainLayout>

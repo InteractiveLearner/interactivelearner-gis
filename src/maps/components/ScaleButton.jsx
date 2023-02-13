@@ -14,7 +14,7 @@ class ScaleButton extends React.Component {
         const panelDiv = L.DomUtil.create("button", "");
 
         panelDiv.style.borderRadius = "6px";
-        panelDiv.style.background = "#152403";
+        panelDiv.style.background = "#0a0908";
         panelDiv.style.color = "white";
         panelDiv.style.padding = "8px";
         panelDiv.style.cursor = "pointer";

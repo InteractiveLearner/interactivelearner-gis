@@ -28,7 +28,7 @@ export default function NotFound(props) {
             style={{
               display: "flex",
               justifyContent: "center",
-              background: "#152403",
+              background: "#0a0908",
             }}
             color="primary"
             to={"/"}

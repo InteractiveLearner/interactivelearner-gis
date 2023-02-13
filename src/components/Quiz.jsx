@@ -136,7 +136,7 @@ export default function Quiz(props) {
               </Typography>
               {renderResultsData()}
               <Button
-                style={{ background: "#152403", marginTop: "10px" }}
+                style={{ background: "#0a0908", marginTop: "10px" }}
                 size="small"
                 color="primary"
                 onClick={(e) => {
