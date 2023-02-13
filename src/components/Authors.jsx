@@ -56,6 +56,7 @@ export default function Authors(props) {
                     size="small"
                     color="primary"
                     href={card.url}
+                    target="_blank"
                     variant="contained"
                   >
                     View Profile

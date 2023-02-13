@@ -42,7 +42,7 @@ export default function Footer(props) {
               if (props.credit !== "") {
                 return (
                   <Typography variant="caption">
-                    <a href={props.url} style={{ color: "black" }}>
+                    <a href={props.url} target="_blank" style={{ color: "black" }}>
                       {props.credit}
                     </a>
                   </Typography>

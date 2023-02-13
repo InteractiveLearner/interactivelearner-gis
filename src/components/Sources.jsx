@@ -68,6 +68,7 @@ export default function Sources(props) {
                 <ListItemButton
                   component="a"
                   href={card.url}
+                  target="_blank"
                   variant="contained"
                   sx={theme.listItemButton}
                 >
