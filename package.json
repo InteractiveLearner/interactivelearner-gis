@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "preinstall": "npx -y only-allow pnpm",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "vite",
