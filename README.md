@@ -60,23 +60,27 @@ See the **[Contribute Page](https://www.interactivelearner-gis.com/#/contribute)
 git clone https://github.com/InteractiveLearner/interactivelearner.github.io.git
 ```
 
+##### Package Manager
+
+It is recommended to use [pnpm](https://pnpm.io/) for this project. 
+
 ##### Run the Application
 
 ```
-npm install
-npm start 
+pnpm install
+pnpm start 
 ```
 
 ##### Build the Application
 
 ```
-npm run build
+pnpm build
 ```
 
 ##### Publish the Application to GitHub Pages
 
 ```
-npm run deploy
+pnpm deploy
 ```
 
 ### Other Contributors 
