@@ -71,7 +71,7 @@ const authors = [
 export default function MapTypes() {
   return (
     <MainLayout>
-      <Title crumbs={"Visual Encoding"} />
+      <Title crumbs={"Types of Maps"} />
       <ThemeProviderMUI theme={themeMUI}>
         <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
           <Typography gutterBottom variant="h3" sx={themeMUI.header}>
