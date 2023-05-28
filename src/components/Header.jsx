@@ -10,12 +10,8 @@ import { Link } from "react-router-dom";
 import { Public } from "@mui/icons-material";
 
 import {
-  Typography,
-  AppBar,
-  Toolbar,
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
+  AppBar, createTheme,
+  responsiveFontSizes, ThemeProvider, Toolbar, Typography
 } from "@mui/material";
 
 let theme = createTheme({

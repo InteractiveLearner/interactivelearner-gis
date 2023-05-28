@@ -7,7 +7,7 @@ import React from "react";
 
 import { CssBaseline, Grow } from "@mui/material";
 
-import Footer from "../../components/Footer.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 import Header from "../../components/Header.jsx";
 
 export default function MainLayout({ children }) {

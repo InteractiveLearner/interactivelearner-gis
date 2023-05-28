@@ -1,25 +1,16 @@
 import React from "react";
 
-import {
-  Typography,
-  Container,
-  ThemeProvider as ThemeProviderMUI,
-  Card,
-} from "@mui/material";
-
 import MainLayout from "../layouts/MainLayout";
 
-import Title from "../../components/Title.jsx";
+import Authors from "../../components/Authors.jsx";
 import Quiz from "../../components/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
-import Authors from "../../components/Authors.jsx";
-import questions from "../questions/MapTypes.json";
+import Title from "../../components/Title/Title.jsx";
 import { themeMUI } from "../../styles/themeMUI";
+import questions from "../questions/MapTypes.json";
 
-import { MDXProvider } from "@mdx-js/react";
-import { useThemedStylesWithMdx } from "@theme-ui/mdx";
-import { ThemeProvider } from "theme-ui";
-import { themeMDX } from "../../styles/themeMDX";
+import Card from "../../components/card/Card";
+import Container from "../../components/Container/Container";
 import Content from "../content/MapTypes.mdx";
 
 const sources = [
@@ -71,27 +62,17 @@ const authors = [
 export default function MapTypes() {
   return (
     <MainLayout>
-      <Title crumbs={"Types of Maps"} />
-      <ThemeProviderMUI theme={themeMUI}>
-        <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
-          <Typography gutterBottom variant="h3" sx={themeMUI.header}>
-            Learn and Interact
-          </Typography>
+      <Title name={"Types of Maps"} />
+      <Container>
+        <h2>Learn and Interact</h2>
 
-          <Card elevation={3} sx={themeMUI.card}>
-            <ThemeProvider theme={themeMDX}>
-              <MDXProvider components={useThemedStylesWithMdx()}>
-                <Content />
-              </MDXProvider>
-            </ThemeProvider>
-          </Card>
+        <Card elevation={3} sx={themeMUI.card}>
+          <Content />
+        </Card>
 
-          <Typography gutterBottom variant="h3" sx={themeMUI.header}>
-            Test Your Knowledge
-          </Typography>
-          <Quiz questions={questions} />
-        </Container>
-      </ThemeProviderMUI>
+        <h2>Test Your Knowledge</h2>
+        <Quiz questions={questions} />
+      </Container>
       <Sources sources={sources} />
       <Authors authors={authors} />
     </MainLayout>
