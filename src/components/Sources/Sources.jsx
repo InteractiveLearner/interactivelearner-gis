@@ -3,11 +3,11 @@
  */
 import React from "react";
 
-import Card from "./card/Card";
+import Card from "../card/Card";
 
 import { DashList } from "@didyoumeantoast/dash-components-react";
 
-import NavListItem from "./NavListItem/NavListItem";
+import NavListItem from "../NavListItem/NavListItem";
 
 export default function Sources(props) {
   return (

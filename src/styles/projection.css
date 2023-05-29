@@ -19,8 +19,8 @@
   margin-top: 4px;
   cursor: pointer;
   border: 2px solid;
-  width: 250px; 
-  padding: 5px; 
+  width: 250px;
+  padding: 5px;
 }
 
 .menu .item .value {
@@ -39,20 +39,20 @@
 }
 
 .map path {
-  fill: #87b687;
-  stroke: #777;
+  fill: var(--dash-success);
+  stroke: var(--dash-border-1);
 }
 
 .projection-center {
-  fill: red;
+  fill: var(--dash-danger);
 }
 
 .graticule path {
   fill: none;
-  stroke: #eee;
+  stroke: var(--dash-text-color-1);
 }
 
 .circles path {
   fill: none;
-  stroke: #aaa;
+  stroke: var(--dash-border-color-1);
 }

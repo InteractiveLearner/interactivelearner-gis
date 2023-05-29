@@ -1,10 +1,7 @@
 import React from "react";
 
 import {
-  MapContainer,
-  TileLayer,
-  LayersControl,
-  ScaleControl,
+  LayersControl, MapContainer, ScaleControl, TileLayer
 } from "react-leaflet";
 
 import ScaleButton from "./components/ScaleButton.jsx";
