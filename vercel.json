@@ -1,3 +1,10 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/projections", "dest": "/" },
+    { "src": "/scale", "dest": "/" },
+    { "src": "/visual", "dest": "/" },
+    { "src": "/thematic", "dest": "/" }
+  ]
 }
