@@ -8,7 +8,7 @@ import Sources from "../../components/Sources/Sources.jsx";
 import Title from "../../components/Title/Title.jsx";
 import questions from "../questions/VisualEncoding.json";
 
-import Card from "../../components/card/Card";
+import Card from "../../components/Card/Card";
 import Container from "../../components/Container/Container";
 import Content from "../content/VisualEncoding.mdx";
 

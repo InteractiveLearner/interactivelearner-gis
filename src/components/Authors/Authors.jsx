@@ -2,7 +2,7 @@
 import { DashGrid } from "@didyoumeantoast/dash-components-react";
 import React from "react";
 import Button from "../Button/Button";
-import Card from "../card/Card";
+import Card from "../Card/Card";
 import "./Authors.css";
 
 export default function Authors(props) {

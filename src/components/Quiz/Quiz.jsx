@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import "./Quiz.css";
 
 import Button from "../Button/Button";
-import Card from "../card/Card";
+import Card from "../Card/Card";
 
 export default function Quiz(props) {
   const numQuestions = props.questions.questions.length;
