@@ -123,3 +123,22 @@ a:focus-visible {
     font-size: var(--dash-font-size-4);
   }
 }
+
+/* main content animation */
+main {
+  animation: fadeInMain 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInMain {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: unset;
+    opacity: 1;
+  }
+}
