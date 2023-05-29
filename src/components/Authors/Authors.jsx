@@ -3,12 +3,11 @@ import { DashGrid } from "@didyoumeantoast/dash-components-react";
 import React from "react";
 import Button from "../Button/Button";
 import Card from "../card/Card";
-import Container from "../Container/Container";
 import "./Authors.css";
 
 export default function Authors(props) {
   return (
-    <Container className="authors">
+    <div className="authors">
       <h2>Authors</h2>
       <DashGrid colCs="1" colS="1" colM="2" colL="2" colXl="2">
         {props.authors.map((card, index) => (
@@ -24,6 +23,6 @@ export default function Authors(props) {
           </Card>
         ))}
       </DashGrid>
-    </Container>
+    </div>
   );
 }

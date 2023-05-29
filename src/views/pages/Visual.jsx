@@ -56,9 +56,9 @@ export default function Visual() {
 
         <h2>Test Your Knowledge</h2>
         <Quiz questions={questions} />
+        <Sources sources={sources} />
+        <Authors authors={authors} />
       </Container>
-      <Sources sources={sources} />
-      <Authors authors={authors} />
     </MainLayout>
   );
 }

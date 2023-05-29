@@ -7,12 +7,11 @@ import Card from "./card/Card";
 
 import { DashList } from "@didyoumeantoast/dash-components-react";
 
-import Container from "./Container/Container";
 import NavListItem from "./NavListItem/NavListItem";
 
 export default function Sources(props) {
   return (
-    <Container>
+    <>
       <h2>Sources</h2>
       <Card noPadding>
         <DashList scale="l" selectionMode="none">
@@ -28,6 +27,6 @@ export default function Sources(props) {
           ))}
         </DashList>
       </Card>
-    </Container>
+    </>
   );
 }

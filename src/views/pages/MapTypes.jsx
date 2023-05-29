@@ -6,7 +6,6 @@ import Authors from "../../components/Authors/Authors.jsx";
 import Quiz from "../../components/Quiz/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Title from "../../components/Title/Title.jsx";
-import { themeMUI } from "../../styles/themeMUI";
 import questions from "../questions/MapTypes.json";
 
 import Card from "../../components/card/Card";
@@ -66,15 +65,16 @@ export default function MapTypes() {
       <Container>
         <h2>Learn and Interact</h2>
 
-        <Card elevation={3} sx={themeMUI.card}>
+        <Card>
           <Content />
         </Card>
 
         <h2>Test Your Knowledge</h2>
+
         <Quiz questions={questions} />
+        <Sources sources={sources} />
+        <Authors authors={authors} />
       </Container>
-      <Sources sources={sources} />
-      <Authors authors={authors} />
     </MainLayout>
   );
 }
