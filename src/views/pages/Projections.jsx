@@ -2,8 +2,8 @@ import React from "react";
 
 import MainLayout from "../layouts/MainLayout";
 
-import Authors from "../../components/Authors.jsx";
-import Quiz from "../../components/Quiz.jsx";
+import Authors from "../../components/Authors/Authors.jsx";
+import Quiz from "../../components/Quiz/Quiz.jsx";
 import Sources from "../../components/Sources.jsx";
 import Title from "../../components/Title/Title.jsx";
 import questions from "../questions/Projections.json";

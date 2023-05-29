@@ -2,6 +2,5 @@
   box-shadow: var(--dash-box-shadow);
   border-radius: var(--dash-border-radius);
   padding: var(--dash-spacing-4);
-  border: var(--dash-border-style-1);
   background-color: var(--dash-background-2);
 }

@@ -7,7 +7,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div class="footer">
+    <div className="footer">
       <h4>Interactive Learner GIS</h4>
       <p>
         Source code available on{" "}

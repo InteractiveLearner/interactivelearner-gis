@@ -22,6 +22,7 @@ export default function Sources(props) {
               href={card.url}
               title={card.title}
               description={card.author}
+              target="_blank"
               icon="&#128214;"
             ></NavListItem>
           ))}

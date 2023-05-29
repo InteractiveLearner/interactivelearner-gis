@@ -1,6 +1,10 @@
+@import "@didyoumeantoast/dash-components/dist/dash-components/dash-components.css";
+@import url("./fonts.css");
+
 body {
-  background-color: var(--dash-background-1);
-  color: var(--dash-text-1);
+  background: var(--dash-background-1);
+  color: var(--dash-text-color-1);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 h1,
@@ -10,6 +14,7 @@ h4,
 h5,
 h6,
 p {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   line-height: var(--dash-line-height-default);
   font-weight: var(--dash-font-weight-light);
 }
@@ -46,4 +51,8 @@ h6 {
 
 p {
   font-size: var(--dash-font-size-4);
+}
+
+.container > .card {
+  margin-bottom: var(--dash-spacing-8);
 }

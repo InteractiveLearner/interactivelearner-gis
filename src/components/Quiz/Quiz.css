@@ -1,0 +1,42 @@
+.quiz h4 {
+  font-weight: var(--dash-font-weight-normal);
+}
+
+.quiz p {
+  font-size: var(--dash-font-size-3);
+}
+
+.quiz .quiz-answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dash-spacing-2);
+  padding-block-end: var(--dash-spacing-6);
+}
+
+.quiz .quiz-answers-container .button {
+  font-weight: var(--dash-font-weight-light);
+}
+
+.quiz .quiz-footer {
+  display: flex;
+  gap: var(--dash-spacing-3);
+}
+
+.quiz .quiz-results-data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dash-spacing-2);
+  padding-block-end: var(--dash-spacing-6);
+}
+
+.quiz .quiz-results-data .quiz-correct-answer {
+  color: var(--dash-success);
+}
+
+.quiz .quiz-results-data .quiz-incorrect-answer {
+  color: var(--dash-danger);
+}
+
+.quiz .quiz-results-data .quiz-result-data-question-num {
+  font-weight: var(--dash-font-weight-normal);
+}

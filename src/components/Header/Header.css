@@ -1,0 +1,25 @@
+.header {
+  color: var(--dash-text-color-1-dark);
+  background-color: var(--dash-background-2-dark);
+  padding: var(--dash-spacing-3) var(--dash-spacing-6);
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--dash-box-shadow);
+}
+
+.header a {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+  align-items: center;
+  outline-color: var(--dash-brand);
+}
+
+.header h3 {
+  padding-inline-start: var(--dash-spacing-3);
+  margin: 0;
+}
+
+.header dash-theme-toggle {
+  --dash-text-color-1: var(--dash-text-color-1-dark);
+}
