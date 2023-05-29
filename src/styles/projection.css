@@ -40,7 +40,11 @@
 
 .map path {
   fill: var(--dash-success);
-  stroke: var(--dash-border-1);
+  stroke: var(--dash-text-color-2);
+}
+
+html[data-theme="dark"] .map path {
+  stroke: unset;
 }
 
 .projection-center {
@@ -49,10 +53,14 @@
 
 .graticule path {
   fill: none;
-  stroke: var(--dash-text-color-1);
+  stroke: var(--dash-background-3);
+}
+
+html[data-theme="dark"] .graticule path {
+  stroke: var(--dash-border-1);
 }
 
 .circles path {
   fill: none;
-  stroke: var(--dash-border-color-1);
+  stroke: var(--dash-text-color-2);
 }

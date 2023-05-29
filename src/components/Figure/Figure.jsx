@@ -4,24 +4,27 @@
  */
 
 import React from "react";
-import Card from "../card/Card";
+
+import "./Figure.css";
 
 export default function Footer(props) {
   return (
-    <Card>
+    <div className="figure">
       <img src={props.img} width="100%" height="100%" />
       <h5>{props.title}</h5>
       {props.credit !== "" && (
-        <a
-          href={props.url}
-          target="_blank"
-          style={{
-            fontSize: "var(--dash-font-size-1)",
-          }}
-        >
-          {props.credit}
-        </a>
+        <div className="figure-credit">
+          <a
+            href={props.url}
+            target="_blank"
+            style={{
+              fontSize: "var(--dash-font-size-1)",
+            }}
+          >
+            {props.credit}
+          </a>
+        </div>
       )}
-    </Card>
+    </div>
   );
 }

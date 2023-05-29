@@ -1,0 +1,15 @@
+.figure {
+  border-radius: var(--dash-border-radius);
+  padding: var(--dash-spacing-4) var(--dash-spacing-4) var(--dash-spacing-2)
+    var(--dash-spacing-4);
+  background-color: var(--dash-background-2);
+  border: var(--dash-border-style-1);
+}
+
+.figure h5 {
+  margin: 0;
+}
+
+.figure .figure-credit {
+  margin-top: var(--dash-spacing-2);
+}

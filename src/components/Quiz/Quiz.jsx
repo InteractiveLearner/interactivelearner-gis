@@ -72,6 +72,7 @@ export default function Quiz(props) {
           <div className="quiz-results-data">{renderResultsData()}</div>
           <Button
             scale="l"
+            appearance="outline"
             onClick={() => {
               setShowScore(false);
               setCurrentQuestion(0);
