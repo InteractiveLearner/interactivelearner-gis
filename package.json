@@ -2,7 +2,6 @@
   "homepage": "https://www.interactivelearner-gis.com",
   "name": "interactivelearner.github.io",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
