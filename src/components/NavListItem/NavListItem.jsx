@@ -14,7 +14,7 @@ export default function NavListItem({
       <DashIcon
         className="nli-icon"
         icon={icon}
-        scale="l"
+        scale="m"
         slot="actions-start"
       />
       <div className="nli-content">
