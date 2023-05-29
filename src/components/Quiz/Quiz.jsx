@@ -97,7 +97,6 @@ export default function Quiz(props) {
                 <Button
                   key={option.key}
                   appearance="outline"
-                  scale="l"
                   onClick={() => {
                     OnOptionSelect(
                       option.key ===
