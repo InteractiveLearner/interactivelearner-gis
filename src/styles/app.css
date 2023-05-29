@@ -1,10 +1,18 @@
 @import "@didyoumeantoast/dash-components/dist/dash-components/dash-components.css";
 @import url("./fonts.css");
 
-body {
+body,
+#root {
   background: var(--dash-background-1);
   color: var(--dash-text-color-1);
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
 
 h1,

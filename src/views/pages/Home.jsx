@@ -61,7 +61,7 @@ export default function Home() {
             {cards.map((card, index) => (
               <NavListItem
                 key={index}
-                icon="&#128218;"
+                icon="mortarboard"
                 title={card.title}
                 description={card.description}
                 href={card.url}

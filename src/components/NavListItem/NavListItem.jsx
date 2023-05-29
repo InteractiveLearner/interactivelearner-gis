@@ -1,4 +1,4 @@
-import { DashListItem } from "@didyoumeantoast/dash-components-react";
+import { DashIcon, DashListItem } from "@didyoumeantoast/dash-components-react";
 import React from "react";
 import "./NavListItem.css";
 
@@ -11,9 +11,12 @@ export default function NavListItem({
 } = {}) {
   return (
     <DashListItem className="nav-list-item" href={href} target={target}>
-      <span className="nli-icon" slot="actions-start">
-        {icon}
-      </span>
+      <DashIcon
+        className="nli-icon"
+        icon={icon}
+        scale="l"
+        slot="actions-start"
+      />
       <div className="nli-content">
         <span className="nli-title">{title}</span>
         <span className="nli-description">{description}</span>

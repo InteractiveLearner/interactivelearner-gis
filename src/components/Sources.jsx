@@ -3,11 +3,11 @@
  */
 import React from "react";
 
-import { Container } from "@mui/material";
 import Card from "./card/Card";
 
 import { DashList } from "@didyoumeantoast/dash-components-react";
 
+import Container from "./Container/Container";
 import NavListItem from "./NavListItem/NavListItem";
 
 export default function Sources(props) {
@@ -23,7 +23,7 @@ export default function Sources(props) {
               title={card.title}
               description={card.author}
               target="_blank"
-              icon="&#128214;"
+              icon="journal-bookmark-fill"
             ></NavListItem>
           ))}
         </DashList>
