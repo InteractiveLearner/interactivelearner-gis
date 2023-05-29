@@ -118,10 +118,6 @@ a:focus-visible {
     margin: 0 0 var(--dash-spacing-half) 0;
     font-size: 0.75rem;
   }
-
-  p {
-    font-size: var(--dash-font-size-4);
-  }
 }
 
 /* main content animation */
