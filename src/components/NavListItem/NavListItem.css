@@ -1,6 +1,7 @@
 dash-list-item.nav-list-item .nli-content {
   display: flex;
   flex-direction: column;
+  padding-inline-end: var(--dash-spacing-2);
 }
 
 dash-list-item.nav-list-item .nli-title {
