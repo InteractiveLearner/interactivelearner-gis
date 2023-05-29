@@ -1,6 +1,6 @@
 .header {
   color: var(--dash-text-color-1-dark);
-  background-color: var(--dash-background-2-dark);
+  background-color: var(--ilgis-brand);
   padding: var(--dash-spacing-2) var(--dash-spacing-6);
   display: flex;
   justify-content: space-between;
