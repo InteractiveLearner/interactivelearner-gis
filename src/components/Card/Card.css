@@ -1,0 +1,6 @@
+.card {
+  box-shadow: var(--dash-box-shadow);
+  border-radius: var(--dash-border-radius);
+  padding: var(--dash-spacing-4);
+  background-color: var(--dash-background-2);
+}

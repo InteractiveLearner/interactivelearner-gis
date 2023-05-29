@@ -1,0 +1,15 @@
+.footer {
+  text-align: center;
+  padding: var(--dash-spacing-12);
+}
+
+.footer h4 {
+  font-weight: var(--dash-font-weight-normal);
+}
+
+.footer p {
+  margin: var(--dash-spacing-1) 0;
+  color: var(--dash-text-color-2);
+  font-weight: var(--dash-font-weight-normal);
+  font-size: var(--dash-font-size-2);
+}

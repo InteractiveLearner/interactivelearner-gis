@@ -1,0 +1,25 @@
+.header {
+  color: var(--dash-text-color-1-dark);
+  background-color: var(--ilgis-brand);
+  padding: var(--dash-spacing-2) var(--dash-spacing-6);
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--dash-box-shadow);
+  height: 48px;
+}
+
+.header a {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+  align-items: center;
+}
+
+.header h3 {
+  padding-inline-start: var(--dash-spacing-3);
+  margin: 0;
+}
+
+.header dash-theme-toggle {
+  --dash-text-color-1: var(--dash-text-color-1-dark);
+}
