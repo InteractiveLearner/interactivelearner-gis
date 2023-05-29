@@ -2,11 +2,11 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@didyoumeantoast/dash-components':
-    specifier: ^1.5.1
-    version: 1.5.1
+    specifier: ^1.5.2
+    version: 1.5.2
   '@didyoumeantoast/dash-components-react':
-    specifier: ^1.5.1
-    version: 1.5.1(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.5.2
+    version: 1.5.2(react-dom@18.2.0)(react@18.2.0)
   '@mdx-js/react':
     specifier: ^2.2.1
     version: 2.3.0(react@18.2.0)
@@ -286,19 +286,19 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@didyoumeantoast/dash-components-react@1.5.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-kEJsDMncrSztYA9OKLFayVDdDvoyHN8tOHKhUuJNnnlRjC+rs4H8J2olHS4e7MLzLOGV22kT/rpvB4V4ao1Qfw==}
+  /@didyoumeantoast/dash-components-react@1.5.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-R1CM6EVqJVrY8K9iEHe2nD/FvESuxtUO3LqkuRuS1H4wgWozSnWdUJuIuhGgoKelCajva6cGqhDyiTlsqBIUQQ==}
     peerDependencies:
       react: '>=16.4'
       react-dom: '>=16.4'
     dependencies:
-      '@didyoumeantoast/dash-components': 1.5.1
+      '@didyoumeantoast/dash-components': 1.5.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@didyoumeantoast/dash-components@1.5.1:
-    resolution: {integrity: sha512-Qf6kk9Vg6o7qQTIYYngm7XbiDIUyNWSFdPOa1N2MHTfLZpzKUIv7NZiEjbI0R9Ib54KmAiAxbajnEEQ7Qj8LYQ==}
+  /@didyoumeantoast/dash-components@1.5.2:
+    resolution: {integrity: sha512-myCeV0CyZmoT5YXz9eLE7uq9j3hy/ZvfEJ31L0brzro9J/klQzKkdGdfZ184umHcNOKo2mWCMRffnZt0F+3iYA==}
     engines: {node: 18.x}
     dependencies:
       '@didyoumeantoast/dash-utils': 2.0.0
