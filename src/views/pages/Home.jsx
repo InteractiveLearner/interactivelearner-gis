@@ -11,6 +11,7 @@ const cards = [
     description:
       "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
     url: "/projections",
+    icon: "globe2",
   },
   {
     title: "Scale",
@@ -18,12 +19,14 @@ const cards = [
       "Explore how map scale can be used to hide and show details on a map.",
 
     url: "/scale",
+    icon: "zoom-in",
   },
   {
     title: "Visual encoding",
     description: "Learn about the main building blocks of visual encoding.",
 
     url: "/visual",
+    icon: "bounding-box",
   },
   {
     title: "Types of maps",
@@ -31,6 +34,8 @@ const cards = [
       "Find out how visual encoding allows geographers to produce thematic maps.",
 
     url: "/thematic",
+    icon: "map",
+
   },
   // {
   //   title: "Resources",
@@ -61,7 +66,7 @@ export default function Home() {
             {cards.map((card, index) => (
               <NavListItem
                 key={index}
-                icon="mortarboard"
+                icon={card.icon}
                 title={card.title}
                 description={card.description}
                 href={card.url}
