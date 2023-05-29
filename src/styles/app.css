@@ -108,17 +108,17 @@ a:focus-visible {
 
   h4 {
     margin: 0 0 var(--dash-spacing-2) 0;
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   h5 {
     margin: 0 0 var(--dash-spacing-1) 0;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 
   h6 {
     margin: 0 0 var(--dash-spacing-half) 0;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 }
 
