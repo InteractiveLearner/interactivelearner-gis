@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   box-shadow: var(--dash-box-shadow);
+  height: 48px;
 }
 
 .header a {
@@ -22,4 +23,9 @@
 
 .header dash-theme-toggle {
   --dash-text-color-1: var(--dash-text-color-1-dark);
+}
+
+.header dash-icon {
+  width: 32px;
+  height: 32px;
 }

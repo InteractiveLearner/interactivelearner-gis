@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <div className="header">
       <a href="/">
-        <DashIcon icon="globe2" />
+        <DashIcon icon="globe2" scale="l" />
         <h3>Interactive Learner GIS</h3>
       </a>
 
