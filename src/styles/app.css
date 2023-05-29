@@ -58,7 +58,7 @@ h6 {
 }
 
 p {
-  font-size: var(--dash-font-size-4);
+  font-size: var(--dash-font-size-3);
 }
 
 .container > .card {
@@ -67,4 +67,59 @@ p {
 
 a {
   color: var(--dash-text-color-2);
+}
+
+a:focus-visible {
+  outline-color: var(--dash-brand);
+}
+
+/* Responsive font sizes */
+
+@media (max-width: 768px) {
+  body {
+    --dash-font-size--1: 8px;
+    --dash-font-size-0: 10px;
+    --dash-font-size-1: 12px;
+    --dash-font-size-2: 14px;
+    --dash-font-size-3: 16px;
+    --dash-font-size-4: 18px;
+    --dash-font-size-5: 20px;
+    --dash-font-size-6: 24px;
+    --dash-font-size-7: 30px;
+    --dash-font-size-8: 36px;
+  }
+
+  h1 {
+    margin: var(--dash-spacing-2) 0 var(--dash-spacing-5) 0;
+    font-size: 2rem;
+  }
+
+  h2 {
+    margin: var(--dash-spacing-1) 0 var(--dash-spacing-4) 0;
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    margin: var(--dash-spacing-half) 0 var(--dash-spacing-3) 0;
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    margin: 0 0 var(--dash-spacing-2) 0;
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    margin: 0 0 var(--dash-spacing-1) 0;
+    font-size: 1rem;
+  }
+
+  h6 {
+    margin: 0 0 var(--dash-spacing-half) 0;
+    font-size: 0.75rem;
+  }
+
+  p {
+    font-size: var(--dash-font-size-4);
+  }
 }
