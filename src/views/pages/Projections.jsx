@@ -6,11 +6,11 @@ import Authors from "../../components/Authors/Authors.jsx";
 import Quiz from "../../components/Quiz/Quiz.jsx";
 import Sources from "../../components/Sources/Sources.jsx";
 import Title from "../../components/Title/Title.jsx";
-import questions from "../questions/Projections.json";
-
 import Card from "../../components/Card/Card";
 import Container from "../../components/Container/Container";
+
 import Content from "../content/Projections.mdx";
+import questions from "../questions/Projections.json";
 
 const sources = [
   {

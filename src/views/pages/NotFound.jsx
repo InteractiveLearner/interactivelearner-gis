@@ -4,10 +4,10 @@
  */
 import React from "react";
 
+import MainLayout from "../layouts/MainLayout";
+
 import Button from "../../components/Button/Button";
 import Container from "../../components/Container/Container";
-
-import MainLayout from "../layouts/MainLayout";
 
 export default function NotFound(props) {
   return (

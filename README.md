@@ -42,7 +42,7 @@ The incomplete features are mentioned in the [Issues](https://github.com/Interac
 - [ ] Support multiple languages
 - [ ] Pagination
 - [ ] Table of contents
-- [ ] Consistent styling between desktop and mobile
+- [x] Consistent styling between desktop and mobile
 
 ## How to Contribute
 
@@ -52,7 +52,7 @@ Create an issue and / or make a pull request. A GitHub account is required.
 
 ##### Get Familiar with the Workflow
 
-See the **[Contribute Page](https://www.interactivelearner-gis.com/#/contribute)** for instructions.
+Please visit the **[Contribute Page](./src/views/content/Contribute.mdx)** for instructions.
 
 ##### Clone the Application
 
@@ -89,21 +89,26 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ## Technologies
 
-### Basic
-- [GitHub Pages](https://pages.github.com/)
-- [Markdown](https://daringfireball.net/projects/markdown/)
+### Deployment
+- [Vercel](https://vercel.com/docs)
+
+### Tooling
+
+- [Vite](https://vitejs.dev/)
 
 ### Web Design
 - [React](https://reactjs.org/)
-- [Material UI](https://mui.com/)
 - [React Router](https://reactrouter.com/)
-- [NodeJS](https://nodejs.org/en/)
-- [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
-- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- [Dash Components](https://www.npmjs.com/package/@didyoumeantoast/dash-components)
+
+### Content writing and documentation
+- [MDX JS](https://mdxjs.com/)
+- [Markdown](https://daringfireball.net/projects/markdown/syntax)
 
 ### Geospatial
 - [GeoPandas](https://geopandas.org/en/stable/)
 - [React Leaflet](https://react-leaflet.js.org/)
+- [QGIS](https://qgis.org/en/site/)
 - [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview)
 - [ArcGIS Online Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm)
 
@@ -113,7 +118,7 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ## Contributors
 
-Your name here!
+[Jeff Menke](https://github.com/jmanke)
   
 ## Credits and Acknowledgements
 
