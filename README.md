@@ -1,8 +1,8 @@
-<img src="https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/public/logo192.png" width="192px" height="192px" />
+<img src="https://github.com/InteractiveLearner/interactivelearner-gis/blob/main/public/logo192.png" width="192px" height="192px" />
 
 # Interactive Learner GIS
 
-[![Issues Open](https://img.shields.io/github/issues/InteractiveLearner/interactivelearner.github.io?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) [![Project License](https://img.shields.io/github/license/InteractiveLearner/interactivelearner.github.io?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/LICENSE)
+[![Issues Open](https://img.shields.io/github/issues/InteractiveLearner/interactivelearner-gis?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner-gis/issues) [![Project License](https://img.shields.io/github/license/InteractiveLearner/interactivelearner-gis?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner-gis/blob/main/LICENSE)
 
 Your one-stop shop for all things GIS! Easily learn about GIS in an interactive environment. 
 
@@ -15,9 +15,9 @@ Mapmakers use maps as a form of graphical communication. Map readers (such as yo
 
 ## Curriculum (ongoing)
 
-Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner.github.io#how-to-contribute). 
+Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner-gis#how-to-contribute). 
 
-The incomplete chapters are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) tab under the *Content* label. 
+The incomplete chapters are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Content* label. 
 
 - [x] [Projections](https://www.interactivelearner-gis.com/#/projections)
 - [x] [Scale](https://www.interactivelearner-gis.com/#/scale)
@@ -35,7 +35,7 @@ The incomplete chapters are mentioned in the [Issues](https://github.com/Interac
 
 ## Planned Features for a Better Learning Experience
 
-The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) tab under the *Enhancement* label. 
+The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Enhancement* label. 
 
 - [ ] Implement report system using local storage to track user progress
 - [ ] Grade tracking system to assess learning (also local storage)
@@ -57,7 +57,7 @@ See the **[Contribute Page](https://www.interactivelearner-gis.com/#/contribute)
 ##### Clone the Application
 
 ```
-git clone https://github.com/InteractiveLearner/interactivelearner.github.io.git
+git clone https://github.com/InteractiveLearner/interactivelearner-gis.git
 ```
 
 ##### Package Manager

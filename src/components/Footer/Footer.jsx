@@ -13,7 +13,7 @@ export default function Footer() {
         Source code available on{" "}
         <a
           style={{ color: "inherit" }}
-          href="https://github.com/InteractiveLearner/interactivelearner.github.io"
+          href="https://github.com/InteractiveLearner/interactivelearner-gis"
           target="_blank"
           rel="noreferrer"
         >
