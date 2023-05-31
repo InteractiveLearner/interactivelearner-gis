@@ -2,35 +2,27 @@
 
 ## Basic Template
 
-Anytime you want to add a new page, it should follow this format. 
+Anytime you want to add a new page, it should follow this format. Then you can add the page to `Home.jsx` and `App.jsx`.
 
 ```jsx
 import React from "react";
 
-import {
-  Typography,
-  Container,
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-} from "@mui/material";
-
 import MainLayout from "../layouts/MainLayout";
 
-import Title from "../../components/Title.jsx";
-import Quiz from "../../components/Quiz.jsx";
-import Sources from "../../components/Sources.jsx";
-import Authors from "../../components/Authors.jsx";
-import questions from "../questions/NameOfFile.json";
-import { themeMUI } from "../../styles/themeMUI";
+import Authors from "../../components/Authors/Authors.jsx";
+import Quiz from "../../components/Quiz/Quiz.jsx";
+import Sources from "../../components/Sources/Sources.jsx";
+import Title from "../../components/Title/Title.jsx";
+import Card from "../../components/Card/Card";
+import Container from "../../components/Container/Container";
 
-import { MDXProvider } from "@mdx-js/react";
-import { useThemedStylesWithMdx } from "@theme-ui/mdx";
-import { ThemeProvider } from "theme-ui";
-import { themeMDX } from "../../styles/themeMDX";
+// The MDX Content you wrote for the page
 import Content from "../content/NameOfFile.mdx";
 
+// The quiz questions you wrote for the page
+import questions from "../questions/NameOfFile.json";
 
+// Source you used to write content for the page
 const sources = [
   {
     title: "",
@@ -39,40 +31,32 @@ const sources = [
   },
 ];
 
+// Who helped write the page?
 const authors = [
   {
-    author: "Omar Kawach",
-    description: "Developer of Interactive Learner GIS",
-    url: "https://github.com/omarkawach",
+    author: "your name here",
+    description: "some background about you",
+    url: "link to where people can learn more about you",
   },
 ];
 
-export default function ComponentName() {
+// Rename the function and title
+export default function PageName() {
   return (
     <MainLayout>
-      <Title crumbs={"ComponentName"} />
-      <ThemeProviderMUI theme={themeMUI}>
-        <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
-          <Typography gutterBottom variant="h3" sx={themeMUI.header}>
-            Learn and Interact
-          </Typography>
+      <Title name={"Page name"} />
+      <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
+        <h2>Learn and Interact</h2>
 
-          <Card elevation={3} sx={themeMUI.card}>
-            <ThemeProvider theme={themeMDX}>
-              <MDXProvider components={useThemedStylesWithMdx()}>
-                <Content />
-              </MDXProvider>
-            </ThemeProvider>
-          </Card>
+        <Card>
+          <Content />
+        </Card>
 
-          <Typography gutterBottom variant="h3" sx={themeMUI.header}>
-            Test Your Knowledge
-          </Typography>
-          <Quiz questions={questions} />
-        </Container>
-      </ThemeProviderMUI>
-      <Sources sources={sources} />
-      <Authors authors={authors} />
+        <h2>Test Your Knowledge</h2>
+        <Quiz questions={questions} />
+        <Sources sources={sources} />
+        <Authors authors={authors} />
+      </Container>
     </MainLayout>
   );
 }

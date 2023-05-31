@@ -1,8 +1,8 @@
-<img src="https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/public/logo192.png" width="192px" height="192px" />
+<img src="https://github.com/InteractiveLearner/interactivelearner-gis/blob/main/public/logo192.png" width="192px" height="192px" />
 
 # Interactive Learner GIS
 
-[![Issues Open](https://img.shields.io/github/issues/InteractiveLearner/interactivelearner.github.io?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) [![Project License](https://img.shields.io/github/license/InteractiveLearner/interactivelearner.github.io?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner.github.io/blob/main/LICENSE)
+[![Issues Open](https://img.shields.io/github/issues/InteractiveLearner/interactivelearner-gis?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner-gis/issues) [![Project License](https://img.shields.io/github/license/InteractiveLearner/interactivelearner-gis?style=flat-square)](https://github.com/InteractiveLearner/interactivelearner-gis/blob/main/LICENSE)
 
 Your one-stop shop for all things GIS! Easily learn about GIS in an interactive environment. 
 
@@ -15,9 +15,9 @@ Mapmakers use maps as a form of graphical communication. Map readers (such as yo
 
 ## Curriculum (ongoing)
 
-Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner.github.io#how-to-contribute). 
+Have a chapter idea? Look below on [how to contribute](https://github.com/InteractiveLearner/interactivelearner-gis#how-to-contribute). 
 
-The incomplete chapters are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) tab under the *Content* label. 
+The incomplete chapters are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Content* label. 
 
 - [x] [Projections](https://www.interactivelearner-gis.com/#/projections)
 - [x] [Scale](https://www.interactivelearner-gis.com/#/scale)
@@ -35,14 +35,14 @@ The incomplete chapters are mentioned in the [Issues](https://github.com/Interac
 
 ## Planned Features for a Better Learning Experience
 
-The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner.github.io/issues) tab under the *Enhancement* label. 
+The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Enhancement* label. 
 
 - [ ] Implement report system using local storage to track user progress
 - [ ] Grade tracking system to assess learning (also local storage)
 - [ ] Support multiple languages
 - [ ] Pagination
 - [ ] Table of contents
-- [ ] Consistent styling between desktop and mobile
+- [x] Consistent styling between desktop and mobile
 
 ## How to Contribute
 
@@ -52,12 +52,12 @@ Create an issue and / or make a pull request. A GitHub account is required.
 
 ##### Get Familiar with the Workflow
 
-See the **[Contribute Page](https://www.interactivelearner-gis.com/#/contribute)** for instructions.
+Please visit the **[Contribute Page](./src/views/content/Contribute.mdx)** for instructions.
 
 ##### Clone the Application
 
 ```
-git clone https://github.com/InteractiveLearner/interactivelearner.github.io.git
+git clone https://github.com/InteractiveLearner/interactivelearner-gis.git
 ```
 
 ##### Package Manager
@@ -89,21 +89,26 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ## Technologies
 
-### Basic
-- [GitHub Pages](https://pages.github.com/)
-- [Markdown](https://daringfireball.net/projects/markdown/)
+### Deployment
+- [Vercel](https://vercel.com/docs)
+
+### Tooling
+
+- [Vite](https://vitejs.dev/)
 
 ### Web Design
 - [React](https://reactjs.org/)
-- [Material UI](https://mui.com/)
 - [React Router](https://reactrouter.com/)
-- [NodeJS](https://nodejs.org/en/)
-- [Markdown-to-JSX](https://github.com/probablyup/markdown-to-jsx)
-- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- [Dash Components](https://www.npmjs.com/package/@didyoumeantoast/dash-components)
+
+### Content writing and documentation
+- [MDX JS](https://mdxjs.com/)
+- [Markdown](https://daringfireball.net/projects/markdown/syntax)
 
 ### Geospatial
 - [GeoPandas](https://geopandas.org/en/stable/)
 - [React Leaflet](https://react-leaflet.js.org/)
+- [QGIS](https://qgis.org/en/site/)
 - [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview)
 - [ArcGIS Online Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm)
 
@@ -113,7 +118,7 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 ## Contributors
 
-Your name here!
+[Jeff Menke](https://github.com/jmanke)
   
 ## Credits and Acknowledgements
 
