@@ -1,131 +1,266 @@
 /**
- * Quiz.jsx is meant to test user knowledge. Eventually, the
- * goal is to have a more complex quiz system to gauge learning.
+ * Footer.jsx replaces the HTML <footer> tag for one
+ * built using Material UI.
  */
-import React, { useState } from "react";
-
-import "./Quiz.css";
-
+import {
+  DashButton,
+  DashDropdown,
+  DashIconButton,
+  DashList,
+  DashListItem,
+  DashTooltip
+} from "@didyoumeantoast/dash-components-react";
+import React, { useEffect, useState } from "react";
+import { MediaSizes } from "../../constants";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
+import "./Quiz.css";
 
-export default function Quiz(props) {
-  const numQuestions = props.questions.questions.length;
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
-  const [activeStep, setActiveStep] = useState(0);
-  const [answersSelected, setAnswersSelected] = useState(
-    new Array(numQuestions).fill(0)
+const QuestionState = Object.freeze({
+  UNANSWERED: "unanswered",
+  CORRECT: "correct",
+  INCORRECT: "incorrect",
+});
+
+function createQuizQuestions(questions) {
+  return questions.map((question) => ({
+    question: question.question,
+    correctAnswer: question.correctAnswer,
+    currentAnswer: undefined,
+    options: question.options,
+    status: QuestionState.UNANSWERED,
+  }));
+}
+
+function questionOptionStatus(question, key) {
+  if (
+    question.status === QuestionState.UNANSWERED ||
+    question.currentAnswer !== key
+  ) {
+    return undefined;
+  }
+
+  return question.status === QuestionState.CORRECT ? "success" : "error";
+}
+
+export default function Quiz({ questions } = {}) {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [quizQuestions, setQuizQuestions] = useState(
+    createQuizQuestions(questions.questions)
+  );
+  const [isFinished, setIsFinished] = useState(false);
+  const [resetBtn, setResetBtn] = useState(null);
+  const [questionDropdown, setQuestionDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const question = quizQuestions[currentQuestionIndex];
+  const hasAnswered = quizQuestions.some(
+    (q) => q.status !== QuestionState.UNANSWERED
+  );
+  const allAnswered = quizQuestions.every(
+    (q) => q.status !== QuestionState.UNANSWERED
   );
 
-  const OnOptionSelect = (correctOptionSelected) => {
-    if (correctOptionSelected) {
-      setScore(score + 1);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= MediaSizes.MOBILE);
+    };
+    console.log("add");
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const updateCurrentAnswer = (key) => {
+    if (question.currentAnswer === key) {
+      return;
     }
 
-    if (currentQuestion + 1 < numQuestions) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setShowScore(true);
+    quizQuestions[currentQuestionIndex].status = QuestionState.UNANSWERED;
+    quizQuestions[currentQuestionIndex].currentAnswer = key;
+    setQuizQuestions([...quizQuestions]);
+  };
+
+  const nextQuestion = () => {
+    setCurrentQuestionIndex(
+      Math.min(currentQuestionIndex + 1, quizQuestions.length - 1)
+    );
+  };
+
+  const finish = () => {
+    if (!allAnswered) {
+      return;
     }
 
-    setActiveStep(currentQuestion + 1);
+    setIsFinished(true);
   };
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setCurrentQuestion(currentQuestion + 1);
+  const checkAnswer = () => {
+    quizQuestions[currentQuestionIndex].status =
+      question.currentAnswer === question.correctAnswer
+        ? QuestionState.CORRECT
+        : QuestionState.INCORRECT;
+    setQuizQuestions([...quizQuestions]);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    setCurrentQuestion(currentQuestion - 1);
-  };
+  const reset = () => {
+    if (!hasAnswered) {
+      return;
+    }
 
-  const renderResultsData = () => {
-    return answersSelected.map((selected, index) => {
-      let answer = props.questions.questions[index].correctAnswer;
-      return (
-        <div key={index} className="quiz-result-data">
-          <span className="quiz-result-data-question-num">Q{index + 1}: </span>
-          {selected === answer ? (
-            <span className="quiz-correct-answer">Correct</span>
-          ) : (
-            <span className="quiz-incorrect-answer">
-              Incorrect or no answer selected
-            </span>
-          )}
-        </div>
-      );
-    });
+    setIsFinished(false);
+    setQuizQuestions(createQuizQuestions(questions.questions));
+    setCurrentQuestionIndex(0);
   };
 
   return (
     <Card className="quiz">
-      {showScore ? (
-        <>
-          <h4>
-            You scored {score} out of {props.questions.questions.length}
-          </h4>
-          <h5>Results:</h5>
-          <div className="quiz-results-data">{renderResultsData()}</div>
-          <Button
-            scale="l"
-            appearance="outline"
-            onClick={() => {
-              setShowScore(false);
-              setCurrentQuestion(0);
-              setScore(0);
-              setActiveStep(0);
-              setAnswersSelected(new Array(numQuestions).fill(0));
-            }}
-          >
-            Take the quiz again?
-          </Button>
-        </>
+      {isFinished ? (
+        <h5>
+          You got{" "}
+          {quizQuestions.reduce(
+            (correct, question) =>
+              correct + (question.status === QuestionState.CORRECT ? 1 : 0),
+            0
+          )}{" "}
+          out of {quizQuestions.length} Correct
+        </h5>
       ) : (
         <>
-          <h4>
-            Question {currentQuestion + 1}/{props.questions.questions.length}
-          </h4>
+          <h5 className="quiz-question-header">{question.question}</h5>
 
-          <p>{props.questions.questions[currentQuestion].question}</p>
-
-          <div className="quiz-answers-container">
-            {props.questions.questions[currentQuestion].options.map(
-              (option) => (
-                <Button
-                  key={option.key}
-                  appearance="outline"
-                  onClick={() => {
-                    OnOptionSelect(
-                      option.key ===
-                        props.questions.questions[currentQuestion].correctAnswer
-                    );
-                    answersSelected[currentQuestion] = option.key;
-                    setAnswersSelected(answersSelected);
-                  }}
-                >
-                  {option.answer}
-                </Button>
-              )
-            )}
-          </div>
-          <div className="quiz-footer">
-            <Button scale="l" disabled={activeStep === 0} onClick={handleBack}>
-              Back
-            </Button>
-            <Button
-              scale="l"
-              disabled={activeStep === numQuestions - 1}
-              onClick={handleNext}
-            >
-              Next
-            </Button>
+          <div className="quiz-options">
+            {question.options.map(({ answer, key }) => (
+              <Button
+                key={answer + key}
+                onClick={() => updateCurrentAnswer(key)}
+                appearance={
+                  question.currentAnswer === key &&
+                  question.status === QuestionState.UNANSWERED
+                    ? "solid"
+                    : "outline"
+                }
+                status={questionOptionStatus(question, key)}
+              >
+                {answer}
+              </Button>
+            ))}
           </div>
         </>
       )}
+      <div className="quiz-footer">
+        {isMobile ? (
+          <DashDropdown
+            ref={(e) => setQuestionDropdown(e)}
+            placement="bottom-end"
+            autoClose={true}
+          >
+            <DashButton slot="dropdown-trigger" appearance="outline">
+              Q{currentQuestionIndex + 1}
+            </DashButton>
+
+            <DashList
+              selectionMode="single"
+              disableDeselect={true}
+              maxItems={6}
+            >
+              {quizQuestions.map((_, index) => (
+                <DashListItem
+                  key={index}
+                  selected={currentQuestionIndex === index}
+                  onDashListItemSelectedChanged={() => {
+                    setCurrentQuestionIndex(index);
+                    questionDropdown.close();
+                  }}
+                >
+                  Question {index + 1}
+                </DashListItem>
+              ))}
+            </DashList>
+          </DashDropdown>
+        ) : (
+          <span className="quiz-indicator-wrapper">
+            <DashIconButton
+              ref={setResetBtn}
+              className="quiz-reset"
+              scale="s"
+              icon="arrow-clockwise"
+              disabled={!hasAnswered ? true : undefined}
+              onClick={reset}
+            />
+            <DashTooltip
+              target={resetBtn}
+              enabled={hasAnswered}
+              offsetX={5}
+              text="Start over"
+              placementStrategy="fixed"
+              placement="right"
+            />
+            {quizQuestions.map((_, index) => (
+              <Button
+                className="quiz-progress"
+                key={index}
+                scale="s"
+                onClick={() => setCurrentQuestionIndex(index)}
+              >
+                <div
+                  className={
+                    "quiz-question-indicator" +
+                    (currentQuestionIndex === index && !isFinished
+                      ? " active"
+                      : "") +
+                    (" " + quizQuestions[index].status)
+                  }
+                ></div>
+              </Button>
+            ))}
+          </span>
+        )}
+
+        <span>
+          {isFinished ? (
+            <Button appearance="outline" onClick={reset}>
+              Start over?
+            </Button>
+          ) : (
+            <>
+              <Button
+                appearance="outline"
+                disabled={!question.currentAnswer ? true : undefined}
+                onClick={checkAnswer}
+              >
+                Check
+              </Button>
+
+              {allAnswered ||
+              currentQuestionIndex === quizQuestions.length - 1 ? (
+                <Button
+                  appearance="outline"
+                  disabled={!allAnswered ? true : undefined}
+                  onClick={finish}
+                >
+                  Finish
+                </Button>
+              ) : (
+                <Button
+                  appearance="outline"
+                  disabled={
+                    question.status === QuestionState.UNANSWERED
+                      ? true
+                      : undefined
+                  }
+                  onClick={nextQuestion}
+                >
+                  Next
+                </Button>
+              )}
+            </>
+          )}
+        </span>
+      </div>
     </Card>
   );
 }
