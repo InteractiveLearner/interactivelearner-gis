@@ -16,12 +16,20 @@ import Button from "../Button/Button";
 import Card from "../Card/Card";
 import "./Quiz.css";
 
+/**
+ * QuestionState is an enum for the state of a question.
+ */
 const QuestionState = Object.freeze({
   UNANSWERED: "unanswered",
   CORRECT: "correct",
   INCORRECT: "incorrect",
 });
 
+/**
+ * Creates an array of questions for the quiz's state.
+ * @param {*} questions - The questions to create the quiz from.
+ * @returns An array of questions for the quiz's state.
+ */
 function createQuizQuestions(questions) {
   return questions.map((question) => ({
     question: question.question,
@@ -32,6 +40,12 @@ function createQuizQuestions(questions) {
   }));
 }
 
+/**
+ * Gets the status of a question option.
+ * @param {*} question - The question to get the status of.
+ * @param {*} key - The key of the question option to get the status of.
+ * @returns The status of the question option.
+ */
 function questionOptionStatus(question, key) {
   if (
     question.status === QuestionState.UNANSWERED ||
@@ -48,10 +62,12 @@ export default function Quiz({ questions } = {}) {
   const [quizQuestions, setQuizQuestions] = useState(
     createQuizQuestions(questions.questions)
   );
-  const [isFinished, setIsFinished] = useState(false);
+
+  const [isQuizFinished, setIsQuizFinished] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   const [resetBtn, setResetBtn] = useState(null);
   const [questionDropdown, setQuestionDropdown] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   const question = quizQuestions[currentQuestionIndex];
   const hasAnswered = quizQuestions.some(
@@ -61,6 +77,9 @@ export default function Quiz({ questions } = {}) {
     (q) => q.status !== QuestionState.UNANSWERED
   );
 
+  /**
+   * Watches for the window to resize and updates the isMobile state.
+   */
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= MediaSizes.MOBILE);
@@ -73,6 +92,10 @@ export default function Quiz({ questions } = {}) {
     };
   }, []);
 
+  /**
+   * Updates the current question's answer.
+   * @param {*} key - The key of the question option to update the answer to.
+   */
   const updateCurrentAnswer = (key) => {
     if (question.currentAnswer === key) {
       return;
@@ -83,20 +106,29 @@ export default function Quiz({ questions } = {}) {
     setQuizQuestions([...quizQuestions]);
   };
 
+  /**
+   * Moves to the next question
+   */
   const nextQuestion = () => {
     setCurrentQuestionIndex(
       Math.min(currentQuestionIndex + 1, quizQuestions.length - 1)
     );
   };
 
+  /**
+   * Finishes the quiz.
+   */
   const finish = () => {
     if (!allAnswered) {
       return;
     }
 
-    setIsFinished(true);
+    setIsQuizFinished(true);
   };
 
+  /**
+   * Checks the current question's answer and updates the question's status.
+   */
   const checkAnswer = () => {
     quizQuestions[currentQuestionIndex].status =
       question.currentAnswer === question.correctAnswer
@@ -105,19 +137,22 @@ export default function Quiz({ questions } = {}) {
     setQuizQuestions([...quizQuestions]);
   };
 
+  /**
+   * Resets the quiz.
+   */
   const reset = () => {
     if (!hasAnswered) {
       return;
     }
 
-    setIsFinished(false);
+    setIsQuizFinished(false);
     setQuizQuestions(createQuizQuestions(questions.questions));
     setCurrentQuestionIndex(0);
   };
 
   return (
     <Card className="quiz">
-      {isFinished ? (
+      {isQuizFinished ? (
         <h5>
           {quizQuestions.every((q) => q.status === QuestionState.CORRECT) ? (
             <>Congratulations, you got all questions correct! </>
@@ -215,7 +250,7 @@ export default function Quiz({ questions } = {}) {
                 <div
                   className={
                     "quiz-question-indicator" +
-                    (currentQuestionIndex === index && !isFinished
+                    (currentQuestionIndex === index && !isQuizFinished
                       ? " active"
                       : "") +
                     (" " + quizQuestions[index].status)
@@ -227,7 +262,7 @@ export default function Quiz({ questions } = {}) {
         )}
 
         <span>
-          {isFinished ? (
+          {isQuizFinished ? (
             <Button appearance="outline" onClick={reset}>
               Start over?
             </Button>
