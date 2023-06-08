@@ -29,6 +29,8 @@
 .quiz .quiz-footer .quiz-indicator-wrapper {
   overflow-x: auto;
   margin-inline-end: var(--dash-spacing-3);
+  padding: var(--dash-spacing-2) var(--dash-spacing-2) var(--dash-spacing-2)
+    var(--dash-spacing-1);
 }
 
 .quiz .quiz-progress {
