@@ -193,7 +193,7 @@ export default function Quiz({ questions } = {}) {
         </>
       )}
       <div className="quiz-footer">
-        {isMobile ? (
+        {isMobile && !isQuizFinished && (
           <DashDropdown
             ref={(e) => setQuestionDropdown(e)}
             placement="bottom-end"
@@ -222,7 +222,8 @@ export default function Quiz({ questions } = {}) {
               ))}
             </DashList>
           </DashDropdown>
-        ) : (
+        )}
+        {!isMobile && (
           <span className="quiz-indicator-wrapper">
             <DashIconButton
               ref={setResetBtn}
