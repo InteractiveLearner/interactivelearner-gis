@@ -14,6 +14,7 @@
     "@didyoumeantoast/dash-components-react": "^1.5.5",
     "@mdx-js/react": "^2.2.1",
     "@mdx-js/rollup": "^2.2.1",
+    "@nivo/geo": "^0.83.0",
     "d3": "^7.8.2",
     "leaflet": "^1.9.3",
     "react": "^18.2.0",
