@@ -289,11 +289,6 @@ export default function Quiz({ questions } = {}) {
               ) : (
                 <Button
                   appearance="outline"
-                  disabled={
-                    question.status === QuestionState.UNANSWERED
-                      ? true
-                      : undefined
-                  }
                   onClick={nextQuestion}
                 >
                   Next
