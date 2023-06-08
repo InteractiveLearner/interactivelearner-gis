@@ -65,7 +65,6 @@ export default function Quiz({ questions } = {}) {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= MediaSizes.MOBILE);
     };
-    console.log("add");
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -120,13 +119,19 @@ export default function Quiz({ questions } = {}) {
     <Card className="quiz">
       {isFinished ? (
         <h5>
-          You got{" "}
-          {quizQuestions.reduce(
-            (correct, question) =>
-              correct + (question.status === QuestionState.CORRECT ? 1 : 0),
-            0
-          )}{" "}
-          out of {quizQuestions.length} Correct
+          {quizQuestions.every((q) => q.status === QuestionState.CORRECT) ? (
+            <>Congratulations, you got all questions correct! </>
+          ) : (
+            <>
+              You got{" "}
+              {quizQuestions.reduce(
+                (correct, question) =>
+                  correct + (question.status === QuestionState.CORRECT ? 1 : 0),
+                0
+              )}{" "}
+              out of {quizQuestions.length} correct
+            </>
+          )}
         </h5>
       ) : (
         <>
@@ -135,6 +140,7 @@ export default function Quiz({ questions } = {}) {
           <div className="quiz-options">
             {question.options.map(({ answer, key }) => (
               <Button
+                className="quiz-option"
                 key={answer + key}
                 onClick={() => updateCurrentAnswer(key)}
                 appearance={

@@ -4,6 +4,10 @@
   gap: var(--dash-spacing-2);
 }
 
+.quiz .quiz-options .quiz-option {
+  font-weight: var(--dash-font-weight-light);
+}
+
 .quiz .quiz-question-header {
   margin-bottom: var(--dash-spacing-6);
 }
