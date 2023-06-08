@@ -43,7 +43,7 @@ function createQuizQuestions(questions) {
 /**
  * Gets the status of a question option.
  * @param {*} question - The question to get the status of.
- * @param {*} key - The key of the question option to get the status of.
+ * @param {Number} key - The key of the question option to get the status of.
  * @returns The status of the question option.
  */
 function questionOptionStatus(question, key) {
@@ -94,7 +94,7 @@ export default function Quiz({ questions } = {}) {
 
   /**
    * Updates the current question's answer.
-   * @param {*} key - The key of the question option to update the answer to.
+   * @param {Number} key - The key of the question option to update the answer to.
    */
   const updateCurrentAnswer = (key) => {
     if (question.currentAnswer === key) {
