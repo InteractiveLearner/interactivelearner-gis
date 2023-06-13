@@ -11,6 +11,7 @@ import NotFound from "./views/pages/NotFound.jsx";
 import Projections from "./views/pages/Projections.jsx";
 import Scale from "./views/pages/Scale.jsx";
 import VisualEncoding from "./views/pages/Visual.jsx";
+import SpatialData from "./views/pages/SpatialData";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route exact path="*" element={<NotFound />} />
         <Route exact path="/projections" element={<Projections />} />
         <Route exact path="/scale" element={<Scale />} />
+        <Route exact path="/spatial" element={<SpatialData />} />
         <Route exact path="/visual" element={<VisualEncoding />} />
         <Route exact path="/thematic" element={<MapTypes />} />
       </Routes>

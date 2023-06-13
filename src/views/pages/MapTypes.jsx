@@ -61,7 +61,7 @@ const authors = [
 export default function MapTypes() {
   return (
     <MainLayout>
-      <Title name={"Types of Maps"} />
+      <Title name={"Types of maps"} />
       <Container>
         <h2>Learn and Interact</h2>
 

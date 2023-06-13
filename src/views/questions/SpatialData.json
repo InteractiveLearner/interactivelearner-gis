@@ -1,0 +1,47 @@
+{
+    "questions": [
+      {
+        "question": "Which is preferred for representing continuous data such as elevation? (Hint: you want the data with the more detailed representation of terrain)",
+        "options": [
+          {
+            "answer": "Raster",
+            "key": 1
+          },
+          {
+            "answer": "Vector",
+            "key": 2
+          }
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Which is preferred for representing discrete or categorical data such as political boundaries?",
+        "options": [
+          {
+            "answer": "Raster",
+            "key": 1
+          },
+          {
+            "answer": "Vector",
+            "key": 2
+          }
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Can you convert vector data to raster and vice versa?",
+        "options": [
+          {
+            "answer": "Yes",
+            "key": 1
+          },
+          {
+            "answer": "No",
+            "key": 2
+          }
+        ],
+        "correctAnswer": 1
+      }
+    ]
+  }
+  

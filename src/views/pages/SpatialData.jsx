@@ -9,32 +9,22 @@ import Title from "../../components/Title/Title.jsx";
 import Card from "../../components/Card/Card";
 import Container from "../../components/Container/Container";
 
-import Content from "../content/VisualEncoding.mdx";
-import questions from "../questions/VisualEncoding.json";
+// The MDX Content you wrote for the page
+import Content from "../content/SpatialData.mdx";
 
+// The quiz questions you wrote for the page
+import questions from "../questions/SpatialData.json";
+
+// Source you used to write content for the page
 const sources = [
   {
-    title: "Visualization Analysis and Design",
-    author: "Tamara Munzner",
-    url: "https://www.cs.ubc.ca/~tmm/vadbook/",
-  },
-  {
-    title: "Visual Representation from Semiology of Graphics by J. Bertin",
-    author: "Sheelagh Carpendale",
-    url: "https://innovis.cpsc.ucalgary.ca/innovis/uploads/Courses/InformationVisualizationDetails/09Bertin.pdf",
-  },
-  {
-    title: "Geometric Primitive",
-    author: "Wikipedia",
-    url: "https://en.wikipedia.org/wiki/Geometric_primitive",
-  },
-  {
-    title: "Visual Variables",
-    author: "infovis-wiki",
-    url: "https://infovis-wiki.net/wiki/Visual_Variables",
+    title: "Geospatial Analysis 6th Edition, 2021 update",
+    author: "spatialanalysisonline.com",
+    url: "https://spatialanalysisonline.com/HTML/index.html?tessellations_and_triangulatio.htm",
   },
 ];
 
+// Who helped write the page?
 const authors = [
   {
     author: "Omar Kawach",
@@ -43,10 +33,11 @@ const authors = [
   },
 ];
 
-export default function Visual() {
+// Rename the function and title
+export default function SpatialData() {
   return (
     <MainLayout>
-      <Title name={"Visual encoding"} />
+      <Title name={"Spatial data and its types"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
         <h2>Learn and Interact</h2>
 
