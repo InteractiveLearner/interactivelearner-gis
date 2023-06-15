@@ -48,13 +48,13 @@ export default function Visual() {
     <MainLayout>
       <Title name={"Visual encoding"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
-        <h2>Learn and Interact</h2>
+        <h2>Learn and interact</h2>
 
         <Card>
           <Content />
         </Card>
 
-        <h2>Test Your Knowledge</h2>
+        <h2>Test your knowledge</h2>
         <Quiz questions={questions} />
         <Sources sources={sources} />
         <Authors authors={authors} />

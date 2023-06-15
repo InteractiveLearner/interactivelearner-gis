@@ -22,6 +22,21 @@ const sources = [
     author: "spatialanalysisonline.com",
     url: "https://spatialanalysisonline.com/HTML/index.html?tessellations_and_triangulatio.htm",
   },
+  {
+    title: "6.4 Geometric Primitives",
+    author: "PennState College of Earth and Mineral Sciences",
+    url: "https://www.e-education.psu.edu/geog160/node/1948",
+  },
+  {
+    title: "The Ultimate List of GIS Formats and Geospatial File Extensions",
+    author: "GISGeography",
+    url: "https://gisgeography.com/gis-formats/",
+  },
+  {
+    title: "Tessellation",
+    author: "Living Textbook",
+    url: "https://ltb.itc.utwente.nl/491/concept/79690",
+  },
 ];
 
 // Who helped write the page?
@@ -39,13 +54,13 @@ export default function SpatialData() {
     <MainLayout>
       <Title name={"Spatial data and its types"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
-        <h2>Learn and Interact</h2>
+        <h2>Learn and interact</h2>
 
         <Card>
           <Content />
         </Card>
 
-        <h2>Test Your Knowledge</h2>
+        <h2>Test your knowledge</h2>
         <Quiz questions={questions} />
         <Sources sources={sources} />
         <Authors authors={authors} />

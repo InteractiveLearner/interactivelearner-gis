@@ -3,15 +3,15 @@
 import ContentFigure from "../../components/Figure/Figure.jsx";
 import vectorRasterImg from "../../assets/images/vector_raster.png";
 
-## Spatial Data
+## Spatial data
 
 Spatial data have two main components that set them apart from regular data, making them suitable for mapping:
 - "Where": Referring to the location of the data
 - "What": Referring to the information about the data
 
-## Types of Spatial Data
+## Types of spatial data
 
-Spatial data can be categorized into two types: vector and raster.
+Spatial data can be categorized into two types: raster and vector.
 
 Raster data are described as a grid of cells (rows and columns), similar to pixels in pictures.
 
@@ -21,24 +21,16 @@ Raster data are described as a grid of cells (rows and columns), similar to pixe
 - Can be either continuous (progressive, varying data) or discrete (thematic or categorical)
 - Rectangular tessellated rasters are most commonly used due to their mathematical simplicity
 - Examples of raster data include satellite images or aerial photos
-
-{/* Should probably add more info about tesselation */}
+- Most commonly seen in the GeoTIFF file format
 
 Vector data are represented as points, lines, and polygons.
 
 - Commonly used for representing discrete or categorical data, such as political boundaries, roads, or land cover
 - Stored as sets of x, y coordinate pairs defining point locations, or as series of coordinates defining vertices of lines or polygons
-- Can be categorized into 0-dimensional, 1-dimensional, and 2-dimensional forms. In the 0th dimension, coordinate points exist independently. In the 1st dimension, two points can form a line. In the 2nd dimension, three or more lines can be joined to create a polygon
+- Can be categorized into 0-dimensional, 1-dimensional, and 2-dimensional forms (geometric primitives). In the 0th dimension, coordinate points exist independently. In the 1st dimension, two points can form a line. In the 2nd dimension, three or more lines can be joined to create a polygon
 - Vector data allows for more efficient storage and manipulation
-- You can convert vectors to raster and vice versa using specialized software (e.g., ArcGIS Pro, and QGIS)
-
-{/* The comment about the dimensions relates to geometric primitives */}
-
-{/* https://www.e-education.psu.edu/geog160/node/1948 */}
-
-{/* Voronoi polygons */}
-
-{/* https://gistbok.ucgis.org/bok-topics/geometric-primitives-and-algorithms#:~:text=Geometric%20primitives%20are%20the%20representations,data%20objects%20described%20by%20coordinates. */}
+- Can convert vectors to raster and vice versa using specialized software (e.g., ArcGIS Pro, and QGIS)
+- Common data formats include CSV, KML (Google), GeoJSON, and Shapefile (Esri)
 
 <ContentFigure
   img={vectorRasterImg}
@@ -49,4 +41,8 @@ Vector data are represented as points, lines, and polygons.
   }
 />
 
-{/* Add interaction */}
+{/* Add interaction comparing vector data (polygon) and raster data*/}
+
+{/* Add interaction comparing RTIN by MapBox (MARTINI or DELATIN) and DEM GeoTIFF */}
+
+{/* Example showing the where and what of spatial data (e.g., map with points and a data table) */}
