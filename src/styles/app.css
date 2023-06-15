@@ -67,6 +67,10 @@ p {
   margin-bottom: var(--dash-spacing-8);
 }
 
+.card > .figure {
+  margin: auto;
+}
+
 a {
   color: var(--dash-text-color-2);
 }
