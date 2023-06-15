@@ -4,6 +4,11 @@
     var(--dash-spacing-4);
   background-color: var(--dash-background-2);
   border: var(--dash-border-style-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
+  max-height: fit-content;
 }
 
 .figure h5 {
@@ -12,4 +17,9 @@
 
 .figure .figure-credit {
   margin-top: var(--dash-spacing-2);
+}
+
+.figure .figure-footer {
+  margin-top: var(--dash-spacing-2);
+  align-self: flex-start;
 }
