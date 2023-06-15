@@ -22,6 +22,8 @@ Raster data are described as a grid of cells (rows and columns), similar to pixe
 - Rectangular tessellated rasters are most commonly used due to their mathematical simplicity
 - Examples of raster data include satellite images or aerial photos
 
+{/* Should probably add more info about tesselation */}
+
 Vector data are represented as points, lines, and polygons.
 
 - Commonly used for representing discrete or categorical data, such as political boundaries, roads, or land cover
@@ -29,6 +31,14 @@ Vector data are represented as points, lines, and polygons.
 - Can be categorized into 0-dimensional, 1-dimensional, and 2-dimensional forms. In the 0th dimension, coordinate points exist independently. In the 1st dimension, two points can form a line. In the 2nd dimension, three or more lines can be joined to create a polygon
 - Vector data allows for more efficient storage and manipulation
 - You can convert vectors to raster and vice versa using specialized software (e.g., ArcGIS Pro, and QGIS)
+
+{/* The comment about the dimensions relates to geometric primitives */}
+
+{/* https://www.e-education.psu.edu/geog160/node/1948 */}
+
+{/* Voronoi polygons */}
+
+{/* https://gistbok.ucgis.org/bok-topics/geometric-primitives-and-algorithms#:~:text=Geometric%20primitives%20are%20the%20representations,data%20objects%20described%20by%20coordinates. */}
 
 <ContentFigure
   img={vectorRasterImg}
@@ -38,4 +48,5 @@ Vector data are represented as points, lines, and polygons.
     "http://www.geography.hunter.cuny.edu/~jochen/gtech361/lectures/lecture05/concepts/03%20-%20Geographic%20data%20models.html"
   }
 />
+
 {/* Add interaction */}
