@@ -3,7 +3,7 @@
  * Right now only the site name is there, but eventually the
  * plan is to access grades and progress reports from the <AppBar>
  */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { DashThemeToggle } from "@didyoumeantoast/dash-components-react";
 
@@ -13,7 +13,7 @@ const LocalStorageThemeKey = "__interactive-learner-gis--theme";
 
 export default function Header() {
   const [theme, setTheme] = useState(
-    localStorage.getItem(LocalStorageThemeKey)
+    localStorage.getItem(LocalStorageThemeKey) ?? "light"
   );
 
   // NOTE: this is a quick and dirty way of theme management, refactor
@@ -23,9 +23,11 @@ export default function Header() {
     setTheme(theme);
   };
 
-  if (theme !== document.querySelector("html").getAttribute("data-theme")) {
-    setHtmlTheme(theme ?? "light");
-  }
+  useEffect(() => {
+    if (theme !== document.querySelector("html").getAttribute("data-theme")) {
+      setHtmlTheme(theme ?? "light");
+    }
+  }, []);
 
   return (
     <div className="header">
