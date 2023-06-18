@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@didyoumeantoast/dash-components': ^1.5.5
-  '@didyoumeantoast/dash-components-react': ^1.5.5
+  '@didyoumeantoast/dash-components': ^1.8.1
+  '@didyoumeantoast/dash-components-react': ^1.8.1
   '@mdx-js/react': ^2.2.1
   '@mdx-js/rollup': ^2.2.1
   '@types/react': ^18.0.27
@@ -19,8 +19,8 @@ specifiers:
   vite-plugin-static-copy: ^0.15.0
 
 dependencies:
-  '@didyoumeantoast/dash-components': 1.5.5
-  '@didyoumeantoast/dash-components-react': 1.5.5_biqbaboplfbrettd7655fr4n2y
+  '@didyoumeantoast/dash-components': 1.8.1
+  '@didyoumeantoast/dash-components-react': 1.8.1_biqbaboplfbrettd7655fr4n2y
   '@mdx-js/react': 2.3.0_react@18.2.0
   '@mdx-js/rollup': 2.3.0_rollup@2.79.1
   d3: 7.8.4
@@ -272,19 +272,19 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@didyoumeantoast/dash-components-react/1.5.5_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-hgYRjq48k4kYbYObcdQ4c+qhfauhOIsZnBmlTIjlwMlmNSjH3vuoiLfTCCysw6gm6dw8YXerNfrPYAuhMhgvsw==}
+  /@didyoumeantoast/dash-components-react/1.8.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-M6B9Ygq+Tm12cIpELYPVPyvTVh0czpNeD9grdKWfI1OrSSyE3sTvXdSAiyPGZLppmFCPa+wj2xRssB8SpAxaIA==}
     peerDependencies:
       react: '>=16.4'
       react-dom: '>=16.4'
     dependencies:
-      '@didyoumeantoast/dash-components': 1.5.5
+      '@didyoumeantoast/dash-components': 1.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@didyoumeantoast/dash-components/1.5.5:
-    resolution: {integrity: sha512-Qstzc3K9NT3NJCpmYZ210Os+t+OwAf5J0h/5k2G+dGf0gceypXxy69gjX5m9u/nS/xjrUbL/pojzUk96BLZ7IQ==}
+  /@didyoumeantoast/dash-components/1.8.1:
+    resolution: {integrity: sha512-Y8k8t29Q6H8ARNOmvNiEHXBh1Pkkb4hY0yfh9iwwcObJMS7v9sw+3MFF1OkVi4fvIsy8qx1eAL7CF/9a9wmtSQ==}
     engines: {node: 18.x}
     dependencies:
       '@didyoumeantoast/dash-utils': 2.0.0
