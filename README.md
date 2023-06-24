@@ -105,6 +105,9 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 - [MDX JS](https://mdxjs.com/)
 - [Markdown](https://daringfireball.net/projects/markdown/syntax)
 
+### Data Visualization
+- [d3js](https://d3js.org/)
+
 ### Geospatial
 - [GeoPandas](https://geopandas.org/en/stable/)
 - [React Leaflet](https://react-leaflet.js.org/)
@@ -124,11 +127,9 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 Under the supervision of [Dr. Charles Perin](http://charlesperin.net/), I developed this website for my capstone project at the [University of Victoria](https://www.uvic.ca/).
 
-Projection explorer taken from [D3 in Depth](https://www.d3indepth.com/) by [Peter Cook](https://www.animateddata.com/) and converted to JSX. 
-
 ## License (GPL) 
 
-Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). This project made use of code derived from other GPL-licensed software. To protect against theft and promote free open source software, any developers making use of this repository must release their changes under the same license. 
+Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). To protect against theft and promote free open source software, any developers making use of this repository must release their changes under the same license. 
 
 ## Dataset Sources
 
