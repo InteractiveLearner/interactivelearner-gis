@@ -2,6 +2,7 @@
 
 import ContentFigure from "../../components/Figure/Figure.jsx";
 import vectorRasterImg from "../../assets/images/vector_raster.png";
+import GeoRasterLeaflet from "../../maps/GeoRasterLeaflet.jsx";
 
 ## Spatial data
 
@@ -41,8 +42,14 @@ Vector data are represented as points, lines, and polygons.
   }
 />
 
+## Compare vector and raster data
+
 {/* Add interaction comparing vector data (polygon) and raster data*/}
+{/* + Example showing the where and what of spatial data (e.g., map with points and a data table) */}
+{/* https://turfjs.org/docs/#tin */}
 
-{/* Add interaction comparing RTIN by MapBox (MARTINI or DELATIN) and DEM GeoTIFF */}
+<GeoRasterLeaflet />
 
-{/* Example showing the where and what of spatial data (e.g., map with points and a data table) */}
+## Compare elevation maps
+
+{/* Add interaction comparing RTIN by MapBox (MARTINI or DELATIN) or @turf/tin and DEM GeoTIFF */}
