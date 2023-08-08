@@ -199,7 +199,11 @@ export default function Quiz({ questions } = {}) {
             placement="bottom-end"
             autoClose={true}
           >
-            <DashButton slot="dropdown-trigger" appearance="outline">
+            <DashButton
+              slot="dropdown-trigger"
+              appearance="outline"
+              endIcon="chevron-down"
+            >
               Q{currentQuestionIndex + 1}
             </DashButton>
 
@@ -287,10 +291,7 @@ export default function Quiz({ questions } = {}) {
                   Finish
                 </Button>
               ) : (
-                <Button
-                  appearance="outline"
-                  onClick={nextQuestion}
-                >
+                <Button appearance="outline" onClick={nextQuestion}>
                   Next
                 </Button>
               )}

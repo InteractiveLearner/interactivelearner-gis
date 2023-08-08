@@ -13,6 +13,7 @@ export default function Button({
   href,
   target,
   status,
+  endIcon,
 } = {}) {
   const isShadowAppearance = appearance === "shadow";
   appearance = isShadowAppearance ? null : appearance;
@@ -28,6 +29,7 @@ export default function Button({
       href={href}
       target={target}
       status={status}
+      endIcon={endIcon}
       onClick={(e) => {
         if (!disabled) {
           onClick?.(e);
