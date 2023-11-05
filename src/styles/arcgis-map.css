@@ -1,0 +1,14 @@
+@import "@arcgis/core/assets/esri/themes/dark/main.css";
+
+arcgis-map {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+.esri-view-width-xsmall .esri-expand--auto .esri-expand__container--expanded {
+    position: relative;
+ }

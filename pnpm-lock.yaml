@@ -1,6 +1,12 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@arcgis/core':
+    specifier: ^4.28.7
+    version: 4.28.7
+  '@arcgis/map-components-react':
+    specifier: 4.28.0-beta.40
+    version: 4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0)(react-dom@18.2.0)(react@18.2.0)
   '@didyoumeantoast/dash-components':
     specifier: ^1.8.2
     version: 1.8.2
@@ -65,6 +71,45 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
     dev: true
+
+  /@arcgis/core@4.28.7:
+    resolution: {integrity: sha512-uZtD7xI3qYWPkxJWoj6FwTfFxJJMKpj1s5vRn7vBpGv/eLl78OdCXMvb1Ce3302+5ShwC08WppQmERvISSkpUA==}
+    dependencies:
+      '@esri/arcgis-html-sanitizer': 3.0.1
+      '@esri/calcite-colors': 6.1.0
+      '@esri/calcite-components': 1.10.0
+      '@popperjs/core': 2.11.8
+      '@zip.js/zip.js': 2.7.30
+      focus-trap: 7.5.4
+      luxon: 3.4.3
+      sortablejs: 1.15.0
+    dev: false
+
+  /@arcgis/map-components-react@4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-84b4yB9al4zjExuEt50srUDBI6pGR0sx06D0gci3NhtaGDsqgsrotwg6XrV/lGtj25JOcgmgtJ9o95BicMo0sQ==}
+    peerDependencies:
+      '@arcgis/core': ~4.28.0
+      react: ^18
+      react-dom: ^18
+    dependencies:
+      '@arcgis/core': 4.28.7
+      '@arcgis/map-components': 4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@esri/calcite-components'
+    dev: false
+
+  /@arcgis/map-components@4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0):
+    resolution: {integrity: sha512-kiUd8RWMBvq1bLUAajEGZaZ7hp6j0dPiEb+7HX7Rh6N9HpKgf72bwZVMubj4pQoH+BnjznaLZ46RPLZwg46EoQ==}
+    peerDependencies:
+      '@arcgis/core': ~4.28.0
+      '@esri/calcite-components': '>=1.7.0 <2.0.0'
+    dependencies:
+      '@arcgis/core': 4.28.7
+      '@esri/calcite-components': 1.10.0
+      '@stencil/core': 2.22.3
+    dev: false
 
   /@babel/code-frame@7.21.4:
     resolution: {integrity: sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==}
@@ -514,6 +559,49 @@ packages:
     dev: true
     optional: true
 
+  /@esri/arcgis-html-sanitizer@3.0.1:
+    resolution: {integrity: sha512-cwZJwsYCJZwtBQU2AmaiIVFg5nZcVwInPYja1/OgC9iKYO+ytZRoc5h+0S9/ygbFNoS8Nd0RX9A85stLX/BgiA==}
+    dependencies:
+      xss: 1.0.13
+    dev: false
+
+  /@esri/calcite-colors@6.1.0:
+    resolution: {integrity: sha512-wHQYWFtDa6c328EraXEVZvgOiaQyYr0yuaaZ0G3cB4C3lSkWefW34L/e5TLAhtuG3zJ/wR6pl5X1YYNfBc0/4Q==}
+    dev: false
+
+  /@esri/calcite-components@1.10.0:
+    resolution: {integrity: sha512-nKTwU7hseSAXTqEQelVfo+qDa5jCGvabky4atRsJxROkHbSQkhdFFfwOrrffHOr9CtZBxtvZhfh/Tb6Nky15hw==}
+    dependencies:
+      '@floating-ui/dom': 1.5.3
+      '@stencil/core': 2.22.3
+      '@types/color': 3.0.4
+      color: 4.2.3
+      composed-offset-position: 0.0.4
+      dayjs: 1.11.10
+      focus-trap: 7.5.4
+      form-request-submit-polyfill: 2.0.0
+      lodash-es: 4.17.21
+      sortablejs: 1.15.0
+      timezone-groups: 0.8.0
+    dev: false
+
+  /@floating-ui/core@1.5.0:
+    resolution: {integrity: sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg==}
+    dependencies:
+      '@floating-ui/utils': 0.1.6
+    dev: false
+
+  /@floating-ui/dom@1.5.3:
+    resolution: {integrity: sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA==}
+    dependencies:
+      '@floating-ui/core': 1.5.0
+      '@floating-ui/utils': 0.1.6
+    dev: false
+
+  /@floating-ui/utils@0.1.6:
+    resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+    dev: false
+
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
     engines: {node: '>=6.0.0'}
@@ -653,6 +741,12 @@ packages:
       rollup: 2.79.1
     dev: false
 
+  /@stencil/core@2.22.3:
+    resolution: {integrity: sha512-kmVA0M/HojwsfkeHsifvHVIYe4l5tin7J5+DLgtl8h6WWfiMClND5K3ifCXXI2ETDNKiEk21p6jql3Fx9o2rng==}
+    engines: {node: '>=12.10.0', npm: '>=6.0.0'}
+    hasBin: true
+    dev: false
+
   /@stencil/core@3.3.0:
     resolution: {integrity: sha512-+3hqJ8RmUvxz8FgvMP9lxYJdjb4EnZrkdo6ln5fUqGju62ORS5/Ch9m6OAIjlEn6CbDb5Uf1OdeMjO87DJwIAA==}
     engines: {node: '>=14.10.0', npm: '>=6.0.0'}
@@ -663,6 +757,22 @@ packages:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
     dependencies:
       '@types/estree': 1.0.1
+    dev: false
+
+  /@types/color-convert@2.0.2:
+    resolution: {integrity: sha512-KGRIgCxwcgazts4MXRCikPbIMzBpjfdgEZSy8TRHU/gtg+f9sOfHdtK8unPfxIoBtyd2aTTwINVLSNENlC8U8A==}
+    dependencies:
+      '@types/color-name': 1.1.2
+    dev: false
+
+  /@types/color-name@1.1.2:
+    resolution: {integrity: sha512-JWO/ZyxTKk0bLuOhAavGjnwLR73rUE7qzACnU7gMeyA/gdrSHm2xJwqNPipw2MtaZUaqQ2UG/q7pP6AQiZ8mqw==}
+    dev: false
+
+  /@types/color@3.0.4:
+    resolution: {integrity: sha512-OpisS4bqJJwbkkQRrMvURf3DOxBoAg9mysHYI7WgrWpSYHqHGKYBULHdz4ih77SILcLDo/zyHGFyfIl9yb8NZQ==}
+    dependencies:
+      '@types/color-convert': 2.0.2
     dev: false
 
   /@types/debug@4.1.8:
@@ -743,6 +853,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@zip.js/zip.js@2.7.30:
+    resolution: {integrity: sha512-nhMvQCj+TF1ATBqYzFds7v+yxPBhdDYHh8J341KtC1D2UrVBUIYcYK4Jy1/GiTsxOXEiKOXSUxvPG/XR+7jMqw==}
+    engines: {bun: '>=0.7.0', deno: '>=1.0.0', node: '>=16.5.0'}
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.8.2):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -874,8 +989,27 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: false
 
+  /color-string@1.9.1:
+    resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
+    dependencies:
+      color-name: 1.1.4
+      simple-swizzle: 0.2.2
+    dev: false
+
+  /color@4.2.3:
+    resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
+    engines: {node: '>=12.5.0'}
+    dependencies:
+      color-convert: 2.0.1
+      color-string: 1.9.1
+    dev: false
+
   /comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+    dev: false
+
+  /commander@2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: false
 
   /commander@7.2.0:
@@ -883,9 +1017,17 @@ packages:
     engines: {node: '>= 10'}
     dev: false
 
+  /composed-offset-position@0.0.4:
+    resolution: {integrity: sha512-vMlvu1RuNegVE0YsCDSV/X4X10j56mq7PCIyOKK74FxkXzGLwhOUmdkJLSdOBOMwWycobGUMgft2lp+YgTe8hw==}
+    dev: false
+
   /convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
     dev: true
+
+  /cssfilter@0.0.10:
+    resolution: {integrity: sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw==}
+    dev: false
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
@@ -1138,6 +1280,10 @@ packages:
       d3-zoom: 3.0.0
     dev: false
 
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+    dev: false
+
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -1286,6 +1432,16 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
+  /focus-trap@7.5.4:
+    resolution: {integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==}
+    dependencies:
+      tabbable: 6.2.0
+    dev: false
+
+  /form-request-submit-polyfill@2.0.0:
+    resolution: {integrity: sha512-p0+M92y2gFnP0AuuL8VJ0GYVzAT0bYp3GsSkmPFhvUopdnfDLP/9xplQTBBc4w8qOjKRzdK7GaFcdL9IhlXdTQ==}
+    dev: false
+
   /fs-extra@11.1.1:
     resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
     engines: {node: '>=14.14'}
@@ -1381,6 +1537,10 @@ packages:
       is-decimal: 2.0.1
     dev: false
 
+  /is-arrayish@0.3.2:
+    resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
+    dev: false
+
   /is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
@@ -1461,6 +1621,10 @@ packages:
     resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
     dev: false
 
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
@@ -1481,6 +1645,11 @@ packages:
     dependencies:
       yallist: 3.1.1
     dev: true
+
+  /luxon@3.4.3:
+    resolution: {integrity: sha512-tFWBiv3h7z+T/tDaoxA8rqTxy1CHV6gHS//QdaH4pulbq/JuBSGgQspQQqcgnwdAx6pNI7cmvz5Sv/addzHmUg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
@@ -2106,6 +2275,16 @@ packages:
     hasBin: true
     dev: true
 
+  /simple-swizzle@0.2.2:
+    resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
+    dependencies:
+      is-arrayish: 0.3.2
+    dev: false
+
+  /sortablejs@1.15.0:
+    resolution: {integrity: sha512-bv9qgVMjUMf89wAvM6AxVvS/4MX3sPeN0+agqShejLU5z5GX4C75ow1O2e5k4L6XItUyAK3gH6AxSbXrOM5e8w==}
+    dev: false
+
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -2139,6 +2318,15 @@ packages:
     dependencies:
       has-flag: 3.0.0
     dev: true
+
+  /tabbable@6.2.0:
+    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+    dev: false
+
+  /timezone-groups@0.8.0:
+    resolution: {integrity: sha512-t7E/9sPfCU0m0ZbS7Cqw52D6CB/UyeaiIBmyJCokI1SyOyOgA/ESiQ/fbreeFaUG9QSenGlZSSk/7rEbkipbOA==}
+    hasBin: true
+    dev: false
 
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
@@ -2309,6 +2497,15 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /xss@1.0.13:
+    resolution: {integrity: sha512-clu7dxTm1e8Mo5fz3n/oW3UCXBfV89xZ72jM8yzo1vR/pIS0w3sgB3XV2H8Vm6zfGnHL0FzvLJPJEBhd86/z4Q==}
+    engines: {node: '>= 0.10.0'}
+    hasBin: true
+    dependencies:
+      commander: 2.20.3
+      cssfilter: 0.0.10
+    dev: false
 
   /yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@arcgis/core": "^4.28.7",
+    "@arcgis/map-components-react": "4.28.0-beta.40",
     "@didyoumeantoast/dash-components": "^1.8.2",
     "@didyoumeantoast/dash-components-react": "^1.8.2",
     "@mdx-js/react": "^2.2.1",
