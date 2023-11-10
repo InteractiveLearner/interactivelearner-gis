@@ -2,11 +2,11 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@arcgis/core':
-    specifier: ^4.28.7
-    version: 4.28.7
+    specifier: ^4.29.0-next.20231109
+    version: 4.29.0-next.20231109
   '@arcgis/map-components-react':
-    specifier: 4.28.0-beta.40
-    version: 4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 4.29.0-beta.10
+    version: 4.29.0-beta.10(@arcgis/core@4.29.0-next.20231109)(@esri/calcite-components@1.10.0)(react-dom@18.2.0)(react@18.2.0)
   '@didyoumeantoast/dash-components':
     specifier: ^1.9.3
     version: 1.9.3
@@ -69,41 +69,40 @@ packages:
       '@jridgewell/trace-mapping': 0.3.20
     dev: true
 
-  /@arcgis/core@4.28.7:
-    resolution: {integrity: sha512-uZtD7xI3qYWPkxJWoj6FwTfFxJJMKpj1s5vRn7vBpGv/eLl78OdCXMvb1Ce3302+5ShwC08WppQmERvISSkpUA==}
+  /@arcgis/core@4.29.0-next.20231109:
+    resolution: {integrity: sha512-lE4wp2qTuP3MG2nzXj6qr4CX3NW/MHoyDM52CMm6Bz72VvxFW4IM6uN6yCULBOp40+42tjMNd2uozpW9aPbXmg==}
     dependencies:
       '@esri/arcgis-html-sanitizer': 3.0.1
       '@esri/calcite-colors': 6.1.0
       '@esri/calcite-components': 1.10.0
       '@popperjs/core': 2.11.8
       '@zip.js/zip.js': 2.7.30
-      focus-trap: 7.5.4
       luxon: 3.4.3
       sortablejs: 1.15.0
     dev: false
 
-  /@arcgis/map-components-react@4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-84b4yB9al4zjExuEt50srUDBI6pGR0sx06D0gci3NhtaGDsqgsrotwg6XrV/lGtj25JOcgmgtJ9o95BicMo0sQ==}
+  /@arcgis/map-components-react@4.29.0-beta.10(@arcgis/core@4.29.0-next.20231109)(@esri/calcite-components@1.10.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-0U/zcJgVdL62iaZRjDQMF+afycpW4+tyt8wPuHFUxFIlIuoDTgF+Xg+1pCnyTAk70m0dK7iTtK60IpqqBl/+pQ==}
     peerDependencies:
-      '@arcgis/core': ~4.28.0
+      '@arcgis/core': '>=4.29.0-next <4.30'
       react: ^18
       react-dom: ^18
     dependencies:
-      '@arcgis/core': 4.28.7
-      '@arcgis/map-components': 4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0)
+      '@arcgis/core': 4.29.0-next.20231109
+      '@arcgis/map-components': 4.29.0-beta.10(@arcgis/core@4.29.0-next.20231109)(@esri/calcite-components@1.10.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - '@esri/calcite-components'
     dev: false
 
-  /@arcgis/map-components@4.28.0-beta.40(@arcgis/core@4.28.7)(@esri/calcite-components@1.10.0):
-    resolution: {integrity: sha512-kiUd8RWMBvq1bLUAajEGZaZ7hp6j0dPiEb+7HX7Rh6N9HpKgf72bwZVMubj4pQoH+BnjznaLZ46RPLZwg46EoQ==}
+  /@arcgis/map-components@4.29.0-beta.10(@arcgis/core@4.29.0-next.20231109)(@esri/calcite-components@1.10.0):
+    resolution: {integrity: sha512-68UekHObcCYzor4a5j5V1zO8Op777UyO4nJuA+0oF4D32tlqkbZADGIdzhgv5Y6d0eRMj2J5WO6mNwUaZF/FAA==}
     peerDependencies:
-      '@arcgis/core': ~4.28.0
+      '@arcgis/core': '>=4.29.0-next <4.30'
       '@esri/calcite-components': '>=1.7.0 <2.0.0'
     dependencies:
-      '@arcgis/core': 4.28.7
+      '@arcgis/core': 4.29.0-next.20231109
       '@esri/calcite-components': 1.10.0
       '@stencil/core': 2.22.3
     dev: false
