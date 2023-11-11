@@ -37,6 +37,15 @@ const cards = [
     icon: "map",
 
   },
+  {
+    title: "construction",
+    description:
+      "using gis in construction.",
+
+    url: "/construction",
+    icon: "123",
+
+  },
   // {
   //   title: "Resources",
   //   description: "GIS resources recommended by the contributors of the site.",
