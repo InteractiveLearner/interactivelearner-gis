@@ -1,6 +1,6 @@
 .header {
   color: var(--dash-text-color-1-dark);
-  background-color: rgba(22, 22, 23, .90);
+  background-color: rgba(22, 22, 23, .95);
   backdrop-filter: saturate(180%) blur(20px);
   padding: var(--dash-spacing-2) var(--dash-spacing-6);
   display: flex;
