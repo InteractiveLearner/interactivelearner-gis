@@ -53,7 +53,6 @@ export default function Scale() {
     <MainLayout>
       <Title name={"Scale"} />
       <Container>
-        <h2>Learn and Interact</h2>
 
         <Card>
           <Content />

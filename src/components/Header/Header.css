@@ -1,11 +1,16 @@
 .header {
   color: var(--dash-text-color-1-dark);
-  background-color: var(--ilgis-brand);
+  background-color: rgba(22, 22, 23, .95);
+  backdrop-filter: saturate(180%) blur(20px);
   padding: var(--dash-spacing-2) var(--dash-spacing-6);
   display: flex;
   justify-content: space-between;
   box-shadow: var(--dash-box-shadow);
   height: 48px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .header a {
@@ -22,4 +27,13 @@
 
 .header dash-theme-toggle {
   --dash-text-color-1: var(--dash-text-color-1-dark);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: auto;
 }
