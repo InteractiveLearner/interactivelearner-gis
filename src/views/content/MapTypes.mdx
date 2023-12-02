@@ -1,5 +1,8 @@
 import ContentFigure from "../../components/Figure/Figure.jsx";
 import datatypeImg from "../../assets/images/datatype.png";
+
+import { DashCarousel, DashCarouselItem } from "@didyoumeantoast/dash-components-react";
+
 import {
   ArcgisMap,
   ArcgisLayerList,
@@ -51,6 +54,29 @@ Now that you've learned how thematic maps are designed, it is time to explore an
   {/* There is no diagram symbol map below. However, an example can still be seen on this page. Did you notice that pie charts were one of the hospital shape styles in the Visually Encoded Map? Despite the fact that the pie charts in the Visually Encoded Map contain meaningless data, they could, for example, represent each hospital's budget categories. */}
 
 ### Chorochromatic and Symbol Map
+
+{/* <DashCarousel style={{width: "100%"}}>
+  <DashCarouselItem visible>
+    <ArcgisMap item-id="7cc45dbad2234d3888b1d0e31007360e" zoom="3">
+      <ArcgisLayerList position="top-right" expandable />
+      <ArcgisLegend position="bottom-left" expandable/>
+    </ArcgisMap>
+  </DashCarouselItem>
+
+  <DashCarouselItem>
+    <ArcgisMap item-id="97cf520d6f9f41a6871c827ac7af626e" zoom="2">
+      <ArcgisLayerList position="top-right" expandable/>
+      <ArcgisLegend position="bottom-left" expandable/>
+    </ArcgisMap>
+  </DashCarouselItem>
+
+  <DashCarouselItem>
+    <ArcgisMap item-id="afe16ecfce4a4996996b0a01c9056797" zoom="7.5">
+      <ArcgisLayerList position="top-right" expandable/>
+      <ArcgisLegend position="bottom-left" expandable/>
+    </ArcgisMap>
+  </DashCarouselItem>
+</DashCarousel> */}
 
 <ArcgisMap item-id="7cc45dbad2234d3888b1d0e31007360e" zoom="3">
   <ArcgisLayerList position="top-right" expandable />
