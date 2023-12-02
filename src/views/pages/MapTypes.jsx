@@ -58,7 +58,6 @@ export default function MapTypes() {
     <MainLayout>
       <Title name={"Types of Maps"} />
       <Container>
-        <h2>Learn and Interact</h2>
 
         <Card>
           <Content />
