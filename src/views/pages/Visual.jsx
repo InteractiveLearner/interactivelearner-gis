@@ -48,7 +48,6 @@ export default function Visual() {
     <MainLayout>
       <Title name={"Visual Encoding"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
-        <h2>Learn and Interact</h2>
 
         <Card>
           <Content />

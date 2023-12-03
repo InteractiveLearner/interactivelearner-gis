@@ -8,11 +8,13 @@ import React from "react";
 import Footer from "../../components/Footer/Footer.jsx";
 import Header from "../../components/Header/Header.jsx";
 
+import "./MainLayout.css";
+
 export default function MainLayout({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <main>{children}</main>
+      <main className="main-layout">{children}</main>
       <Footer />
     </React.Fragment>
   );

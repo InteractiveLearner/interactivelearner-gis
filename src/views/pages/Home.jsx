@@ -1,6 +1,5 @@
 import { DashList } from "@didyoumeantoast/dash-components-react";
 import React from "react";
-import Card from "../../components/Card/Card";
 import Container from "../../components/Container/Container";
 import NavListItem from "../../components/NavListItem/NavListItem";
 import MainLayout from "../layouts/MainLayout";
@@ -35,7 +34,6 @@ const cards = [
 
     url: "/thematic",
     icon: "map",
-
   },
   {
     title: "construction",
@@ -57,32 +55,27 @@ export default function Home() {
   return (
     <MainLayout>
       <Container>
-        <Card>
-          <h1>Welcome!</h1>
+        <h1>Welcome!</h1>
 
-          <p>
-            The goal of Interactive Learner GIS is to give readers a fun
-            environment to develop, refresh or improve their map literacy. The
-            content of this website aims to follow a standard geography
-            curriculum. Map scale, projections, coordinate systems, spatial
-            analysis, relational databases, thematic maps, and spatial
-            statistics are some common courses you'd find in such a cirriculum.
-          </p>
+        <p>
+          Whether you're here to learn, refresh your knowledge, or improve your
+          map literacy, Interactive Learner GIS is your gateway to a captivating
+          journey through geography!
+        </p>
 
-          <h2>What would you like to learn today?</h2>
+        <h2>What would you like to learn today?</h2>
 
-          <DashList scale="l" selectionMode="none">
-            {cards.map((card, index) => (
-              <NavListItem
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-                href={card.url}
-              />
-            ))}
-          </DashList>
-        </Card>
+        <DashList scale="l" selectionMode="none">
+          {cards.map((card, index) => (
+            <NavListItem
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+              href={card.url}
+            />
+          ))}
+        </DashList>
       </Container>
     </MainLayout>
   );
