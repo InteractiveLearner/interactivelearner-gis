@@ -6,13 +6,13 @@ dependencies:
     version: 4.29.0-next.20231202
   '@arcgis/map-components-react':
     specifier: 4.29.0-beta.10
-    version: 4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)(@esri/calcite-components@1.11.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)(react-dom@18.2.0)(react@18.2.0)
   '@didyoumeantoast/dash-components':
-    specifier: ^1.10.0
-    version: 1.10.0
+    specifier: ^1.10.2
+    version: 1.10.2
   '@didyoumeantoast/dash-components-react':
-    specifier: ^1.10.0
-    version: 1.10.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.10.2
+    version: 1.10.2(react-dom@18.2.0)(react@18.2.0)
   '@mdx-js/rollup':
     specifier: ^3.0.0
     version: 3.0.0(rollup@2.79.1)
@@ -82,7 +82,7 @@ packages:
       sortablejs: 1.15.1
     dev: false
 
-  /@arcgis/map-components-react@4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)(@esri/calcite-components@1.11.0)(react-dom@18.2.0)(react@18.2.0):
+  /@arcgis/map-components-react@4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-0U/zcJgVdL62iaZRjDQMF+afycpW4+tyt8wPuHFUxFIlIuoDTgF+Xg+1pCnyTAk70m0dK7iTtK60IpqqBl/+pQ==}
     peerDependencies:
       '@arcgis/core': '>=4.29.0-next <4.30'
@@ -90,21 +90,20 @@ packages:
       react-dom: ^18
     dependencies:
       '@arcgis/core': 4.29.0-next.20231202
-      '@arcgis/map-components': 4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)(@esri/calcite-components@1.11.0)
+      '@arcgis/map-components': 4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - '@esri/calcite-components'
     dev: false
 
-  /@arcgis/map-components@4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202)(@esri/calcite-components@1.11.0):
+  /@arcgis/map-components@4.29.0-beta.10(@arcgis/core@4.29.0-next.20231202):
     resolution: {integrity: sha512-68UekHObcCYzor4a5j5V1zO8Op777UyO4nJuA+0oF4D32tlqkbZADGIdzhgv5Y6d0eRMj2J5WO6mNwUaZF/FAA==}
     peerDependencies:
       '@arcgis/core': '>=4.29.0-next <4.30'
       '@esri/calcite-components': '>=1.7.0 <2.0.0'
     dependencies:
       '@arcgis/core': 4.29.0-next.20231202
-      '@esri/calcite-components': 1.11.0
       '@stencil/core': 2.22.3
     dev: false
 
@@ -324,19 +323,19 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@didyoumeantoast/dash-components-react@1.10.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-n4EhIYAF76HJ74mtR+5rQ7L+z2yR62q6cMN1vyKHwdQzF5/9Cn1fW+JcFLxLyRlo6qXE9+ZZoCpJP4haMwLP+g==}
+  /@didyoumeantoast/dash-components-react@1.10.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-sguxKF2oaZNflZlbhhKjB+qGY1UhWpALjvyGUttg1PfdL12JXiOVPChbVVA0eY0CzgV+p/FYkLbQn+zzgQhUkQ==}
     peerDependencies:
       react: '>=16.4'
       react-dom: '>=16.4'
     dependencies:
-      '@didyoumeantoast/dash-components': 1.10.0
+      '@didyoumeantoast/dash-components': 1.10.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@didyoumeantoast/dash-components@1.10.0:
-    resolution: {integrity: sha512-PTT16qhaW2rE+bJinHHxYBlTK25YBbu5IEs2zNORMwIMf2fUoupGi9h02MyccvHyqLzjmPNNQjmVsaCXqJMNuA==}
+  /@didyoumeantoast/dash-components@1.10.2:
+    resolution: {integrity: sha512-8unYLRPViGtsad2qO9694IJ3XUHfLjGIjteIDpQ0uN51JRGG5qqvEdyrFugceUu6DhhRJFQ/iLzhLsBRvTW49Q==}
     engines: {node: 18.x}
     dependencies:
       '@didyoumeantoast/dash-utils': 2.0.0
