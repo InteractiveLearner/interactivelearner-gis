@@ -1,3 +1,9 @@
 .main-layout {
-  margin-top: 48px;
+  margin-top: 65px;
+  overflow-y: auto;
+  height: calc(100% - 65px);
+}
+
+.content {
+  height: 100vh;
 }

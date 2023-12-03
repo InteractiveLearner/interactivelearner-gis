@@ -10,6 +10,8 @@ body,
   display: flex;
   flex-direction: column;
   --ilgis-brand: #144d1e;
+  height: 100vh;
+  overflow: hidden;
 }
 
 main {
