@@ -1,13 +1,23 @@
 import ContentFigure from "../../components/Figure/Figure.jsx";
 import datatypeImg from "../../assets/images/datatype.png";
 
-import { DashCarousel, DashCarouselItem } from "@didyoumeantoast/dash-components-react";
+import {
+  DashCarousel,
+  DashCarouselItem,
+} from "@didyoumeantoast/dash-components-react";
 
 import {
   ArcgisMap,
   ArcgisLayerList,
   ArcgisLegend,
+  ArcgisExpand,
 } from "@arcgis/map-components-react";
+
+import {
+  CalciteShell,
+  CalciteNavigation,
+  CalciteNavigationLogo,
+} from "@esri/calcite-components-react";
 
 import "../../styles/arcgis-map.css";
 
@@ -33,17 +43,17 @@ Thematic mapping channel selections are linked to the **expressiveness types** a
 ## Types of Thematic Maps
 
 **Choropleth maps** are useful for showing variability in data. A single classification scheme is required and statistical normalization may be necessary. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use choropleth mapping to depict population density, GDP per capita, DUIs per 10,000 persons, etc.
-Proportional Symbol Maps show that the size of a single dot within a geographic region is based on the absolute magnitude of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. 
+Proportional Symbol Maps show that the size of a single dot within a geographic region is based on the absolute magnitude of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio.
 
-**Graduated Symbol** Maps show that the size of a single dot within a geographic region based on the class of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use graduated symbol mapping when your desired theme is a choropleth map, but the area attribute is not necessary. 
+**Graduated Symbol** Maps show that the size of a single dot within a geographic region based on the class of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use graduated symbol mapping when your desired theme is a choropleth map, but the area attribute is not necessary.
 
 **Diagram Symbol Maps** are useful for displaying a relationship between variables / attributes. This map type is quantitative and sometimes qualitative, and may be of data type nominal, ordinal, interval or ratio. You might want to use diagram symbol maps for comparing the number of post-secondary graduates by gender in each US State by use of a bar chart.
 
-**Dot Density Maps** are useful for depicting the geographic distribution of a variable / attribute. Many dots within a geographic region, each portraying quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use dot density maps for depicting the number of people within each US state. 
+**Dot Density Maps** are useful for depicting the geographic distribution of a variable / attribute. Many dots within a geographic region, each portraying quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use dot density maps for depicting the number of people within each US state.
 
 **Chorochromatic Maps** are useful when there is no data hierarchy. This map type is qualitative, and is of data type categorical / nominal. You may want to use chorochromatic maps for identifying city zoning, water resource regions, and cover types.
 
-**Multivariate Maps** are a combination of two or more themes. 
+**Multivariate Maps** are a combination of two or more themes.
 
 ## Exploration of Thematic Maps
 
@@ -53,48 +63,42 @@ Now that you've learned how thematic maps are designed, it is time to explore an
 - The dot density maps's view is set to World. people. Notice how the dots begin to indicate a different number of people when you zoom in to a Continent or Country level.
   {/* There is no diagram symbol map below. However, an example can still be seen on this page. Did you notice that pie charts were one of the hospital shape styles in the Visually Encoded Map? Despite the fact that the pie charts in the Visually Encoded Map contain meaningless data, they could, for example, represent each hospital's budget categories. */}
 
-### Chorochromatic and Symbol Map
-
-{/* <DashCarousel style={{width: "100%"}}>
+<DashCarousel style={{width: "100%"}}>
   <DashCarouselItem visible>
-    <ArcgisMap item-id="7cc45dbad2234d3888b1d0e31007360e" zoom="3">
-      <ArcgisLayerList position="top-right" expandable />
-      <ArcgisLegend position="bottom-left" expandable/>
-    </ArcgisMap>
+    <CalciteShell className="calcite-mode-dark">
+      <CalciteNavigation slot="header">
+        <CalciteNavigationLogo slot="logo" heading="Chorochromatic and symbol map" />
+      </CalciteNavigation>
+      <ArcgisMap itemId="7cc45dbad2234d3888b1d0e31007360e" zoom="4">
+        <ArcgisExpand position="top-right">
+          <ArcgisLayerList />
+        </ArcgisExpand>
+      </ArcgisMap>
+    </CalciteShell>
   </DashCarouselItem>
 
   <DashCarouselItem>
-    <ArcgisMap item-id="97cf520d6f9f41a6871c827ac7af626e" zoom="2">
-      <ArcgisLayerList position="top-right" expandable/>
-      <ArcgisLegend position="bottom-left" expandable/>
-    </ArcgisMap>
+    <CalciteShell className="calcite-mode-dark">
+      <CalciteNavigation slot="header">
+        <CalciteNavigationLogo slot="logo" heading="Dot density map" />
+      </CalciteNavigation>
+      <ArcgisMap itemId="97cf520d6f9f41a6871c827ac7af626e" zoom="3">
+        <ArcgisLegend position="bottom-left"/>
+      </ArcgisMap>
+    </CalciteShell>
   </DashCarouselItem>
 
   <DashCarouselItem>
-    <ArcgisMap item-id="afe16ecfce4a4996996b0a01c9056797" zoom="7.5">
-      <ArcgisLayerList position="top-right" expandable/>
-      <ArcgisLegend position="bottom-left" expandable/>
-    </ArcgisMap>
+    <CalciteShell className="calcite-mode-dark">
+      <CalciteNavigation slot="header">
+        <CalciteNavigationLogo slot="logo" heading="Choropleth and symbol map" />
+      </CalciteNavigation>
+      <ArcgisMap itemId="afe16ecfce4a4996996b0a01c9056797" zoom="7.5">
+        <ArcgisExpand position="top-right">
+          <ArcgisLayerList />
+        </ArcgisExpand>
+        <ArcgisLegend position="bottom-left" />
+      </ArcgisMap>
+    </CalciteShell>
   </DashCarouselItem>
-</DashCarousel> */}
-
-<ArcgisMap item-id="7cc45dbad2234d3888b1d0e31007360e" zoom="3">
-  <ArcgisLayerList position="top-right" expandable />
-  <ArcgisLegend position="bottom-left" expandable/>
-</ArcgisMap>
-
-### Dot Density Map
-
-<ArcgisMap item-id="97cf520d6f9f41a6871c827ac7af626e" zoom="2">
-  <ArcgisLayerList position="top-right" expandable/>
-  <ArcgisLegend position="bottom-left" expandable/>
-</ArcgisMap>
-
-### Choropleth and Symbol Map
-
-<ArcgisMap item-id="afe16ecfce4a4996996b0a01c9056797" zoom="7.5">
-  <ArcgisLayerList position="top-right" expandable/>
-  <ArcgisLegend position="bottom-left" expandable/>
-</ArcgisMap>
-
-<br></br>
+</DashCarousel>

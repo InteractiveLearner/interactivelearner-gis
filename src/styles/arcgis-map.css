@@ -9,6 +9,10 @@ arcgis-map {
   display: block;
 }
 
+calcite-shell {
+  position: relative;
+}
+
 .esri-view-width-xsmall .esri-expand--auto .esri-expand__container--expanded {
-    position: relative;
- }
+  position: relative;
+}

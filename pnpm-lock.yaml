@@ -4,15 +4,24 @@ dependencies:
   '@arcgis/core':
     specifier: ~4.29.0
     version: 4.29.0
+  '@arcgis/map-components':
+    specifier: ~4.29.0
+    version: 4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.4.0)
   '@arcgis/map-components-react':
     specifier: ~4.29.0
-    version: 4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.6.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.4.0)(react-dom@18.2.0)(react@18.2.0)
   '@didyoumeantoast/dash-components':
     specifier: ^1.10.2
     version: 1.10.2
   '@didyoumeantoast/dash-components-react':
     specifier: ^1.10.2
     version: 1.10.2(react-dom@18.2.0)(react@18.2.0)
+  '@esri/calcite-components':
+    specifier: ^2.4.0
+    version: 2.4.0
+  '@esri/calcite-components-react':
+    specifier: ^2.4.0
+    version: 2.4.0(react-dom@18.2.0)(react@18.2.0)
   '@mdx-js/rollup':
     specifier: ^3.0.0
     version: 3.0.0(rollup@2.79.1)
@@ -82,7 +91,7 @@ packages:
       sortablejs: 1.15.2
     dev: false
 
-  /@arcgis/map-components-react@4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.6.0)(react-dom@18.2.0)(react@18.2.0):
+  /@arcgis/map-components-react@4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.4.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-ZNx/mXSlTHLwyNmohvwFPpQ88dInKV0joy+R0EJboEJC3oIzz8RUDrReRpG1OVJ4a+kmj/48+dg4wm+vqoa6ag==}
     peerDependencies:
       '@arcgis/core': '>=4.29.0-next <4.30'
@@ -90,21 +99,21 @@ packages:
       react-dom: '>=18.0.0 <19.0.0'
     dependencies:
       '@arcgis/core': 4.29.0
-      '@arcgis/map-components': 4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.6.0)
+      '@arcgis/map-components': 4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.4.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - '@esri/calcite-components'
     dev: false
 
-  /@arcgis/map-components@4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.6.0):
+  /@arcgis/map-components@4.29.0(@arcgis/core@4.29.0)(@esri/calcite-components@2.4.0):
     resolution: {integrity: sha512-Fm2t9Qbc+WZK9cAku0OtAJ0ebcrkDU/4kcsfqYsQHhJzJlCZxIqeNhrQND6W5jnoWjjYyHxF/MAFNKH3XZLg5A==}
     peerDependencies:
       '@arcgis/core': '>=4.29.0-next <4.30'
       '@esri/calcite-components': '>=2.2.0 <3.0.0'
     dependencies:
       '@arcgis/core': 4.29.0
-      '@esri/calcite-components': 2.6.0
+      '@esri/calcite-components': 2.4.0
       '@stencil/core': 4.12.5
     dev: false
 
@@ -562,6 +571,33 @@ packages:
     resolution: {integrity: sha512-wHQYWFtDa6c328EraXEVZvgOiaQyYr0yuaaZ0G3cB4C3lSkWefW34L/e5TLAhtuG3zJ/wR6pl5X1YYNfBc0/4Q==}
     dev: false
 
+  /@esri/calcite-components-react@2.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-diT32R1wr33mT7B52+AFTC+SbLV8NcEHscvmxgcuyuQqZF9RHHLXknmEx1bwCielPPLoAnzyB+mLJhfi4mkhDQ==}
+    peerDependencies:
+      react: '>=16.7'
+      react-dom: '>=16.7'
+    dependencies:
+      '@esri/calcite-components': 2.6.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@esri/calcite-components@2.4.0:
+    resolution: {integrity: sha512-OCzxKlxaDAqLtHtfq9CEZ3IJRWeqUb2ZSo6PDEpvCZFfiCUQHqY+pUTkQyxAsJ4boYl61QYxNn/4XOsssQ0bpg==}
+    dependencies:
+      '@floating-ui/dom': 1.5.4
+      '@stencil/core': 4.9.0
+      '@types/color': 3.0.6
+      color: 4.2.3
+      composed-offset-position: 0.0.4
+      dayjs: 1.11.10
+      focus-trap: 7.5.4
+      form-request-submit-polyfill: 2.0.0
+      lodash-es: 4.17.21
+      sortablejs: 1.15.1
+      timezone-groups: 0.8.0
+    dev: false
+
   /@esri/calcite-components@2.6.0:
     resolution: {integrity: sha512-GbpascF/mI3TvC5EQejzMi8zDG/wv0pzGU5HzUsrzHqIkIwRruuIe7qdg/srjaEQkXwwpJKxfd8r5QaBXjlQWw==}
     dependencies:
@@ -577,21 +613,24 @@ packages:
       timezone-groups: 0.8.0
     dev: false
 
-  /@floating-ui/core@1.5.1:
-    resolution: {integrity: sha512-QgcKYwzcc8vvZ4n/5uklchy8KVdjJwcOeI+HnnTNclJjs2nYsy23DOCf+sSV1kBwD9yDAoVKCkv/gEPzgQU3Pw==}
+  /@floating-ui/core@1.6.0:
+    resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
     dependencies:
-      '@floating-ui/utils': 0.1.6
+      '@floating-ui/utils': 0.2.1
+    dev: false
+
+  /@floating-ui/dom@1.5.4:
+    resolution: {integrity: sha512-jByEsHIY+eEdCjnTVu+E3ephzTOzkQ8hgUfGwos+bg7NlH33Zc5uO+QHz1mrQUOgIKKDD1RtS201P9NvAfq3XQ==}
+    dependencies:
+      '@floating-ui/core': 1.6.0
+      '@floating-ui/utils': 0.2.1
     dev: false
 
   /@floating-ui/dom@1.6.3:
     resolution: {integrity: sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==}
     dependencies:
-      '@floating-ui/core': 1.5.1
+      '@floating-ui/core': 1.6.0
       '@floating-ui/utils': 0.2.1
-    dev: false
-
-  /@floating-ui/utils@0.1.6:
-    resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: false
 
   /@floating-ui/utils@0.2.1:
@@ -1642,6 +1681,10 @@ packages:
     resolution: {integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==}
     dependencies:
       tabbable: 6.2.0
+    dev: false
+
+  /form-request-submit-polyfill@2.0.0:
+    resolution: {integrity: sha512-p0+M92y2gFnP0AuuL8VJ0GYVzAT0bYp3GsSkmPFhvUopdnfDLP/9xplQTBBc4w8qOjKRzdK7GaFcdL9IhlXdTQ==}
     dev: false
 
   /fs-extra@11.2.0:

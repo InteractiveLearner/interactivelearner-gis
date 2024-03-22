@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@arcgis/core": "~4.29.0",
+    "@arcgis/map-components": "~4.29.0",
     "@arcgis/map-components-react": "~4.29.0",
     "@didyoumeantoast/dash-components": "^1.10.2",
     "@didyoumeantoast/dash-components-react": "^1.10.2",
+    "@esri/calcite-components": "^2.4.0",
+    "@esri/calcite-components-react": "^2.4.0",
     "@mdx-js/rollup": "^3.0.0",
     "d3": "^7.8.5",
     "leaflet": "^1.9.4",
