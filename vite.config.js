@@ -7,7 +7,7 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 export default defineConfig({
   plugins: [
     react(),
-    mdx({ providerImportSource: "@mdx-js/react" }),
+    mdx(),
     viteStaticCopy({
       targets: [
         {

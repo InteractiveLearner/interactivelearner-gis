@@ -1,6 +1,4 @@
-/* @import "https://js.arcgis.com/4.25/@arcgis/core/assets/esri/themes/dark/main.css"; */
-
-@import "leaflet/dist/leaflet.css";
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
 
 .leaflet-container {
   height: 40vh;

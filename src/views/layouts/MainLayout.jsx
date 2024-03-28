@@ -14,8 +14,10 @@ export default function MainLayout({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <main className="main-layout">{children}</main>
-      <Footer />
+      <div className="content">
+        <main className="main-layout">{children}</main>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 }

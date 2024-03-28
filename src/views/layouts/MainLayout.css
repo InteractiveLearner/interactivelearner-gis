@@ -1,3 +1,11 @@
 .main-layout {
-  margin-top: 48px;
+  flex-grow: 1;
+}
+
+.content {
+  margin-top: 65px;
+  overflow-y: auto;
+  height: calc(100% - 65px);
+  display: flex;
+  flex-direction: column;
 }

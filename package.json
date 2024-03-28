@@ -10,23 +10,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@didyoumeantoast/dash-components": "^1.8.2",
-    "@didyoumeantoast/dash-components-react": "^1.8.2",
-    "@mdx-js/react": "^2.2.1",
-    "@mdx-js/rollup": "^2.2.1",
-    "d3": "^7.8.2",
-    "leaflet": "^1.9.3",
+    "@arcgis/core": "~4.29.0",
+    "@arcgis/map-components": "~4.29.0",
+    "@arcgis/map-components-react": "~4.29.0",
+    "@didyoumeantoast/dash-components": "^1.10.2",
+    "@didyoumeantoast/dash-components-react": "^1.10.2",
+    "@esri/calcite-components": "^2.4.0",
+    "@esri/calcite-components-react": "^2.4.0",
+    "@mdx-js/rollup": "^3.0.0",
+    "d3": "^7.8.5",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-leaflet": "^4.2.0",
-    "react-router-dom": "^6.8.1-pre.0"
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.20.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "rollup": "2",
-    "vite": "^4.1.0",
+    "@types/react": "^18.2.41",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.0",
+    "rollup": "^2.79.1",
+    "vite": "^4.5.0",
     "vite-plugin-static-copy": "^0.15.0"
   }
 }
