@@ -1,5 +1,5 @@
 @import "https://js.arcgis.com/4.30/esri/themes/dark/main.css";
-@import "https://js.arcgis.com/calcite-components/2.10.0/calcite.esm.js";
+@import "https://js.arcgis.com/calcite-components/2.10.0/calcite.css";
 
 arcgis-map {
   padding: 0;
