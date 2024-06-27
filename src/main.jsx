@@ -9,10 +9,10 @@ import { defineCustomElements as defineCalciteElements } from "@esri/calcite-com
 
 // Register custom elements
 defineMapElements(window, {
-  resourcesUrl: "https://js.arcgis.com/map-components/4.29/assets",
+  resourcesUrl: "https://js.arcgis.com/map-components/4.30/assets",
 });
 defineCalciteElements(window, {
-  resourcesUrl: "https://js.arcgis.com/calcite-components/2.4.0/assets",
+  resourcesUrl: "https://js.arcgis.com/calcite-components/2.10.0/assets",
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
