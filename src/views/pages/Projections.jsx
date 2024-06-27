@@ -53,7 +53,6 @@ export default function Projections() {
     <MainLayout>
       <Title name={"Projections"} />
       <Container>
-        <h2>Learn and interact</h2>
 
         <Card>
           <Content />

@@ -46,7 +46,6 @@ export default function PageName() {
     <MainLayout>
       <Title name={"Page name"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
-        <h2>Learn and interact</h2>
 
         <Card>
           <Content />
