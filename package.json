@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@arcgis/core": "~4.30.5",
-    "@arcgis/map-components": "~4.30.3",
-    "@arcgis/map-components-react": "~4.30.3",
+    "@arcgis/core": "~4.30.8",
+    "@arcgis/map-components": "~4.30.5",
+    "@arcgis/map-components-react": "~4.30.5",
     "@didyoumeantoast/dash-components": "^1.10.2",
     "@didyoumeantoast/dash-components-react": "^1.10.2",
     "@esri/calcite-components": "~2.10.1",
