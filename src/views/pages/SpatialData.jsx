@@ -1,10 +1,3 @@
-# Pages
-
-## Basic Template
-
-Anytime you want to add a new page, it should follow this format. Then you can add the page to `Home.jsx` and `App.jsx`.
-
-```jsx
 import React from "react";
 
 import MainLayout from "../layouts/MainLayout";
@@ -17,35 +10,51 @@ import Card from "../../components/Card/Card";
 import Container from "../../components/Container/Container";
 
 // The MDX Content you wrote for the page
-import Content from "../content/NameOfFile.mdx";
+import Content from "../content/SpatialData.mdx";
 
 // The quiz questions you wrote for the page
-import questions from "../questions/NameOfFile.json";
+import questions from "../questions/SpatialData.json";
 
 // Source you used to write content for the page
 const sources = [
   {
-    title: "",
-    author: "",
-    url: "link here",
+    title: "Geospatial Analysis 6th Edition, 2021 update",
+    author: "spatialanalysisonline.com",
+    url: "https://spatialanalysisonline.com/HTML/index.html?tessellations_and_triangulatio.htm",
+  },
+  {
+    title: "6.4 Geometric Primitives",
+    author: "PennState College of Earth and Mineral Sciences",
+    url: "https://www.e-education.psu.edu/geog160/node/1948",
+  },
+  {
+    title: "The Ultimate List of GIS Formats and Geospatial File Extensions",
+    author: "GISGeography",
+    url: "https://gisgeography.com/gis-formats/",
+  },
+  {
+    title: "Tessellation",
+    author: "Living Textbook",
+    url: "https://ltb.itc.utwente.nl/491/concept/79690",
   },
 ];
 
 // Who helped write the page?
 const authors = [
   {
-    author: "your name here",
-    description: "some background about you",
-    url: "link to where people can learn more about you",
+    author: "Omar Kawach",
+    description: "Developer of Interactive Learner GIS",
+    url: "https://github.com/omarkawach",
   },
 ];
 
 // Rename the function and title
-export default function PageName() {
+export default function SpatialData() {
   return (
     <MainLayout>
-      <Title name={"Page name"} />
+      <Title name={"Spatial data and its types"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
+        <h2>Learn and interact</h2>
 
         <Card>
           <Content />
@@ -59,4 +68,3 @@ export default function PageName() {
     </MainLayout>
   );
 }
-```

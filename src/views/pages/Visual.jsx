@@ -46,14 +46,14 @@ const authors = [
 export default function Visual() {
   return (
     <MainLayout>
-      <Title name={"Visual Encoding"} />
+      <Title name={"Visual encoding"} />
       <Container maxWidth="lg" style={{ padding: "20px 0 0" }}>
 
         <Card>
           <Content />
         </Card>
 
-        <h2>Test Your Knowledge</h2>
+        <h2>Test your knowledge</h2>
         <Quiz questions={questions} />
         <Sources sources={sources} />
         <Authors authors={authors} />

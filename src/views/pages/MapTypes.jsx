@@ -56,14 +56,14 @@ const authors = [
 export default function MapTypes() {
   return (
     <MainLayout>
-      <Title name={"Types of Maps"} />
+      <Title name={"Types of maps"} />
       <Container>
 
         <Card>
           <Content />
         </Card>
 
-        <h2>Test Your Knowledge</h2>
+        <h2>Test your knowledge</h2>
 
         <Quiz questions={questions} />
         <Sources sources={sources} />

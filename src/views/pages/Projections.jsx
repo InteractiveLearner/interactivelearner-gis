@@ -58,7 +58,7 @@ export default function Projections() {
           <Content />
         </Card>
 
-        <h2>Test Your Knowledge</h2>
+        <h2>Test your knowledge</h2>
         <Quiz questions={questions} />
         <Sources sources={sources} />
         <Authors authors={authors} />
