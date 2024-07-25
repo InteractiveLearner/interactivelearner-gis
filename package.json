@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@arcgis/core": "~4.30.9",
+    "@arcgis/map-components": "~4.30.6",
+    "@arcgis/map-components-react": "~4.30.6",
     "@didyoumeantoast/dash-components": "^1.10.2",
     "@didyoumeantoast/dash-components-react": "^1.10.2",
+    "@esri/calcite-components": "~2.10.1",
+    "@esri/calcite-components-react": "~2.10.1",
     "@mdx-js/rollup": "^3.0.1",
     "d3": "^7.9.0",
     "leaflet": "^1.9.4",

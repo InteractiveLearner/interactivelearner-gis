@@ -1,4 +1,6 @@
 @import "@didyoumeantoast/dash-components/dist/dash-components/dash-components.css";
+@import "@arcgis/core/assets/esri/themes/dark/main.css";
+@import "@esri/calcite-components/dist/calcite/calcite.css";
 @import url("./fonts.css");
 
 body,

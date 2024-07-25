@@ -1,6 +1,6 @@
 import ContentFigure from "../../components/Figure/Figure.jsx";
 import datatypeImg from "../../assets/images/datatype.png";
-import ArcgisMapIframe from '../../maps/ArcgisMapIframe.jsx';
+import ArcgisCalciteMap from '../../maps/ArcgisCalciteMap.jsx';
 
 import {
   DashCarousel,
@@ -51,14 +51,14 @@ Now that you've learned how thematic maps are designed, it is time to explore an
 
 <DashCarousel style={{width: "100%"}}>
   <DashCarouselItem visible>
-    <ArcgisMapIframe itemId="6748f56e0bb24ec5bbc6494687a3cca0" title="Chorochromatic map" zoom={4} />
+    <ArcgisCalciteMap itemId="6748f56e0bb24ec5bbc6494687a3cca0" title="Chorochromatic map" zoom={4} mapId="chorochromatic" />
   </DashCarouselItem>
 
   <DashCarouselItem>
-    <ArcgisMapIframe itemId="b247e64a3d6a45ffaa63bbba12726db3" title="Dot density map" zoom={2} />
+    <ArcgisCalciteMap itemId="b247e64a3d6a45ffaa63bbba12726db3" title="Dot density map" zoom={2} mapId="dot"/>
   </DashCarouselItem>
 
   <DashCarouselItem>
-    <ArcgisMapIframe itemId="11e173a4e2f040ae80d39e44ee29467a" title="Choropleth and symbol map" zoom={7.5} />
+    <ArcgisCalciteMap itemId="11e173a4e2f040ae80d39e44ee29467a" title="Choropleth and symbol map" zoom={7.5} mapId="choropleth"/>
   </DashCarouselItem>
 </DashCarousel>
