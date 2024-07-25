@@ -58,7 +58,7 @@ const ArcgisCalciteMap = ({ itemId, title, zoom, mapId }) => {
   
     const handleActionBarToggle = () => {
       actionBarExpanded = !actionBarExpanded;
-      mapElement.view.padding = { left: actionBarExpanded ? 150 : 49 };
+      mapElement.view.padding = { left: actionBarExpanded ? 120 : 49 };
     };
   
     const handleArcgisViewReadyChange = () => {
@@ -120,7 +120,7 @@ const ArcgisCalciteMap = ({ itemId, title, zoom, mapId }) => {
         </CalcitePanel>
       </CalciteShellPanel>
 
-      <ArcgisMap itemId={itemId} id={mapId} ref={mapRef} zoom={zoom} />
+      <ArcgisMap itemId={itemId} id={mapId} ref={mapRef} zoom={zoom} padding={{left: 49}}/>
     </CalciteShell>
   );
 };
