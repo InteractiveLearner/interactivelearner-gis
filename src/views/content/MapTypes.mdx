@@ -1,25 +1,11 @@
 import ContentFigure from "../../components/Figure/Figure.jsx";
 import datatypeImg from "../../assets/images/datatype.png";
+import ArcgisMapIframe from '../../maps/ArcgisMapIframe.jsx';
 
 import {
   DashCarousel,
   DashCarouselItem,
 } from "@didyoumeantoast/dash-components-react";
-
-import {
-  ArcgisMap,
-  ArcgisLayerList,
-  ArcgisLegend,
-  ArcgisExpand,
-} from "@arcgis/map-components-react";
-
-import {
-  CalciteShell,
-  CalciteNavigation,
-  CalciteNavigationLogo,
-} from "@esri/calcite-components-react";
-
-import "../../styles/arcgis-map.css";
 
 ## Reference Maps
 
@@ -65,41 +51,14 @@ Now that you've learned how thematic maps are designed, it is time to explore an
 
 <DashCarousel style={{width: "100%"}}>
   <DashCarouselItem visible>
-    <CalciteShell className="calcite-mode-dark">
-      <CalciteNavigation slot="header">
-        <CalciteNavigationLogo slot="logo" heading="Chorochromatic map" />
-      </CalciteNavigation>
-      <ArcgisMap itemId="6748f56e0bb24ec5bbc6494687a3cca0" zoom="4">
-        <ArcgisExpand position="top-right">
-          <ArcgisLayerList />
-        </ArcgisExpand>
-        <ArcgisLegend position="bottom-left"/>
-      </ArcgisMap>
-    </CalciteShell>
+    <ArcgisMapIframe itemId="6748f56e0bb24ec5bbc6494687a3cca0" title="Chorochromatic map" zoom={4} />
   </DashCarouselItem>
 
   <DashCarouselItem>
-    <CalciteShell className="calcite-mode-dark">
-      <CalciteNavigation slot="header">
-        <CalciteNavigationLogo slot="logo" heading="Dot density map" />
-      </CalciteNavigation>
-      <ArcgisMap itemId="b247e64a3d6a45ffaa63bbba12726db3" zoom="2">
-        <ArcgisLegend position="bottom-left"/>
-      </ArcgisMap>
-    </CalciteShell>
+    <ArcgisMapIframe itemId="b247e64a3d6a45ffaa63bbba12726db3" title="Dot density map" zoom={2} />
   </DashCarouselItem>
 
   <DashCarouselItem>
-    <CalciteShell className="calcite-mode-dark">
-      <CalciteNavigation slot="header">
-        <CalciteNavigationLogo slot="logo" heading="Choropleth and symbol map" />
-      </CalciteNavigation>
-      <ArcgisMap itemId="11e173a4e2f040ae80d39e44ee29467a" zoom="7.5">
-        <ArcgisExpand position="top-right">
-          <ArcgisLayerList />
-        </ArcgisExpand>
-        <ArcgisLegend position="bottom-left" />
-      </ArcgisMap>
-    </CalciteShell>
+    <ArcgisMapIframe itemId="11e173a4e2f040ae80d39e44ee29467a" title="Choropleth and symbol map" zoom={7.5} />
   </DashCarouselItem>
 </DashCarousel>
