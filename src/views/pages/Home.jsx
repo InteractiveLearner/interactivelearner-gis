@@ -2,7 +2,7 @@ import { DashList } from "@didyoumeantoast/dash-components-react";
 import React from "react";
 import Container from "../../components/Container/Container";
 import NavListItem from "../../components/NavListItem/NavListItem";
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../../components/MainLayout/MainLayout";
 
 const cards = [
   {

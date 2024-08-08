@@ -4,7 +4,7 @@
  */
 import React from "react";
 
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../../components/MainLayout/MainLayout";
 
 import Button from "../../components/Button/Button";
 import Container from "../../components/Container/Container";

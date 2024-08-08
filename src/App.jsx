@@ -1,16 +1,41 @@
-/* App.jsx is the main component for the application */
 import React from "react";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import "./styles/app.css";
 
-/* Import pages and add a path for them */
+// Pages
 import Home from "./views/pages/Home.jsx";
-import MapTypes from "./views/pages/MapTypes.jsx";
 import NotFound from "./views/pages/NotFound.jsx";
-import Projections from "./views/pages/Projections.jsx";
-import Scale from "./views/pages/Scale.jsx";
-import VisualEncoding from "./views/pages/Visual.jsx";
+import ContentLayout from "./components/ContentLayout/ContentLayout.jsx";
+
+// Content for pages
+import {
+  ProjectionContent,
+  ScaleContent,
+  VisualEncodingContent,
+  MapTypesContent,
+} from "./views/content";
+
+import {
+  ProjectionQuestions,
+  ScaleQuestions,
+  VisualEncodingQuestions,
+  MapTypesQuestions,
+} from "./views/questions";
+
+import {
+  ProjectionSources,
+  ScaleSources,
+  VisualEncodingSources,
+  MapTypesSources,
+} from "./views/sources";
+
+import {
+  ProjectionAuthors,
+  ScaleAuthors,
+  VisualEncodingAuthors,
+  MapTypesAuthors,
+} from "./views/authors";
 
 export default function App() {
   return (
@@ -18,10 +43,58 @@ export default function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="*" element={<NotFound />} />
-        <Route exact path="/projections" element={<Projections />} />
-        <Route exact path="/scale" element={<Scale />} />
-        <Route exact path="/visual" element={<VisualEncoding />} />
-        <Route exact path="/thematic" element={<MapTypes />} />
+        <Route
+          exact
+          path="/projections"
+          element={
+            <ContentLayout
+              title="Projections"
+              content={ProjectionContent}
+              questions={ProjectionQuestions}
+              sources={ProjectionSources}
+              authors={ProjectionAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/scale"
+          element={
+            <ContentLayout
+              title="Scale"
+              content={ScaleContent}
+              questions={ScaleQuestions}
+              sources={ScaleSources}
+              authors={ScaleAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/visual"
+          element={
+            <ContentLayout
+              title="Visual encoding"
+              content={VisualEncodingContent}
+              questions={VisualEncodingQuestions}
+              sources={VisualEncodingSources}
+              authors={VisualEncodingAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/thematic"
+          element={
+            <ContentLayout
+              title="Types of Maps"
+              content={MapTypesContent}
+              questions={MapTypesQuestions}
+              sources={MapTypesSources}
+              authors={MapTypesAuthors}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
