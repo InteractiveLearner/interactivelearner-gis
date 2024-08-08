@@ -87,7 +87,7 @@ export default function App() {
           path="/thematic"
           element={
             <ContentLayout
-              title="Types of Maps"
+              title="Types of maps"
               content={MapTypesContent}
               questions={MapTypesQuestions}
               sources={MapTypesSources}
