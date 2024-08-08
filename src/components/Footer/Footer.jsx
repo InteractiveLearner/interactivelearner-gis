@@ -20,7 +20,7 @@ export default function Footer() {
           GitHub
         </a>
       </p>
-      <p>Copyright © Interactive Learner GIS 2023</p>
+      <p>Copyright © Interactive Learner GIS 2024</p>
     </div>
   );
 }
