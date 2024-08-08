@@ -33,7 +33,7 @@ The incomplete chapters are mentioned in the [Issues](https://github.com/Interac
 - [ ] Geodatabases
 - [ ] Resources
 
-## Planned Features for a Better Learning Experience
+## Planned features for a better learning experience
 
 The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Enhancement* label. 
 
@@ -44,46 +44,42 @@ The incomplete features are mentioned in the [Issues](https://github.com/Interac
 - [ ] Table of contents
 - [x] Consistent styling between desktop and mobile
 
-## How to Contribute
+## How to contribute
 
-### Developers and Content Writers
+### Developers and content writers
 
 Create an issue and / or make a pull request. A GitHub account is required.
 
-##### Get Familiar with the Workflow
-
-Please visit the **[Contribute Page](./src/views/content/Contribute.mdx)** for instructions.
-
-##### Clone the Application
+##### Clone the application
 
 ```
 git clone https://github.com/InteractiveLearner/interactivelearner-gis.git
 ```
 
-##### Package Manager
+##### Package manager
 
 It is recommended to use [pnpm](https://pnpm.io/) for this project. 
 
-##### Run the Application
+##### Run the application
 
 ```
 pnpm install
 pnpm start 
 ```
 
-##### Build the Application
+##### Build the application
 
 ```
 pnpm build
 ```
 
-##### Publish the Application to GitHub Pages
+##### Publish the application to GitHub Pages
 
 ```
 pnpm deploy
 ```
 
-### Other Contributors 
+### Other contributors 
 
 Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share. If you do not have a GitHub account, I can upload and credit you for any content you wish to contribute. 
 
@@ -96,7 +92,7 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 - [Vite](https://vitejs.dev/)
 
-### Web Design
+### Web design
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Dash Components](https://www.npmjs.com/package/@didyoumeantoast/dash-components)
@@ -105,7 +101,7 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 - [MDX JS](https://mdxjs.com/)
 - [Markdown](https://daringfireball.net/projects/markdown/syntax)
 
-### Data Visualization
+### Data visualization
 - [d3js](https://d3js.org/)
 
 ### Geospatial
@@ -123,7 +119,7 @@ Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd l
 
 [Jeff Menke](https://github.com/jmanke)
   
-## Credits and Acknowledgements
+## Credits and acknowledgements
 
 Under the supervision of [Dr. Charles Perin](http://charlesperin.net/), I developed this website for my capstone project at the [University of Victoria](https://www.uvic.ca/).
 
@@ -131,7 +127,7 @@ Under the supervision of [Dr. Charles Perin](http://charlesperin.net/), I develo
 
 Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). To protect against theft and promote free open source software, any developers making use of this repository must release their changes under the same license. 
 
-## Dataset Sources
+## Dataset sources
 
 **[Hospitals from Open Ottawa](https://open.ottawa.ca/datasets/b769ce497f2540aa962e602c983994d6_0?geometry=-76.050%2C45.348%2C-75.396%2C45.433)**
 
