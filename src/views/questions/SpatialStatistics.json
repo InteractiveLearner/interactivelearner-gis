@@ -1,0 +1,37 @@
+{
+    "questions": [
+      {
+        "question": "Gerrymandering is an example of which type of spatial analysis?",
+        "options": [
+          {
+            "answer": "Spatial autocorrelation",
+            "key": 1
+          },
+          {
+            "answer": "MUAP",
+            "key": 2
+          }
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Which sampling method introduces no bias?",
+        "options": [
+          {
+            "answer": "Random sampling",
+            "key": 1
+          },
+          {
+            "answer": "Systematic sampling",
+            "key": 2
+          },
+          {
+            "answer": "Stratified random sampling",
+            "key": 3
+          }
+        ],
+        "correctAnswer": 3
+      }
+    ]
+  }
+  

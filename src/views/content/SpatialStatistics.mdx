@@ -1,0 +1,89 @@
+import ContentFigure from "../../components/Figure/Figure.jsx";
+import datatypeImg from "../../assets/images/datatype.png";
+
+## What is spatial autocorrelation statistics?
+
+Spatial autocorrelation statistics in geographic information systems (GIS) assess relationships between variable values at different locations, measuring similarity or dissimilarity based on distance. 
+They identify patterns like clustering or dispersion, aiding fields such as environmental science, urban planning, and epidemiology.
+For example, if the values of a variable are clustered together in one area and dispersed in another, this may indicate a relationship between the variable and other spatial factors, such as socioeconomic status or natural resources.
+
+## Types of spatial autocorrelation statistics
+
+There are two main types of spatial autocorrelation statistics: **global** statistics and **local** statistics. 
+Global statistics, like [**Moran's I**](https://en.wikipedia.org/wiki/Moran%27s_I), summarize the overall pattern of spatial autocorrelation in a dataset. 
+In contrast, local statistics, such as **Local Moran's I**, provide information on the spatial autocorrelation of values within specific geographic areas.
+
+## Considerations
+
+Spatial autocorrelation statistics follows Tobler's first law of Geography where near things are more related than distant things ([TFL](https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography)).
+When conducting statistical analysis, the outcome of the correlation coefficient from Moran's I can explain the relationship between two values (or multiple locations).
+The relationship between two values ([bivariate](https://en.wikipedia.org/wiki/Bivariate_analysis)) can either be by chance or correlated. 
+This is where you would reject or accept a hypothesis and show that the distribution is/isn't random, which is the same as cause and effect in data. 
+
+### Moran's I
+
+Moran's I measures how clustered or dispersed values are in a dataset, or Local Moran's I can be used to identify spatial clusters or outliers.
+
+<ContentFigure
+  img={""}
+  title={"Formula for Moran's I"}
+  credit={"Credit: "}
+  url={""}
+/>
+
+- In the formula:
+    - n represents the number of regions or spatial units
+    - w represents [weights](https://geodacenter.github.io/workbook/4a_contig_weights/lab4a.html#spatial-weights---basic-concepts)
+        - There are different weight matrices such as queen contiguity, rook contiguity, distance, and k-nearest neighbors
+- Can incorporate topological relationship types (see my other repo for more background)
+- Output is between -1 and +1
+    - Positive is similar values found together
+    - Negative is dissimilar values found together (rare)
+    - 0 means distribution is random and no spatial autocorrelation
+- Measure significance
+    - p-values (prob. spatial autocorrelation is correlated, look for low value )
+    - z-score (absolute value means your data is likely to be spatially autocorrelated, look for high value)
+    - Distance decay
+        - Moran's I decreases as more observations (farther away) are included in the calculations, therefore less influence
+- Great for finding hotspots ([LISA](https://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00338.x))
+- Spatial relationships (weights matrix, [GWR](https://www.publichealth.columbia.edu/research/population-health-methods/geographically-weighted-regression))
+
+Moran's I can be used to perform nearest neighbor, inverse distance, and classifications. 
+
+### Spatiotemporal dependence (space and time)
+
+The two most challenging aspects of spatial statistics, or GIS in general, are space and time.
+Consider that the weather at one location is likely to be similar to the weather of a nearby location, but the weather at both locations is also likely to change over time.
+Spatiotemporal dependence combines both spatial dependence and temporal dependence.
+Spatial dependence signifies that values of a variable at one location can depend on values of that same variable at other locations.
+It's worth mentioning that there are issues related to spatial dependance that impact statistical tests:
+
+- Modifiable Areal Unit Problem ([MAUP](https://en.wikipedia.org/wiki/Modifiable_areal_unit_problem)) can introduce bias
+    - Boundaries impact statistical tests (most importantly, look at standard deviation)
+    - Location of boundaries used to aggregate data can influence results of statistical tests (Moran's I)
+    - Gerrymandering is a good example of this
+- [Ecological fallacy](https://en.wikipedia.org/wiki/Ecological_fallacy) can result in weak inferences
+    - Individuals vs Populations
+    - Cant take aggregated results and apply them to individuals
+    - Statistical test results change based on data aggregation
+- Sampling methods such as [random](https://www.scribbr.com/methodology/simple-random-sampling/), [stratified random](https://www.scribbr.com/methodology/stratified-sampling/#:~:text=What%20is%20stratified%20sampling%3F,using%20another%20probability%20sampling%20method.), and [systematic sampling](https://www.scribbr.com/methodology/systematic-sampling/) can dictate sampling bias
+    - For a good amount of spatial representation and to avoid bias, use stratified random sampling
+- [Boundary Problem](https://en.wikipedia.org/wiki/Boundary_problem_(spatial_analysis)) might lead to loss of information
+
+Other issues exist
+
+- Does the neighboring make sense? Remember that if you use queen or rook contiguity, you can't have islands or disconnected data since they will have less or no neighbors. You'd need to use a distance weight instead, i.e., lower the weight of things further away which follows Tobler's first law.
+
+### Local indicators of spatial association (LISA)
+
+A LISA cluster map uses Local Moran's I to inform where things are concentrated (hot spot, relationship likely not by chance) and where they are not (cold spot).
+
+Spatial clusters in LISA indicate areas where similar values (high or low) are grouped together, while spatial outliers highlight areas where a value significantly differs from its surrounding values.
+
+Spatial clusters
+- high high (red) indicates a high concentration within itself and surrounding areas
+- low low (blue) indicates a low concentration when surrounding areas have more concentration
+
+Spatial outliers
+- high low (light red) indicates a high concentration when surrounding areas have low conc
+- low high (light blue) indicates a low concentration when surrounding areas have high conc

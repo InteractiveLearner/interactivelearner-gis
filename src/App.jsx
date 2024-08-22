@@ -14,6 +14,7 @@ import {
   ScaleContent,
   VisualEncodingContent,
   MapTypesContent,
+  SpatialStatisticsContent
 } from "./views/content";
 
 import {
@@ -21,6 +22,7 @@ import {
   ScaleQuestions,
   VisualEncodingQuestions,
   MapTypesQuestions,
+  SpatialStatisticsQuestions
 } from "./views/questions";
 
 import {
@@ -28,6 +30,7 @@ import {
   ScaleSources,
   VisualEncodingSources,
   MapTypesSources,
+  SpatialStatisticsSources
 } from "./views/sources";
 
 import {
@@ -35,6 +38,7 @@ import {
   ScaleAuthors,
   VisualEncodingAuthors,
   MapTypesAuthors,
+  SpatialStatisticsAuthors
 } from "./views/authors";
 
 export default function App() {
@@ -92,6 +96,19 @@ export default function App() {
               questions={MapTypesQuestions}
               sources={MapTypesSources}
               authors={MapTypesAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/spatial-stats"
+          element={
+            <ContentLayout
+              title="Spatial autocorrelation statistics"
+              content={SpatialStatisticsContent}
+              questions={SpatialStatisticsQuestions}
+              sources={SpatialStatisticsSources}
+              authors={SpatialStatisticsAuthors}
             />
           }
         />
