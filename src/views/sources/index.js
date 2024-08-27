@@ -126,5 +126,10 @@ export const SpatialStatisticsSources = [
     author: "Sergio J. Rey, Dani Arribas-Bel, Levi J. Wolf",
     url: "https://geographicdata.science/book/intro.html",
   },
+  {
+    title: "Chapter 13 Spatial Autocorrelation",
+    author: "Manuel Gimond",
+    url: "https://mgimond.github.io/Spatial/spatial-autocorrelation.html",
+  },
 ];
 
