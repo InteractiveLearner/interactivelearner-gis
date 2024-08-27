@@ -35,6 +35,14 @@ const cards = [
     url: "/thematic",
     icon: "map",
   },
+  {
+    title: "Spatial autocorrelation statistics",
+    description:
+      "Understand how spatial autocorrelation statistics can help you analyze spatial data.",
+
+    url: "/spatial-stats",
+    icon: "calculator",
+  },
   // {
   //   title: "Resources",
   //   description: "GIS resources recommended by the contributors of the site.",

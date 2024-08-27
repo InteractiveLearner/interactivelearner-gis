@@ -109,3 +109,27 @@ export const MapTypesSources = [
     url: "https://gisgeography.com/dot-distribution-graduated-symbols-proportional-symbol-maps/#:~:text=While%20proportional%20symbol%20maps%20scale,population%20into%204%20separate%20classes.",
   },
 ];
+
+export const SpatialStatisticsSources = [
+  {
+    title: "FOSS for performing spatial autocorrelation statistics",
+    author: "GeoDa",
+    url: "https://geodacenter.github.io/",
+  },
+  {
+    title: "Spatial Regression with GeoDa ",
+    author: "GeoDa",
+    url: "https://s4.ad.brown.edu/Resources/Tutorial/Modul2/GeoDa3FINAL.pdf",
+  },
+  {
+    title: "Geographic Data Science with Python",
+    author: "Sergio J. Rey, Dani Arribas-Bel, Levi J. Wolf",
+    url: "https://geographicdata.science/book/intro.html",
+  },
+  {
+    title: "Chapter 13 Spatial Autocorrelation",
+    author: "Manuel Gimond",
+    url: "https://mgimond.github.io/Spatial/spatial-autocorrelation.html",
+  },
+];
+

@@ -29,3 +29,11 @@ export const MapTypesAuthors = [
     url: "https://github.com/omarkawach",
   },
 ];
+
+export const SpatialStatisticsAuthors = [
+  {
+    author: "Omar Kawach",
+    description: "Developer of Interactive Learner GIS",
+    url: "https://github.com/omarkawach",
+  },
+];
