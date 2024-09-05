@@ -12,33 +12,37 @@ import ContentLayout from "./components/ContentLayout/ContentLayout.jsx";
 import {
   ProjectionContent,
   ScaleContent,
+  SpatialDataContent,
   VisualEncodingContent,
   MapTypesContent,
-  SpatialStatisticsContent
+  SpatialStatisticsContent,
 } from "./views/content";
 
 import {
   ProjectionQuestions,
   ScaleQuestions,
+  SpatialDataQuestions,
   VisualEncodingQuestions,
   MapTypesQuestions,
-  SpatialStatisticsQuestions
+  SpatialStatisticsQuestions,
 } from "./views/questions";
 
 import {
   ProjectionSources,
   ScaleSources,
+  SpatialDataSources,
   VisualEncodingSources,
   MapTypesSources,
-  SpatialStatisticsSources
+  SpatialStatisticsSources,
 } from "./views/sources";
 
 import {
   ProjectionAuthors,
   ScaleAuthors,
+  SpatialDataAuthors,
   VisualEncodingAuthors,
   MapTypesAuthors,
-  SpatialStatisticsAuthors
+  SpatialStatisticsAuthors,
 } from "./views/authors";
 
 export default function App() {
@@ -70,6 +74,19 @@ export default function App() {
               questions={ScaleQuestions}
               sources={ScaleSources}
               authors={ScaleAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/spatial-data"
+          element={
+            <ContentLayout
+              title="Spatial data and its types"
+              content={SpatialDataContent}
+              questions={SpatialDataQuestions}
+              sources={SpatialDataSources}
+              authors={SpatialDataAuthors}
             />
           }
         />

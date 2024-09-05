@@ -16,14 +16,18 @@ const cards = [
     title: "Scale",
     description:
       "Explore how map scale can be used to hide and show details on a map.",
-
     url: "/scale",
     icon: "zoom-in",
   },
   {
+    title: "Spatial data and its types",
+    description: "Check out the key elements of spatial data and its types.",
+    url: "/spatial-data",
+    icon: "activity",
+  },
+  {
     title: "Visual encoding",
     description: "Learn about the main building blocks of visual encoding.",
-
     url: "/visual",
     icon: "bounding-box",
   },
@@ -31,7 +35,6 @@ const cards = [
     title: "Types of maps",
     description:
       "Find out how visual encoding allows geographers to produce thematic maps.",
-
     url: "/thematic",
     icon: "map",
   },
@@ -39,7 +42,6 @@ const cards = [
     title: "Spatial autocorrelation statistics",
     description:
       "Understand how spatial autocorrelation statistics can help you analyze spatial data.",
-
     url: "/spatial-stats",
     icon: "calculator",
   },

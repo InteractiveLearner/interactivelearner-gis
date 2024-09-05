@@ -54,6 +54,29 @@ export const ScaleSources = [
   },
 ];
 
+export const SpatialDataSources = [
+  {
+    title: "Geospatial Analysis 6th Edition, 2021 update",
+    author: "spatialanalysisonline.com",
+    url: "https://spatialanalysisonline.com/HTML/index.html?tessellations_and_triangulatio.htm",
+  },
+  {
+    title: "6.4 Geometric Primitives",
+    author: "PennState College of Earth and Mineral Sciences",
+    url: "https://www.e-education.psu.edu/geog160/node/1948",
+  },
+  {
+    title: "The Ultimate List of GIS Formats and Geospatial File Extensions",
+    author: "GISGeography",
+    url: "https://gisgeography.com/gis-formats/",
+  },
+  {
+    title: "Tessellation",
+    author: "Living Textbook",
+    url: "https://ltb.itc.utwente.nl/491/concept/79690",
+  },
+];
+
 export const VisualEncodingSources = [
   {
     title: "Visualization Analysis and Design",

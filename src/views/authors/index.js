@@ -14,6 +14,14 @@ export const ScaleAuthors = [
   },
 ];
 
+export const SpatialDataAuthors = [
+  {
+    author: "Omar Kawach",
+    description: "Developer of Interactive Learner GIS",
+    url: "https://github.com/omarkawach",
+  },
+];
+
 export const VisualEncodingAuthors = [
   {
     author: "Omar Kawach",
