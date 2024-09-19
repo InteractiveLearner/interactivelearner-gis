@@ -19,14 +19,14 @@ Have a chapter idea? Look below on [how to contribute](https://github.com/Intera
 
 The incomplete chapters are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Content* label. 
 
-- [x] [Projections](https://www.interactivelearner-gis.com/#/projections)
-- [x] [Scale](https://www.interactivelearner-gis.com/#/scale)
-- [x] [Visual Encoding](https://www.interactivelearner-gis.com/#/visual)
-- [x] [Types of Maps](https://www.interactivelearner-gis.com/#/thematic)
-- [x] Classification Schemes
-- [x] Spatial Autocorrelation Statistics
+- [x] [Projections](https://www.interactivelearner-gis.com/projections)
+- [x] [Scale](https://www.interactivelearner-gis.com/scale)
+- [x] [Visual Encoding](https://www.interactivelearner-gis.com/visual)
+- [x] [Types of Maps](https://www.interactivelearner-gis.com/thematic)
+- [x] [Classification Schemes](https://www.interactivelearner-gis.com/classification)
+- [x] [Spatial Autocorrelation Statistics](https://www.interactivelearner-gis.com/spatial-stats)
 - [ ] Lying with Maps
-- [x] Spatial data and its types
+- [x] [Spatial data and its types](https://www.interactivelearner-gis.com/spatial-data)
     - Will touch on geometric primitives
 - [ ] Spatial Analysis
 - [ ] Web GIS
