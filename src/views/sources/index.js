@@ -133,6 +133,14 @@ export const MapTypesSources = [
   },
 ];
 
+export const ClassificationSources = [
+  {
+    title: "The Basics of Data Classification",
+    author: "Axis Maps",
+    url: "https://www.axismaps.com/guide/data-classification",
+  }
+];
+
 export const SpatialStatisticsSources = [
   {
     title: "FOSS for performing spatial autocorrelation statistics",

@@ -15,6 +15,7 @@ import {
   SpatialDataContent,
   VisualEncodingContent,
   MapTypesContent,
+  ClassificationContent,
   SpatialStatisticsContent,
 } from "./views/content";
 
@@ -24,6 +25,7 @@ import {
   SpatialDataQuestions,
   VisualEncodingQuestions,
   MapTypesQuestions,
+  ClassificationQuestions,
   SpatialStatisticsQuestions,
 } from "./views/questions";
 
@@ -33,6 +35,7 @@ import {
   SpatialDataSources,
   VisualEncodingSources,
   MapTypesSources,
+  ClassificationSources,
   SpatialStatisticsSources,
 } from "./views/sources";
 
@@ -42,6 +45,7 @@ import {
   SpatialDataAuthors,
   VisualEncodingAuthors,
   MapTypesAuthors,
+  ClassificationAuthors,
   SpatialStatisticsAuthors,
 } from "./views/authors";
 
@@ -113,6 +117,19 @@ export default function App() {
               questions={MapTypesQuestions}
               sources={MapTypesSources}
               authors={MapTypesAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/classification"
+          element={
+            <ContentLayout
+              title="Classifying data"
+              content={ClassificationContent}
+              questions={ClassificationQuestions}
+              sources={ClassificationSources}
+              authors={ClassificationAuthors}
             />
           }
         />

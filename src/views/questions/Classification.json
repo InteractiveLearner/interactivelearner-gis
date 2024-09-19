@@ -1,0 +1,19 @@
+{
+    "questions": [
+      {
+        "question": "Is the following statement true or false? Equal intervals mean each group has the same size. Quantiles mean each group has the same number of items.",
+        "options": [
+          {
+            "answer": "True",
+            "key": 1
+          },
+          {
+            "answer": "False",
+            "key": 2
+          }
+        ],
+        "correctAnswer": 1
+      }
+    ]
+  }
+  

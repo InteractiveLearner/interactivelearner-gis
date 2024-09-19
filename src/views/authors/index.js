@@ -30,6 +30,14 @@ export const VisualEncodingAuthors = [
   },
 ];
 
+export const ClassificationAuthors = [
+  {
+    author: "Omar Kawach",
+    description: "Developer of Interactive Learner GIS",
+    url: "https://github.com/omarkawach",
+  },
+];
+
 export const MapTypesAuthors = [
   {
     author: "Omar Kawach",
