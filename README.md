@@ -23,14 +23,14 @@ The incomplete chapters are mentioned in the [Issues](https://github.com/Interac
 - [x] [Scale](https://www.interactivelearner-gis.com/#/scale)
 - [x] [Visual Encoding](https://www.interactivelearner-gis.com/#/visual)
 - [x] [Types of Maps](https://www.interactivelearner-gis.com/#/thematic)
-- [ ] Classification Schemes
-- [ ] Spatial Autocorrelation Statistics
+- [x] Classification Schemes
+- [x] Spatial Autocorrelation Statistics
 - [ ] Lying with Maps
-- [ ] Spatial data and its types
+- [x] Spatial data and its types
     - Will touch on geometric primitives
 - [ ] Spatial Analysis
 - [ ] Web GIS
-- [ ] Geodatabases
+- [ ] Relational databases
 
 ## Planned features for a better learning experience
 
