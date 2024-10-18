@@ -1,0 +1,89 @@
+import ContentFigure from "../../components/Figure/Figure.jsx";
+
+Relational databases are widely used in the context of Geographic Information Systems (GIS) for managing and storing large amounts of spatial data. 
+A relational database is a type of database management system that uses a structured approach to organizing and storing data in tables, where each table represents a specific type of information.
+
+In the context of GIS, relational databases are often used to store spatial data, such as points, lines, and polygon features, as well as attribute data, such as the name, type, and description of each feature. The spatial data is stored in a spatial data table, while the attribute data is stored in a separate attribute table. The two tables are then related using a common field, such as a unique identifier, that links the spatial data to the attribute data.
+
+One of the main benefits of using relational databases for GIS is that they allow for efficient storage and retrieval of large amounts of data. 
+Relational databases also provide a set of powerful tools for querying and analyzing data, such as SQL (Structured Query Language), which can be used to extract and manipulate specific subsets of data based on specific conditio­ns.
+
+In addition, relational databases can be integrated with GIS software to support advanced spatial analysis and mapping tasks. For example, a relational database can be used to store large amounts of data, and then the data can be queried and visualized in a GIS software package, such as ArcGIS or QGIS.
+
+In summary, relational databases are widely used in the context of GIS for managing and storing large amounts of spatial data. 
+They provide a structured approach to organizing and storing data, as well as powerful tools for querying and analyzing data. Relational databases can also be integrated with GIS software to support advanced spatial analysis and mapping tasks.
+
+## Spatial database
+
+A spatial database is a type of database that is optimized for storing and querying spatial data, such as points, lines, polygons, and other geometric objects.
+
+A geographic database is a georeferenced spatial database
+
+https://en.wikipedia.org/wiki/Spatial_database
+https://vector.geospatial.science/textbook/chapter-four/what-are-relational-databases-and-geodatabases
+
+Technically not always spatial:
+Sometimes the relationship is spatial (e.g. wind turbines within a certain polygon, or distance), but other times the relationship is more traditional (e.g. employee-record with its own primary key, but also a foreign-key to refer to the ID of their department), sourced from Reddit
+
+## Relationships between tables
+
+### One-to-many relationship
+
+A one-to-many relationship in a GIS relational database context refers to a relationship between two tables where one record in the first table is related to multiple records in the second table. In other words, one record in the first table is the "parent" of multiple records in the second table.
+
+For example, consider a GIS database containing two tables: a spatial data table containing polygon features, and an attribute data table containing information about each polygon, such as its name, type, and description. In this case, each polygon in the spatial data table could have multiple entries in the attribute data table, each with its own set of information. In this scenario, the one-to-many relationship would be between the spatial data table and the attribute data table.
+
+In a one-to-many relationship, the common field used to link the two tables would be a unique identifier, such as a primary key, in the first table. 
+This unique identifier would be repeated in the second table as a foreign key to link each record in the second table to its corresponding record in the first table.
+
+One-to-many relationships are commonly used in GIS relational databases to store related information about spatial features in separate tables, while still allowing the information to be linked and queried together.
+
+### Many-to-many relationship
+
+A many-to-many relationship in a GIS relational database context refers to a relationship between two tables where multiple records in the first table are related to multiple records in the second table. In other words, each record in the first table is the "parent" of multiple records in the second table, and each record in the second table is the "parent" of multiple records in the first table.
+
+For example, consider a GIS database containing two tables: a spatial data table containing points of interest, and a second table containing categories, such as "restaurant", "hotel", "tourist attraction". In this case, each point of interest in the spatial data table could belong to multiple categories, and each category in the second table could be associated with multiple points of interest. In this scenario, the many-to-many relationship would be between the spatial data table and the second table.
+
+In a many-to-many relationship, a third table, known as a junction table, is used to store the relationships between the records in the first and second tables. The junction table would contain two columns, one with the unique identifier of each record in the first table and another with the unique identifier of each record in the second table. The junction table would then store a separate record for each relationship between a record in the first table and a record in the second table.
+
+Many-to-many relationships are commonly used in GIS relational databases to store multiple relationships between spatial features and categories or other attributes, while still allowing the information to be linked and queried together.
+
+### One-to-one relationship
+
+A one-to-one relationship in a GIS relational database context refers to a relationship between two tables where each record in the first table is related to exactly one record in the second table, and each record in the second table is related to exactly one record in the first table. In other words, each record in the first table is the "parent" of exactly one record in the second table, and each record in the second table is the "child" of exactly one record in the first table.
+
+For example, consider a GIS database containing two tables: a spatial data table containing polygon features, and a second table containing attributes, such as land use information, population data, or ownership information. In this case, each polygon feature in the spatial data table could be related to exactly one attribute record in the second table, and each attribute record in the second table could be related to exactly one polygon feature in the spatial data table.
+
+One-to-one relationships are useful in GIS relational databases for situations where each spatial feature only needs to be related to one set of attributes, or where each set of attributes only needs to be related to one spatial feature. This allows for more efficient storage and management of the data, and ensures that the information is organized in a meaningful and consistent way.
+
+## Entity relationship diagrams (ERD)
+
+An entity relationship diagram (ERD) is a visual representation of the relationships between tables in a relational database.
+
+## Relational algebra
+
+Relational algebra is a formal system for manipulating and querying relational databases. It provides a set of operations that can be used to extract and manipulate data in a relational database.
+
+There are several basic operations in relational algebra, including selection, projection, union, intersection, difference, join, and division. These operations can be combined to form more complex queries that extract specific subsets of data from a relational database.
+
+### Classes
+
+## Terminology worth remembering
+
+- **Attributes / fields / table columns**: Columns in a table which can be made up of different data types (e.g., text, number, date)
+- **Domain**: The set of possible values for an attribute
+- **Records / tuples**: Rows in a table
+- **Sets**: A collection of unordered distinct values
+- **Bags**: A collection of unordered values that may contain duplicates
+- **Instance**: A single occurrence of an entity
+- **Schema**: The blueprint of the database, including tables, attributes, constraints, keys, and relationships
+- **Key**: An attribute in a table that uniquely identifies a record (e.g., two records cannot have the same value for the key attribute)
+- **Primary key**: A unique identifier for each record in a table, used to link records in different tables.
+- **Foreign key**: A field in a table that links to the primary key of another table, used to establish relationships between tables.
+
+<ContentFigure
+  img={""}
+  title={"Classifying data"}
+  credit={"Credit: Axis Maps licensed under Creative Commons"}
+  url={"https://creativecommons.org/licenses/by-nc-sa/4.0/"}
+/>

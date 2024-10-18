@@ -5,3 +5,4 @@ export { default as VisualEncodingContent } from "./VisualEncoding.mdx";
 export { default as ClassificationContent } from "./Classification.mdx";
 export { default as MapTypesContent } from "./MapTypes.mdx";
 export { default as SpatialStatisticsContent } from "./SpatialStatistics.mdx";
+export { default as RelationalContent } from "./Relational.mdx";

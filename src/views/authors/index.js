@@ -53,3 +53,11 @@ export const SpatialStatisticsAuthors = [
     url: "https://github.com/omarkawach",
   },
 ];
+
+export const RelationalAuthors = [
+  {
+    author: "Omar Kawach",
+    description: "Developer of Interactive Learner GIS",
+    url: "https://github.com/omarkawach",
+  },
+];

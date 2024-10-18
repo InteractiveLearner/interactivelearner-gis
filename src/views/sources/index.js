@@ -164,3 +164,10 @@ export const SpatialStatisticsSources = [
   },
 ];
 
+export const RelationalSources = [
+  {
+    title: "",
+    author: "",
+    url: "",
+  }
+];

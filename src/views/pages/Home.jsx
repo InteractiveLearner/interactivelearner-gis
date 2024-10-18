@@ -52,13 +52,13 @@ const cards = [
     url: "/spatial-stats",
     icon: "calculator",
   },
-  // {
-  //   title: "Relational databases in GIS",
-  //   description:
-  //     "Learn how relational databases can be used to store and manage spatial data.",
-  //   url: "/relational-databases",
-  //   icon: "server",
-  // },
+  {
+    title: "Relational databases in GIS",
+    description:
+      "Learn how relational databases can be used to store and manage spatial data.",
+    url: "/relational-databases",
+    icon: "server",
+  },
   // {
   //   title: "WebGIS",
   //   description:

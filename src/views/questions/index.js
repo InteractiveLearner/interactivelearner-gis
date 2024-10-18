@@ -5,3 +5,4 @@ export { default as VisualEncodingQuestions } from "./VisualEncoding.json";
 export { default as ClassificationQuestions } from "./Classification.json";
 export { default as MapTypesQuestions } from "./MapTypes.json";
 export { default as SpatialStatisticsQuestions } from "./SpatialStatistics.json";
+export { default as RelationalQuestions } from "./Relational.json";

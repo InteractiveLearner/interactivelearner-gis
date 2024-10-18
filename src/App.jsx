@@ -17,6 +17,7 @@ import {
   MapTypesContent,
   ClassificationContent,
   SpatialStatisticsContent,
+  RelationalContent,
 } from "./views/content";
 
 import {
@@ -27,6 +28,7 @@ import {
   MapTypesQuestions,
   ClassificationQuestions,
   SpatialStatisticsQuestions,
+  RelationalQuestions,
 } from "./views/questions";
 
 import {
@@ -37,6 +39,7 @@ import {
   MapTypesSources,
   ClassificationSources,
   SpatialStatisticsSources,
+  RelationalSources,
 } from "./views/sources";
 
 import {
@@ -47,6 +50,7 @@ import {
   MapTypesAuthors,
   ClassificationAuthors,
   SpatialStatisticsAuthors,
+  RelationalAuthors,
 } from "./views/authors";
 
 export default function App() {
@@ -143,6 +147,19 @@ export default function App() {
               questions={SpatialStatisticsQuestions}
               sources={SpatialStatisticsSources}
               authors={SpatialStatisticsAuthors}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/relational-databases"
+          element={
+            <ContentLayout
+              title="Relational databases in GIS"
+              content={RelationalContent}
+              questions={RelationalQuestions}
+              sources={RelationalSources}
+              authors={RelationalAuthors}
             />
           }
         />
