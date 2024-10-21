@@ -7,7 +7,10 @@
     "preinstall": "npx -y only-allow pnpm",
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@arcgis/core": "~4.30.9",
@@ -31,6 +34,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "rollup": "^2.79.1",
     "vite": "^5.4.2",
-    "vite-plugin-static-copy": "^1.0.6"
+    "vite-plugin-static-copy": "^1.0.6",
+    "vitepress": "^1.4.1"
   }
 }

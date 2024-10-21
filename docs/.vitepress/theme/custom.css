@@ -1,0 +1,11 @@
+/* Web component CSS */
+/* @import "@didyoumeantoast/dash-components/dist/dash-components/dash-components.css"; */
+@import "@esri/calcite-components/dist/calcite/calcite.css";
+@import "@arcgis/core/assets/esri/themes/dark/main.css";
+
+/* .vitepress/theme/custom.css */
+:root {
+    --vp-c-brand-1: #646cff;
+    --vp-c-brand-2: #747bff;
+  }
+
