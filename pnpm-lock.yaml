@@ -54,6 +54,9 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^4.3.1
     version: 4.3.1(vite@5.4.2)
+  '@vitejs/plugin-vue':
+    specifier: ^5.1.4
+    version: 5.1.4(vite@5.4.2)(vue@3.5.12)
   rollup:
     specifier: ^2.79.1
     version: 2.79.1
@@ -1489,6 +1492,17 @@ packages:
       vite: 5.4.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@vitejs/plugin-vue@5.1.4(vite@5.4.2)(vue@3.5.12):
+    resolution: {integrity: sha512-N2XSI2n3sQqp5w7Y/AN/L2XDjBIRGqXko+eDp42sydYSBeJuSm5a1sLf8zakmo8u7tA8NmBgoDLA1HeOESjp9A==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 5.4.2
+      vue: 3.5.12
     dev: true
 
   /@vitejs/plugin-vue@5.1.4(vite@5.4.9)(vue@3.5.12):

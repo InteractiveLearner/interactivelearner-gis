@@ -12,12 +12,12 @@ defineCalciteElements(window, { resourcesUrl: "https://js.arcgis.com/calcite-com
 import "./custom.css";
 
 // Import all components globally
-import DashButton from '../../components/ui/DashButton.vue'
+import ProjectionExplorer from '../../components/mapping/ProjectionExplorer.vue'
 
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
-    app.component("DashButton", DashButton);
+    app.component("ProjectionExplorer", ProjectionExplorer);
   },
 };

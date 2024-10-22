@@ -5,11 +5,7 @@ author: Omar Kawach
 date: October 21, 2024
 ---
 
-<!-- <script setup>
-import DashButton from './components/ui/DashButton.vue'
-</script> -->
-
-<DashButton />
+<ProjectionExplorer />
 
 # {{ $frontmatter.title }}
 
