@@ -5,8 +5,6 @@ author: Omar Kawach
 date: October 21, 2024
 ---
 
-<ProjectionExplorer />
-
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.date }}, by {{ $frontmatter.author }}
@@ -51,3 +49,5 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
 ## Projection explorer
 
 Try out the projection explorer below now that you've learned about projection types and techniques.
+
+<ProjectionExplorer />

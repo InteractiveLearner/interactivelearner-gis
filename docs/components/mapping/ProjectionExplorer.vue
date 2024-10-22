@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref, onMounted, watchEffect } from "vue";
 import * as d3 from "d3";
 
 const DefaultProjection = "AzimuthalEqualArea";
@@ -53,17 +53,19 @@ const state = ref({
 const geojson = ref(null);
 const svg = ref(null);
 
-watchEffect(async () => {
-  if (!geojson.value) {
-    try {
-      const json = await d3.json(
-        "https://gist.githubusercontent.com/d3indepth/f28e1c3a99ea6d84986f35ac8646fac7/raw/c58cede8dab4673c91a3db702d50f7447b373d98/ne_110m_land.json"
-      );
-      geojson.value = json;
-    } catch (error) {
-      console.error('Error loading JSON:', error);
-    }
+onMounted(async () => {
+  try {
+    const json = await d3.json(
+      "https://gist.githubusercontent.com/d3indepth/f28e1c3a99ea6d84986f35ac8646fac7/raw/c58cede8dab4673c91a3db702d50f7447b373d98/ne_110m_land.json"
+    );
+    geojson.value = json;
+  } catch (error) {
+    console.error('Error loading JSON:', error);
   }
+});
+
+watchEffect(async () => {
+  if (!geojson.value) return;
 
   console.log("geo" + state.value.type.replace(/\s/g, ""))
   const projection = d3["geo" + state.value.type.replace(/\s/g, "")]();
@@ -93,6 +95,10 @@ watchEffect(async () => {
   circles.enter().append("path").merge(circles).attr("d", GeoGenerator);
 });
 
+function updateType(event) {
+  state.value.type = event.target.value;
+}
+
 function updateScale(event) {
   state.value.scale = event.target.value;
 }
@@ -110,7 +116,7 @@ function updateCenterLat(event) {
   <div class="menu" style="margin: inherit">
     <div class="projection-type item">
       <div style="max-width: 200px">
-        <calcite-select v-model="state.type" @calciteSelectChange="update">
+        <calcite-select :value="state.type" @calciteSelectChange="updateType">
           <calcite-option v-for="type in projectionTypes" :key="type" :value="type" :selected="state.type === type">
             {{ type }}
           </calcite-option>
