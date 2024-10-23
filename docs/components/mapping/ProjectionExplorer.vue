@@ -1,8 +1,18 @@
 <script setup>
-import { ref, onMounted, watchEffect } from "vue";
+// import { useData } from 'vitepress'
+import { ref, onMounted, watch, reactive } from "vue";
 import * as d3 from "d3";
 
-const DefaultProjection = "AzimuthalEqualArea";
+// const { isDark } = useData();
+
+// console.log(isDark.value)
+
+// Watch for changes in the isDark property
+// watch(isDark, (newVal) => {
+//   console.log("Theme changed:", newVal);
+// });
+
+const DefaultProjection = "Azimuthal Equal Area";
 const projectionTypes = [
   "Azimuthal Equal Area",
   "Azimuthal Equidistant",
@@ -38,7 +48,10 @@ const GeoGenerator = d3.geoPath().projection(DefaultProjection);
 const Graticule = d3.geoGraticule();
 const GeoCircle = d3.geoCircle().radius(10).precision(1);
 
-const state = ref({
+const geojson = ref(null);
+const svg = ref(null);
+
+const state = reactive({
   type: DefaultProjection,
   scale: 120,
   translateX: 450,
@@ -50,36 +63,35 @@ const state = ref({
   rotateGamma: 0,
 });
 
-const geojson = ref(null);
-const svg = ref(null);
-
 onMounted(async () => {
   try {
     const json = await d3.json(
       "https://gist.githubusercontent.com/d3indepth/f28e1c3a99ea6d84986f35ac8646fac7/raw/c58cede8dab4673c91a3db702d50f7447b373d98/ne_110m_land.json"
     );
     geojson.value = json;
+    updateProjection();
   } catch (error) {
     console.error('Error loading JSON:', error);
   }
 });
 
-watchEffect(async () => {
-  if (!geojson.value) return;
+watch(state, () => {
+  updateProjection();
+});
 
-  console.log("geo" + state.value.type.replace(/\s/g, ""))
-  const projection = d3["geo" + state.value.type.replace(/\s/g, "")]();
+function updateProjection() {
+  const projection = d3["geo" + state.type.replace(/\s/g, "")]();
   GeoGenerator.projection(projection);
   projection
-    .scale(state.value.scale)
-    .translate([state.value.translateX, state.value.translateY])
-    .center([state.value.centerLon, state.value.centerLat])
-    .rotate([state.value.rotateLambda, state.value.rotatePhi, state.value.rotateGamma]);
+    .scale(state.scale)
+    .translate([state.translateX, state.translateY])
+    .center([state.centerLon, state.centerLat])
+    .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
 
   const u = d3.select(svg.value).select("g.map").selectAll("path").data(geojson.value.features);
   u.enter().append("path").merge(u).attr("d", GeoGenerator);
 
-  const projectedCenter = projection([state.value.centerLon, state.value.centerLat]);
+  const projectedCenter = projection([state.centerLon, state.centerLat]);
   d3.select(svg.value).select(".projection-center")
     .attr("cx", projectedCenter[0])
     .attr("cy", projectedCenter[1]);
@@ -93,22 +105,22 @@ watchEffect(async () => {
     })
   );
   circles.enter().append("path").merge(circles).attr("d", GeoGenerator);
-});
+}
 
 function updateType(event) {
-  state.value.type = event.target.value;
+  state.type = event.target.value;
 }
 
 function updateScale(event) {
-  state.value.scale = event.target.value;
+  state.scale = event.target.value;
 }
 
 function updateCenterLon(event) {
-  state.value.centerLon = event.target.value;
+  state.centerLon = event.target.value;
 }
 
 function updateCenterLat(event) {
-  state.value.centerLat = event.target.value;
+  state.centerLat = event.target.value;
 }
 </script>
 
@@ -116,31 +128,35 @@ function updateCenterLat(event) {
   <div class="menu" style="margin: inherit">
     <div class="projection-type item">
       <div style="max-width: 200px">
-        <calcite-select :value="state.type" @calciteSelectChange="updateType">
-          <calcite-option v-for="type in projectionTypes" :key="type" :value="type" :selected="state.type === type">
-            {{ type }}
-          </calcite-option>
-        </calcite-select>
+        <calcite-label>
+          Choose a projection
+          <calcite-select :value="state.type" @calciteSelectChange="updateType">
+            <calcite-option v-for="type in projectionTypes" :key="type" :value="type" :selected="state.type === type">
+              {{ type }}
+            </calcite-option>
+          </calcite-select>
+        </calcite-label>
       </div>
     </div>
     <div class="slider item">
       <calcite-label>
         Scale
-        <calcite-slider min="0" max="400" :value="state.scale" @calciteSliderInput="updateScale"></calcite-slider>
+        <calcite-slider min="0" max="400" :value="state.scale" @calciteSliderInput="updateScale" label-handles
+          scale="l"></calcite-slider>
       </calcite-label>
     </div>
     <div class="slider item">
       <calcite-label>
         Center - Longitude
-        <calcite-slider min="-180" max="180" :value="state.centerLon"
-          @calciteSliderInput="updateCenterLon"></calcite-slider>
+        <calcite-slider min="-180" max="180" :value="state.centerLon" @calciteSliderInput="updateCenterLon"
+          label-handles scale="l"></calcite-slider>
       </calcite-label>
     </div>
     <div class="slider item">
       <calcite-label>
         Center - Latitude
-        <calcite-slider min="-90" max="90" :value="state.centerLat"
-          @calciteSliderInput="updateCenterLat"></calcite-slider>
+        <calcite-slider min="-90" max="90" :value="state.centerLat" @calciteSliderInput="updateCenterLat" label-handles
+          scale="l"></calcite-slider>
       </calcite-label>
     </div>
     <svg ref="svg" width="95%" height="500px" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet">
@@ -155,6 +171,10 @@ function updateCenterLat(event) {
 </template>
 
 <style scoped>
+.slider {
+  max-width: 300px;
+}
+
 .menu {
   width: 98%;
   padding-left: 0px;
