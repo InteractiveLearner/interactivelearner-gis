@@ -1,16 +1,6 @@
 <script setup>
-// import { useData } from 'vitepress'
 import { ref, onMounted, watch, reactive } from "vue";
 import * as d3 from "d3";
-
-// const { isDark } = useData();
-
-// console.log(isDark.value)
-
-// Watch for changes in the isDark property
-// watch(isDark, (newVal) => {
-//   console.log("Theme changed:", newVal);
-// });
 
 const DefaultProjection = "Azimuthal Equal Area";
 const projectionTypes = [
@@ -246,5 +236,4 @@ body[class="calcite-mode-dark"] .circles path {
 .projection-center {
   fill: #ff4444;
 }
-
 </style>
