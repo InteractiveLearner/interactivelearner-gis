@@ -118,8 +118,8 @@ function updateCenterLat(event) {
 </script>
 
 <template>
-  <div class="menu" style="margin: inherit">
-    <div class="projection-type item">
+  <div>
+    <div class="projection-type">
       <div style="max-width: 200px">
         <calcite-label>
           Choose a projection
@@ -131,21 +131,21 @@ function updateCenterLat(event) {
         </calcite-label>
       </div>
     </div>
-    <div class="slider item">
+    <div class="slider">
       <calcite-label>
         Scale
         <calcite-slider min="0" max="400" :value="state.scale" @calciteSliderInput="updateScale" label-handles
           scale="l"></calcite-slider>
       </calcite-label>
     </div>
-    <div class="slider item">
+    <div class="slider">
       <calcite-label>
         Center - Longitude
         <calcite-slider min="-180" max="180" :value="state.centerLon" @calciteSliderInput="updateCenterLon"
           label-handles scale="l"></calcite-slider>
       </calcite-label>
     </div>
-    <div class="slider item">
+    <div class="slider">
       <calcite-label>
         Center - Latitude
         <calcite-slider min="-90" max="90" :value="state.centerLat" @calciteSliderInput="updateCenterLat" label-handles
@@ -166,44 +166,6 @@ function updateCenterLat(event) {
 <style>
 .slider {
   max-width: 300px;
-}
-
-.menu {
-  width: 98%;
-  padding-left: 0px;
-  padding-top: 16px;
-}
-
-.menu .item {
-  margin-bottom: 12px;
-}
-
-.menu .item input {
-  width: 200px;
-  cursor: pointer;
-}
-
-.menu select {
-  margin-top: 4px;
-  cursor: pointer;
-  border: 2px solid;
-  width: 250px;
-  padding: 5px;
-}
-
-.menu .item .value {
-  font-weight: bold;
-}
-
-.menu .item span,
-.menu .item input {
-  vertical-align: middle;
-}
-
-.menu .item .low {
-  display: inline-block;
-  width: 30px;
-  text-align: right;
 }
 
 .map path {

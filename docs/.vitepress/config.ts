@@ -56,7 +56,7 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
-    logo: { src: "/logo192.png", width: 26, height: 26 },
+    logo: { src: "/logo192.png", width: 28, height: 28 },
     socialLinks: [
       {
         icon: "github",
