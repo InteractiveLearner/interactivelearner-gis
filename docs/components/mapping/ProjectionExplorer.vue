@@ -49,7 +49,6 @@ const Graticule = d3.geoGraticule();
 const GeoCircle = d3.geoCircle().radius(10).precision(1);
 
 const geojson = ref(null);
-const svg = ref(null);
 
 const state = reactive({
   type: DefaultProjection,
@@ -88,23 +87,27 @@ function updateProjection() {
     .center([state.centerLon, state.centerLat])
     .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
 
-  const u = d3.select(svg.value).select("g.map").selectAll("path").data(geojson.value.features);
+  // Update world map
+  let u = d3.select("g.map").selectAll("path").data(geojson.value.features);
   u.enter().append("path").merge(u).attr("d", GeoGenerator);
 
+  // Update projection center
   const projectedCenter = projection([state.centerLon, state.centerLat]);
-  d3.select(svg.value).select(".projection-center")
+  d3.select(".projection-center")
     .attr("cx", projectedCenter[0])
     .attr("cy", projectedCenter[1]);
 
-  d3.select(svg.value).select(".graticule path").datum(Graticule()).attr("d", GeoGenerator);
+  // Update graticule
+  d3.select(".graticule path").datum(Graticule()).attr("d", GeoGenerator);
 
-  const circles = d3.select(svg.value).select(".circles").selectAll("path").data(
+  // Update circles
+  u = d3.select(".circles").selectAll("path").data(
     Circles.map((d) => {
       GeoCircle.center(d);
       return GeoCircle();
     })
   );
-  circles.enter().append("path").merge(circles).attr("d", GeoGenerator);
+  u.enter().append("path").merge(u).attr("d", GeoGenerator);
 }
 
 function updateType(event) {
@@ -159,7 +162,7 @@ function updateCenterLat(event) {
           scale="l"></calcite-slider>
       </calcite-label>
     </div>
-    <svg ref="svg" width="95%" height="500px" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet">
+    <svg width="95%" height="500px" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet">
       <g class="graticule">
         <path></path>
       </g>
@@ -170,7 +173,7 @@ function updateCenterLat(event) {
   </div>
 </template>
 
-<style scoped>
+<style>
 .slider {
   max-width: 300px;
 }
@@ -218,12 +221,8 @@ function updateCenterLat(event) {
   stroke: #515151;
 }
 
-html[data-theme="dark"] .map path {
+body[class="calcite-mode-dark"] .map path {
   stroke: unset;
-}
-
-.projection-center {
-  fill: #ff4444;
 }
 
 .graticule path {
@@ -231,7 +230,7 @@ html[data-theme="dark"] .map path {
   stroke: #e2e2e2;
 }
 
-html[data-theme="dark"] .graticule path {
+body[class="calcite-mode-dark"] .graticule path {
   stroke: #54575c;
 }
 
@@ -239,4 +238,13 @@ html[data-theme="dark"] .graticule path {
   fill: none;
   stroke: #515151;
 }
+
+body[class="calcite-mode-dark"] .circles path {
+  stroke: #eaecf0;
+}
+
+.projection-center {
+  fill: #ff4444;
+}
+
 </style>
