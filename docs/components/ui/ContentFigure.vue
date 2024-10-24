@@ -11,7 +11,7 @@ defineProps({
 <template>
     <div>
         <img :src="imgSrc" :alt="imgAlt" />
-        <p>{{ description }}</p>
+        <p class="description">{{ description }}</p>
         <a :href="anchorHref" target="_blank">{{ anchorText }}</a>
     </div>
 </template>
@@ -21,7 +21,7 @@ div {
     text-align: center;
 }
 
-p {
+.description {
     margin: 0;
 }
 </style>
