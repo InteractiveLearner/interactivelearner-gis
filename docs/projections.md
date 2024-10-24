@@ -40,14 +40,45 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
    - Longitude lines appear equally spaced and straight which become increasingly radiant
    - Latitude lines appear as equally spaced centric circles
 
-<div style="text-align: center;">
-  <img src="../../../assets/images/projection_surfaces.png" alt="Cylinder, Cone, and Plane" />
-  <p>Cylinder, Cone, and Plane</p>
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Credit: PennState licensed under CC BY-ND 2.0</a>
-</div>
+<ContentFigure 
+   :imgSrc="'../../../assets/images/projection_surfaces.png'" 
+   :imgAlt="'Cylinder, Cone, and Plane'"
+   :description="'Cylinder, Cone, and Plane'"
+   :anchorHref="'https://creativecommons.org/licenses/by-nc-sa/4.0/'"
+   :anchorText="'Credit: PennState licensed under CC BY-ND 2.0'"
+/>
 
 ## Projection explorer
 
 Try out the projection explorer below now that you've learned about projection types and techniques.
 
 <ProjectionExplorer />
+
+## Test your knowledge
+
+## Sources
+
+<Sources 
+  :sources="[
+    {
+      title: 'Map Projections and Distortion',
+      url: 'http://www.geography.hunter.cuny.edu/~jochen/gtech361/lectures/lecture04/concepts/Map%20coordinate%20systems/Map%20projections%20and%20distortion.htm',
+      author: 'Hunter College',
+    },
+        {
+      title: 'Projections',
+      url: 'https://www.icsm.gov.au/education/fundamentals-mapping/projections',
+      author: 'Intergovernmental Committee on Surveying and Mapping',
+    },
+    {
+      title: 'Supported Map Projections',
+      url: 'https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm',
+      author: 'ArcMap',
+    },
+    {
+      title: 'Characteristics of Projections',
+      url: 'https://www.e-education.psu.edu/geog486/node/675',
+      author: 'PennState College of Earth and Mineral Sciences',
+    }
+  ]"
+/>

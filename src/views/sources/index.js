@@ -1,31 +1,3 @@
-export const ProjectionSources = [
-  {
-    title: "Distortion",
-    author: "The GIS Encyclopedia",
-    url: "http://wiki.gis.com/wiki/index.php/Distortion#:~:text=There%20are%20four%20main%20types,example%20is%20in%20cylindrical%20projections.",
-  },
-  {
-    title: "Map Projections and Distortion",
-    author: "Hunter College",
-    url: "http://www.geography.hunter.cuny.edu/~jochen/gtech361/lectures/lecture04/concepts/Map%20coordinate%20systems/Map%20projections%20and%20distortion.htm",
-  },
-  {
-    title: "Projections",
-    author: "Intergovernmental Committee on Surveying and Mapping",
-    url: "https://www.icsm.gov.au/education/fundamentals-mapping/projections",
-  },
-  {
-    title: "Supported Map Projections",
-    author: "ArcMap",
-    url: "https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm",
-  },
-  {
-    title: "Characteristics of Projections",
-    author: "PennState College of Earth and Mineral Sciences",
-    url: "https://www.e-education.psu.edu/geog486/node/675",
-  },
-];
-
 export const ScaleSources = [
   {
     title: "Map Scale",

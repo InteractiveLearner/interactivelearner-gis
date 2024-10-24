@@ -81,6 +81,7 @@ export default defineConfig({
       },
     ],
   },
+  outDir: "build",
   vue: {
     template: {
       compilerOptions: {
