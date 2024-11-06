@@ -80,6 +80,10 @@ export default defineConfig({
         ],
       },
     ],
+    // Use local search instead of Algolia
+    search: {
+      provider: 'local'
+    },
   },
   outDir: "build",
   vue: {
