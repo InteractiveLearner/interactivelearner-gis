@@ -130,6 +130,7 @@ export default defineConfig({
     }),
     // Use local search instead of Algolia
     search: {
+      // TODO: Modify render function so frontmatter.title displays correctly
       provider: 'local'
     },
   },

@@ -2,12 +2,11 @@
 title: Projections
 description: Discover the projections that convert curved 3D surfaces to flat 2D surfaces.
 author: Omar Kawach
-date: October 21, 2024
 ---
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.date }}, by {{ $frontmatter.author }}
+By {{ $frontmatter.author }}
 
 ## Projection types
 
@@ -41,7 +40,7 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
    - Latitude lines appear as equally spaced centric circles
 
 <ContentFigure 
-   :imgSrc="'../../../../assets/images/projection_surfaces.png'" 
+   :imgSrc="'/assets/images/projection_surfaces.png'" 
    :imgAlt="'Cylinder, Cone, and Plane'"
    :description="'Cylinder, Cone, and Plane'"
    :anchorHref="'https://creativecommons.org/licenses/by-nc-sa/4.0/'"
@@ -55,6 +54,79 @@ Try out the projection explorer below now that you've learned about projection t
 <ProjectionExplorer />
 
 ## Test your knowledge
+
+<Quiz :quiz-data="{
+  questions: [
+    {
+      question: 'The Albers projection uses which technique and type?',
+      options: [
+        {
+          answer: 'Conical and Equal Area',
+          key: 1
+        },
+        {
+          answer: 'Azimuthal and Equal Area',
+          key: 2
+        },
+        {
+          answer: 'Conical and Conformal',
+          key: 3
+        }
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'The Equirectangular projection uses which technique and type?',
+      options: [
+        {
+          answer: 'Azimuthal and Equidistant',
+          key: 1
+        },
+        {
+          answer: 'Azimuthal and Conformal',
+          key: 2
+        },
+        {
+          answer: 'Cylindrical and Conformal',
+          key: 3
+        },
+        {
+          answer: 'Cylindrical and Equidistant',
+          key: 4
+        }
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'The Mercator projection distorts the area of features. When looking at this projection, does Greenland appear much larger than Africa?',
+      options: [
+        {
+          answer: 'No',
+          key: 1
+        },
+        {
+          answer: 'Yes',
+          key: 2
+        }
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'Trick question: The spherical version of which projection is the de facto standard for web mapping?',
+      options: [
+        {
+          answer: 'Mercator projection',
+          key: 1
+        },
+        {
+          answer: 'Again, Mercator projection, but non-conformal',
+          key: 2
+        }
+      ],
+      correctAnswer: 2
+    }
+  ]
+}"/>
 
 ## Sources
 

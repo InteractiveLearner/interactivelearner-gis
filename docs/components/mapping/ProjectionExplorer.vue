@@ -53,16 +53,6 @@ const state = reactive({
 });
 
 onMounted(async () => {
-  // Dynamic import necessary due to the following error message:
-  // SyntaxError: Named export 'getAssetPath' not found. 
-  // The requested module '@stencil/core/internal/client/index.js' is a CommonJS module, which may not support all module.exports as named exports.
-  const { setAssetPath } = await import("@esri/calcite-components/dist/components");
-  setAssetPath("https://js.arcgis.com/calcite-components/2.13.0/assets");
-
-  await import("@esri/calcite-components/dist/components/calcite-label");
-  await import("@esri/calcite-components/dist/components/calcite-select");
-  await import("@esri/calcite-components/dist/components/calcite-option");
-  await import("@esri/calcite-components/dist/components/calcite-slider");
   try {
     const json = await d3.json(
       "https://gist.githubusercontent.com/d3indepth/f28e1c3a99ea6d84986f35ac8646fac7/raw/c58cede8dab4673c91a3db702d50f7447b373d98/ne_110m_land.json"
