@@ -11,5 +11,5 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /projections
+      link: /lessons/projections
 ---

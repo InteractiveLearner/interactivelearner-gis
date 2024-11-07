@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { generateSidebar } from 'vitepress-sidebar';
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -66,25 +67,73 @@ export default defineConfig({
     nav: [
       {
         text: "Lessons",
-        items: [{ text: "Projections", link: "/projections" }],
+        items: [{ text: "Projections", link: "/lessons/projections" }],
       },
     ],
     footer: {
       copyright: "Copyright © Interactive Learner GIS 2024",
     },
-    sidebar: [
-      {
-        items: [
-          { text: "Projections", link: "/projections" },
-          // ...
-        ],
-      },
-    ],
+    sidebar: generateSidebar({
+      // ============ [ RESOLVING PATHS ] ============
+      documentRootPath: '/docs',
+      // scanStartPath: null,
+      // resolvePath: null,
+      // basePath: null,
+      //
+      // ============ [ GROUPING ] ============
+      // collapsed: true,
+      // collapseDepth: 2,
+      // rootGroupText: 'Contents',
+      // rootGroupLink: 'https://github.com/jooy2',
+      // rootGroupCollapsed: false,
+      //
+      // ============ [ GETTING MENU TITLE ] ============
+      // useTitleFromFileHeading: true,
+      useTitleFromFrontmatter: true,
+      // useFolderLinkFromIndexFile: false,
+      // useFolderTitleFromIndexFile: false,
+      // frontmatterTitleFieldName: 'title',
+      //
+      // ============ [ GETTING MENU LINK ] ============
+      // useFolderLinkFromSameNameSubFile: false,
+      // useFolderLinkFromIndexFile: false,
+      // folderLinkNotIncludesFileName: false,
+      //
+      // ============ [ INCLUDE / EXCLUDE ] ============
+      // excludePattern: ['README.md', 'folder/'],
+      // excludeFilesByFrontmatterFieldName: 'exclude',
+      // includeDotFiles: false,
+      // includeEmptyFolder: false,
+      // includeRootIndexFile: false,
+      // includeFolderIndexFile: false,
+      //
+      // ============ [ STYLING MENU TITLE ] ============
+      // hyphenToSpace: true,
+      // underscoreToSpace: true,
+      capitalizeFirst: true,
+      // capitalizeEachWords: false,
+      // keepMarkdownSyntaxFromTitle: false,
+      // removePrefixAfterOrdering: false,
+      // prefixSeparator: '.',
+      //
+      // ============ [ SORTING ] ============
+      // manualSortFileNameByPriority: ['first.md', 'second', 'third.md'],
+      // sortFolderTo: null,
+      // sortMenusByName: false,
+      // sortMenusByFileDatePrefix: false,
+      // sortMenusByFrontmatterOrder: false,
+      // frontmatterOrderDefaultValue: 0,
+      // sortMenusByFrontmatterDate: false,
+      // sortMenusOrderByDescending: false,
+      // sortMenusOrderNumericallyFromTitle: false,
+      // sortMenusOrderNumericallyFromLink: false,
+    }),
     // Use local search instead of Algolia
     search: {
       provider: 'local'
     },
   },
+  lastUpdated: true,
   outDir: "build",
   vue: {
     template: {

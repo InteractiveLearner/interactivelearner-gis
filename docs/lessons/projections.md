@@ -41,7 +41,7 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
    - Latitude lines appear as equally spaced centric circles
 
 <ContentFigure 
-   :imgSrc="'../../../assets/images/projection_surfaces.png'" 
+   :imgSrc="'../../../../assets/images/projection_surfaces.png'" 
    :imgAlt="'Cylinder, Cone, and Plane'"
    :description="'Cylinder, Cone, and Plane'"
    :anchorHref="'https://creativecommons.org/licenses/by-nc-sa/4.0/'"
