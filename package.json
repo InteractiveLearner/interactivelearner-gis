@@ -5,12 +5,9 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   },
   "dependencies": {
     "@arcgis/core": "~4.30.9",

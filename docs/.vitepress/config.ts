@@ -135,7 +135,7 @@ export default defineConfig({
     },
   },
   lastUpdated: true,
-  outDir: "build",
+  outDir: "../build",
   vue: {
     template: {
       compilerOptions: {
