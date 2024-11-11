@@ -18,7 +18,6 @@ The level of detail on a map is determined by the scale size. In **small-scale**
 
 <ContentFigure 
    :imgSrc="'/assets/images/scale.png'" 
-   :imgAlt="'Small scale versus large scale Victoria, BC'"
    :description="'Small scale versus large scale Victoria, BC'"
 />
 

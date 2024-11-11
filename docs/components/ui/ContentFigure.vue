@@ -1,7 +1,6 @@
 <script setup>
 defineProps({
     imgSrc: String,
-    imgAlt: String,
     description: String,
     anchorHref: String,
     anchorText: String,
@@ -10,7 +9,7 @@ defineProps({
 
 <template>
     <div>
-        <img :src="imgSrc" :alt="imgAlt" />
+        <img :src="imgSrc" :alt="description" />
         <p class="description">{{ description }}</p>
         <a :href="anchorHref" target="_blank">{{ anchorText }}</a>
     </div>
@@ -19,6 +18,11 @@ defineProps({
 <style scoped>
 div {
     text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
 }
 
 .description {

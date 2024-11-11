@@ -41,8 +41,7 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
 
 <ContentFigure 
    :imgSrc="'/assets/images/projection_surfaces.png'" 
-   :imgAlt="'Cylinder, Cone, and Plane'"
-   :description="'Cylinder, Cone, and Plane'"
+   :description="'Cylinder, cone and plane'"
    :anchorHref="'https://creativecommons.org/licenses/by-nc-sa/4.0/'"
    :anchorText="'Credit: PennState licensed under CC BY-ND 2.0'"
 />

@@ -67,10 +67,15 @@ export default defineConfig({
     nav: [
       {
         text: "Lessons",
-        items: [{ text: "Projections", link: "/lessons/projections" }],
+        items: [
+          { text: "Projections", link: "/lessons/projections" },
+          { text: "Scale", link: "/lessons/scale" },
+          { text: "Spatial data", link: "/lessons/spatial-data" },
+        ],
       },
     ],
     footer: {
+      message: "Released under the GPL-3.0 license.",
       copyright: "Copyright © Interactive Learner GIS 2024",
     },
     sidebar: generateSidebar({

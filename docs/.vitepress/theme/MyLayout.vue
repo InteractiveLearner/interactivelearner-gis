@@ -6,6 +6,7 @@ import { watch, onMounted } from 'vue';
 const { isDark } = useData();
 
 watch(isDark, (newVal) => {
+  // TODO: Revisit this later
   document.body.classList.toggle('calcite-mode-dark', newVal);
   document.body.classList.toggle('calcite-mode-light', !newVal);
 });
