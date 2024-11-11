@@ -7,6 +7,7 @@ defineCustomElements(globalThis, {
 
 // Vue components for global use
 import ProjectionExplorer from "../../components/mapping/ProjectionExplorer.vue";
+import ScaleMap from "../../components/mapping/ScaleMap.vue";
 import ContentFigure from "../../components/ui/ContentFigure.vue";
 import Sources from "../../components/ui/Sources.vue";
 import Quiz from "../../components/ui/Quiz.vue";
@@ -22,6 +23,7 @@ export default {
   Layout: MyLayout,
   enhanceApp({ app }) {
     app.component("ProjectionExplorer", ProjectionExplorer);
+    app.component("ScaleMap", ScaleMap);
     app.component("ContentFigure", ContentFigure);
     app.component("Quiz", Quiz);
     app.component("Sources", Sources);

@@ -6,20 +6,6 @@ import MainLayout from "../../components/MainLayout/MainLayout";
 
 const cards = [
   {
-    title: "Projections",
-    description:
-      "Discover the projections that convert curved 3D surfaces to flat 2D surfaces. ",
-    url: "/projections",
-    icon: "globe2",
-  },
-  {
-    title: "Scale",
-    description:
-      "Explore how map scale can be used to hide and show details on a map.",
-    url: "/scale",
-    icon: "zoom-in",
-  },
-  {
     title: "Spatial data and its types",
     description: "Check out the key elements of spatial data and its types.",
     url: "/spatial-data",
@@ -72,11 +58,6 @@ const cards = [
   //     "Discover how GIS and BIM can be integrated to create a more comprehensive view of the built environment.",
   //   url: "/gis-bim",
   //   icon: "building",
-  // },
-  // {
-  //   title: "Resources",
-  //   description: "GIS resources recommended by the contributors of the site.",
-  //   url: "/resources",
   // },
 ];
 

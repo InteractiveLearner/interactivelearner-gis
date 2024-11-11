@@ -131,13 +131,13 @@ Try out the projection explorer below now that you've learned about projection t
 ## Sources
 
 <Sources 
-  :sources="[
-    {
+  :sources="
+  [{
       title: 'Map Projections and Distortion',
       url: 'http://www.geography.hunter.cuny.edu/~jochen/gtech361/lectures/lecture04/concepts/Map%20coordinate%20systems/Map%20projections%20and%20distortion.htm',
       author: 'Hunter College',
     },
-        {
+    {
       title: 'Projections',
       url: 'https://www.icsm.gov.au/education/fundamentals-mapping/projections',
       author: 'Intergovernmental Committee on Surveying and Mapping',
@@ -151,6 +151,5 @@ Try out the projection explorer below now that you've learned about projection t
       title: 'Characteristics of Projections',
       url: 'https://www.e-education.psu.edu/geog486/node/675',
       author: 'PennState College of Earth and Mineral Sciences',
-    }
-  ]"
+  }]"
 />
