@@ -4,41 +4,43 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import L from "leaflet";
 
 const map = ref(null);
 const center = [48.42829687325907, -123.3656709938676];
 
-onMounted(() => {
-    map.value = L.map("map", {
+let Leaflet;
+
+onMounted(async () => {
+    Leaflet = await import('leaflet'); // window not defined error if not imported here
+    map.value = Leaflet.map("map", {
         center: center,
         zoom: 12,
     });
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    Leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
             '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map.value);
 
-    L.control.scale({ position: "bottomleft" }).addTo(map.value);
+    Leaflet.control.scale({ position: "bottomleft" }).addTo(map.value);
 
     addButtonToMap(15, center, "Large scale");
     addButtonToMap(12, center, "Small scale");
 });
 
 function addButtonToMap(zoom, center, title) {
-    const button = L.DomUtil.create("button", "");
+    const button = Leaflet.DomUtil.create("button", "");
     button.innerText = title;
     button.style.cursor = "pointer";
     button.style.padding = "8px";
     button.style.background = "#0a0908";
     button.style.borderRadius = "6px";
 
-    L.DomEvent.on(button, "click", () => {
+    Leaflet.DomEvent.on(button, "click", () => {
         map.value.setView(center, zoom);
     });
 
-    const customControl = L.Control.extend({
+    const customControl = Leaflet.Control.extend({
         onAdd: function () {
             return button;
         },
