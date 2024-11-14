@@ -30,11 +30,14 @@ onMounted(async () => {
 
 function addButtonToMap(zoom, center, title) {
     const button = Leaflet.DomUtil.create("button", "");
-    button.innerText = title;
-    button.style.cursor = "pointer";
-    button.style.padding = "8px";
-    button.style.background = "#0a0908";
+
     button.style.borderRadius = "6px";
+    button.style.background = "#0a0908";
+    button.style.color = 'white';
+    button.style.padding = "8px";
+    button.style.cursor = "pointer";
+
+    button.innerHTML = title;
 
     Leaflet.DomEvent.on(button, "click", () => {
         map.value.setView(center, zoom);

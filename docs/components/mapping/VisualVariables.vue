@@ -71,7 +71,6 @@ const createControl = (title, data) => {
             panelDiv.style.color = 'white';
             panelDiv.style.padding = '12px';
             panelDiv.style.cursor = 'pointer';
-
             panelDiv.innerHTML = title;
 
             panelDiv.addEventListener('click', () => {
