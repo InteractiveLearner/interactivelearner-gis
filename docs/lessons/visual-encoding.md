@@ -67,7 +67,7 @@ The appearance of marks can be manipulated using channels:
 
 Now that you've learned about visual encoding, play around with the map below to see which marks and channels are displayed, as well as the data they contain. You can alter the style of the points by pressing the bottom-right button.
 
-<!-- <VisualVariables /> -->
+<VisualVariables />
 
 ## Test your knowledge
 
