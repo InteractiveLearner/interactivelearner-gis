@@ -2,9 +2,10 @@
 title: Projections
 description: Discover the projections that convert curved 3D surfaces to flat 2D surfaces.
 author: Omar Kawach
+order: 0
 ---
 
-# {{ $frontmatter.title }}
+# Projections
 
 By {{ $frontmatter.author }}
 

@@ -1,7 +1,11 @@
-import ContentFigure from "../../components/Figure/Figure.jsx";
-import moranFormula from "../../assets/images/moran_formula.svg";
-import pzvalue from "../../assets/images/p-z-value.png";
-import gerrymandering from "../../assets/images/gerrymandering.png";
+---
+title: Spatial autocorrelation statistics
+description: Understand how spatial autocorrelation statistics can help you analyze spatial data.
+author: Omar Kawach
+order: 6
+---
+
+# Spatial autocorrelation statistics
 
 ## What is spatial autocorrelation statistics?
 
@@ -28,12 +32,13 @@ Moran's I generally describes a measure of spatial autocorrelation, indicating t
 Global Moran's I measures how clustered or dispersed values are in a dataset/study area. 
 Local Moran's I can be used to identify specific spatial clusters or outliers within a dataset.
 
+<!-- TODO: Moran's I hard to read in dark theme -->
 
 <ContentFigure
-  img={moranFormula}
-  title={"Formula for Moran's I"}
-  credit={"Credit: Wikipedia"}
-  url={"https://en.wikipedia.org/wiki/Moran%27s_I"}
+  :imgSrc="'/assets/images/moran_formula.svg'"
+  :description="'Formula for Moran\'s I'"
+  :anchorHref="'https://en.wikipedia.org/wiki/Moran%27s_I'"
+  :anchorText="'Credit: Wikipedia'"
 />
 
 In the formula for Moran's I, ( **N** ) represents the number of regions or spatial units, and ( **W** ) represents the sum of all [weights]((https://geodacenter.github.io/workbook/4a_contig_weights/lab4a.html#spatial-weights---basic-concepts)). 
@@ -42,10 +47,10 @@ There are different weight matrices such as queen contiguity, rook contiguity, d
 The output of Moran's I ranges between -1 and +1, where a positive value indicates similar values are found together, a negative value (which is rare) indicates dissimilar values are found together, and a value of 0 means the distribution is random with no spatial autocorrelation. 
 
 <ContentFigure
-  img={pzvalue}
-  title={"Spatial autocorrelation analysis"}
-  credit={"Credit: Anna Papa, Persefoni Sidira, Andreas Tsatsaris"}
-  url={"https://www.researchgate.net/publication/305954162_Spatial_cluster_analysis_of_Crimean-Congo_hemorrhagic_fever_virus_seroprevalence_in_humans_Greece"}
+  :imgSrc="'/assets/images/p-z-value.png'"
+  :description="'Spatial autocorrelation analysis'"
+  :anchorHref="'https://www.researchgate.net/publication/305954162_Spatial_cluster_analysis_of_Crimean-Congo_hemorrhagic_fever_virus_seroprevalence_in_humans_Greece'"
+  :anchorText="'Credit: Anna Papa, Persefoni Sidira, Andreas Tsatsaris'"
 />
 
 Additionally, measuring significance is important, as p-values determine the probability of spatial autocorrelation/null hypothesis being true, and z-scores indicate the likelihood that the data is spatially autocorrelated.
@@ -79,9 +84,10 @@ It's worth mentioning that there are issues related to spatial dependance that i
     - Location of boundaries used to aggregate data can influence results of statistical tests (Moran's I)
     - Gerrymandering is a good example of this
     <ContentFigure
-        img={gerrymandering}
-        credit={"Credit: Spektrum der Wissenschaft/Manon Bischoff"}
-        url={"https://www.scientificamerican.com/article/geometry-reveals-the-tricks-behind-gerrymandering/"}/>
+        :imgSrc="'/assets/images/gerrymandering.png'"
+        :anchorHref="'https://www.scientificamerican.com/article/geometry-reveals-the-tricks-behind-gerrymandering/'"
+        :anchorText="'Credit: Spektrum der Wissenschaft/Manon Bischoff'"
+    />
 - [Ecological fallacy](https://en.wikipedia.org/wiki/Ecological_fallacy) can result in weak inferences
     - Individuals vs populations
     - Cant take aggregated results and apply them to individuals
@@ -90,6 +96,74 @@ It's worth mentioning that there are issues related to spatial dependance that i
     - For a good amount of spatial representation and to avoid bias, use stratified random sampling
 - [Boundary problem](https://en.wikipedia.org/wiki/Boundary_problem_(spatial_analysis)) might lead to loss of information
 
-### Interaction
+## Interaction
 
 Coming soon
+
+## Test your knowledge
+
+<Quiz
+    :quiz-data="{
+        questions: [
+            {
+            question: 'Gerrymandering is an example of which type of spatial analysis?',
+            options: [
+                {
+                'answer': 'Spatial autocorrelation',
+                'key': 1
+                },
+                {
+                'answer': 'MUAP',
+                'key': 2
+                }
+            ],
+            correctAnswer: 2
+            },
+            {
+            question: 'Which sampling method introduces no bias?',
+            options: [
+                {
+                answer: 'Random sampling',
+                key: 1
+                },
+                {
+                answer: 'Systematic sampling',
+                key: 2
+                },
+                {
+                answer: 'Stratified random sampling',
+                key: 3
+                }
+            ],
+            correctAnswer: 3
+            }
+        ]
+    }"
+/>
+
+## Sources
+
+<Sources
+    :sources="[
+        {
+            title: 'FOSS for performing spatial autocorrelation statistics',
+            author: 'GeoDa',
+            url: 'https://geodacenter.github.io/',
+        },
+        {
+            title: 'Spatial Regression with GeoDa ',
+            author: 'GeoDa',
+            url: 'https://s4.ad.brown.edu/Resources/Tutorial/Modul2/GeoDa3FINAL.pdf',
+        },
+        {
+            title: 'Geographic Data Science with Python',
+            author: 'Sergio J. Rey, Dani Arribas-Bel, Levi J. Wolf',
+            url: 'https://geographicdata.science/book/intro.html',
+        },
+        {
+            title: 'Chapter 13 Spatial Autocorrelation',
+            author: 'Manuel Gimond',
+            url: 'https://mgimond.github.io/Spatial/spatial-autocorrelation.html',
+        },
+    ]"
+/>

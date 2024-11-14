@@ -126,8 +126,8 @@ export default defineConfig({
       // sortFolderTo: null,
       // sortMenusByName: false,
       // sortMenusByFileDatePrefix: false,
-      // sortMenusByFrontmatterOrder: false,
-      // frontmatterOrderDefaultValue: 0,
+      sortMenusByFrontmatterOrder: true,
+      frontmatterOrderDefaultValue: 9,
       // sortMenusByFrontmatterDate: false,
       // sortMenusOrderByDescending: false,
       // sortMenusOrderNumericallyFromTitle: false,
@@ -135,7 +135,6 @@ export default defineConfig({
     }),
     // Use local search instead of Algolia
     search: {
-      // TODO: Modify render function so frontmatter.title displays correctly
       provider: 'local'
     },
   },

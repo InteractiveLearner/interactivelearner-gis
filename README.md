@@ -32,6 +32,30 @@ The incomplete chapters are mentioned in the [Issues](https://github.com/Interac
 - [ ] Web GIS
 - [ ] Relational databases
 
+<!-- TODO:
+  // {
+  //   title: "Relational databases in GIS",
+  //   description:
+  //     "Learn how relational databases can be used to store and manage spatial data.",
+  //   url: "/relational-databases",
+  //   icon: "server",
+  // },
+  // {
+  //   title: "WebGIS",
+  //   description:
+  //     "Explore the world of WebGIS and learn how to create your own web mapping applications.",
+  //   url: "/web-gis",
+  //   icon: "laptop",
+  // },
+  // {
+  //   title: "GIS and BIM",
+  //   description:
+  //     "Discover how GIS and BIM can be integrated to create a more comprehensive view of the built environment.",
+  //   url: "/gis-bim",
+  //   icon: "building",
+  // },
+ -->
+
 ## Planned features for a better learning experience
 
 The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Enhancement* label. 
