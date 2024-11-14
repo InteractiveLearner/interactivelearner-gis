@@ -32,8 +32,6 @@ Moran's I generally describes a measure of spatial autocorrelation, indicating t
 Global Moran's I measures how clustered or dispersed values are in a dataset/study area. 
 Local Moran's I can be used to identify specific spatial clusters or outliers within a dataset.
 
-<!-- TODO: Moran's I hard to read in dark theme -->
-
 <ContentFigure
   :imgSrc="'/assets/images/moran_formula.svg'"
   :description="'Formula for Moran\'s I'"
