@@ -20,6 +20,7 @@
 .env.test.local
 .env.production.local
 *cache
+*.temp
 
 # Logs
 logs

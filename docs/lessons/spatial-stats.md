@@ -3,6 +3,7 @@ title: Spatial autocorrelation statistics
 description: Understand how spatial autocorrelation statistics can help you analyze spatial data.
 author: Omar Kawach
 order: 6
+outline: [2,4]
 ---
 
 # Spatial autocorrelation statistics
@@ -39,7 +40,7 @@ Local Moran's I can be used to identify specific spatial clusters or outliers wi
   :anchorText="'Credit: Wikipedia'"
 />
 
-In the formula for Moran's I, ( **N** ) represents the number of regions or spatial units, and ( **W** ) represents the sum of all [weights]((https://geodacenter.github.io/workbook/4a_contig_weights/lab4a.html#spatial-weights---basic-concepts)). 
+In the formula for Moran's I, ( **N** ) represents the number of regions or spatial units, and ( **W** ) represents the sum of all [weights](https://geodacenter.github.io/workbook/4a_contig_weights/lab4a.html#spatial-weights---basic-concepts). 
 There are different weight matrices such as queen contiguity, rook contiguity, distance, and k-nearest neighbors.
 
 The output of Moran's I ranges between -1 and +1, where a positive value indicates similar values are found together, a negative value (which is rare) indicates dissimilar values are found together, and a value of 0 means the distribution is random with no spatial autocorrelation. 

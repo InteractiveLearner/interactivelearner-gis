@@ -3,6 +3,7 @@ title: Visual encoding
 description: Learn about the main building blocks of visual encoding / data visualization.
 author: Omar Kawach
 order: 3
+outline: [2,4]
 ---
 
 # Visual encoding
@@ -169,8 +170,6 @@ Now that you've learned about visual encoding, play around with the map below to
 
 ## Sources
 
-<!-- TODO: One of the links are broken -->
-
 <Sources :sources="[
   {
     title: 'Visualization Analysis and Design',
@@ -178,9 +177,9 @@ Now that you've learned about visual encoding, play around with the map below to
     url: 'https://www.cs.ubc.ca/~tmm/vadbook/',
   },
   {
-    title: 'Visual Representation from Semiology of Graphics by J. Bertin',
-    author: 'Sheelagh Carpendale',
-    url: 'https://innovis.cpsc.ucalgary.ca/innovis/uploads/Courses/InformationVisualizationDetails/09Bertin.pdf',
+      title: 'Jacques Bertin\'s Semiology of Graphics',
+      author: 'Information Visuals',
+      url: 'https://www.informationvisuals.com/information-design-theory/jacques-bertins-semiology-of-graphics',
   },
   {
     title: 'Geometric Primitive',

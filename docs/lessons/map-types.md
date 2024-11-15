@@ -3,15 +3,16 @@ title: Types of maps
 description: Find out how visual encoding allows geographers to produce thematic maps.
 author: Omar Kawach
 order: 4
+outline: [2,4]
 ---
 
 # Types of maps
 
 ## Reference maps
 
-**Reference maps** serve a general purpose. They can be found in the form of transit maps, topographic maps, road maps, hiking trail maps, and so on. The Scale Map you saw in the [Scales](/lessons/scale) chapter is considered a reference map because it had no intended theme and only showed the location and names of features.
+**Reference maps** serve a general purpose. They can be found in the form of transit maps, topographic maps, road maps, hiking trail maps, and so on. Reference maps have no intended theme and only showed the location and names of features.
 
-<!-- EmptyMap -->
+<ReferenceMap />
 
 ## Thematic maps
 
@@ -47,21 +48,19 @@ Now that you've learned how thematic maps are designed, it is time to explore an
 
 - Can you identify which channels were used to create each of the thematic maps? The Channel Ranking figure could be useful.
 - The dot density maps's view is set to World. Notice how the dots begin to indicate a different number of people when you zoom in to a Continent or Country level.
-- There is no diagram symbol map below. However, you can find pie charts as one of the hospital shape styles in the [Visually Encoded Map](/visual) from the previous chapter. Despite the fact that the pie charts in the Visually Encoded Map contain meaningless data, they could, for example, represent each hospital's budget categories.
+- There is no diagram symbol map below. However, you can find pie charts as one of the hospital shape styles in the [Visually encoded map](/lessons/visual-encoding) from the previous chapter. Despite the fact that the pie charts in the Visually Encoded Map contain meaningless data, they could, for example, represent each hospital's budget categories.
 
-<!-- <DashCarousel style={{width: "100%"}}>
-  <DashCarouselItem visible>
-    <ArcgisCalciteMap itemId="6748f56e0bb24ec5bbc6494687a3cca0" title="Chorochromatic map" zoom={4} mapId="chorochromatic" />
-  </DashCarouselItem>
-
-  <DashCarouselItem>
-    <ArcgisCalciteMap itemId="b247e64a3d6a45ffaa63bbba12726db3" title="Dot density map" zoom={2} mapId="dot"/>
-  </DashCarouselItem>
-
-  <DashCarouselItem>
-    <ArcgisCalciteMap itemId="11e173a4e2f040ae80d39e44ee29467a" title="Choropleth and symbol map" zoom={7.5} mapId="choropleth"/>
-  </DashCarouselItem>
-</DashCarousel> -->
+<calcite-carousel label="Maps" style="height: 600px;">
+    <calcite-carousel-item label="Chorochromatic map">
+        <ArcgisCalciteMap itemId="6748f56e0bb24ec5bbc6494687a3cca0" title="Chorochromatic map" :zoom=4 mapId="chorochromatic" />
+    </calcite-carousel-item>
+    <calcite-carousel-item label="Dot density map">
+        <ArcgisCalciteMap itemId="b247e64a3d6a45ffaa63bbba12726db3" title="Dot density map" :zoom=2 mapId="dot"/>
+    </calcite-carousel-item>
+    <calcite-carousel-item label="Choropleth and symbol map">
+        <ArcgisCalciteMap itemId="11e173a4e2f040ae80d39e44ee29467a" title="Choropleth and symbol map" :zoom=7.5 mapId="choropleth"/>
+    </calcite-carousel-item>
+</calcite-carousel>
 
 ## Test your knowledge
 
@@ -146,8 +145,6 @@ Now that you've learned how thematic maps are designed, it is time to explore an
 
 ## Sources
 
-<!-- TODO: One of the links are broken -->
-
 <Sources
     :sources="[
         {
@@ -156,9 +153,9 @@ Now that you've learned how thematic maps are designed, it is time to explore an
             url: 'https://www.cs.ubc.ca/~tmm/vadbook/',
         },
         {
-            title: 'Visual Representation from Semiology of Graphics by J. Bertin',
-            author: 'Sheelagh Carpendale',
-            url: 'https://innovis.cpsc.ucalgary.ca/innovis/uploads/Courses/InformationVisualizationDetails/09Bertin.pdf',
+            title: 'Jacques Bertin\'s Semiology of Graphics',
+            author: 'Information Visuals',
+            url: 'https://www.informationvisuals.com/information-design-theory/jacques-bertins-semiology-of-graphics',
         },
         {
             title: 'Geometric Primitive',

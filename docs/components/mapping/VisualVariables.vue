@@ -4,7 +4,6 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import L from 'leaflet';
 
 import pin from '/assets/icons/pin.png';
 import icon from '/assets/icons/icon.png';
@@ -20,6 +19,8 @@ const options = [pin, icon, pie, hospital];
 let pointsCollection = [];
 let current = 1;
 
+let Leaflet;
+
 const onEachHospital = (hospital, layer) => {
     let name = hospital.properties.NAME;
     let addr = hospital.properties.ADDRESS;
@@ -28,7 +29,7 @@ const onEachHospital = (hospital, layer) => {
     pointsCollection.push(layer);
 
     layer.setIcon(
-        L.icon({
+        Leaflet.icon({
             iconSize: [38, 38], // size of the icon
             iconUrl: pin,
             color: "green",
@@ -62,9 +63,9 @@ const onEachRoad = (road, layer) => {
 };
 
 const createControl = (title, data) => {
-    const MapInfo = L.Control.extend({
+    const MapInfo = Leaflet.Control.extend({
         onAdd: () => {
-            const panelDiv = L.DomUtil.create('button', '');
+            const panelDiv = Leaflet.DomUtil.create('button', '');
 
             panelDiv.style.borderRadius = '6px';
             panelDiv.style.background = '#0a0908';
@@ -78,7 +79,7 @@ const createControl = (title, data) => {
 
                 data.forEach((layer) => {
                     layer.setIcon(
-                        L.icon({
+                        Leaflet.icon({
                             iconSize: [38, 38],
                             iconUrl: options[current],
                             color: 'green',
@@ -95,20 +96,21 @@ const createControl = (title, data) => {
     return new MapInfo({ position: 'bottomright' });
 };
 
-onMounted(() => {
-    const map = L.map('map').setView([45.279716962875604, -75.78658103340784], 9);
+onMounted(async () => {
+    Leaflet = await import('leaflet'); // window not defined error if not imported here
+    const map = Leaflet.map('map').setView([45.279716962875604, -75.78658103340784], 9);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
     // Set up hospital layer
-    L.geoJSON(hospitalsData, {
+    Leaflet.geoJSON(hospitalsData, {
         onEachFeature: onEachHospital,
     }).addTo(map);
 
     // Set up ward layer
-    L.geoJSON(wardsData, {
+    Leaflet.geoJSON(wardsData, {
         style: () => {
             return {
                 fillColor: "#f1faee",
@@ -122,7 +124,7 @@ onMounted(() => {
     }).addTo(map);
 
     // Set up road layer
-    L.geoJSON(roadsData, {
+    Leaflet.geoJSON(roadsData, {
         style: () => {
             return {
                 weight: 4,
@@ -137,7 +139,7 @@ onMounted(() => {
     const scaleButton = createControl('Change Shape Style', pointsCollection);
     scaleButton.addTo(map);
 
-    L.control.scale({ position: 'bottomleft' }).addTo(map);
+    Leaflet.control.scale({ position: 'bottomleft' }).addTo(map);
 });
 </script>
 

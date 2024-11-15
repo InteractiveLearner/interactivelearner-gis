@@ -3,6 +3,7 @@ title: Scale
 description: Explore how map scale can be used to hide and show details on a map.
 author: Omar Kawach
 order: 1
+outline: [2,4]
 ---
 
 # Scale
