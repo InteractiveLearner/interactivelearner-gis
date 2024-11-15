@@ -21,7 +21,7 @@ function isSvg(src) {
 
 <style scoped>
 /* Need a white background for svg's that have black text */
-html[class="dark"] .svg-background {
+html.dark .svg-background {
   background-color: #f0f0f0; 
 }
 

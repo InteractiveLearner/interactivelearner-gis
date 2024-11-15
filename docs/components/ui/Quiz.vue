@@ -151,7 +151,7 @@ const goToPreviousQuestion = () => {
     transition: all 0.2s;
 }
 
-html[class="dark"] .quiz-option {
+html.dark .quiz-option {
     background: #383838;
     border-color: #444444;
     color: white;
@@ -161,7 +161,7 @@ html[class="dark"] .quiz-option {
     background: #f8fafc;
 }
 
-html[class="dark"] .quiz-option:hover:not(.selected) {
+html.dark .quiz-option:hover:not(.selected) {
     background: #4b4b4b;
 }
 
@@ -171,7 +171,7 @@ html[class="dark"] .quiz-option:hover:not(.selected) {
     color: #166534;
 }
 
-html[class="dark"] .quiz-option.selected.correct {
+html.dark .quiz-option.selected.correct {
     background: #14532d;
     border-color: #16a34a;
     color: #bbf7d0;
@@ -183,7 +183,7 @@ html[class="dark"] .quiz-option.selected.correct {
     color: #991b1b;
 }
 
-html[class="dark"] .quiz-option.selected.incorrect {
+html.dark .quiz-option.selected.incorrect {
     background: #7f1d1d;
     border-color: #dc2626;
     color: #fecaca;
