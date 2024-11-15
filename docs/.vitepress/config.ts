@@ -9,6 +9,57 @@ export default defineConfig({
   sitemap: {
     hostname: "https://www.interactivelearner-gis.com",
   },
+  themeConfig: {
+    logo: { src: "/logo192.png", width: 28, height: 28 },
+    socialLinks: [
+      {
+        icon: "github",
+        link: "https://github.com/InteractiveLearner/interactivelearner-gis/",
+      },
+    ],
+    nav: [
+      {
+        text: "Lessons",
+        items: [
+          { text: "Projections", link: "/lessons/projections" },
+          { text: "Scale", link: "/lessons/scale" },
+          { text: "Spatial data", link: "/lessons/spatial-data" },
+          { text: "Visual encoding", link: "/lessons/visual-encoding" },
+          { text: "Types of maps", link: "/lessons/map-types" },
+          { text: "Classifying data", link: "/lessons/classification" },
+          { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
+        ],
+      },
+    ],
+    footer: {
+      message: "Released under the GPL-3.0 license.",
+      copyright: "Copyright © Interactive Learner GIS 2024",
+    },
+    sidebar: generateSidebar({
+      // ============ [ RESOLVING PATHS ] ============
+      documentRootPath: '/docs',
+      // ============ [ GETTING MENU TITLE ] ============
+      useTitleFromFrontmatter: true,
+      // ============ [ STYLING MENU TITLE ] ============
+      capitalizeFirst: true,
+      // ============ [ SORTING ] ============
+      sortMenusByFrontmatterOrder: true,
+      frontmatterOrderDefaultValue: 9,
+    }),
+    search: {
+      provider: 'local'
+    },
+  },
+  lastUpdated: true,
+  outDir: "../build",
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) =>
+          tag.startsWith("arcgis-") || tag.startsWith("calcite-"),
+      },
+    },
+  },
   head: [
     ["link", { rel: "icon", type: "image/png", href: "/logo192.png" }],
     ["meta", { name: "theme-color", content: "#144d1e" }],
@@ -56,96 +107,4 @@ export default defineConfig({
       },
     ],
   ],
-  themeConfig: {
-    logo: { src: "/logo192.png", width: 28, height: 28 },
-    socialLinks: [
-      {
-        icon: "github",
-        link: "https://github.com/InteractiveLearner/interactivelearner-gis/",
-      },
-    ],
-    nav: [
-      {
-        text: "Lessons",
-        items: [
-          { text: "Projections", link: "/lessons/projections" },
-          { text: "Scale", link: "/lessons/scale" },
-          { text: "Spatial data", link: "/lessons/spatial-data" },
-        ],
-      },
-    ],
-    footer: {
-      message: "Released under the GPL-3.0 license.",
-      copyright: "Copyright © Interactive Learner GIS 2024",
-    },
-    sidebar: generateSidebar({
-      // ============ [ RESOLVING PATHS ] ============
-      documentRootPath: '/docs',
-      // scanStartPath: null,
-      // resolvePath: null,
-      // basePath: null,
-      //
-      // ============ [ GROUPING ] ============
-      // collapsed: true,
-      // collapseDepth: 2,
-      // rootGroupText: 'Contents',
-      // rootGroupLink: 'https://github.com/jooy2',
-      // rootGroupCollapsed: false,
-      //
-      // ============ [ GETTING MENU TITLE ] ============
-      // useTitleFromFileHeading: true,
-      useTitleFromFrontmatter: true,
-      // useFolderLinkFromIndexFile: false,
-      // useFolderTitleFromIndexFile: false,
-      // frontmatterTitleFieldName: 'title',
-      //
-      // ============ [ GETTING MENU LINK ] ============
-      // useFolderLinkFromSameNameSubFile: false,
-      // useFolderLinkFromIndexFile: false,
-      // folderLinkNotIncludesFileName: false,
-      //
-      // ============ [ INCLUDE / EXCLUDE ] ============
-      // excludePattern: ['README.md', 'folder/'],
-      // excludeFilesByFrontmatterFieldName: 'exclude',
-      // includeDotFiles: false,
-      // includeEmptyFolder: false,
-      // includeRootIndexFile: false,
-      // includeFolderIndexFile: false,
-      //
-      // ============ [ STYLING MENU TITLE ] ============
-      // hyphenToSpace: true,
-      // underscoreToSpace: true,
-      capitalizeFirst: true,
-      // capitalizeEachWords: false,
-      // keepMarkdownSyntaxFromTitle: false,
-      // removePrefixAfterOrdering: false,
-      // prefixSeparator: '.',
-      //
-      // ============ [ SORTING ] ============
-      // manualSortFileNameByPriority: ['first.md', 'second', 'third.md'],
-      // sortFolderTo: null,
-      // sortMenusByName: false,
-      // sortMenusByFileDatePrefix: false,
-      sortMenusByFrontmatterOrder: true,
-      frontmatterOrderDefaultValue: 9,
-      // sortMenusByFrontmatterDate: false,
-      // sortMenusOrderByDescending: false,
-      // sortMenusOrderNumericallyFromTitle: false,
-      // sortMenusOrderNumericallyFromLink: false,
-    }),
-    // Use local search instead of Algolia
-    search: {
-      provider: 'local'
-    },
-  },
-  lastUpdated: true,
-  outDir: "../build",
-  vue: {
-    template: {
-      compilerOptions: {
-        isCustomElement: (tag) =>
-          tag.startsWith("arcgis-") || tag.startsWith("calcite-"),
-      },
-    },
-  },
 });
