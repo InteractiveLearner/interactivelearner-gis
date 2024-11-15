@@ -32,16 +32,35 @@ The incomplete chapters are mentioned in the [Issues](https://github.com/Interac
 - [ ] Web GIS
 - [ ] Relational databases
 
-## Planned features for a better learning experience
+<!-- TODO:
+  // {
+  //   title: "Relational databases in GIS",
+  //   description:
+  //     "Learn how relational databases can be used to store and manage spatial data.",
+  //   url: "/relational-databases",
+  //   icon: "server",
+  // },
+  // {
+  //   title: "WebGIS",
+  //   description:
+  //     "Explore the world of WebGIS and learn how to create your own web mapping applications.",
+  //   url: "/web-gis",
+  //   icon: "laptop",
+  // },
+  // {
+  //   title: "GIS and BIM",
+  //   description:
+  //     "Discover how GIS and BIM can be integrated to create a more comprehensive view of the built environment.",
+  //   url: "/gis-bim",
+  //   icon: "building",
+  // },
+ -->
 
-The incomplete features are mentioned in the [Issues](https://github.com/InteractiveLearner/interactivelearner-gis/issues) tab under the *Enhancement* label. 
+## Planned features for a better learning experience
 
 - [ ] Implement report system using local storage to track user progress
 - [ ] Grade tracking system to assess learning (also local storage)
 - [ ] Support multiple languages
-- [ ] Pagination
-- [ ] Table of contents
-- [x] Consistent styling between desktop and mobile
 
 ## How to contribute
 
@@ -57,13 +76,13 @@ git clone https://github.com/InteractiveLearner/interactivelearner-gis.git
 
 ##### Package manager
 
-It is recommended to use [pnpm](https://pnpm.io/) for this project. 
+It is mandatory to use [pnpm](https://pnpm.io/) for this project. 
 
 ##### Run the application
 
 ```
 pnpm install
-pnpm start 
+pnpm dev 
 ```
 
 ##### Build the application
@@ -72,43 +91,15 @@ pnpm start
 pnpm build
 ```
 
-##### Publish the application to GitHub Pages
+##### Preview the build
 
 ```
-pnpm deploy
+pnpm preview
 ```
 
 ### Other contributors 
 
 Email me at omarkawach@outlook.com with any resources, feedback or ideas you'd like to share. If you do not have a GitHub account, I can upload and credit you for any content you wish to contribute. 
-
-## Technologies
-
-### Deployment
-- [Vercel](https://vercel.com/docs)
-
-### Tooling
-
-- [Vite](https://vitejs.dev/)
-
-### Web design
-- [React](https://reactjs.org/)
-- [React Router](https://reactrouter.com/)
-- [Dash Components](https://www.npmjs.com/package/@didyoumeantoast/dash-components)
-
-### Content writing and documentation
-- [MDX JS](https://mdxjs.com/)
-- [Markdown](https://daringfireball.net/projects/markdown/syntax)
-
-### Data visualization
-- [d3js](https://d3js.org/)
-
-### Geospatial
-- [GeoPandas](https://geopandas.org/en/stable/)
-- [React Leaflet](https://react-leaflet.js.org/)
-- [QGIS](https://qgis.org/en/site/)
-- [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview)
-- [ArcGIS Online Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm)
 
 ## Author
 
