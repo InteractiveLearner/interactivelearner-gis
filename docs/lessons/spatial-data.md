@@ -3,7 +3,6 @@ title: Spatial data and its types
 description: Check out the key elements of spatial data and its types.
 author: Omar Kawach
 order: 2
-outline: [2,4]
 ---
 
 # Spatial data and its types

@@ -10,6 +10,7 @@ export default defineConfig({
     hostname: "https://www.interactivelearner-gis.com",
   },
   themeConfig: {
+    outline: [2, 4],
     logo: { src: "/logo192.png", width: 28, height: 28 },
     socialLinks: [
       {
