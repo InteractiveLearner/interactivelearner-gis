@@ -32,7 +32,7 @@ onMounted(() => {
   const globe = svg.append("circle")
     .attr("fill", "transparent")
     .attr("stroke", "#14a02e")
-    .attr("stroke-width", "0.2")
+    .attr("stroke-width", "1")
     .attr("cx", width/2)
     .attr("cy", height/2)
     .attr("r", initialScale);
@@ -58,7 +58,7 @@ onMounted(() => {
     .attr("d", path)
     .attr("fill", "transparent")
     .style('stroke', '#14a02e')
-    .style('stroke-width', 0.3)
+    .style('stroke-width', 0.8)
     .style("opacity", 0.8);
 
   // Auto rotation
