@@ -15,6 +15,7 @@ import ArcgisCalciteMap from "../../components/mapping/ArcgisCalciteMap.vue";
 import ContentFigure from "../../components/ui/ContentFigure.vue";
 import Sources from "../../components/ui/Sources.vue";
 import Quiz from "../../components/ui/Quiz.vue";
+import HomePageGlobe from "../../components/mapping/HomePageGlobe.vue";
 
 // Layout
 import MyLayout from "./MyLayout.vue";
@@ -34,5 +35,6 @@ export default {
     app.component("ContentFigure", ContentFigure);
     app.component("Quiz", Quiz);
     app.component("Sources", Sources);
+    app.component("HomePageGlobe", HomePageGlobe)
   },
 };

@@ -2,11 +2,11 @@
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress';
 import { watch, onMounted } from 'vue';
+import HomePageGlobe from '../../components/mapping/HomePageGlobe.vue'
 
-const { isDark } = useData();
+const { isDark, frontmatter } = useData();
 
 watch(isDark, (newVal) => {
-  // TODO: Revisit this later
   document.body.classList.toggle('calcite-mode-dark', newVal);
   document.body.classList.toggle('calcite-mode-light', !newVal);
 });
@@ -18,5 +18,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #home-hero-image>
+      <div class="hero-globe" v-if="frontmatter.layout === 'home'">
+        <HomePageGlobe />
+      </div>
+    </template>
+  </DefaultTheme.Layout>
 </template>
+
+<style>
+.hero-globe {
+  margin: 0 auto;
+  max-width: auto;
+  width: 100%;
+  position: relative;
+}
+</style>
