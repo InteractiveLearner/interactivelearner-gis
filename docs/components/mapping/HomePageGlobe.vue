@@ -78,7 +78,8 @@ onMounted(() => {
 <style scoped>
 #globe {
   width: 100%;
-  height: 500px;
+  height: 100%;
+  aspect-ratio: 1/1;
 }
 
 .countries path {
