@@ -25,3 +25,8 @@ onMounted(() => {
   </DefaultTheme.Layout>
 </template>
 
+<style>
+.image-bg{
+  display: none !important;
+}
+</style>
