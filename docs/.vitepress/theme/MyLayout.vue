@@ -20,19 +20,8 @@ onMounted(() => {
 <template>
   <DefaultTheme.Layout>
     <template #home-hero-image>
-      <div class="hero-globe" v-if="frontmatter.layout === 'home'">
-          <HomePageGlobe />
-      </div>
+        <HomePageGlobe />
     </template>
   </DefaultTheme.Layout>
 </template>
 
-<style>
-.hero-globe {
-  margin: 0 auto 2rem auto;
-  max-width: auto;
-  width: 100%;
-  position: relative;
-  overflow: hidden; 
-}
-</style>

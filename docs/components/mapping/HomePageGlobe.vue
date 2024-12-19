@@ -9,18 +9,17 @@ import worldData from '../../data/world.json';
 
 onMounted(() => {
 
-  const heroContainer = document.querySelector('.hero-globe');
+  const heroContainer = document.querySelector('#globe');
   const containerRect = heroContainer.getBoundingClientRect();
-  const width = containerRect.width;
-  const height = containerRect.height;
+  const size = Math.min(containerRect.width, containerRect.height);
   const sensitivity = 75;
-  const scale = Math.min(width, height) * 0.45; // 40% of the smaller dimension
+  const scale = size * 0.45; 
   // Setup projection
   const projection = d3.geoOrthographic()
     .scale(scale)
     .center([0, 0])
     .rotate([0, -30])
-    .translate([width / 2, height / 2]);
+    .translate([size / 2, size / 2]);
 
   const initialScale = projection.scale();
   let path = d3.geoPath().projection(projection);
@@ -28,16 +27,16 @@ onMounted(() => {
   // Create SVG container
   const svg = d3.select("#globe")
     .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("viewBox", `0 0 ${size} ${size}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
 
   // Add globe circle
   const globe = svg.append("circle")
     .attr("fill", "transparent")
     .attr("stroke", "#14a02e")
     .attr("stroke-width", "1")
-    .attr("cx", width/2)
-    .attr("cy", height/2)
+    .attr("cx", size/2)
+    .attr("cy", size/2)
     .attr("r", initialScale);
 
   // Add drag behavior
@@ -82,7 +81,6 @@ onMounted(() => {
 #globe {
   width: 100%;
   height: 100%;
-  aspect-ratio: 1/1;
 }
 
 .countries path {
