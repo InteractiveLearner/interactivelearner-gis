@@ -8,13 +8,16 @@ import * as d3 from 'd3';
 import worldData from '../../data/world.json';
 
 onMounted(() => {
-  const width = document.getElementById('globe').getBoundingClientRect().width;
-  const height = 500;
-  const sensitivity = 75;
 
+  const heroContainer = document.querySelector('.hero-globe');
+  const containerRect = heroContainer.getBoundingClientRect();
+  const width = containerRect.width;
+  const height = containerRect.height;
+  const sensitivity = 75;
+  const scale = Math.min(width, height) * 0.45; // 40% of the smaller dimension
   // Setup projection
   const projection = d3.geoOrthographic()
-    .scale(250)
+    .scale(scale)
     .center([0, 0])
     .rotate([0, -30])
     .translate([width / 2, height / 2]);
