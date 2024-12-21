@@ -1,7 +1,7 @@
 <template>
   <div id="globe"></div>
 </template>
-
+<!-- Inspired by Michael Keith's (@_mkeith_) globe -->
 <script setup>
 import { onMounted } from 'vue';
 import * as d3 from 'd3';
