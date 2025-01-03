@@ -7,6 +7,8 @@ order: 4
 
 # Types of maps
 
+By {{ $frontmatter.author }}
+
 ## Reference maps
 
 **Reference maps** serve a general purpose. They can be found in the form of transit maps, topographic maps, road maps, hiking trail maps, and so on. Reference maps have no intended theme and only showed the location and names of features.

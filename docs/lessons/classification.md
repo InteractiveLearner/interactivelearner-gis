@@ -7,6 +7,10 @@ order: 5
 
 # Classifying data
 
+By {{ $frontmatter.author }}
+
+## Background
+
 Classifying your data into categories and grouping geographic features or data into classes based on a certain criteria can help you better understand your data. 
 
 ## Thematic maps that employ classification schemes

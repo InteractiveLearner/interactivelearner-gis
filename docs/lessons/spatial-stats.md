@@ -7,6 +7,8 @@ order: 6
 
 # Spatial autocorrelation statistics
 
+By {{ $frontmatter.author }}
+
 ## What is spatial autocorrelation statistics?
 
 Spatial autocorrelation statistics in geographic information systems (GIS) assess relationships between variable values at different locations, measuring similarity or dissimilarity based on distance. 

@@ -29,6 +29,7 @@ export default defineConfig({
           { text: "Types of maps", link: "/lessons/map-types" },
           { text: "Classifying data", link: "/lessons/classification" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
+          { text: "Relational databases", link: "/lessons/relational-db" },
         ],
       },
     ],
