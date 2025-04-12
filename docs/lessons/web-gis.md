@@ -5,6 +5,8 @@ author: Omar Kawach
 order: 8
 ---
 
+<!-- Feel free to include pictures, better code samples where they might be helpful -->
+
 <script setup>
   import LeafletMarker from "../samples/LeafletMarker.vue"
 </script>
@@ -14,15 +16,15 @@ order: 8
 By {{ $frontmatter.author }}
 
 Making a beautiful map requires a lot of effort.
-You may only need a printed or static digital version of your map if it is mostly meant to be illustrative and not to be used to interact with data.
+You may only need a printed or static digital version of your map if it is meant to be illustrative and not to be used to interact with data.
 
 However, expectations have evolved. People today expect their maps to be more engaging, interactive, and accessible. They are looking for maps with dynamic content that encourage exploration and provide deeper insights.
 
-WebGIS can greatly help with that, and depending on what you're trying to achieve, implementing WebGIS at your organization can get quite technical.
+Web GIS can help with that, but depending on what you're trying to achieve, implementing Web GIS at your organization can get quite technical.
 
-WebGIS combines the power of the browser and GIS tools for capturing, storing, and analyzing spatial data, enabling users to access spatial data from anywhere, on any device.
+Web GIS combines the power of the browser and GIS tools for capturing, storing, and analyzing spatial data, enabling users to access spatial data from anywhere, on any device.
 
-Below are **_some_** key considerations for a successful WebGIS based mapping application:
+Below are **_some_** key considerations for a successful Web GIS based mapping application:
 
 - Choose a web mapping library that suits your needs
 - Decide on a frontend web development framework
@@ -31,7 +33,7 @@ Below are **_some_** key considerations for a successful WebGIS based mapping ap
 
 ## Web mapping libraries
 
-To include maps in a web application, the easiest and most common way is through mapping libraries. Mapping libraries provides out-of-box support for visualizations and interactions in maps. Common choices are as follows:
+To include maps in a web application, the easiest and most common way is through mapping libraries. Mapping libraries provide out-of-box support for visualizations and interactions in maps. Common choices are as follows:
 
 - Open-source libraries:
   - [Leaflet](https://leafletjs.com/)
@@ -59,7 +61,7 @@ Some web maps can be quite simple like placing a point on a map to help customer
 For this, the application can be written quickly without extra tools, all you need is HTML/JavaScript/CSS. 
 
 ::: tip
-If you're new to web development, you should read about the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction), [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML), [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript), and [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS).
+If you're new to web development, you should read about the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) (DOM), [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML), [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript), and [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS).
 :::
 
 <LeafletMarker/>
@@ -141,15 +143,15 @@ const msg = 'Hello World'
 
 ### Tooling
 
-Only HTML, CSS, and JavaScript are core features of modern web browsers. Frameworks like React or Vue extend these native web technologies.
+HTML/CSS/JavaScript are core features of modern web browsers. Frameworks like React or Vue extend these native web technologies.
 
-[Bundling tools](https://webreference.com/javascript/advanced/module-bundlers/) like [Vite](https://vite.dev/) optimize and prepare framework-based applications for browsers by reducing file sizes and splitting bundles — a process commonly referred to as "building."
+[Bundling tools](https://webreference.com/javascript/advanced/module-bundlers/) like [Vite](https://vite.dev/) optimize and prepare framework-based applications for browsers by reducing file sizes and splitting bundles.
 
 Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend frameworks like React provides an improved developer experience. TypeScript's static typing adds a layer of safety to JavaScript development, reducing uncertainty and boosting confidence.
 
 ### Rendering strategies
 
-As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR), [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) like [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which are unavailable during SSR. You might find yourself needing to write workarounds to when trying to use web mapping functionalities within SSG-based applications. 
+As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR), [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) like [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which are unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications. 
 
 This is what could be done to get Leaflet to work in a SSG-based application.
 
@@ -186,7 +188,7 @@ See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly
 <!-- Need example of workaround comparing CSR and SSG -->
 
 ::: tip
-This site was built with [VitePress](https://vitepress.dev/) which is a Vite and Vue powered SSG. You can check out all the code for this site at https://github.com/InteractiveLearner/interactivelearner-gis/
+This site was built with [VitePress](https://vitepress.dev/) which is a Vite and Vue powered SSG. You can check out all the code for this site [here](https://github.com/InteractiveLearner/interactivelearner-gis/).
 :::
 
 
@@ -200,7 +202,6 @@ There are a growing number of JavaScript mapping libraries as React, Angular, we
   - [React Leaflet](https://react-leaflet.js.org/)
   - [ngx-leaflet](https://www.npmjs.com/package/@asymmetrik/ngx-leaflet)
   - [ngx-maplibre-gl](https://github.com/maplibre/ngx-maplibre-gl)
-  - [@planet/maps](https://github.com/planetlabs/maps)
   - [leaflet-map](https://github.com/leaflet-extras/leaflet-map)
   - [openlayers-elements](https://github.com/openlayers-elements/openlayers-elements)
 - Commericial libraries:
@@ -215,12 +216,14 @@ The challenge with mapping libraries lacking framework-agnostic web components i
 > Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.
 :::
 
-## Backend
+## Backend and hosting
 
 <!-- Different caching strategies?
 JS Maps SDK client side example 
 JS Maps SDK AGO webmap example 
 JS Maps SDK GeoJSON request example  -->
+
+<!-- Deploy your app to GitHub pages or Vercel -->
 
 ## Test your knowledge
 
@@ -228,21 +231,55 @@ JS Maps SDK GeoJSON request example  -->
     {
         questions: [
             {
-            question: 'Can a spatial database have non-spatial relationships?',
+            question: 'For a simple web map to display a business location, which might be sufficient?',
             options: [
                 {
-                answer: 'Yes',
-                key: 1
+                  answer: 'A complex frontend framework like Angular',
+                  key: 1
                 },
                 {
-                answer: 'No',
-                key: 2
+                  answer: 'Only HTML/JavaScript/CSS',
+                  key: 2
+                },
+                {
+                  answer: 'Static site generator with server-side rendering',
+                  key: 3
                 }
+            ],
+            correctAnswer: 2
+            },
+            {
+            question: 'What is a key challenge associated with mapping libraries that are not framework-agnostic web components?',
+            options: [
+                {
+                  answer: 'They generally have poor performance compared to native browser APIs.',
+                  key: 1
+                },
+                {
+                  answer: 'Switching to a different frontend framework after committing can be difficult.',
+                  key: 2
+                },
+                {
+                  answer: 'They often lack support for basic map visualizations and interactions.',
+                  key: 3
+                }
+            ],
+            correctAnswer: 2
+            },
+            {
+            question: 'Web GIS combines browser capabilities with GIS tools',
+            options: [
+                {
+                  answer: 'True',
+                  key: 1
+                },
+                {
+                  answer: 'False',
+                  key: 2
+                },
             ],
             correctAnswer: 1
             },
-        ]
+        ],     
     }" 
 />
-
-<!-- Feel free to include pictures, better code samples where they might be helpful -->

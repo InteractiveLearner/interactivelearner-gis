@@ -11,6 +11,7 @@
     // Import dynamically to avoid window not defined error in SSR
     Leaflet = await import('leaflet'); 
   
+    // Check if window is defined
     if (typeof window !== 'undefined') {
       const map = Leaflet.map('map').setView([48.43, -123.36], 14);
   
