@@ -1,9 +1,9 @@
 // Web components for global use
-import { defineCustomElements as defineCalciteElements } from "@esri/calcite-components/dist/esm/loader";
+import { defineCustomElements as defineCalciteElements } from "@esri/calcite-components/loader";
 
 // CDN hosted assets
 defineCalciteElements(globalThis, {
-  resourcesUrl: "https://js.arcgis.com/calcite-components/2.13.2/assets"
+  resourcesUrl: "https://js.arcgis.com/calcite-components/3.1.0/assets"
 });
 
 // Vue components for global use
