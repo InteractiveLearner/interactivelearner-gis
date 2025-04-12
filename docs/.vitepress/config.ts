@@ -1,5 +1,7 @@
 import { defineConfig } from "vitepress";
-import { generateSidebar } from 'vitepress-sidebar';
+import { generateSidebar } from "vitepress-sidebar";
+// import { viteStaticCopy } from "vite-plugin-static-copy";
+// import path from "path";
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -31,6 +33,7 @@ export default defineConfig({
           { text: "Classifying data", link: "/lessons/classification" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
           { text: "Relational databases", link: "/lessons/relational-db" },
+          { text: "WebGIS", link: "/lessons/web-gis" },
         ],
       },
     ],
@@ -40,7 +43,7 @@ export default defineConfig({
     },
     sidebar: generateSidebar({
       // ============ [ RESOLVING PATHS ] ============
-      documentRootPath: '/docs',
+      documentRootPath: "/docs",
       // ============ [ GETTING MENU TITLE ] ============
       useTitleFromFrontmatter: true,
       // ============ [ STYLING MENU TITLE ] ============
@@ -50,7 +53,7 @@ export default defineConfig({
       frontmatterOrderDefaultValue: 9,
     }),
     search: {
-      provider: 'local'
+      provider: "local",
     },
   },
   lastUpdated: true,
@@ -62,6 +65,21 @@ export default defineConfig({
           tag.startsWith("arcgis-") || tag.startsWith("calcite-"),
       },
     },
+  },
+  vite: {
+    plugins: [
+      // viteStaticCopy({
+      //   targets: [
+      //     {
+      //       src: path.resolve(
+      //         __dirname,
+      //         "../../node_modules/package-name/**/*"
+      //       ),
+      //       dest: "",
+      //     },
+      //   ],
+      // }),
+    ],
   },
   head: [
     ["link", { rel: "icon", type: "image/png", href: "/logo192.png" }],
