@@ -9,6 +9,7 @@ export default defineConfig({
   sitemap: {
     hostname: "https://www.interactivelearner-gis.com",
   },
+  cleanUrls: true,
   themeConfig: {
     outline: [2, 4],
     logo: { src: "/logo192.png", width: 28, height: 28 },
