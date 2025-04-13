@@ -34,6 +34,7 @@ export default defineConfig({
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
           { text: "Relational databases", link: "/lessons/relational-db" },
           { text: "WebGIS", link: "/lessons/web-gis" },
+          { text: "Misleading maps", link: "/lessons/misleading" },
         ],
       },
     ],
