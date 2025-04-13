@@ -232,6 +232,7 @@ JS Maps SDK client side example
 JS Maps SDK AGO webmap example 
 JS Maps SDK GeoJSON request example  -->
 <!-- Deploy your app to GitHub pages or Vercel -->
+<!-- Postgres + PostGIS, GeoServer and Leaflet? -->
 
 ## Test your knowledge
 
