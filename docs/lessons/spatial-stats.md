@@ -5,6 +5,10 @@ author: Omar Kawach
 order: 6
 ---
 
+::: warning
+Interactive examples are a work in progress for this page.
+:::
+
 # Spatial autocorrelation statistics
 
 By {{ $frontmatter.author }}

@@ -31,6 +31,7 @@ export default defineConfig({
           { text: "Classifying data", link: "/lessons/classification" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
           { text: "Relational databases", link: "/lessons/relational-db" },
+          { text: "Misleading maps", link: "/lessons/misleading" },
         ],
       },
     ],
