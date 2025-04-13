@@ -41,3 +41,70 @@ All map projections cause some form of distortion. The Mercator projection prese
 Design choices matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
 
 <!-- Have an example that messed with color -->
+
+## Test your knowledge
+
+<Quiz :quiz-data="
+    {
+        questions: [
+            {
+            question: 'What is a key difference between large-scale and small-scale maps?',
+            options: [
+                {
+                answer: 'Large-scale maps cover more area with less detail',
+                key: 1
+                },
+                {
+                answer: 'Small-scale maps show greater local detail',
+                key: 2
+                },
+                {
+                answer: 'Large-scale maps provide more detail in a smaller area',
+                key: 3
+                },
+                {
+                answer: 'Small-scale maps have no distortion',
+                key: 4
+                }
+            ],
+            correctAnswer: 3
+            },
+            {
+            question: 'A map showing total COVID-19 cases without adjusting for population size can lead to misleading interpretations.',
+            options: [
+                {
+                answer: 'True',
+                key: 1
+                },
+                {
+                answer: 'False',
+                key: 2
+                }
+            ],
+            correctAnswer: 1
+            },
+            {
+            question: 'Fill in the blank. The __________ projection exaggerates the size of landmasses near the poles, such as making Greenland appear the size of Africa.',
+            options: [
+                {
+                answer: 'Albers',
+                key: 1
+                },
+                {
+                answer: '1:150,000 or 1/150,000',
+                key: 2
+                },
+                {
+                answer: 'Transverse mercator',
+                key: 3
+                },
+                {
+                answer: 'Mercator',
+                key: 4
+                }
+            ],
+            correctAnswer: 4
+            }
+        ]
+    }" 
+/>
