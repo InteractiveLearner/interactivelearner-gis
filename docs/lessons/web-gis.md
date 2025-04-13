@@ -190,7 +190,7 @@ onMounted(() => {
 :::
 
 You won't allows need to write this kind of workaround. 
-See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly) or Astro [client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) for simpler examples.
+See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly) or Astro [client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) for simpler workarounds.
 
 ::: tip
 This site was built with [VitePress](https://vitepress.dev/) which is a Vite and Vue powered SSG. You can check out all the code for this site [here](https://github.com/InteractiveLearner/interactivelearner-gis/).
