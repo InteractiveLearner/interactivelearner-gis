@@ -9,6 +9,10 @@ order: 8
   import LeafletMarker from "../samples/LeafletMarker.vue"
 </script>
 
+::: warning
+Interactive examples are a work in progress for this page.
+:::
+
 # Web GIS
 
 By {{ $frontmatter.author }}
