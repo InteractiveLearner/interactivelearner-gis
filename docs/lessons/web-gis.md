@@ -16,9 +16,9 @@ order: 8
 By {{ $frontmatter.author }}
 
 Making a beautiful map requires a lot of effort.
-You may only need a printed or static digital version of your map if it is meant to be illustrative and not to be used to interact with data.
+If your map is only for illustration, you may only need a printed or static digital version.
 
-However, expectations have evolved. People today expect their maps to be more engaging, interactive, and accessible. They are looking for maps with dynamic content that encourage exploration and provide deeper insights.
+However, expectations have evolved. People today expect their maps to be more engaging, interactive, and accessible. They are looking for maps with dynamic content that encourage exploration and provide more profound insights.
 
 Web GIS can help with that, but depending on what you're trying to achieve, implementing Web GIS at your organization can get quite technical.
 
@@ -33,7 +33,7 @@ Below are **_some_** key considerations for a successful Web GIS based mapping a
 
 ## Web mapping libraries
 
-To include maps in a web application, the easiest and most common way is through mapping libraries. Mapping libraries provide out-of-box support for visualizations and interactions in maps. Common choices are as follows:
+To include maps in a web application, the easiest and most common way is through mapping libraries. Mapping libraries provide out-of-the-box support for visualizations and interactions in maps. Common choices are as follows:
 
 - Open-source libraries:
   - [Leaflet](https://leafletjs.com/)
@@ -110,14 +110,14 @@ L.marker([48.46, -123.36])
 
 :::
 
-What you saw above is great, but its important to remember that there are organizations out there who intentionally build applications meant to scale with demands. 
-If you want to scale quickly along with a team, writing a complex web application requires structure, organization and maintainability.
+What you saw above is great, but it's important to remember that there are organizations out there that intentionally build applications meant to scale with demands. 
+If you want to scale quickly along with a team, writing a complex web application requires structure, organization, and maintainability.
 
 Fortunately, you don't need to decide on structure and tooling yourself.
 Frameworks make app development easier by providing more structure to the way we write applications.
-They do come with a learning curve, but in return, you get a more maintainable codebase, reusable components, nice conveniences and helpful tooling — which can really pay off as your project scales.
+They do come with a learning curve, but in return, you get a more maintainable codebase, reusable components, nice conveniences, and helpful tooling — which can really pay off as your project scales.
 
-There are a lot of frontend frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). There are some nuances but generally, frontend frameworks encourage component-based / reusable code block architecture via a [top-down 1-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html). In turn, frontend frameworks promote declarative code writing (e.g., more HTML and less JavaScript).
+There are a lot of front-end frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). There are some nuances, but generally, frontend frameworks encourage component-based/reusable code block architecture via a [top-down, one-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html). In turn, frontend frameworks promote declarative code writing (e.g., more HTML and less JavaScript).
 
 ::: tip
 Be sure to read up on [Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js), [npm](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management), [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json), [dependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies), [devDependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies), and [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) before you start working with frameworks.
@@ -149,9 +149,11 @@ HTML/CSS/JavaScript are core features of modern web browsers. Frameworks like Re
 
 Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend frameworks like React provides an improved developer experience. TypeScript's static typing adds a layer of safety to JavaScript development, reducing uncertainty and boosting confidence.
 
+<!-- Link to React TS app -->
+
 ### Rendering strategies
 
-As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR), [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) like [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which are unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications. 
+As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR), [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) like [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications. 
 
 This is what could be done to get Leaflet to work in a SSG-based application.
 
@@ -208,7 +210,7 @@ There are a growing number of JavaScript mapping libraries as React, Angular, we
   - [ArcGIS Maps SDK for JavaScript components](https://developers.arcgis.com/javascript/latest/components/)
   - [Google Maps JavaScript API Web Components](https://mapsplatform.google.com/resources/blog/build-maps-faster-web-components/#:~:text=Maps%20JavaScript%20API%20Web%20Components.%20Developers%20can%20access)
 
-The challenge with mapping libraries lacking framework-agnostic web components is that committing to one framework can make switching difficult, or the library might not even offer support for your desired framework. This often requires you to build all the necessary UI components yourself.
+The challenge with mapping libraries lacking framework-agnostic web components is that committing to one framework can make switching difficult, or the library might not even offer support for your desired framework. This scenario often requires you to build all the necessary UI components yourself.
 
 ::: info What are web components?
 
