@@ -5,8 +5,6 @@ author: Omar Kawach
 order: 8
 ---
 
-<!-- Feel free to include pictures, better code samples where they might be helpful -->
-
 <script setup>
   import LeafletMarker from "../samples/LeafletMarker.vue"
 </script>
@@ -123,7 +121,7 @@ There are a lot of front-end frameworks to choose from. Some of the most popular
 Be sure to read up on [Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js), [npm](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management), [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json), [dependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies), [devDependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies), and [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) before you start working with frameworks.
 :::
 
-<!-- Example here comparing declarative to imperative code (use JS Maps SDK?)-->
+<!-- Example here comparing vanilla JS imperative code to React code (use JS Maps SDK?)-->
 
 ::: code-group
 
@@ -149,7 +147,10 @@ HTML/CSS/JavaScript are core features of modern web browsers. Frameworks like Re
 
 Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend frameworks like React provides an improved developer experience. TypeScript's static typing adds a layer of safety to JavaScript development, reducing uncertainty and boosting confidence.
 
-<!-- Link to React TS app -->
+::: info Code sample
+Check out [this code repository](https://github.com/omarkawach/maps-sdk-react-ts) combining the ArcGIS Maps SDK for JavaScript with React, Vite, and TypeScript.
+::: 
+
 
 ### Rendering strategies
 
@@ -187,8 +188,6 @@ onMounted(() => {
 You won't allows need to write this kind of workaround. 
 See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly) or Astro [client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) for simpler examples.
 
-<!-- Need example of workaround comparing CSR and SSG -->
-
 ::: tip
 This site was built with [VitePress](https://vitepress.dev/) which is a Vite and Vue powered SSG. You can check out all the code for this site [here](https://github.com/InteractiveLearner/interactivelearner-gis/).
 :::
@@ -216,6 +215,10 @@ The challenge with mapping libraries lacking framework-agnostic web components i
 
 > [Web components](https://www.webcomponents.org/introduction) are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
 > Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.
+
+Interested in writing your own web components using a web mapping library? Check out these code repositories about the process:
+- [foss-gis-web-components](https://github.com/omarkawach/foss-gis-web-components)
+- [arcgis-web-components](https://github.com/omarkawach/arcgis-web-components)
 :::
 
 ## Backend and hosting
@@ -224,7 +227,6 @@ The challenge with mapping libraries lacking framework-agnostic web components i
 JS Maps SDK client side example 
 JS Maps SDK AGO webmap example 
 JS Maps SDK GeoJSON request example  -->
-
 <!-- Deploy your app to GitHub pages or Vercel -->
 
 ## Test your knowledge
