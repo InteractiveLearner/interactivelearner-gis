@@ -2,7 +2,7 @@
 title: Spatial autocorrelation statistics
 description: Understand how spatial autocorrelation statistics can help you analyze spatial data.
 author: Omar Kawach
-order: 6
+order: 7
 ---
 
 ::: warning

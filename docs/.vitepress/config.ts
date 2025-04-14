@@ -26,6 +26,7 @@ export default defineConfig({
           { text: "Projections", link: "/lessons/projections" },
           { text: "Scale", link: "/lessons/scale" },
           { text: "Spatial data", link: "/lessons/spatial-data" },
+          { text: "Remote sensing", link: "/lessons/remote-sensing" },
           { text: "Visual encoding", link: "/lessons/visual-encoding" },
           { text: "Types of maps", link: "/lessons/map-types" },
           { text: "Classifying data", link: "/lessons/classification" },

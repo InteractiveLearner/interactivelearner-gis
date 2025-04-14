@@ -2,7 +2,7 @@
 title: Visual encoding
 description: Learn about the main building blocks of visual encoding / data visualization.
 author: Omar Kawach
-order: 3
+order: 4
 ---
 
 # Visual encoding

@@ -2,7 +2,7 @@
 title: Classifying data
 description: Discover the different classification schemes used in thematic mapping.
 author: Omar Kawach
-order: 5
+order: 6
 ---
 
 ::: warning
