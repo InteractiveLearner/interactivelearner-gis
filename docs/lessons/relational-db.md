@@ -2,7 +2,7 @@
 title: Relational databases
 description: Learn how relational databases can be used to store and manage spatial data.
 author: Omar Kawach
-order: 7
+order: 8
 ---
 
 ::: warning
