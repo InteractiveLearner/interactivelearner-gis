@@ -16,7 +16,7 @@ Every map reflects decisions someone made about what to show, what to leave out,
 
 ## Scale
 
-Scale controls what gets shown—and what gets left out. A large-scale map (like a neighborhood street map) gives detail but omits broader context. A small-scale map (like a national or continental map) shows the big picture but hides local nuance.
+[Scale](/lessons/scale) controls what gets shown—and what gets left out. A large-scale map (like a neighborhood street map) gives detail but omits broader context. A small-scale map (like a national or continental map) shows the big picture but hides local nuance.
 
 <!-- Copy / paste scale map? -->
 
@@ -28,17 +28,19 @@ While perfection isn't possible, ignoring these variables can lead to flawed con
 
 <!-- Compare normalized to non normalized choropleth map? -->
 
-### False Correlations
+### False correlations
 
-Just because two things appear together on a map doesn’t mean they’re connected. A map that displays obesity rates alongside fast-food locations may appear to exhibit a pattern, but it might not establish a causal relationship. Without proper analysis, it’s just a guess.
+Just because two things appear together on a map doesn’t mean they’re connected. A map that displays obesity rates alongside fast-food locations may appear to exhibit a pattern, but it might not establish a causal relationship. Without proper analysis, it’s just a guess. 
+
+Check out the [spatial statistics](/lessons/spatial-stats) chapter for more.
 
 ## Projection
 
-All map projections cause some form of distortion. The Mercator projection preserves shapes but exaggerates the size of areas near the poles—making Greenland look the size of Africa. Equal-area projections address size distortion but distort shapes. The projection chosen reflects a priority—and influences perception.
+All map [projections](/lessons/projections) cause some form of distortion. The Mercator projection preserves shapes but exaggerates the size of areas near the poles—making Greenland look the size of Africa. Equal-area projections address size distortion but distort shapes. The projection chosen reflects a priority—and influences perception.
 
 ## Theme
 
-Design choices matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
+[Design choices](/lessons/visual-encoding) matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
 
 <!-- Have an example that messed with color -->
 
