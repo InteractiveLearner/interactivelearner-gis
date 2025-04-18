@@ -5,9 +5,10 @@ author: Omar Kawach
 order: 2
 ---
 
-::: warning
-Interactive examples are a work in progress for this page.
-:::
+<script setup>
+import VectorAndRaster from '../components/mapping/VectorAndRaster.vue'
+
+</script>
 
 # Spatial data and its types
 
@@ -52,11 +53,9 @@ Vector data are represented as points, lines, and polygons.
 
 ## Compare vector and raster data
 
-Interaction coming soon
+Topo has terrain and elevation info
 
-## Compare elevation maps
-
-Interaction coming soon
+<VectorAndRaster />
 
 ## Test your knowledge
 
