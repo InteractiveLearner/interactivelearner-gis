@@ -4,10 +4,10 @@
     <div class="map-container">
       <div class="map-section">
         <div class="map-header">
-          <div class="h2-like">Vector</div>
+          <div class="h2-like">1. Vector</div>
           <div class="map-controls">
             <calcite-select
-              v-model="vectorStyleType"
+              :value="vectorStyleType"
               @calciteSelectChange="updateVectorStyle"
             >
               <calcite-option value="population">Population</calcite-option>
@@ -18,20 +18,9 @@
         </div>
         <div id="vector-map" class="map-element"></div>
       </div>
-
       <div class="map-section">
         <div class="map-header">
-          <div class="h2-like">Raster</div>
-          <div class="map-controls">
-            <calcite-select
-              v-model="rasterLayerType"
-              @calciteSelectChange="updateRasterLayer"
-            >
-              <calcite-option value="streets">Streets</calcite-option>
-              <calcite-option value="satellite">Satellite</calcite-option>
-              <calcite-option value="terrain">Terrain</calcite-option>
-            </calcite-select>
-          </div>
+          <div class="h2-like">2. Raster</div>
         </div>
         <div id="raster-map" class="map-element"></div>
       </div>
@@ -39,10 +28,10 @@
   </div>
 </template>
 
-<script>
-import { ref, onMounted, watch } from "vue";
-import L from "leaflet";
-import sampleGeoJSON from "../../data/us-states.json";
+<script setup>
+import { ref, onMounted, watch, toRaw } from "vue";
+import statesJSON from "../../data/us-states.json";
+let L;
 
 // Style functions for vector features
 const getColorByPopulation = (population) => {
@@ -102,7 +91,7 @@ const getColorByDensity = (density) => {
 const styleVectorFeature = (feature, styleType = "population") => {
   const population = feature.properties.population;
   const area = feature.properties.area_sqkm;
-  const density = population / (area || 1);
+  const density = feature.properties.density;
 
   let fillColor;
   switch (styleType) {
@@ -136,12 +125,6 @@ const baseMaps = {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     name: "Streets",
   },
-  satellite: {
-    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    attribution:
-      "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
-    name: "Satellite",
-  },
   terrain: {
     url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
     attribution:
@@ -155,230 +138,212 @@ const defaultMapConfig = {
   zoom: 4,
   minZoom: 2,
   maxZoom: 18,
+  zoomControl: false,
 };
 
-export default {
-  name: "App",
-  setup() {
-    const vectorMap = ref(null);
-    const rasterMap = ref(null);
-    const vectorGeoJsonLayer = ref(null);
-    const vectorStyleType = ref("population");
-    const rasterLayerType = ref("streets");
-    const rasterLayers = ref({});
-    const currentRasterLayer = ref(null);
-    const vectorLegend = ref(null);
+const vectorMap = ref(null);
+const rasterMap = ref(null);
+const vectorGeoJsonLayer = ref(null);
+const vectorStyleType = ref("population");
+const rasterLayers = ref({});
+const currentRasterLayer = ref(null);
+const vectorLegend = ref(null);
 
-    const updateVectorStyle = (event) => {
-      vectorStyleType.value = event.target.value;
-    };
+const updateVectorStyle = (event) => {
+  vectorStyleType.value = event.target.value;
+};
 
-    const updateRasterLayer = (event) => {
-      rasterLayerType.value = event.target.value;
-    };
+const createLegend = (_, styleType = "population") => {
+  const legend = L.control({ position: "bottomright" });
 
-    const createLegend = (map, styleType = "population") => {
-      const legend = L.control({ position: "bottomright" });
+  legend.onAdd = function () {
+    const div = L.DomUtil.create("div", "legend");
+    let grades, colors, labels;
 
-      legend.onAdd = function () {
-        const div = L.DomUtil.create("div", "legend");
-        let grades, colors, labels;
+    switch (styleType) {
+      case "area":
+        grades = [0, 10000, 25000, 50000, 75000, 150000, 250000, 500000];
+        labels = [
+          "< 10,000",
+          "10,000-25,000",
+          "25,000-50,000",
+          "50,000-75,000",
+          "75,000-150,000",
+          "150,000-250,000",
+          "250,000-500,000",
+          "> 500,000",
+        ];
+        colors = grades.map((g) => getColorByArea(g + 1));
+        div.innerHTML = '<div class="h4-like">Area (sq km)</div>';
+        break;
 
-        switch (styleType) {
-          case "area":
-            grades = [0, 10000, 25000, 50000, 75000, 150000, 250000, 500000];
-            labels = [
-              "< 10,000",
-              "10,000-25,000",
-              "25,000-50,000",
-              "50,000-75,000",
-              "75,000-150,000",
-              "150,000-250,000",
-              "250,000-500,000",
-              "> 500,000",
-            ];
-            colors = grades.map((g) => getColorByArea(g + 1));
-            div.innerHTML = '<div class="h4-like">Area (sq km)</div>';
-            break;
+      case "density":
+        grades = [0, 10, 20, 50, 100, 200, 500, 1000];
+        labels = [
+          "< 10",
+          "10-20",
+          "20-50",
+          "50-100",
+          "100-200",
+          "200-500",
+          "500-1000",
+          "> 1000",
+        ];
+        colors = grades.map((g) => getColorByDensity(g + 1));
+        div.innerHTML = '<div class="h4-like">Population Density</div>';
+        break;
 
-          case "density":
-            grades = [0, 10, 20, 50, 100, 200, 500, 1000];
-            labels = [
-              "< 10",
-              "10-20",
-              "20-50",
-              "50-100",
-              "100-200",
-              "200-500",
-              "500-1000",
-              "> 1000",
-            ];
-            colors = grades.map((g) => getColorByDensity(g + 1));
-            div.innerHTML = '<div class="h4-like">Population Density</div>';
-            break;
+      case "population":
+      default:
+        grades = [
+          0, 100000, 200000, 500000, 1000000, 2000000, 5000000, 10000000,
+        ];
+        labels = [
+          "< 100k",
+          "100k-200k",
+          "200k-500k",
+          "500k-1M",
+          "1M-2M",
+          "2M-5M",
+          "5M-10M",
+          "> 10M",
+        ];
+        colors = grades.map((g) => getColorByPopulation(g + 1));
+        div.innerHTML = '<div class="h4-like">Population</div>';
+        break;
+    }
 
-          case "population":
-          default:
-            grades = [
-              0, 100000, 200000, 500000, 1000000, 2000000, 5000000, 10000000,
-            ];
-            labels = [
-              "< 100k",
-              "100k-200k",
-              "200k-500k",
-              "500k-1M",
-              "1M-2M",
-              "2M-5M",
-              "5M-10M",
-              "> 10M",
-            ];
-            colors = grades.map((g) => getColorByPopulation(g + 1));
-            div.innerHTML = '<div class="h4-like">Population</div>';
-            break;
-        }
-
-        for (let i = 0; i < grades.length; i++) {
-          div.innerHTML += `
+    for (let i = 0; i < grades.length; i++) {
+      div.innerHTML += `
               <div class="legend-item">
                   <i style="background: ${colors[i]}"></i>
                   <span>${labels[i]}</span>
               </div>`;
-        }
+    }
 
-        return div;
-      };
+    return div;
+  };
 
-      return legend;
-    };
-
-    const initVectorMap = () => {
-      vectorMap.value = L.map("vector-map", {
-        ...defaultMapConfig,
-        zoomControl: false,
-      });
-
-      L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-        {
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          subdomains: "abcd",
-          maxZoom: defaultMapConfig.maxZoom,
-          minZoom: defaultMapConfig.minZoom,
-        }
-      ).addTo(vectorMap.value);
-
-      addGeoJSONLayer();
-      updateVectorLegend();
-    };
-
-    const updateVectorLegend = () => {
-      if (vectorLegend.value) {
-        vectorMap.value.removeControl(vectorLegend.value);
-      }
-
-      vectorLegend.value = createLegend(vectorMap.value, vectorStyleType.value);
-      vectorLegend.value.addTo(vectorMap.value);
-    };
-
-    const addGeoJSONLayer = () => {
-      if (vectorGeoJsonLayer.value) {
-        vectorMap.value.removeLayer(vectorGeoJsonLayer.value);
-      }
-
-      vectorGeoJsonLayer.value = L.geoJSON(sampleGeoJSON, {
-        style: (feature) => styleVectorFeature(feature, vectorStyleType.value),
-        onEachFeature: (feature, layer) => {
-          layer.bindTooltip(feature.properties.name, {
-            permanent: false,
-            direction: "center",
-            className: "custom-tooltip",
-          });
-        },
-      }).addTo(vectorMap.value);
-
-      vectorMap.value.fitBounds(vectorGeoJsonLayer.value.getBounds());
-    };
-
-    const initRasterMap = () => {
-      rasterMap.value = L.map("raster-map", {
-        ...defaultMapConfig,
-        zoomControl: false,
-      });
-
-      Object.keys(baseMaps).forEach((key) => {
-        const layerConfig = baseMaps[key];
-        rasterLayers.value[key] = L.tileLayer(layerConfig.url, {
-          attribution: layerConfig.attribution,
-          maxZoom: defaultMapConfig.maxZoom,
-          minZoom: defaultMapConfig.minZoom,
-        });
-      });
-
-      switchRasterLayer("streets");
-    };
-
-    const switchRasterLayer = (layerId) => {
-      if (currentRasterLayer.value) {
-        rasterMap.value.removeLayer(currentRasterLayer.value);
-      }
-
-      if (rasterLayers.value[layerId]) {
-        rasterLayers.value[layerId].addTo(rasterMap.value);
-        currentRasterLayer.value = rasterLayers.value[layerId];
-      }
-    };
-
-    watch(vectorStyleType, () => {
-      if (vectorGeoJsonLayer.value) {
-        vectorGeoJsonLayer.value.setStyle((feature) => {
-          return styleVectorFeature(feature, vectorStyleType.value);
-        });
-        updateVectorLegend();
-      }
-    });
-
-    watch(rasterLayerType, (newType) => {
-      switchRasterLayer(newType);
-    });
-
-    onMounted(() => {
-      initVectorMap();
-      initRasterMap();
-
-      // Always synchronize maps
-      vectorMap.value.on("move", () => {
-        rasterMap.value.setView(
-          vectorMap.value.getCenter(),
-          vectorMap.value.getZoom(),
-          { animate: false }
-        );
-      });
-
-      rasterMap.value.on("move", () => {
-        vectorMap.value.setView(
-          rasterMap.value.getCenter(),
-          rasterMap.value.getZoom(),
-          { animate: false }
-        );
-      });
-    });
-
-    return {
-      vectorStyleType,
-      rasterLayerType,
-      updateVectorStyle,
-      updateRasterLayer,
-    };
-  },
+  return legend;
 };
+
+const initVectorMap = () => {
+  vectorMap.value = L.map("vector-map", {
+    ...defaultMapConfig,
+  });
+
+  L.tileLayer(baseMaps.streets.url, {
+    attribution: baseMaps.streets.attribution,
+  }).addTo(toRaw(vectorMap.value));
+
+  addGeoJSONLayer();
+  updateVectorLegend();
+};
+
+const updateVectorLegend = () => {
+  if (vectorLegend.value) {
+    vectorMap.value.removeControl(vectorLegend.value);
+  }
+
+  vectorLegend.value = createLegend(vectorMap.value, vectorStyleType.value);
+  vectorLegend.value.addTo(toRaw(vectorMap.value));
+};
+
+const addGeoJSONLayer = () => {
+  if (vectorGeoJsonLayer.value) {
+    vectorMap.value.removeLayer(vectorGeoJsonLayer.value);
+  }
+
+  vectorGeoJsonLayer.value = L.geoJSON(statesJSON, {
+    style: (feature) => styleVectorFeature(feature, vectorStyleType.value),
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(feature.properties.name, {
+        permanent: false,
+        direction: "center",
+        className: "custom-tooltip",
+      });
+    },
+  }).addTo(toRaw(vectorMap.value));
+
+  vectorMap.value.fitBounds(vectorGeoJsonLayer.value.getBounds());
+};
+
+const initRasterMap = () => {
+  rasterMap.value = L.map("raster-map", {
+    ...defaultMapConfig,
+  });
+
+  rasterLayers.value["terrain"] = L.tileLayer(baseMaps.terrain.url, {
+    attribution: baseMaps.terrain.attribution,
+    maxZoom: defaultMapConfig.maxZoom,
+    minZoom: defaultMapConfig.minZoom,
+  });
+
+  rasterLayers.value["terrain"].addTo(toRaw(rasterMap.value));
+  currentRasterLayer.value = rasterLayers.value["terrain"];
+
+  const svgElement = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "svg"
+  );
+  svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  svgElement.setAttribute("viewBox", "0 0 200 200");
+  svgElement.innerHTML =
+    '<rect width="200" height="200"/><rect x="75" y="23" width="50" height="50" style="fill:red"/><rect x="75" y="123" width="50" height="50" style="fill:#0013ff"/>';
+  
+  const latLngBounds = L.latLngBounds([
+    [32, -130],
+    [13, -100],
+  ]);
+  rasterMap.value.fitBounds(latLngBounds);
+
+  L.svgOverlay(svgElement, latLngBounds, {
+    opacity: 0.7,
+    interactive: true,
+  }).addTo(toRaw(rasterMap.value));
+};
+
+watch(vectorStyleType, () => {
+  if (vectorGeoJsonLayer.value) {
+    vectorGeoJsonLayer.value.setStyle((feature) => {
+      return styleVectorFeature(feature, vectorStyleType.value);
+    });
+    updateVectorLegend();
+  }
+});
+
+onMounted(async () => {
+  // Dynamically import Leaflet to avoid SSR issues
+  L = await import("leaflet"); 
+
+  initVectorMap();
+  initRasterMap();
+
+  // Always synchronize maps
+  vectorMap.value.on("move", () => {
+    rasterMap.value.setView(
+      vectorMap.value.getCenter(),
+      vectorMap.value.getZoom(),
+      { animate: false }
+    );
+  });
+
+  rasterMap.value.on("move", () => {
+    vectorMap.value.setView(
+      rasterMap.value.getCenter(),
+      rasterMap.value.getZoom(),
+      { animate: false }
+    );
+  });
+});
 </script>
 
 <style scoped>
 .h2-like {
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
   margin: 0.67em 0;
+  color: #000000;
 }
 
 .h4-like {
@@ -410,7 +375,7 @@ export default {
 .map-section {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #1dae50;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -422,7 +387,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 12px;
   border-bottom: 1px solid #e5e5ea;
 }
 
@@ -468,11 +433,14 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   line-height: 1.2;
 }
-
-/* Leaflet buttons use anchor tags for some reason and vitepress underlines them */
 :deep(.legend div) {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+:deep(.legend span) {
+  color: #000000;
 }
 
 :deep(.legend i) {
