@@ -12,6 +12,7 @@ import ScaleMap from "../../components/mapping/ScaleMap.vue";
 import VisualVariables from "../../components/mapping/VisualVariables.vue";
 import ReferenceMap from "../../components/mapping/ReferenceMap.vue";
 import ArcgisCalciteMap from "../../components/mapping/ArcgisCalciteMap.vue";
+import VectorAndRaster from '../../components/mapping/VectorAndRaster.vue'
 import ContentFigure from "../../components/ui/ContentFigure.vue";
 import Sources from "../../components/ui/Sources.vue";
 import Quiz from "../../components/ui/Quiz.vue";
@@ -31,6 +32,7 @@ export default {
     app.component("VisualVariables", VisualVariables);
     app.component("ReferenceMap", ReferenceMap);
     app.component("ArcgisCalciteMap", ArcgisCalciteMap);
+    app.component("VectorAndRaster", VectorAndRaster);
     app.component("ContentFigure", ContentFigure);
     app.component("Quiz", Quiz);
     app.component("Sources", Sources);
