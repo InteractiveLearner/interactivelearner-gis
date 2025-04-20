@@ -157,7 +157,7 @@ const createLegend = (_, styleType = "population") => {
   const legend = L.control({ position: "bottomright" });
 
   legend.onAdd = function () {
-    const div = L.DomUtil.create("div", "legend");
+    const div = L.DomUtil.create("div", "leaflet-legend");
     let grades, colors, labels;
 
     switch (styleType) {
@@ -215,7 +215,7 @@ const createLegend = (_, styleType = "population") => {
 
     for (let i = 0; i < grades.length; i++) {
       div.innerHTML += `
-              <div class="legend-item">
+              <div>
                   <i style="background: ${colors[i]}"></i>
                   <span>${labels[i]}</span>
               </div>`;
@@ -422,8 +422,11 @@ onMounted(async () => {
   justify-content: center;
   margin-bottom: 24px;
 }
+</style>
 
-:deep(.legend) {
+<!-- Leaflet elements and Vue don't play nice together -->
+<style>
+.leaflet-legend {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -433,21 +436,35 @@ onMounted(async () => {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   line-height: 1.2;
 }
-:deep(.legend div) {
+
+.leaflet-legend div {
   display: flex;
   align-items: center;
   color: #000000;
 }
 
-:deep(.legend span) {
+.leaflet-legend span {
   color: #000000;
 }
 
-:deep(.legend i) {
+.leaflet-legend i {
   width: 18px;
   height: 18px;
   margin-right: 8px;
   opacity: 0.8;
   flex-shrink: 0;
+}
+
+html.dark .leaflet-legend {
+  background: #333333;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+html.dark .leaflet-legend div {
+  color: #ffffff;
+}
+
+html.dark .leaflet-legend span {
+  color: #ffffff;
 }
 </style>

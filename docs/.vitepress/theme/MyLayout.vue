@@ -4,7 +4,7 @@ import { useData } from 'vitepress';
 import { watch, onMounted } from 'vue';
 import HomePageGlobe from '../../components/mapping/HomePageGlobe.vue'
 
-const { isDark, frontmatter } = useData();
+const { isDark } = useData();
 
 watch(isDark, (newVal) => {
   document.body.classList.toggle('calcite-mode-dark', newVal);
