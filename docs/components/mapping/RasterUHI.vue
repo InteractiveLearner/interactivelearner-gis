@@ -4,7 +4,9 @@
 
 <script setup>
 import { onMounted } from "vue";
-import montrealUHI from "../../data/montreal-uhi/2020.json";
+import montrealUHI from "../../data/uhi2020.json";
+import thermographyImage from "../../public/assets/images/thermographie-surface-2016-montreal-ouest-nuit.png";
+
 
 let Leaflet;
 
@@ -101,15 +103,12 @@ onMounted(async () => {
   map.createPane("imagePane");
   map.getPane("imagePane").style.zIndex = 650; // Higher zIndex ensures it is above other layers
 
-  const imageUrl =
-    "../../data/montreal-uhi/thermographie-surface-2016-montreal-ouest-nuit.png";
-
   const imageBounds = [
     [45.446962230074824, -73.67502123460079],
     [45.46036894381611, -73.63257647690578],
   ];
 
-  const img = L.imageOverlay(imageUrl, imageBounds, {
+  const img = L.imageOverlay(thermographyImage, imageBounds, {
     pane: "imagePane",
     interactive: true,
   })
