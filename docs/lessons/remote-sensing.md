@@ -5,10 +5,6 @@ author: Omar Kawach
 order: 3
 ---
 
-::: warning
-Interactive examples are a work in progress for this page.
-:::
-
 # Remote sensing
 
 By {{ $frontmatter.author }}
@@ -119,6 +115,21 @@ Passive remote sensing systems use various types of sensors to capture different
 
 Remote sensing data, acquired through both passive and active means, enables a wide range of applications, including land cover classification, the [Normalized Difference Vegetation Index](https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index) (NDVI), and the [urban heat island](https://en.wikipedia.org/wiki/Urban_heat_island) effect. Passive multispectral and hyperspectral imagery are fundamental for land cover classification, while NDVI quantifies vegetation greenness and health based on red and near-infrared bands. These sensors help researchers and urban planners identify areas experiencing the most intense heat, understand contributing factors, and develop mitigation strategies to improve urban sustainability and human health.
 
+## Explore the urban heat island effect in Montreal, Quebec
+
+The urban heat island (UHI) describes the common phenomenon of urban areas being warmer in temperature than their semirural surroundings, though the presence of significant canopy cover and green infrastructure in some cities can lessen or counteract this effect (i.e., cool islands). 
+
+In the example below, the City of Montreal is shown to have a significant UHI effect, with the hottest areas (in red) being located in the downtown core and other densely populated areas. The data used for the 2020 UHI GeoJSON vector layer was sourced from [Données Québec](https://www.donneesquebec.ca/recherche/dataset/vmtl-ilots-de-chaleur). [Vector data](/lessons/spatial-data#vector-data) is easier to work with for this kind of thematic mapping on the web. 
+
+However, for analyzing the UHI, raster data is crucial for [surface thermography](https://donnees.montreal.ca/dataset/thermographie-surface), a technique that maps heat patterns. Données Québec, for example, created Montreal's heat island maps with the help of airborne and satellite LiDAR imagery, generally distributed in ([Geo](https://en.wikipedia.org/wiki/GeoTIFF))[TIFF](https://en.wikipedia.org/wiki/TIFF) format.
+
+[Lossless](https://en.wikipedia.org/wiki/Lossless_compression) TIFF is preferable for scientific analysis than [JPEG](https://en.wikipedia.org/wiki/JPEG) since it preserves data and image quality, which is highly beneficial for accurate pixel temperature readings.
+High quality TIFF raster images are essential for in-depth spatial analysis of heat distribution and change detection, allowing [principal component analysis](https://spss.espaceweb.usherbrooke.ca/analyse-en-composantes-principales-2/) to compare thermal behavior over time, but they are less suitable for interactive web-based demonstrations than vector data. 
+
+This is more apparent when you look at an imprecise geo-rectified image of Montreal West's surface thermography taken at night in 2016, shown below.
+
+<RasterUHI />
+
 ## Test your knowledge
 
 <Quiz :quiz-data="
@@ -191,3 +202,20 @@ Remote sensing data, acquired through both passive and active means, enables a w
         ]
     }" 
 />
+
+## Sources
+
+<Sources 
+  :sources="
+    [{
+        title: 'Urban Geographicots',
+        author: 'Climate Central',
+        url: 'https://www.climatecentral.org/climate-matters/urban-heat-islands-2023',
+    },
+    {
+        title: 'What data can be stored in a GeoTIFF file?',
+        author: 'Blue Marble Geographics',
+        url: 'https://www.bluemarblegeo.com/blog/about-geotiff-format/',
+    }]"
+/>
+

@@ -190,7 +190,7 @@ const createLegend = (_, styleType = "population") => {
           "> 1000",
         ];
         colors = grades.map((g) => getColorByDensity(g + 1));
-        div.innerHTML = '<div class="h4-like">Population Density</div>';
+        div.innerHTML = '<div class="h4-like">Population density</div>';
         break;
 
       case "population":
@@ -213,13 +213,30 @@ const createLegend = (_, styleType = "population") => {
         break;
     }
 
-    for (let i = 0; i < grades.length; i++) {
-      div.innerHTML += `
-              <div>
-                  <i style="background: ${colors[i]}"></i>
-                  <span>${labels[i]}</span>
-              </div>`;
-    }
+    // Add toggle button and legend content
+    div.innerHTML = `
+      <div class="legend-header">
+        <button class="toggle-legend">Legend</button>
+      </div>
+      <div class="legend-content">
+        ${div.innerHTML}
+        ${grades
+          .map(
+            (grade, i) => `
+          <div>
+            <i style="background: ${colors[i]}"></i>
+            <span>${labels[i]}</span>
+          </div>`
+          )
+          .join("")}
+      </div>
+    `;
+
+    // Add event listener for toggling the legend
+    div.querySelector(".toggle-legend").addEventListener("click", () => {
+      const content = div.querySelector(".legend-content");
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    });
 
     return div;
   };
@@ -421,50 +438,5 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
-}
-</style>
-
-<!-- Leaflet elements and Vue don't play nice together -->
-<style>
-.leaflet-legend {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  line-height: 1.2;
-}
-
-.leaflet-legend div {
-  display: flex;
-  align-items: center;
-  color: #000000;
-}
-
-.leaflet-legend span {
-  color: #000000;
-}
-
-.leaflet-legend i {
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
-  opacity: 0.8;
-  flex-shrink: 0;
-}
-
-html.dark .leaflet-legend {
-  background: #333333;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-}
-
-html.dark .leaflet-legend div {
-  color: #ffffff;
-}
-
-html.dark .leaflet-legend span {
-  color: #ffffff;
 }
 </style>
