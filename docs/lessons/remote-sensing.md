@@ -101,15 +101,48 @@ Passive remote sensing systems use various types of sensors to capture different
 
 ### LiDAR
 
-[LiDAR](https://en.wikipedia.org/wiki/Lidar) (light detection and ranging) uses laser pulses to measure distances to the Earth's surface, generating highly accurate three-dimensional models. 
+[LiDAR](https://en.wikipedia.org/wiki/Lidar) (light detection and ranging) uses laser pulses to measure distances to the Earth's surface, generating highly accurate three-dimensional models.
+- High energy (short wavelength, high frequency) and cannot penetrate aerosol
+- Can be used for topographic mapping, vegetation analysis, and urban planning
 
 ### RADAR
 
 [RADAR](https://en.wikipedia.org/wiki/Radar) (radio detection and ranging) instruments transmit microwave pulses and analyze the backscattered signal to obtain information about surface roughness, moisture content, and elevation.
+- Low energy (long wavelength, lower frequency) and can penetrate aerosol
+- Can be used for surface moisture estimation, and precipitation monitoring
 
 ### SAR
   
 [SAR](https://en.wikipedia.org/wiki/Synthetic-aperture_radar) (synthetic aperture radar) is an advanced form of radar that utilizes the motion of the sensor platform to synthesize a larger antenna, resulting in higher spatial resolution imagery.
+- High resolution through motion and able to penetrate clouds
+- Can be used for topographic mapping and land cover classification
+
+## Types of resolutions
+
+Remote sensing systems can be classified based on their spatial, spectral, temporal, and radiometric resolutions.
+
+### Spatial  
+
+[Spatial resolution](https://en.wikipedia.org/wiki/Image_resolution) refers to the area of ground imaged by a single pixel. 
+Each pixel within an image represents a small square of the ground surface. 
+While the spatial resolution of a sensor remains constant, the pixel size can be adjusted to represent either smaller or larger ground areas. 
+
+### Spectral 
+
+[Spectral resolution](https://en.wikipedia.org/wiki/Spectral_resolution) refers to the width of the electromagnetic spectrum regions that a sensor can detect. 
+This allows for the identification of materials using distinctive spectral signatures. 
+The particular features or materials being observed—such as differentiating bodies of water or examining human infrared emissions—determine the optimal spectral resolution.
+
+### Radiometric 
+
+[Radiometric resolution](https://en.wikipedia.org/wiki/Satellite_imagery#:~:text=Radiometric%20resolution) refers to a sensor's ability to detect very small differences in energy. 
+A sensor with finer radiometric resolution is more sensitive to subtle variations in reflected or emitted energy. 
+This characteristic is directly related to the sensor's [bit depth](https://en.wikipedia.org/wiki/Bit_depth).
+
+### Temporal 
+
+[Temporal resolution](https://en.wikipedia.org/wiki/Temporal_resolution) refers to the discrete frequency with which a sensor acquires measurements over a specific area in relation to time. 
+Temporal resolution is influenced by the sensor's swath width, configuration, and orbital characteristics.
 
 ## Applications of remote sensing
 
@@ -121,7 +154,7 @@ The urban heat island (UHI) describes the common phenomenon of urban areas being
 
 In the example below, the City of Montreal is shown to have a significant UHI effect, with the hottest areas (in red) being located in the downtown core and other densely populated areas. The data used for the 2020 UHI GeoJSON vector layer was sourced from [Données Québec](https://www.donneesquebec.ca/recherche/dataset/vmtl-ilots-de-chaleur). [Vector data](/lessons/spatial-data#vector-data) is easier to work with for this kind of thematic mapping on the web. 
 
-However, for analyzing the UHI, raster data is crucial for [surface thermography](https://donnees.montreal.ca/dataset/thermographie-surface), a technique that maps heat patterns. Données Québec, for example, created Montreal's heat island maps with the help of airborne and satellite LiDAR imagery, generally distributed in ([Geo](https://en.wikipedia.org/wiki/GeoTIFF))[TIFF](https://en.wikipedia.org/wiki/TIFF) format.
+However, for analyzing the UHI, [surface thermography](https://donnees.montreal.ca/dataset/thermographie-surface) is crucial to maps heat patterns. Données Québec, for example, created Montreal's heat island maps by combining surface thermography, and LiDAR. LiDAR airborne and satellite imagery provided the City of Montreal's [digital surface model (DSM)](https://en.wikipedia.org/wiki/Digital_elevation_model). This imagery is generally distributed in ([Geo](https://en.wikipedia.org/wiki/GeoTIFF))[TIFF](https://en.wikipedia.org/wiki/TIFF) format.
 
 [Lossless](https://en.wikipedia.org/wiki/Lossless_compression) TIFF is preferable for scientific analysis than [JPEG](https://en.wikipedia.org/wiki/JPEG) since it preserves data and image quality, which is highly beneficial for accurate pixel temperature readings.
 High quality TIFF raster images are essential for in-depth spatial analysis of heat distribution and change detection, allowing [principal component analysis](https://spss.espaceweb.usherbrooke.ca/analyse-en-composantes-principales-2/) to compare thermal behavior over time, but they are less suitable for interactive web-based demonstrations than vector data. 
@@ -198,6 +231,20 @@ This is more apparent when you look at an imprecise geo-rectified image of Montr
                 }
             ],
             correctAnswer: 2
+            },
+            {
+            question: 'Urban heat island effect can be measured with the help of LiDAR and surface thermography.',
+            options: [
+                {
+                answer: 'True',
+                key: 1
+                },
+                {
+                answer: 'False',
+                key: 2
+                }
+            ],
+            correctAnswer: 1
             }
         ]
     }" 

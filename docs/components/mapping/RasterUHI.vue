@@ -5,7 +5,7 @@
 <script setup>
 import { onMounted } from "vue";
 import montrealUHI from "../../data/uhi2020.json";
-import thermographyImage from "../../public/assets/images/thermographie-surface-2016-montreal-ouest-nuit.png";
+import thermographyImage from "/src/assets/images/thermographie-surface-2016-montreal-ouest-nuit.png";
 
 
 let Leaflet;
