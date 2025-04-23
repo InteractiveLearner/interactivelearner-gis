@@ -23,11 +23,17 @@ Both active and passive sensors are deployed on various platforms, including sat
   :anchorText="'Credit: NASA Earthdata'"
 />
 
-## Spatial resolution
+## Types of resolutions
+
+Remote sensing systems can be classified based on their spatial, spectral, temporal, and radiometric resolutions.
+
+### Spatial  
 
 [Spatial resolution](https://en.wikipedia.org/wiki/Spatial_resolution) is the amount of detail that can be discerned in a remote sensing [raster](/lessons/spatial-data#types-of-spatial-data) image. 
 It is frequently described in terms of the smallest distinguishable feature on the ground. 
 Higher spatial resolution shows finer detail and smaller resolvable objects.
+Each pixel within an image represents a small square of the ground surface. 
+While the spatial resolution of a sensor remains constant, the pixel size can be adjusted to represent either smaller or larger ground areas. 
 
 You can consider an image to be composed of a grid of pixels.
 The low resolution grid below is composed of fewer, larger cells/pixels, meaning each pixel covers a larger area on the ground. 
@@ -39,6 +45,23 @@ This results in less detail, making it harder to distinguish between smaller fea
   :anchorHref="'https://openverse.org/image/80007498-4292-4197-89f5-ee032a032a28?q=spatial+resolution&p=1'"
   :anchorText="'Credit: Morrisccs, licensed under CC BY 4.0 (modified)'"
 />
+
+### Spectral 
+
+[Spectral resolution](https://en.wikipedia.org/wiki/Spectral_resolution) refers to the width of the electromagnetic spectrum regions that a sensor can detect. 
+This allows for the identification of materials using distinctive spectral signatures. 
+The particular features or materials being observed—such as differentiating bodies of water or examining human infrared emissions—determine the optimal spectral resolution.
+
+### Radiometric 
+
+[Radiometric resolution](https://en.wikipedia.org/wiki/Satellite_imagery#:~:text=Radiometric%20resolution) refers to a sensor's ability to detect very small differences in energy. 
+A sensor with finer radiometric resolution is more sensitive to subtle variations in reflected or emitted energy. 
+This characteristic is directly related to the sensor's [bit depth](https://en.wikipedia.org/wiki/Bit_depth).
+
+### Temporal 
+
+[Temporal resolution](https://en.wikipedia.org/wiki/Temporal_resolution) refers to the discrete frequency with which a sensor acquires measurements over a specific area in relation to time. 
+Temporal resolution is influenced by the sensor's swath width, configuration, and orbital characteristics.
 
 ## Passive remote sensing
 
@@ -116,33 +139,6 @@ Passive remote sensing systems use various types of sensors to capture different
 [SAR](https://en.wikipedia.org/wiki/Synthetic-aperture_radar) (synthetic aperture radar) is an advanced form of radar that utilizes the motion of the sensor platform to synthesize a larger antenna, resulting in higher spatial resolution imagery.
 - High resolution through motion and able to penetrate clouds
 - Can be used for topographic mapping and land cover classification
-
-## Types of resolutions
-
-Remote sensing systems can be classified based on their spatial, spectral, temporal, and radiometric resolutions.
-
-### Spatial  
-
-[Spatial resolution](https://en.wikipedia.org/wiki/Image_resolution) refers to the area of ground imaged by a single pixel. 
-Each pixel within an image represents a small square of the ground surface. 
-While the spatial resolution of a sensor remains constant, the pixel size can be adjusted to represent either smaller or larger ground areas. 
-
-### Spectral 
-
-[Spectral resolution](https://en.wikipedia.org/wiki/Spectral_resolution) refers to the width of the electromagnetic spectrum regions that a sensor can detect. 
-This allows for the identification of materials using distinctive spectral signatures. 
-The particular features or materials being observed—such as differentiating bodies of water or examining human infrared emissions—determine the optimal spectral resolution.
-
-### Radiometric 
-
-[Radiometric resolution](https://en.wikipedia.org/wiki/Satellite_imagery#:~:text=Radiometric%20resolution) refers to a sensor's ability to detect very small differences in energy. 
-A sensor with finer radiometric resolution is more sensitive to subtle variations in reflected or emitted energy. 
-This characteristic is directly related to the sensor's [bit depth](https://en.wikipedia.org/wiki/Bit_depth).
-
-### Temporal 
-
-[Temporal resolution](https://en.wikipedia.org/wiki/Temporal_resolution) refers to the discrete frequency with which a sensor acquires measurements over a specific area in relation to time. 
-Temporal resolution is influenced by the sensor's swath width, configuration, and orbital characteristics.
 
 ## Applications of remote sensing
 
