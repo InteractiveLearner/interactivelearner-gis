@@ -32,10 +32,10 @@ Remote sensing systems can be classified based on their spatial, spectral, tempo
 [Spatial resolution](https://en.wikipedia.org/wiki/Spatial_resolution) is the amount of detail that can be discerned in a remote sensing [raster](/lessons/spatial-data#types-of-spatial-data) image. 
 It is frequently described in terms of the smallest distinguishable feature on the ground. 
 Higher spatial resolution shows finer detail and smaller resolvable objects.
-Each pixel within an image represents a small square of the ground surface. 
-While the spatial resolution of a sensor remains constant, the pixel size can be adjusted to represent either smaller or larger ground areas. 
 
 You can consider an image to be composed of a grid of pixels.
+Each pixel within an image represents a small square of the ground surface. 
+While the spatial resolution of a sensor remains constant, the pixel size can be adjusted to represent either smaller or larger ground areas. 
 The low resolution grid below is composed of fewer, larger cells/pixels, meaning each pixel covers a larger area on the ground. 
 This results in less detail, making it harder to distinguish between smaller features. 
 
