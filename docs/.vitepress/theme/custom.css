@@ -43,3 +43,73 @@
  *    to create a accent, such as when having inline code block inside
  *    custom containers.
  * -------------------------------------------------------------------------- */
+
+
+ /* Custom Leaflet CSS because Leaflet elements and Vue don't play nice together*/
+
+/* Leaflet legend styling */
+.leaflet-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+.leaflet-legend div {
+  display: flex;
+  color: #000000;
+}
+
+.leaflet-legend div:last-child {
+  margin-bottom: 0;
+}
+
+.leaflet-legend span {
+  color: #000000;
+}
+
+.leaflet-legend i {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+html.dark .leaflet-legend {
+  background: #333333;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+html.dark .leaflet-legend div,
+html.dark .leaflet-legend span {
+  color: #ffffff;
+}
+
+.legend-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-legend {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.toggle-legend:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.legend-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}

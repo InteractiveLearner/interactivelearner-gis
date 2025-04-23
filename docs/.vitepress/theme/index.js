@@ -10,6 +10,7 @@ defineCalciteElements(globalThis, {
 import ProjectionExplorer from "../../components/mapping/ProjectionExplorer.vue";
 import ScaleMap from "../../components/mapping/ScaleMap.vue";
 import VisualVariables from "../../components/mapping/VisualVariables.vue";
+import RasterUHI from "../../components/mapping/RasterUHI.vue";
 import ReferenceMap from "../../components/mapping/ReferenceMap.vue";
 import ArcgisCalciteMap from "../../components/mapping/ArcgisCalciteMap.vue";
 import VectorAndRaster from '../../components/mapping/VectorAndRaster.vue'
@@ -31,6 +32,7 @@ export default {
     app.component("ScaleMap", ScaleMap);
     app.component("VisualVariables", VisualVariables);
     app.component("ReferenceMap", ReferenceMap);
+    app.component("RasterUHI", RasterUHI);
     app.component("ArcgisCalciteMap", ArcgisCalciteMap);
     app.component("VectorAndRaster", VectorAndRaster);
     app.component("ContentFigure", ContentFigure);

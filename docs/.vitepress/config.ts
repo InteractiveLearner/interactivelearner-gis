@@ -38,7 +38,7 @@ export default defineConfig({
     ],
     footer: {
       message: "Released under the GPL-3.0 license.",
-      copyright: "Copyright © Interactive Learner GIS 2024",
+      copyright: "Copyright © Interactive Learner GIS 2022",
     },
     sidebar: generateSidebar({
       // ============ [ RESOLVING PATHS ] ============
