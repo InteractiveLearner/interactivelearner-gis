@@ -2,7 +2,7 @@
 <!-- Repo https://github.com/axismaps/colorbrewer -->
 <script setup>
 import { ref, computed, watch, onMounted } from "vue";
-import { colorSchemes } from "./utils/colorSchemes";
+import { colorSchemes } from "./utils/ColorSchemes";
 import statesJSON from "../../data/us-states.json";
 import * as d3 from "d3";
 import { jenks } from "simple-statistics";
