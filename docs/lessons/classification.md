@@ -5,10 +5,6 @@ author: Omar Kawach
 order: 6
 ---
 
-::: warning
-Interactive examples are a work in progress for this page.
-:::
-
 # Classifying data
 
 By {{ $frontmatter.author }}
@@ -48,15 +44,21 @@ Data can be classified with any one of the following methods
   :anchorText="'Credit: Axis Maps licensed under CC BY-ND 2.0'"
 />
 
-## Interaction
+## Try to classify data
 
-Coming soon
+The map allows you to classify US states by population, area, and density. 
+It uses three classification methods: natural breaks, quantile, and equal intervals. 
 
-<!-- {/* ColorBrewer */}
-{/* Switch breaks between 1 to 6 and play with color palette */}
-{/* https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 */}
-{/* https://github.com/axismaps/colorbrewer?tab=readme-ov-file */}
-{/* Talk about sequential, diverging and qualitative color schemes */} -->
+You can adjust class numbers, and color schemes like **sequential**, **diverging**, and **qualitative**. 
+
+Sequential schemes are suitable for ordered data, while diverging schemes transition between two contrasting colors for meaningful midpoints.
+Recall the choropleth map from the [types of maps lesson](/lessons/map-types#types-of-thematic-maps) for the sequential and diverging color schemes.
+
+Qualitative schemes rely on contrasting colors without implying order, making them ideal for categorical data.
+
+Understanding the distribution of the data is crucial for classification, but without a histogram, it can be challenging to determine how to best classify the data. Try your best!
+
+<ClassifiedMap/>
 
 ## Test your knowledge
 

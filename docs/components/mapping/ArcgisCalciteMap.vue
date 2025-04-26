@@ -89,8 +89,8 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-@import "https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/dark/main.css";
-@import "https://js.arcgis.com/calcite-components/2.13.2/calcite.css";
+@import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css";
+@import "https://js.arcgis.com/calcite-components/3.1.0/calcite.css";
 
 calcite-shell {
     height: 530px;
