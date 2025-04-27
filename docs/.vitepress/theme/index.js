@@ -2,9 +2,7 @@
 import { defineCustomElements as defineCalciteElements } from "@esri/calcite-components/loader";
 
 // CDN hosted assets
-defineCalciteElements(globalThis, {
-  resourcesUrl: "https://js.arcgis.com/calcite-components/3.1.0/assets"
-});
+defineCalciteElements();
 
 // Vue components for global use
 import ProjectionExplorer from "../../components/mapping/ProjectionExplorer.vue";
@@ -13,6 +11,7 @@ import VisualVariables from "../../components/mapping/VisualVariables.vue";
 import RasterUHI from "../../components/mapping/RasterUHI.vue";
 import ReferenceMap from "../../components/mapping/ReferenceMap.vue";
 import ArcgisCalciteMap from "../../components/mapping/ArcgisCalciteMap.vue";
+import ClassifiedMap from "../../components/mapping/ClassifiedMap.vue";
 import VectorAndRaster from '../../components/mapping/VectorAndRaster.vue'
 import ContentFigure from "../../components/ui/ContentFigure.vue";
 import Sources from "../../components/ui/Sources.vue";
@@ -34,6 +33,7 @@ export default {
     app.component("ReferenceMap", ReferenceMap);
     app.component("RasterUHI", RasterUHI);
     app.component("ArcgisCalciteMap", ArcgisCalciteMap);
+    app.component("ClassifiedMap", ClassifiedMap);
     app.component("VectorAndRaster", VectorAndRaster);
     app.component("ContentFigure", ContentFigure);
     app.component("Quiz", Quiz);
