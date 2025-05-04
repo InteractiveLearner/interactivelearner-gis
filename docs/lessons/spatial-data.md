@@ -5,10 +5,6 @@ author: Omar Kawach
 order: 2
 ---
 
-::: warning
-Interactive examples are a work in progress for this page.
-:::
-
 # Spatial data and its types
 
 By {{ $frontmatter.author }}
@@ -17,14 +13,16 @@ By {{ $frontmatter.author }}
 
 Spatial data have two main components that set them apart from regular data, making them suitable for mapping:
 
-- "Where": Referring to the location of the data
-- "What": Referring to the information about the data
+- **"Where"**: Referring to the location of the data
+- **"What"**: Referring to the information about the data
 
 ## Types of spatial data
 
 Spatial data can be categorized into two types: raster and vector.
 
-Raster data are described as a grid of cells (rows and columns), similar to pixels in pictures.
+### Raster data
+
+Raster data can be described as a grid of cells (rows and columns), similar to pixels in pictures.
 
 - Each cell contains a value representing a specific characteristic of a studied geography
 - Commonly used for continuous data, like land use, temperature or elevation (e.g., Digital Elevation Models or DEMs, which consist of elevation values)
@@ -32,7 +30,9 @@ Raster data are described as a grid of cells (rows and columns), similar to pixe
 - Can be either continuous (progressive, varying data) or discrete (thematic or categorical)
 - Rectangular tessellated rasters are most commonly used due to their mathematical simplicity
 - Examples of raster data include satellite images or aerial photos
-- Most commonly seen in the GeoTIFF file format
+- Most commonly seen in the [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF) file format
+
+### Vector data
 
 Vector data are represented as points, lines, and polygons.
 
@@ -41,7 +41,7 @@ Vector data are represented as points, lines, and polygons.
 - Can be categorized into 0-dimensional, 1-dimensional, and 2-dimensional forms (geometric primitives). In the 0th dimension, coordinate points exist independently. In the 1st dimension, two points can form a line. In the 2nd dimension, three or more lines can be joined to create a polygon
 - Vector data allows for more efficient storage and manipulation
 - Can convert vectors to raster and vice versa using specialized software (e.g., ArcGIS Pro, and QGIS)
-- Common data formats include CSV, KML (Google), GeoJSON, and Shapefile (Esri)
+- Common data formats include [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) (Google), [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), and [Shapefile](https://en.wikipedia.org/wiki/Shapefile) (Esri)
 
 <ContentFigure 
    :imgSrc="'/assets/images/vector_raster.png'" 
@@ -50,13 +50,24 @@ Vector data are represented as points, lines, and polygons.
    :anchorText="'Credit: CUNY Department of Geography and Environmental Science'"
 />
 
-## Compare vector and raster data
+## Basemaps and data
 
-Interaction coming soon
+Basemaps are fundamental background layers in mapping, providing critical geographical context for all overlaid data. 
+Basemaps can be raster or vector. 
+Examples of raster basemaps include [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Raster_tile_providers) and [OpenTopoMap](https://wiki.openstreetmap.org/wiki/OpenTopoMap), which provide pre-rendered map tiles in [PNG](https://en.wikipedia.org/wiki/PNG) format. 
 
-## Compare elevation maps
+Overlaying vector data, such as polygon features from a GeoJSON layer, onto a raster basemap is common to visualize specific geographic information within the broader context provided by the underlying imagery.
 
-Interaction coming soon
+Similarly, raster data, such as additional imagery layers, can be superimposed over a raster basemap. 
+While [vector basemaps](https://wiki.openstreetmap.org/wiki/Vector_tiles) offer performance and customization advantages, the basemap examples provided below are raster-based.
+
+Check out the examples below:
+
+1. This map shows U.S. states as colored polygons on top of a street/navigation basemap. You can cycle through different themes using a dropdown menu. The legend classifies what the colors represent for each theme.
+
+2. This map's raster basemap shows terrain/topography, and the map has an image [SVG](https://en.wikipedia.org/wiki/SVG) graphic on top. 
+
+<VectorAndRaster />
 
 ## Test your knowledge
 
@@ -129,5 +140,10 @@ Interaction coming soon
     title: 'Tessellation',
     author: 'Living Textbook',
     url: 'https://ltb.itc.utwente.nl/491/concept/79690',
+  },
+  {
+    title: 'Overlay examples',
+    author: 'Leaflet',
+    url: 'https://leafletjs.com/examples/overlays/',
   },
 ]" />

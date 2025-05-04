@@ -15,6 +15,7 @@ onMounted(async () => {
     map.value = Leaflet.map("map", {
         center: center,
         zoom: 12,
+        zoomControl: false,
     });
 
     Leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -60,12 +61,5 @@ function addButtonToMap(zoom, center, title) {
     height: 40vh;
     width: 100%;
     z-index: 1;
-}
-
-/* Leaflet buttons use anchor tags for some reason and vitepress underlines them */
-:deep(.leaflet-control-zoom-in),
-:deep(.leaflet-control-zoom-out) {
-    text-decoration: none;
-    color: black;
 }
 </style>

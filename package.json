@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "NODE_OPTIONS='--max-old-space-size=6144' vitepress build docs",
     "preview": "vitepress preview docs"
   },
   "dependencies": {
@@ -14,7 +14,8 @@
     "@arcgis/map-components": "~4.32.14",
     "@esri/calcite-components": "~3.1.0",
     "d3": "^7.9.0",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "simple-statistics": "^7.8.8"
   },
   "devDependencies": {
     "vitepress": "^1.6.3",
