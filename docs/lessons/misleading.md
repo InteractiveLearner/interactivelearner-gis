@@ -4,10 +4,6 @@ description: Find out how map making decisions can mislead and/or lie to readers
 author: Omar Kawach
 ---
 
-::: warning
-Interactive examples are a work in progress for this page.
-:::
-
 # Misleading maps
 
 By {{ $frontmatter.author }}
@@ -28,7 +24,7 @@ Without context, raw numbers can be misleading. Normalizing data by population s
 A map of total COVID-19 cases without per capita adjustment may make a large, rural city look worse than a densely packed city. Other factors, like retirement home numbers, can affect local case rates. 
 While perfection isn't possible, ignoring variables can lead to flawed conclusions, while including them in analysis provides a more nuanced and truthful picture.
 
-**Example:** In the choropleth map below, the visualization begins with raw numbers of US state populations.
+**Example:** In the [choropleth](/lessons/map-types#types-of-thematic-maps) map below, the visualization begins with raw numbers of US state populations.
 You can normalize by population density (population divided by area in square kilometers) with one of the filter options in the map's left side panel.
 You can also play around with the classification methods and color schemes to see how they affect the map.
 
@@ -50,7 +46,13 @@ Every map [projection](/lessons/projections) causes some kind of distortion. Whi
 
 [Design choices](/lessons/visual-encoding) matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
 
-<!-- Lie with Vancouver crime statistics using color options -->
+The choropleth map below of Vancouver, BC displays graffiti counts in different areas, with darker red indicating higher counts and lighter yellow indicating lower counts. 
+The theming suggests southern and western parts have higher graffiti incidence, but this is misleading due to the reversed color ramp. 
+In actuality, the central and northeastern parts of Vancouver have a higher graffiti incidence compared to the southern and western regions.
+
+Click the button on the top right of the map to reverse the color ramp.
+
+<MisleadingTheme />
 
 ## Test your knowledge
 

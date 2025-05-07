@@ -90,6 +90,16 @@ html.dark .leaflet-legend span {
   color: #ffffff;
 }
 
+.leaflet-reverse-button {
+  border-radius: 6px;
+  background: #0a0908;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 18px;
+}
+
 .legend-header {
   display: flex;
   justify-content: space-between;

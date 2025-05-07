@@ -71,7 +71,6 @@ function updateProjection() {
     .center([state.centerLon, state.centerLat])
     .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
 
-  // Update world map
   let u = d3.select("g.misleading-map").selectAll("path").data(geojson.value.features);
   u.enter()
     .append("path")
@@ -80,7 +79,6 @@ function updateProjection() {
     .attr("fill", "#53a551")
     .attr("stroke", "#515151");
 
-  // Render Greenland with a separate GeoGenerator
   const greenlandProjection = d3["geo" + state.type.replace(/\s/g, "")]();
   greenlandProjection
     .scale(state.scale)
@@ -102,16 +100,13 @@ function updateProjection() {
     .attr("fill", "orange")
     .attr("stroke", "#515151");
 
-  // Update projection center
   const projectedCenter = projection([state.centerLon, state.centerLat]);
   d3.select(".projection-center")
     .attr("cx", projectedCenter[0])
     .attr("cy", projectedCenter[1]);
 
-  // Update graticule
   d3.select(".graticule path").datum(Graticule()).attr("d", GeoGenerator);
 
-  // Update circles
   u = d3.select(".circles").selectAll("path").data(
     Circles.map((d) => {
       GeoCircle.center(d);
