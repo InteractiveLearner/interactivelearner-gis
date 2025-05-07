@@ -30,15 +30,9 @@ onMounted(async () => {
 });
 
 function addButtonToMap(zoom, center, title) {
-    const button = Leaflet.DomUtil.create("button", "");
+    const button = Leaflet.DomUtil.create("button", "leaflet-scale-button");
 
-    button.style.borderRadius = "6px";
-    button.style.background = "#0a0908";
-    button.style.color = 'white';
-    button.style.padding = "8px";
-    button.style.cursor = "pointer";
-
-    button.innerHTML = title;
+    button.innerHTML = `<button>${title}</button>`;
 
     Leaflet.DomEvent.on(button, "click", () => {
         map.value.setView(center, zoom);
@@ -55,8 +49,6 @@ function addButtonToMap(zoom, center, title) {
 </script>
 
 <style scoped>
-@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
-
 .leaflet-container {
     height: 40vh;
     width: 100%;

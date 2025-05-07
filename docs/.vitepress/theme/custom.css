@@ -45,7 +45,7 @@
  * -------------------------------------------------------------------------- */
 
 
- /* Custom Leaflet CSS because Leaflet elements and Vue don't play nice together*/
+/* Custom Leaflet CSS because Leaflet elements and Vue don't play nice together*/
 
 /* Leaflet legend styling */
 .leaflet-legend {
@@ -90,14 +90,22 @@ html.dark .leaflet-legend span {
   color: #ffffff;
 }
 
-.leaflet-reverse-button {
+.leaflet-reverse-button,
+.leaflet-scale-button {
   border-radius: 6px;
-  background: #0a0908;
-  color: white;
+  background: #ffffff;
+  color: 333333;
   padding: 8px;
   cursor: pointer;
   font-size: 14px;
   line-height: 18px;
+}
+
+html.dark .leaflet-reverse-button,
+html.dark .leaflet-scale-button {
+  background: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
 }
 
 .legend-header {
