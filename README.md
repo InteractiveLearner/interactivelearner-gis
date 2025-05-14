@@ -82,6 +82,10 @@ Released under the [GNU General Public License, version 3](https://opensource.or
 
 **[State Population Totals for 2010-2019 from the United States Census Bureau]()**
 
+**[Annotated geo-json geometry files for the world](https://github.com/johan/world.geo.json)**
+
+**[Vancouver open data](https://opendata.vancouver.ca/pages/home/)**
+
 ## Icons
 
 **[SeekPNG](https://www.seekpng.com/ks/clipart/)**

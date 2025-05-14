@@ -1,18 +1,12 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
 import * as d3 from "d3";
+import GreenlandJSON from "../../data/Greenland.json";
 
-const DefaultProjection = "Azimuthal Equal Area";
+const DefaultProjection = "Mercator";
 const projectionTypes = [
   "Azimuthal Equal Area",
-  "Azimuthal Equidistant",
-  "Albers",
-  "Conic Conformal",
-  "Conic Equal Area",
-  "Conic Equidistant",
-  "Equirectangular",
   "Mercator",
-  "TransverseMercator",
 ];
 
 const Circles = [
@@ -60,7 +54,7 @@ onMounted(async () => {
     geojson.value = json;
     updateProjection();
   } catch (error) {
-    console.error('Error loading JSON:', error);
+    console.error("Error loading JSON:", error);
   }
 });
 
@@ -77,20 +71,42 @@ function updateProjection() {
     .center([state.centerLon, state.centerLat])
     .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
 
-  // Update world map
-  let u = d3.select("g.map").selectAll("path").data(geojson.value.features);
-  u.enter().append("path").merge(u).attr("d", GeoGenerator);
+  let u = d3.select("g.misleading-map").selectAll("path").data(geojson.value.features);
+  u.enter()
+    .append("path")
+    .merge(u)
+    .attr("d", GeoGenerator)
+    .attr("fill", "#53a551")
+    .attr("stroke", "#515151");
 
-  // Update projection center
+  const greenlandProjection = d3["geo" + state.type.replace(/\s/g, "")]();
+  greenlandProjection
+    .scale(state.scale)
+    .translate([state.translateX, state.translateY])
+    .center([state.centerLon, state.centerLat])
+    .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
+
+  const greenlandGeoGenerator = d3.geoPath().projection(greenlandProjection);
+
+  let greenland = d3
+    .select("g.greenland")
+    .selectAll("path")
+    .data([GreenlandJSON]);
+  greenland
+    .enter()
+    .append("path")
+    .merge(greenland)
+    .attr("d", greenlandGeoGenerator)
+    .attr("fill", "orange")
+    .attr("stroke", "#515151");
+
   const projectedCenter = projection([state.centerLon, state.centerLat]);
   d3.select(".projection-center")
     .attr("cx", projectedCenter[0])
     .attr("cy", projectedCenter[1]);
 
-  // Update graticule
   d3.select(".graticule path").datum(Graticule()).attr("d", GeoGenerator);
 
-  // Update circles
   u = d3.select(".circles").selectAll("path").data(
     Circles.map((d) => {
       GeoCircle.center(d);
@@ -106,14 +122,6 @@ function updateType(event) {
 
 function updateScale(event) {
   state.scale = event.target.value;
-}
-
-function updateCenterLon(event) {
-  state.centerLon = event.target.value;
-}
-
-function updateCenterLat(event) {
-  state.centerLat = event.target.value;
 }
 </script>
 
@@ -134,21 +142,7 @@ function updateCenterLat(event) {
     <div class="slider">
       <calcite-label>
         Scale
-        <calcite-slider :min="0" :max="400" :value="state.scale" @calciteSliderInput="updateScale" label-handles
-          scale="l"></calcite-slider>
-      </calcite-label>
-    </div>
-    <div class="slider">
-      <calcite-label>
-        Center - Longitude
-        <calcite-slider :min="-180" :max="180" :value="state.centerLon" @calciteSliderInput="updateCenterLon"
-          label-handles scale="l"></calcite-slider>
-      </calcite-label>
-    </div>
-    <div class="slider">
-      <calcite-label>
-        Center - Latitude
-        <calcite-slider :min="-90" :max="90" :value="state.centerLat" @calciteSliderInput="updateCenterLat" label-handles
+        <calcite-slider min="0" max="400" :value="state.scale" @calciteSliderInput="updateScale" label-handles
           scale="l"></calcite-slider>
       </calcite-label>
     </div>
@@ -157,7 +151,8 @@ function updateCenterLat(event) {
         <path></path>
       </g>
       <g class="circles"></g>
-      <g class="map"></g>
+      <g class="misleading-map"></g>
+      <g class="greenland"></g> <!-- New group for Greenland -->
       <circle class="projection-center" r="4"></circle>
     </svg>
   </div>
@@ -165,13 +160,12 @@ function updateCenterLat(event) {
 
 <style>
 @import "@esri/calcite-components/dist/calcite/calcite.css";
-
 .slider {
   max-width: 300px;
 }
 
-.map path {
-  fill: #53a551;
+.misleading-map path {
+  fill: #6b64ce;
   stroke: #515151;
 }
 

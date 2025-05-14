@@ -12,7 +12,9 @@ import RasterUHI from "../../components/mapping/RasterUHI.vue";
 import ReferenceMap from "../../components/mapping/ReferenceMap.vue";
 import ArcgisCalciteMap from "../../components/mapping/ArcgisCalciteMap.vue";
 import ClassifiedMap from "../../components/mapping/ClassifiedMap.vue";
-import VectorAndRaster from '../../components/mapping/VectorAndRaster.vue'
+import VectorAndRaster from '../../components/mapping/VectorAndRaster.vue';
+import MisleadingProjection from "../../components/mapping/MisleadingProjection.vue";
+import MisleadingTheme from "../../components/mapping/MisleadingTheme.vue";
 import ContentFigure from "../../components/ui/ContentFigure.vue";
 import Sources from "../../components/ui/Sources.vue";
 import Quiz from "../../components/ui/Quiz.vue";
@@ -35,6 +37,8 @@ export default {
     app.component("ArcgisCalciteMap", ArcgisCalciteMap);
     app.component("ClassifiedMap", ClassifiedMap);
     app.component("VectorAndRaster", VectorAndRaster);
+    app.component("MisleadingProjection", MisleadingProjection);
+    app.component("MisleadingTheme", MisleadingTheme);
     app.component("ContentFigure", ContentFigure);
     app.component("Quiz", Quiz);
     app.component("Sources", Sources);

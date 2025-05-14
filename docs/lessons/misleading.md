@@ -1,12 +1,8 @@
 ---
 title: Misleading maps
-description: Find out how map making decisions can mislead readers.
+description: Find out how map making decisions can mislead and/or lie to readers.
 author: Omar Kawach
 ---
-
-::: warning
-Interactive examples are a work in progress for this page.
-:::
 
 # Misleading maps
 
@@ -16,17 +12,23 @@ Every map reflects decisions someone made about what to show, what to leave out,
 
 ## Scale
 
-[Scale](/lessons/scale) controls what gets shown—and what gets left out. A large-scale map (like a neighborhood street map) gives detail but omits broader context. A small-scale map (like a national or continental map) shows the big picture but hides local nuance.
+[Scale](/lessons/scale) controls what gets shown—and what gets left out. A large-scale map (like a neighborhood street map) gives detail but omits broader context. A small-scale map (like a national or continental map) shows the big picture but hides local nuance. 
 
-<!-- Copy / paste scale map? -->
+**Example:** At a small scale, would you be able to tell that downtown Victoria, BC, has a Chinatown?
+
+<ScaleMap />
 
 ## Data
 
 Without context, raw numbers can be misleading. Normalizing data by population size, density, or other factors promotes fairer comparisons. 
 A map of total COVID-19 cases without per capita adjustment may make a large, rural city look worse than a densely packed city. Other factors, like retirement home numbers, can affect local case rates. 
-While perfection isn't possible, ignoring these variables can lead to flawed conclusions, while including them in analysis provides a more nuanced and truthful picture.
+While perfection isn't possible, ignoring variables can lead to flawed conclusions, while including them in analysis provides a more nuanced and truthful picture.
 
-<!-- Compare normalized to non normalized choropleth map? -->
+**Example:** In the [choropleth](/lessons/map-types#types-of-thematic-maps) map below, the visualization begins with raw numbers of US state populations.
+You can normalize by population density (population divided by area in square kilometers) with one of the filter options in the map's left side panel.
+You can also play around with the classification methods and color schemes to see how they affect the map.
+
+<ClassifiedMap/>
 
 ### False correlations
 
@@ -36,13 +38,21 @@ Check out the [spatial statistics](/lessons/spatial-stats) chapter for more.
 
 ## Projection
 
-All map [projections](/lessons/projections) cause some form of distortion. The Mercator projection preserves shapes but exaggerates the size of areas near the poles—making Greenland look the size of Africa. Equal-area projections address size distortion but distort shapes. The projection chosen reflects a priority—and influences perception.
+Every map [projection](/lessons/projections) causes some kind of distortion. While preserving shapes, the Mercator projection makes regions close to the poles appear larger than they actually are, giving Greenland (shown in orange below) the impression that it is larger than Africa. And while equal-area projections correct for size distortion, they cause shape distortion.
+
+<MisleadingProjection />
 
 ## Theme
 
 [Design choices](/lessons/visual-encoding) matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
 
-<!-- Have an example that messed with color -->
+The choropleth map below of Vancouver, BC displays graffiti counts in different areas, with darker red indicating higher counts and lighter yellow indicating lower counts. 
+The theming suggests southern and western parts have higher graffiti incidence, but this is misleading due to the reversed color ramp. 
+In actuality, the central and northeastern parts of Vancouver have a higher graffiti incidence compared to the southern and western regions.
+
+Click the button on the top right of the map to reverse the color ramp.
+
+<MisleadingTheme />
 
 ## Test your knowledge
 
@@ -109,4 +119,16 @@ All map [projections](/lessons/projections) cause some form of distortion. The M
             }
         ]
     }" 
+/>
+
+## Sources
+
+<Sources 
+    :sources="[
+        {
+            title: '7. Lying With Maps',
+            author: 'Eric Deluca and Sara Nelson',
+            url: 'https://open.lib.umn.edu/mapping/chapter/7-lying-with-maps/',
+        }
+    ]"
 />
