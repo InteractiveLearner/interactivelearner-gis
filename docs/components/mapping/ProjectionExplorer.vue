@@ -134,21 +134,21 @@ function updateCenterLat(event) {
     <div class="slider">
       <calcite-label>
         Scale
-        <calcite-slider min="0" max="400" :value="state.scale" @calciteSliderInput="updateScale" label-handles
+        <calcite-slider :min="0" :max="400" :value="state.scale" @calciteSliderInput="updateScale" label-handles
           scale="l"></calcite-slider>
       </calcite-label>
     </div>
     <div class="slider">
       <calcite-label>
         Center - Longitude
-        <calcite-slider min="-180" max="180" :value="state.centerLon" @calciteSliderInput="updateCenterLon"
+        <calcite-slider :min="-180" :max="180" :value="state.centerLon" @calciteSliderInput="updateCenterLon"
           label-handles scale="l"></calcite-slider>
       </calcite-label>
     </div>
     <div class="slider">
       <calcite-label>
         Center - Latitude
-        <calcite-slider min="-90" max="90" :value="state.centerLat" @calciteSliderInput="updateCenterLat" label-handles
+        <calcite-slider :min="-90" :max="90" :value="state.centerLat" @calciteSliderInput="updateCenterLat" label-handles
           scale="l"></calcite-slider>
       </calcite-label>
     </div>
@@ -165,6 +165,7 @@ function updateCenterLat(event) {
 
 <style>
 @import "@esri/calcite-components/dist/calcite/calcite.css";
+
 .slider {
   max-width: 300px;
 }
