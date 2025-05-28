@@ -1,12 +1,12 @@
 ---
 title: Misleading maps
 description: Find out how map making decisions can mislead and/or lie to readers.
-author: Omar Kawach
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
 ---
 
 # Misleading maps
-
-By {{ $frontmatter.author }}
 
 Every map reflects decisions someone made about what to show, what to leave out, and how to present it. Whether intentional or careless, our choices can shape our worldview in ways we may not notice. Occasionally, they can even mislead us.
 

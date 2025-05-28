@@ -6,7 +6,6 @@ const { title, isDark } = useData();
 const commentContainer = ref(null);
 
 const loadGiscus = () => {
-  console.log(isDark)
   if (commentContainer.value && !commentContainer.value.querySelector('script[src*="giscus.app"]')) {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -21,7 +20,7 @@ const loadGiscus = () => {
     script.setAttribute('data-input-position', 'top');
     script.setAttribute('data-theme', isDark.value ? 'dark' : 'light');
     script.setAttribute('data-lang', 'en');
-    script.setAttribute('data-loading', 'lazy');
+    // script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
     commentContainer.value.appendChild(script);

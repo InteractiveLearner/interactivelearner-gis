@@ -1,13 +1,13 @@
 ---
 title: Scale
 description: Explore how map scale can be used to hide and show details on a map.
-author: Omar Kawach
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
 order: 1
 ---
 
 # Scale
-
-By {{ $frontmatter.author }}
 
 ## Scale types
 

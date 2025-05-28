@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress';
 import { watch, onMounted } from 'vue';
 import HomePageGlobe from '../../components/mapping/HomePageGlobe.vue'
+import Authors from "../../components/ui/Authors.vue"
 import Comments from '../../components/ui/Comments.vue'
 
 const { isDark } = useData();
@@ -22,6 +23,9 @@ onMounted(() => {
   <DefaultTheme.Layout>
     <template #home-hero-image>
       <HomePageGlobe />
+    </template>
+    <template #doc-footer-before>
+      <Authors />
     </template>
     <template #doc-after>
       <Comments />

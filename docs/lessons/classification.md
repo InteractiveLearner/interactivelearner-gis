@@ -1,13 +1,13 @@
 ---
 title: Classifying data
 description: Discover the different classification schemes used in thematic mapping.
-author: Omar Kawach
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
 order: 6
 ---
 
 # Classifying data
-
-By {{ $frontmatter.author }}
 
 ## Background
 

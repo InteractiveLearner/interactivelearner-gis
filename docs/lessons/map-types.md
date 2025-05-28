@@ -1,13 +1,13 @@
 ---
 title: Types of maps
 description: Find out how visual encoding allows geographers to produce thematic maps.
-author: Omar Kawach
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
 order: 5
 ---
 
 # Types of maps
-
-By {{ $frontmatter.author }}
 
 ## Reference maps
 
