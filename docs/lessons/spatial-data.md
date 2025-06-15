@@ -4,6 +4,7 @@ description: Check out the key elements of spatial data and its types.
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 2
 ---
 

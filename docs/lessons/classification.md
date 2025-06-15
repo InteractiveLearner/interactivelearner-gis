@@ -4,6 +4,7 @@ description: Discover the different classification schemes used in thematic mapp
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 6
 ---
 

@@ -4,6 +4,7 @@ description: Learn how relational databases can be used to store and manage spat
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 8
 ---
 

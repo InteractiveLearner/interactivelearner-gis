@@ -4,6 +4,7 @@ description: Understand how spatial autocorrelation statistics can help you anal
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 7
 ---
 

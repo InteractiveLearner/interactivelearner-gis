@@ -4,6 +4,7 @@ description: Find out how map making decisions can mislead and/or lie to readers
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 ---
 
 # Misleading maps

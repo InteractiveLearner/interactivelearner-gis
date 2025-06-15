@@ -4,6 +4,7 @@ description: Explore how map scale can be used to hide and show details on a map
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 1
 ---
 

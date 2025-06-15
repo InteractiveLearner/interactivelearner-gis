@@ -4,6 +4,7 @@ description: Learn about the main building blocks of visual encoding / data visu
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 4
 ---
 

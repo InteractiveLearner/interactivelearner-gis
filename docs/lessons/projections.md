@@ -4,8 +4,8 @@ description: Discover the projections that convert curved 3D surfaces to flat 2D
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
-order: 0
 date: 2025-06-15
+order: 0
 ---
 
 # Projections

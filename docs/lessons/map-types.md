@@ -4,6 +4,7 @@ description: Find out how visual encoding allows geographers to produce thematic
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 5
 ---
 
