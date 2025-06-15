@@ -1,5 +1,10 @@
-import { defineConfig } from "vitepress";
-import { generateSidebar } from 'vitepress-sidebar';
+import path from "path";
+import { defineConfig, createContentLoader, type SiteConfig } from "vitepress";
+import { generateSidebar } from "vitepress-sidebar";
+import { writeFileSync } from "fs";
+import { Feed } from "feed";
+
+const hostname: string = "https://www.interactivelearner-gis.com";
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -7,7 +12,7 @@ export default defineConfig({
   title: "Interactive Learner GIS",
   description: "Easily learn about GIS in an interactive environment.",
   sitemap: {
-    hostname: "https://www.interactivelearner-gis.com",
+    hostname: hostname,
   },
   cleanUrls: true,
   themeConfig: {
@@ -42,7 +47,7 @@ export default defineConfig({
     },
     sidebar: generateSidebar({
       // ============ [ RESOLVING PATHS ] ============
-      documentRootPath: '/docs',
+      documentRootPath: "/docs",
       // ============ [ GETTING MENU TITLE ] ============
       useTitleFromFrontmatter: true,
       // ============ [ STYLING MENU TITLE ] ============
@@ -52,7 +57,7 @@ export default defineConfig({
       frontmatterOrderDefaultValue: 9,
     }),
     search: {
-      provider: 'local'
+      provider: "local",
     },
   },
   lastUpdated: true,
@@ -112,4 +117,48 @@ export default defineConfig({
       },
     ],
   ],
+  // Credit to https://laros.io/generating-an-rss-feed-with-vitepress for the guide
+  buildEnd: async (config: SiteConfig) => {
+    const feed = new Feed({
+      title: "Interactive Learner GIS",
+      description: "Easily learn about GIS in an interactive environment.",
+      id: hostname,
+      link: hostname,
+      language: "en",
+      image: `${hostname}/logo192.png`,
+      favicon: `${hostname}/favicon.ico`,
+      copyright: "Copyright (c) 2022-present, Interactive Learner GIS ",
+    });
+
+    const posts = await createContentLoader("**/*.md", {
+      excerpt: true,
+      render: true,
+    }).load();
+
+    posts.sort(
+      (a, b) =>
+        +new Date(b.frontmatter.date as string) -
+        +new Date(a.frontmatter.date as string)
+    );
+
+    for (const { url, excerpt, frontmatter, html } of posts) {
+      feed.addItem({
+        title: frontmatter.title,
+        id: `${hostname}${url}`,
+        link: `${hostname}${url}`,
+        description: excerpt,
+        content: html,
+        author: [
+          {
+            name: "Omar Kawach",
+            email: "omarkawach@outlook.com",
+            link: "https://www.linkedin.com/in/omarkawach/",
+          },
+        ],
+        date: frontmatter.date,
+      });
+    }
+
+    writeFileSync(path.join(config.outDir, "feed.rss"), feed.rss2());
+  },
 });
