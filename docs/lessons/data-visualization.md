@@ -1,14 +1,14 @@
 ---
-title: Visual encoding
+title: Data visualization
 description: Learn about the main building blocks of visual encoding / data visualization.
 authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
 date: 2025-06-15
-order: 4
+order: 1
 ---
 
-# Visual encoding
+# Data visualization
 
 ## Marks
 

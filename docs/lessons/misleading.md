@@ -5,6 +5,7 @@ authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
 date: 2025-06-15
+order: 6
 ---
 
 # Misleading maps
@@ -45,7 +46,7 @@ Every map [projection](/lessons/projections) causes some kind of distortion. Whi
 
 ## Theme
 
-[Design choices](/lessons/visual-encoding) matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
+[Design choices](/lessons/data-visualization) matter. For example, red might suggest danger or urgency, and color gradients and shading, if unbalanced, can exaggerate trends and change perception. Symbol size can misrepresent importance—larger circles draw attention, even if the data doesn’t justify it. These visual tricks change the story a map tells.
 
 The choropleth map below of Vancouver, BC displays graffiti counts in different areas, with darker red indicating higher counts and lighter yellow indicating lower counts. 
 The theming suggests southern and western parts have higher graffiti incidence, but this is misleading due to the reversed color ramp. 

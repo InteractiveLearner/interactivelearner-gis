@@ -48,7 +48,7 @@ Relational algebra is a formal approach to manipulating and accessing relational
 
 Relational algebra contains several fundamental operations, including selection, rename, projection, union, intersection, difference, join, and division. These methods can be combined to create more complicated searches that retrieve specific subsets of data from a relational database. 
 
-## Terminology worth remembering
+## Terminology worth knowing
 
 - **Attributes / fields / table columns**: Columns in a table which can be made up of different data types (e.g., text, number, date)
 - **Domain**: The set of possible values for an attribute

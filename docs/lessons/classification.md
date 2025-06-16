@@ -5,12 +5,10 @@ authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
 date: 2025-06-15
-order: 6
+order: 5
 ---
 
 # Classifying data
-
-## Background
 
 Classifying your data into categories and grouping geographic features or data into classes based on a certain criteria can help you better understand your data. 
 
