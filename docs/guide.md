@@ -38,12 +38,12 @@ To comment, you must log in with a [GitHub account](https://github.com/).
 
 ## Motivation for this site
 
-[Omar Kawach](https://www.linkedin.com/in/omarkawach/) originally created this site at [University of Victoria](https://www.uvic.ca/) as a capstone project for the [Geomatics](https://www.uvic.ca/undergraduate/programs/undergraduate-programs/pages/geography-and-computer-science.php) program to promote map literacy.
+Originally developed by [Omar Kawach](https://www.linkedin.com/in/omarkawach/) as a capstone project for the [University of Victoria's Geomatics program](https://www.uvic.ca/undergraduate/programs/undergraduate-programs/pages/geography-and-computer-science.php), this site aims to promote map literacy.
 
-Map readers vary in levels of map literacy. 
-To bridge the gap between mapmakers and map readers, the site aims to promote map literacy and critical thinking by concentrating on improving map reader spatial inquiry competencies in a self-paced learning environment.
+People who read maps have different levels of map literacy.
+The site's goal is to help people become better map readers and map makers by providing them with a self-paced learning environment where they can improve their abilities in spatial inquiry.
 
-In addition, the site is meant to act as a knowledge base that contributors can build upon.
+In addition, Interactive Learner GIS is designed to serve as a knowledge base of information that contributors can build upon.
 
 ## Contribute
 
