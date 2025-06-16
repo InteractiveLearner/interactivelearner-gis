@@ -13,7 +13,7 @@ Lessons are ordered in a way that builds on previous knowledge, so it is recomme
 
 ## Background on GIS and mapping
 
-Maps help us make sense of the world. They show us where things are, how they are connected, and allow us to investigate patterns in our environment. Geographic information systems (GIS) are effective for for creating, analyzing, and sharing maps.
+Maps help us make sense of the world. They show us where things are, how they are connected, and allow us to investigate patterns in our environment. Geographic information systems (GIS) are effective for creating, analyzing, and sharing maps.
 
 Marks and channels are fundamental concepts in [data visualization](/lessons/data-visualization) that help to visually represent data. These concepts are used in mapping to effectively convey spatial information.
 
