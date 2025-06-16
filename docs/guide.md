@@ -23,7 +23,7 @@ Marks and channels are fundamental concepts in [data visualization](/lessons/dat
 There are different [types of maps](/lessons/map-types), each serving a specific purpose:
 
 - [Reference maps](/lessons/map-types#reference-maps) show general locations, like road maps.
-- [Thematic maps](/lessons/map-types#thematic-maps) focus on specific topics, like population or climate.
+- [Thematic maps](/lessons/map-types#thematic-maps) focus on specific topics, like population.
 
 To represent our round world on paper or screens, we can use [projections](/lessons/projections) that flatten the globe. Every projection comes with its own set of trade-offs and introduces some form of distortion.
 
