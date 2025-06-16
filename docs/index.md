@@ -8,5 +8,5 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /guide
+      link: /welcome
 ---

@@ -1,5 +1,5 @@
 ---
-title: How to use this site
+title: Welcome
 description: A page describing how to navigate and use the site effectively.
 date: 2025-06-15
 order: 0
