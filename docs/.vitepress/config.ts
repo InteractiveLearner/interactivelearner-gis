@@ -23,6 +23,10 @@ export default defineConfig({
         icon: "github",
         link: "https://github.com/InteractiveLearner/interactivelearner-gis/",
       },
+      {
+        icon: "rss",
+        link: "https://www.interactivelearner-gis.com/feed.rss",
+      },
     ],
     nav: [
       {
