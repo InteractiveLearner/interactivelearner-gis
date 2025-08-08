@@ -42,6 +42,7 @@ export default defineConfig({
           { text: "Remote sensing", link: "/lessons/remote-sensing" },
           { text: "Relational databases", link: "/lessons/relational-db" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
+          { text: "Next Steps", link: "/lessons/NextSteps" },
         ],
       },
     ],
