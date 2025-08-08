@@ -1,12 +1,15 @@
 ---
-title: Next Steps
+title: Learn QGIS
 description: Introduction to QGIS and websites to find data to use.
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
 date: 2025-08-07
-order: 10
 ---
+
+::: warning
+This exercise is a work in progress.
+:::
 
 <h1>Next Steps and QGIS</h1>
 <p> Now that you have soaked up all of this information, what is next? Lets continue learning through QGIS. QGIS is a free and open-source Geographic Information System (GIS) software. You are allowed to create, analyze, and publish data through a map. We are going to take some of the concepts that we learned earlier and apply them by creating our own maps! </p>

@@ -45,12 +45,17 @@ export default defineConfig({
           { text: "Next Steps", link: "/lessons/NextSteps" },
         ],
       },
+      {
+        text: "Exercises",
+        items: [{ text: "Next steps", link: "/exercises/next-steps" }],
+      },
     ],
     footer: {
       message: "Released under the GPL-3.0 license.",
       copyright: "Copyright © Interactive Learner GIS 2022",
     },
     sidebar: generateSidebar({
+      manualSortFileNameByPriority: ['welcome.md', 'lessons', 'exercises'],
       // ============ [ RESOLVING PATHS ] ============
       documentRootPath: "/docs",
       // ============ [ GETTING MENU TITLE ] ============
