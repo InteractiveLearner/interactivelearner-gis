@@ -25,7 +25,21 @@ This exercise is a work in progress.
 <p>After downloading the file, open up another file window, and go to where your selected exercise file is. Drag the download into this file. <br></p>
 
 <h1>Adding a vector layer in QGIS</h1>
-<p>Go back to QGIS and find your file on the left side. This file should now have the GeoJSON file inside of it. Hold left click and drag the GeoJSON file and release it when under the <b>Layers</b> section just below. You can also right click the GeoJSON file and select "<b>Add Layer to Project</b>." You should now see something like this:</p>
+<p>Go back to QGIS and find your file on the left side. This file should now have the GeoJSON file inside of it. Hold left click and drag the GeoJSON file and release it when under the <b>Layers</b> section just below. You can also right click the GeoJSON file and select "<b>Add Layer to Project</b>." You should now see something like this:
+<ContentFigure 
+   :imgSrc="'/exercise_files/images/pic-one.png'" 
+/>
+
+<img Src="/exercise_files/images/pic-one.png">
+
+
+<ContentFigure 
+   :imgSrc="'/assets/images/marks.png'" 
+   :description="'Types of marks'"
+   :anchorHref="'https://creativecommons.org/licenses/by-nc-sa/4.0/'"
+   :anchorText="'Credit: PennState licensed under CC BY-ND 2.0'"
+/>
+</p>
 
 <h1>Navigating QGIS</h1>
 <p>By default, you should already have "<b>Pan Map</b>" selected. This is the hand icon towards the top of the screen. In this mode you can hold left click, and move around to see different parts of the map. Refer to the picture below: </p>
