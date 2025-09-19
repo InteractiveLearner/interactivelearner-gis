@@ -12,7 +12,7 @@ This exercise is a work in progress.
 :::
 
 <h1>Creating a new project</h1>
-<p> Open QGIS and left click twice on "<b>New Empty Project</b>" under "<b>Project Templates</b>." You can also click on "<b>Project</b>" in the top left and select "<b>New.</b>" Create a file somewhere on your computer to store this exercise. This file will store the data downloads as well as your overall QGIS project. </p>
+<p> Open QGIS and left click twice on "<b>New Empty Project</b>" under "<b>Project Templates</b>." You can also click on "<b>Project</b>" in the top left and select "<b>New</b>." Create a file somewhere on your computer to store this exercise. This file will store the data downloads as well as your overall QGIS project.</p>
 
 <h1>Downloading vector data</h1>
 <p> Lets start by creating a map using vector data. This data is going to come from the website: <a href="https://www.inaturalist.org/"> City of San Diego Open Data Portal</a>. You can find the exact download file inside of the "<b>exercise_files</b>" folder. You can also click <a href="https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey"> this link</a> or follow the instructions below to find the download through the website.</p>
@@ -22,27 +22,24 @@ This exercise is a work in progress.
 3. Click "<b>Export</b>" in the top right and for the Export Format select "<b>GeoJSON</b>." <br>
 </p>
 
-<p>After downloading the file, open up another file window, and go to where your selected exercise file is. Drag the download into this file. <br></p>
+<p>After downloading the file, open up another file window, and go to where your selected exercise file is. Drag the download into this exercise file. <br></p>
 
 <h1>Adding a vector layer in QGIS</h1>
-<p>Go back to QGIS and find your file on the left side. This file should now have the GeoJSON file inside of it. Hold left click and drag the GeoJSON file and release it when under the <b>Layers</b> section just below. You can also right click the GeoJSON file and select "<b>Add Layer to Project</b>." You should now see something like this:
-<ContentFigure 
-   :imgSrc="'/exercise_files/images/pic-one.png'" 
-/>
-
-<img Src="/exercise_files/images/pic-one.png">
-
+<p>Go back to QGIS and find your file on the left side. This file should now have the GeoJSON file inside of it. Hold left click and drag the GeoJSON file and release it when under the <b>Layers</b> section just below. You can also right click the GeoJSON file and select "<b>Add Layer to Project</b>." You should now see something like this:</p> 
 
 <ContentFigure 
-   :imgSrc="'/assets/images/marks.png'" 
-   :description="'Types of marks'"
-   :anchorHref="'https://creativecommons.org/licenses/by-nc-sa/4.0/'"
-   :anchorText="'Credit: PennState licensed under CC BY-ND 2.0'"
+   :imgSrc="'/exercise_files/images/pic1.png'"
+   :style="{'width': '275px' }"
 />
-</p>
 
 <h1>Navigating QGIS</h1>
 <p>By default, you should already have "<b>Pan Map</b>" selected. This is the hand icon towards the top of the screen. In this mode you can hold left click, and move around to see different parts of the map. Refer to the picture below: </p>
+
+<ContentFigure 
+   :imgSrc="'/exercise_files/images/pic4.png'"
+   :description="'Pan Map icon'"
+   :style="{'width': '300px' }"
+/>
 
 <p>In this picture, there is also a zoom in (magnifying glass with a plus) and zoom out button (magnifying glass with a minus). You can click one of these and then left click to either zoom in or zoom out. You can also zoom in and out by either moving your mouse scroll, or using CTRL + and CTRL - if on windows. Don't forget to click back on "<b>Pan Map</b>" in order to move the map around again. </p>
 
@@ -52,7 +49,20 @@ This exercise is a work in progress.
 <h1>Create a basemap layer</h1>
 <p> Towards the top right of the screen, hover your mouse over a few of the icons and find "<b>QuickMapServices</b>." It should look like this: </p>
 
-<p>Click on it -> OSM -> OSM Standard.<br> You should now see something like this:
+<ContentFigure 
+   :imgSrc="'/exercise_files/images/pic2.png'"
+   :description="'QuickMapServices'"
+   :style="{'width': '300px' }"
+/>
+
+<p>Click on it -> OSM -> OSM Standard.<br> You should now see something like this:<br>
+
+<ContentFigure 
+   :imgSrc="'/exercise_files/images/pic3.png'"
+   :description="'QuickMapServices'"
+   :style="{'width': '275px' }"
+/>
+
 In the bottom right corner, you should see something like "<b>EPSG: 4326</b>." We can change the map projection by clicking this and select: "<b>EPSG: 3857</b>." This is what most maps use. Click "<b>Apply</b>" and "<b>Okay</b>."
 </p>
 
