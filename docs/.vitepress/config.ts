@@ -45,8 +45,8 @@ export default defineConfig({
           { text: "Misleading maps", link: "/lessons/misleading" },
           { text: "Remote sensing", link: "/lessons/remote-sensing" },
           { text: "Relational databases", link: "/lessons/relational-db" },
+          { text: "Web GIS", link: "/lessons/web-gis" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
-          { text: "Next Steps", link: "/lessons/NextSteps" },
         ],
       },
       {
