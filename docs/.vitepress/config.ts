@@ -13,6 +13,10 @@ export default defineConfig({
   },
   cleanUrls: true,
   themeConfig: {
+    editLink: {
+      pattern: "https://github.com/InteractiveLearner/interactivelearner-gis/edit/main/docs/:path",
+      text: "Edit this page on GitHub",
+    },
     outline: [2, 4],
     logo: { src: "/logo192.png", width: 28, height: 28 },
     socialLinks: [
