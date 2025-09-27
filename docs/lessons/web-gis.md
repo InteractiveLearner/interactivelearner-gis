@@ -1,7 +1,10 @@
 ---
 title: Web GIS
-description: GIS and web development technologies
-author: Omar Kawach
+description: Learn how to build interactive, scalable web mapping applications using modern GIS technologies, JavaScript libraries, and frontend frameworks.
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-09-27
 order: 8
 ---
 
@@ -9,15 +12,7 @@ order: 8
   import LeafletMarker from "../samples/LeafletMarker.vue"
 </script>
 
-::: warning
-Interactive examples are a work in progress for this page.
-:::
-
-<!-- TODO: Build tools -->
-
 # Web GIS
-
-By {{ $frontmatter.author }}
 
 Making a beautiful map requires a lot of effort.
 If your map is only for illustration, you may only need a printed or static digital version.
@@ -31,7 +26,7 @@ Web GIS combines the power of the browser and GIS tools for capturing, storing, 
 Below are **_some_** key considerations for a successful Web GIS based mapping application:
 
 - Choose a web mapping library that suits your needs
-- Decide on a frontend web development framework
+- Decide on a frontend web development framework and build tool
 - Assuming your data has already been preprocessed and ready for publishing, consider where you will host your data
   - Client side or server side?
 
@@ -45,6 +40,9 @@ To include maps in a web application, the easiest and most common way is through
   - [OpenLayers](https://openlayers.org/)
   - [turf.js](https://turfjs.org/)
   - [D3.js](https://d3js.org/d3-geo)
+  - [CesiumJS](https://cesium.com/platform/cesiumjs/)
+  - [Kepler.gl](https://kepler.gl/)
+  - [deck.gl](https://deck.gl/)
 - Commercial libraries:
   - [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/latest/)
   - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
@@ -65,7 +63,7 @@ Some web maps can be quite simple like placing a point on a map to help customer
 For this, the application can be written quickly without extra tools, all you need is HTML/JavaScript/CSS. 
 
 ::: tip
-If you're new to web development, you should read about the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) (DOM), [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML), [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript), and [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS).
+If you're new to web development, you should read about the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) (DOM), [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML), [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript), and [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS). MDN Web Docs, by [Mozilla](https://www.mozilla.org/en-US/), are a great resource for [learning web development](https://developer.mozilla.org/en-US/docs/Learn_web_development).
 :::
 
 <LeafletMarker/>
@@ -75,15 +73,22 @@ If you're new to web development, you should read about the [Document Object Mod
 ```html [index.html] ts:line-numbers {1}
 <html>
   <head>
+    <!-- Page title shown in browser tab -->
     <title>Simple Leaflet Map</title>
     <meta charset="utf-8" />
+    <!-- Responsive design for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Custom stylesheet for map styling -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Leaflet CSS for map appearance -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS library for interactive maps -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
   <body>
+    <!-- Container for the Leaflet map -->
     <div id="map"></div>
+    <!-- Custom JavaScript for map initialization and interaction -->
     <script src="script.js"></script>
   </body>
 </html>
@@ -115,41 +120,108 @@ L.marker([48.46, -123.36])
 :::
 
 What you saw above is great, but it's important to remember that there are organizations out there that intentionally build applications meant to scale with demands. 
-If you want to scale quickly along with a team, writing a complex web application requires structure, organization, and maintainability.
+If you want to scale quickly along with a team, writing a scalable web application requires structure, organization, and maintainability.
 
 Fortunately, you don't need to decide on structure and tooling yourself.
 Frameworks make app development easier by providing more structure to the way we write applications.
-They do come with a learning curve, but in return, you get a more maintainable codebase, reusable components, nice conveniences, and helpful tooling — which can really pay off as your project scales.
+They do come with a learning curve, but in return you get a more maintainable codebase, reusable components, nice conveniences, and helpful tooling. These benefits can really pay off as your project scales.
 
-There are a lot of front-end frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). There are some nuances, but generally, frontend frameworks encourage component-based/reusable code block architecture via a [top-down, one-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html). In turn, frontend frameworks promote declarative code writing (e.g., more HTML and less JavaScript).
+There are a lot of front-end frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). There are some nuances, but generally, frontend frameworks encourage component-based/reusable code block architecture via a [top-down, one-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html). In turn, frontend frameworks promote [declarative](https://en.wikipedia.org/wiki/Declarative_programming) code writing (e.g., more HTML and less JavaScript).
 
 ::: tip
 Be sure to read up on [Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js), [npm](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management), [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json), [dependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies), [devDependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies), and [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) before you start working with frameworks.
 :::
 
-<!-- Example here comparing vanilla JS imperative code to React code (use JS Maps SDK?)-->
+Before the [ArcGIS Maps SDK for JavaScript introduced their new library of web components in version 4.28](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/build-gis-web-apps-with-javascript-maps-sdk-components), widgets based on proprietary technology were the only means for adding UI to your web application. Implementing widgets in an app required a lot of boilerplate code and was [imperative](https://en.wikipedia.org/wiki/Imperative_programming) in nature.
+
+::: info What are web components?
+
+> [Web components](https://www.webcomponents.org/introduction) are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components built on Web Component standards will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
+> Web components are based on existing web standards, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.
+
+Interested in writing your own web components using a web mapping library? Check out these resources about the process:
+- [omarkawach/foss-gis-web-components](https://github.com/omarkawach/foss-gis-web-components)
+- [omarkawach/arcgis-web-components](https://github.com/omarkawach/arcgis-web-components)
+- [Web Components Toolkit](https://wc-toolkit.com/)
+:::
+
+The ArcGIS Maps SDK for JavaScript's switch from an imperative API for UI to a community standards-based component library makes it easier to use in plain JavaScript and frontend frameworks. Check out the code sample below showing the SDK with imperative widgets versus declarative web components in plain JavaScript.
+
+<BasicArcgisMap />
 
 ::: code-group
 
-```html [Imperative] ts:line-numbers {1}
-<template>
-  <div>Hello World</div>
-</template>
+```html [Imperative widgets] ts:line-numbers {1}
+<body>
+  <div id="viewDiv"></div>
+  <script>
+    require([
+      "esri/views/MapView",
+      "esri/widgets/Legend",
+      "esri/widgets/Search",
+      "esri/WebMap",
+    ], (MapView, Legend, Search, WebMap) => {
+      const webmap = new WebMap({
+        portalItem: {
+          id: "11e173a4e2f040ae80d39e44ee29467a",
+        },
+      });
+      const view = new MapView({
+        container: "viewDiv",
+        map: webmap,
+      });
+      const search = new Search({
+        view,
+      });
+      const legend = new Legend({
+        view,
+      });
+      view.ui.add(search, "top-right");
+      view.ui.add(legend, "bottom-left");
+    });
+  </script>
+</body>
 ```
 
-```js [Declarative] ts:line-numbers {1}
-<script setup>
-const msg = 'Hello World'
-</script>
+```html [Declarative web components] ts:line-numbers {1}
+<body>
+  <arcgis-map item-id="11e173a4e2f040ae80d39e44ee29467a">
+    <arcgis-search position="top-right" />
+    <arcgis-legend position="bottom-left" />
+  </arcgis-map>
+</body>
 ```
 
 :::
+
+### Framework-based mapping libraries
+
+There are a growing number of JavaScript mapping libraries as reusable/building block React, Angular, web, or Vue components. Some notable component libraries are:
+
+- Open-source:
+  - [Nivo React](https://github.com/plouc/nivo) (built on top of D3)
+  - [Vue 3.x components for CesiumJS](https://github.com/zouyaoji/vue-cesium)
+  - [React Leaflet](https://react-leaflet.js.org/)
+  - [ngx-leaflet](https://www.npmjs.com/package/@asymmetrik/ngx-leaflet)
+  - [ngx-maplibre-gl](https://github.com/maplibre/ngx-maplibre-gl)
+  - [leaflet-map](https://github.com/leaflet-extras/leaflet-map)
+  - [openlayers-elements](https://github.com/openlayers-elements/openlayers-elements)
+- Commericial libraries:
+  - [ArcGIS Maps SDK for JavaScript components](https://developers.arcgis.com/javascript/latest/components/)
+  - [Google Maps JavaScript API Web Components](https://mapsplatform.google.com/resources/blog/build-maps-faster-web-components/#:~:text=Maps%20JavaScript%20API%20Web%20Components.%20Developers%20can%20access)
+
+The challenge with mapping libraries lacking framework-agnostic web components is that committing to one framework can make switching difficult, or the library might not even offer support for your desired framework. This scenario often requires you to build all the necessary UI components yourself.
 
 ### Tooling
 
 HTML/CSS/JavaScript are core features of modern web browsers. Frameworks like React or Vue extend these native web technologies.
 
-[Bundling tools](https://webreference.com/javascript/advanced/module-bundlers/) like [Vite](https://vite.dev/) optimize and prepare framework-based applications for browsers by reducing file sizes and splitting bundles.
+[Bundlers](https://webreference.com/javascript/advanced/module-bundlers/) like [Vite](https://vite.dev/) optimize and prepare framework-based applications for browsers by reducing file sizes and splitting bundles.
+
+<ContentFigure
+  :imgSrc="'/assets/images/bundler.png'"
+  :description="'What do bundlers do?'"
+/>
 
 Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend frameworks like React provides an improved developer experience. TypeScript's static typing adds a layer of safety to JavaScript development, reducing uncertainty and boosting confidence.
 
@@ -157,10 +229,9 @@ Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend fr
 Check out [this code repository](https://github.com/omarkawach/maps-sdk-react-ts) combining the ArcGIS Maps SDK for JavaScript with React, Vite, and TypeScript.
 ::: 
 
-
 ### Rendering strategies
 
-As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR), [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) like [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications. 
+As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR) like many existing React applications on the web today, [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) such as [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like [search engine optimization](https://en.wikipedia.org/wiki/Search_engine_optimization) (SEO), simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications. 
 
 This is what could be done to get Leaflet to work in a SSG-based application.
 
@@ -196,45 +267,16 @@ See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly
 
 ::: tip
 This site was built with [VitePress](https://vitepress.dev/) which is a Vite and Vue powered SSG. You can check out all the code for this site [here](https://github.com/InteractiveLearner/interactivelearner-gis/).
+
+If you're interested in SEO, you should read up [Vercel's research of how Google handles JavaScript through the indexing process based on different rendering strategies](https://vercel.com/blog/how-google-handles-javascript-throughout-the-indexing-process#moving-forward-with-new-information).
 :::
 
-
-### Framework-based mapping libraries
-
-There are a growing number of JavaScript mapping libraries as React, Angular, web, or Vue components. Some notable component libraries are:
-
-- Open-source:
-  - [Nivo React](https://github.com/plouc/nivo) (built on top of D3)
-  - [Vue 3.x components for CesiumJS](https://github.com/zouyaoji/vue-cesium)
-  - [React Leaflet](https://react-leaflet.js.org/)
-  - [ngx-leaflet](https://www.npmjs.com/package/@asymmetrik/ngx-leaflet)
-  - [ngx-maplibre-gl](https://github.com/maplibre/ngx-maplibre-gl)
-  - [leaflet-map](https://github.com/leaflet-extras/leaflet-map)
-  - [openlayers-elements](https://github.com/openlayers-elements/openlayers-elements)
-- Commericial libraries:
-  - [ArcGIS Maps SDK for JavaScript components](https://developers.arcgis.com/javascript/latest/components/)
-  - [Google Maps JavaScript API Web Components](https://mapsplatform.google.com/resources/blog/build-maps-faster-web-components/#:~:text=Maps%20JavaScript%20API%20Web%20Components.%20Developers%20can%20access)
-
-The challenge with mapping libraries lacking framework-agnostic web components is that committing to one framework can make switching difficult, or the library might not even offer support for your desired framework. This scenario often requires you to build all the necessary UI components yourself.
-
-::: info What are web components?
-
-> [Web components](https://www.webcomponents.org/introduction) are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
-> Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.
-
-Interested in writing your own web components using a web mapping library? Check out these code repositories about the process:
-- [foss-gis-web-components](https://github.com/omarkawach/foss-gis-web-components)
-- [arcgis-web-components](https://github.com/omarkawach/arcgis-web-components)
-:::
-
-## Backend and hosting
+## Client-side/server-side data
 
 <!-- Different caching strategies?
 JS Maps SDK client side example 
 JS Maps SDK AGO webmap example 
 JS Maps SDK GeoJSON request example  -->
-<!-- Deploy your app to GitHub pages or Vercel -->
-<!-- Postgres + PostGIS, GeoServer and Leaflet? -->
 
 ## Test your knowledge
 
@@ -294,3 +336,10 @@ JS Maps SDK GeoJSON request example  -->
         ],     
     }" 
 />
+
+## Next steps
+
+::: warning
+Exercise for how to host your own web mapping application via GitHub Pages is a work in progress.
+:::
+

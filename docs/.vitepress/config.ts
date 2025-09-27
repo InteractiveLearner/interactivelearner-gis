@@ -84,21 +84,6 @@ export default defineConfig({
       },
     },
   },
-  vite: {
-    plugins: [
-      // viteStaticCopy({
-      //   targets: [
-      //     {
-      //       src: path.resolve(
-      //         __dirname,
-      //         "../../node_modules/package-name/**/*"
-      //       ),
-      //       dest: "",
-      //     },
-      //   ],
-      // }),
-    ],
-  },
   head: [
     ["link", { rel: "icon", type: "image/png", href: "/logo192.png" }],
     ["meta", { name: "theme-color", content: "#144d1e" }],
