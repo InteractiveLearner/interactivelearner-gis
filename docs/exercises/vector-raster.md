@@ -13,7 +13,7 @@ This exercise is a work in progress.
 
 # Categorized data
 
-<h2>Categorized Data</h2>
+<h2>Categorized data</h2>
 <p>Double click your "<b>SDG Indicator...</b>" layer. A new window should pop up. Click "<b>Symbology</b>" on the left side. Towards the top there should be a drop-down menu that currently says "<b>Single Symbol</b>." Click this and go down to "<b>Categorized</b>." In here, we can color our data based on the category data or value that we select. Directly under, there is a "<b>Value</b>" drop-down. Click the down arrow and select "<b>drinking_water_percentile</b>." This will organize the selected data by color. In the lower left click "<b>Classify</b>." We can uncheck certain values by unselecting them in the checkbox on the left side. We can also double click the one of the current colors. This will open up another window where you can change the color, opacity, etc. We are going to click cancel for now. This just shows you how we can color the categorized data.</p>
 
 <h2>Graduated data</h2>
