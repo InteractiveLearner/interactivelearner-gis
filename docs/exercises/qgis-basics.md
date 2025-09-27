@@ -1,6 +1,6 @@
 ---
 title: QGIS basics
-description: description: In this section we will be learning basic tasks in QGIS using vector data.
+description: In this section we will be learning basic tasks in QGIS using vector data.
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
