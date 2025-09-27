@@ -1,8 +1,11 @@
 ---
 title: Spatial autocorrelation statistics
 description: Understand how spatial autocorrelation statistics can help you analyze spatial data.
-author: Omar Kawach
-order: 7
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
+order: 9
 ---
 
 ::: warning
@@ -10,8 +13,6 @@ Interactive examples are a work in progress for this page.
 :::
 
 # Spatial autocorrelation statistics
-
-By {{ $frontmatter.author }}
 
 ## What is spatial autocorrelation statistics?
 

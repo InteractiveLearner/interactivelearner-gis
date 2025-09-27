@@ -1,13 +1,14 @@
 ---
 title: Types of maps
-description: Find out how visual encoding allows geographers to produce thematic maps.
-author: Omar Kawach
-order: 5
+description: Find out how data visualization / visual encoding allows geographers to produce thematic maps.
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
+order: 2
 ---
 
 # Types of maps
-
-By {{ $frontmatter.author }}
 
 ## Reference maps
 
@@ -49,7 +50,7 @@ Now that you've learned how thematic maps are designed, it is time to explore an
 
 - Can you identify which channels were used to create each of the thematic maps? The Channel Ranking figure could be useful.
 - The dot density maps's view is set to World. Notice how the dots begin to indicate a different number of people when you zoom in to a Continent or Country level.
-- There is no diagram symbol map below. However, you can find pie charts as one of the hospital shape styles in the [Visually encoded map](/lessons/visual-encoding) from the previous chapter. Despite the fact that the pie charts in the Visually Encoded Map contain meaningless data, they could, for example, represent each hospital's budget categories.
+- There is no diagram symbol map below. However, you can find pie charts as one of the hospital shape styles in the [Visually encoded map](/lessons/data-visualization) from the previous chapter. Despite the fact that the pie charts in the Visually Encoded Map contain meaningless data, they could, for example, represent each hospital's budget categories.
 
 <calcite-carousel label="Maps" style="height: 600px;">
     <calcite-carousel-item label="Chorochromatic map">

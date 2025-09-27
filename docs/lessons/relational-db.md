@@ -1,7 +1,10 @@
 ---
 title: Relational databases
 description: Learn how relational databases can be used to store and manage spatial data.
-author: Omar Kawach
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
 order: 8
 ---
 
@@ -11,8 +14,6 @@ Interactive examples are a work in progress for this page.
 :::
 
 # Relational databases in GIS
-
-By {{ $frontmatter.author }}
 
 [Relational databases](https://en.wikipedia.org/wiki/Relational_database) (RDBs) are commonly used in Geographic Information Systems (GIS) to efficiently manage, store, and retrieve vast volumes of spatial data (points, lines, and polygons), as well as associated attribute data such as feature names, kinds, and descriptions. These RDBs are sometimes referred to as "[spatial databases](https://en.wikipedia.org/wiki/Spatial_database)," and if they use a [geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system), they may also be referred to as geographic databases or georeferenced spatial databases.
 
@@ -48,7 +49,7 @@ Relational algebra is a formal approach to manipulating and accessing relational
 
 Relational algebra contains several fundamental operations, including selection, rename, projection, union, intersection, difference, join, and division. These methods can be combined to create more complicated searches that retrieve specific subsets of data from a relational database. 
 
-## Terminology worth remembering
+## Terminology worth knowing
 
 - **Attributes / fields / table columns**: Columns in a table which can be made up of different data types (e.g., text, number, date)
 - **Domain**: The set of possible values for an attribute

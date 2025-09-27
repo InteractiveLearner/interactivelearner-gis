@@ -1,17 +1,18 @@
 ---
 title: Scale
 description: Explore how map scale can be used to hide and show details on a map.
-author: Omar Kawach
-order: 1
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
+order: 4
 ---
 
 # Scale
 
-By {{ $frontmatter.author }}
-
 ## Scale types
 
-As we've seen with projections, mapping isn't a perfect depiction of reality. When you use your favourite navigation service to look up locations or directions (e.g., Google Maps, Apple Maps, Bing Maps, etc. ), the real-world features you see cannot be drawn to their proper scale. These navigation services, on the other hand, use a **graphic scale** to indicate the measurable relationship between the map and the area being examined. Similarly, GIS tools such as QGIS and ArcGIS Pro portray this relationship using representative fractions (**ratio scale**). Both representative fractions and graphic scales can be read aloud as a **verbal scale**. However, representative fractions differ from graphic scales in that they do not employ units (e.g., km, miles, etc.). Regardless of whether representative fractions or graphic scales are used, the level of detail shown is what matters most.
+As we've seen with [projections](/lessons/projections), mapping isn't a perfect depiction of reality. When you use your favourite navigation service to look up locations or directions (e.g., Google Maps, Apple Maps, Bing Maps, etc. ), the real-world features you see cannot be drawn to their proper scale. These navigation services, on the other hand, use a **graphic scale** to indicate the measurable relationship between the map and the area being examined. Similarly, GIS tools such as QGIS and ArcGIS Pro portray this relationship using representative fractions (**ratio scale**). Both representative fractions and graphic scales can be read aloud as a **verbal scale**. However, representative fractions differ from graphic scales in that they do not employ units (e.g., km, miles, etc.). Regardless of whether representative fractions or graphic scales are used, the level of detail shown is what matters most.
 
 ## Scale sizes
 

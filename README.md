@@ -66,7 +66,7 @@ Under the supervision of [Dr. Charles Perin](http://charlesperin.net/), I develo
 
 ## License (GPL) 
 
-Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). To protect against theft and promote free open source software, any developers making use of this repository must release their changes under the same license. 
+Released under the [GNU General Public License, version 3](https://opensource.org/licenses/GPL-3.0). To promote free open source software, any developers making use of this repository must release their changes under the same license. 
 
 ## Dataset sources
 

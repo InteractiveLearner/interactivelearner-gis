@@ -1,7 +1,10 @@
-import { defineConfig } from "vitepress";
+import path from "path";
+import { defineConfig, createContentLoader, type SiteConfig } from "vitepress";
 import { generateSidebar } from "vitepress-sidebar";
-// import { viteStaticCopy } from "vite-plugin-static-copy";
-// import path from "path";
+import { writeFileSync } from "fs";
+import { Feed } from "feed";
+
+const hostname: string = "https://www.interactivelearner-gis.com";
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -9,7 +12,7 @@ export default defineConfig({
   title: "Interactive Learner GIS",
   description: "Easily learn about GIS in an interactive environment.",
   sitemap: {
-    hostname: "https://www.interactivelearner-gis.com",
+    hostname: hostname,
   },
   cleanUrls: true,
   themeConfig: {
@@ -24,23 +27,31 @@ export default defineConfig({
         icon: "github",
         link: "https://github.com/InteractiveLearner/interactivelearner-gis/",
       },
+      {
+        icon: "rss",
+        link: "https://www.interactivelearner-gis.com/feed.rss",
+      },
     ],
     nav: [
       {
         text: "Lessons",
         items: [
+          { text: "Spatial data", link: "/lessons/spatial-data" },
+          { text: "Data visualization", link: "/lessons/data-visualization" },
+          { text: "Types of maps", link: "/lessons/map-types" },
           { text: "Projections", link: "/lessons/projections" },
           { text: "Scale", link: "/lessons/scale" },
-          { text: "Spatial data", link: "/lessons/spatial-data" },
-          { text: "Remote sensing", link: "/lessons/remote-sensing" },
-          { text: "Visual encoding", link: "/lessons/visual-encoding" },
-          { text: "Types of maps", link: "/lessons/map-types" },
           { text: "Classifying data", link: "/lessons/classification" },
-          { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
-          { text: "Relational databases", link: "/lessons/relational-db" },
-          { text: "WebGIS", link: "/lessons/web-gis" },
           { text: "Misleading maps", link: "/lessons/misleading" },
+          { text: "Remote sensing", link: "/lessons/remote-sensing" },
+          { text: "Relational databases", link: "/lessons/relational-db" },
+          { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
+          { text: "Next Steps", link: "/lessons/NextSteps" },
         ],
+      },
+      {
+        text: "Exercises",
+        items: [{ text: "Next steps", link: "/exercises/next-steps" }],
       },
     ],
     footer: {
@@ -48,6 +59,7 @@ export default defineConfig({
       copyright: "Copyright © Interactive Learner GIS 2022",
     },
     sidebar: generateSidebar({
+      manualSortFileNameByPriority: ['welcome.md', 'lessons', 'exercises'],
       // ============ [ RESOLVING PATHS ] ============
       documentRootPath: "/docs",
       // ============ [ GETTING MENU TITLE ] ============
@@ -134,4 +146,48 @@ export default defineConfig({
       },
     ],
   ],
+  // Credit to https://laros.io/generating-an-rss-feed-with-vitepress for the guide
+  buildEnd: async (config: SiteConfig) => {
+    const feed = new Feed({
+      title: "Interactive Learner GIS",
+      description: "Easily learn about GIS in an interactive environment.",
+      id: hostname,
+      link: hostname,
+      language: "en",
+      image: `${hostname}/logo192.png`,
+      favicon: `${hostname}/favicon.ico`,
+      copyright: "Copyright (c) 2022-present, Interactive Learner GIS ",
+    });
+
+    const posts = await createContentLoader("**/*.md", {
+      excerpt: true,
+      render: true,
+    }).load();
+
+    posts.sort(
+      (a, b) =>
+        +new Date(b.frontmatter.date as string) -
+        +new Date(a.frontmatter.date as string)
+    );
+
+    for (const { url, excerpt, frontmatter, html } of posts) {
+      feed.addItem({
+        title: frontmatter.title,
+        id: `${hostname}${url}`,
+        link: `${hostname}${url}`,
+        description: excerpt,
+        content: html,
+        author: [
+          {
+            name: "Omar Kawach",
+            email: "omarkawach@outlook.com",
+            link: "https://www.linkedin.com/in/omarkawach/",
+          },
+        ],
+        date: frontmatter.date,
+      });
+    }
+
+    writeFileSync(path.join(config.outDir, "feed.rss"), feed.rss2());
+  },
 });

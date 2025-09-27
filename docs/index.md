@@ -7,6 +7,6 @@ hero:
   tagline: Whether you're here to learn, refresh your knowledge, or improve your map literacy, Interactive Learner GIS is your gateway to a captivating journey through geography!
   actions:
     - theme: brand
-      text: Get Started
-      link: /lessons/projections
+      text: Get started
+      link: /welcome
 ---

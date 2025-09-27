@@ -1,13 +1,14 @@
 ---
 title: Spatial data and its types
 description: Check out the key elements of spatial data and its types.
-author: Omar Kawach
-order: 2
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
+order: 0
 ---
 
 # Spatial data and its types
-
-By {{ $frontmatter.author }}
 
 ## Spatial data
 

@@ -1,13 +1,14 @@
 ---
 title: Remote sensing
 description: Earth observation through active and passive remote sensing
-author: Omar Kawach
-order: 3
+authors:
+  - name: Omar Kawach
+    url: https://www.linkedin.com/in/omarkawach/
+date: 2025-06-15
+order: 7
 ---
 
 # Remote sensing
-
-By {{ $frontmatter.author }}
 
 The science of gathering data about the Earth's surface without making direct physical contact is known as [remote sensing](https://en.wikipedia.org/wiki/Remote_sensing), and it depends on the detection and measurement of electromagnetic energy. 
 
