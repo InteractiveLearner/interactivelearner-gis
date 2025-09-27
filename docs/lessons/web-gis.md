@@ -8,10 +8,6 @@ date: 2025-09-27
 order: 8
 ---
 
-<script setup>
-  import LeafletMarker from "../samples/LeafletMarker.vue"
-</script>
-
 # Web GIS
 
 Making a beautiful map requires a lot of effort.
@@ -58,9 +54,9 @@ You can **_usually_** tell which technology was used to author a web map by look
 
 ## Frontend frameworks
 
-Your choice of a [frontend](https://en.wikipedia.org/wiki/Frontend_and_backend) framework can depend on the scale of the website you plan to host your web mapping application on. 
+Your choice of a [frontend](https://en.wikipedia.org/wiki/Frontend_and_backend) framework can depend on the scale of the website you plan to host your web mapping application on.
 Some web maps can be quite simple like placing a point on a map to help customers find a business.
-For this, the application can be written quickly without extra tools, all you need is HTML/JavaScript/CSS. 
+For this, the application can be written quickly without extra tools, all you need is HTML/JavaScript/CSS.
 
 ::: tip
 If you're new to web development, you should read about the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) (DOM), [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML), [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript), and [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS). MDN Web Docs, by [Mozilla](https://www.mozilla.org/en-US/), are a great resource for [learning web development](https://developer.mozilla.org/en-US/docs/Learn_web_development).
@@ -96,7 +92,7 @@ If you're new to web development, you should read about the [Document Object Mod
 
 ```javascript [script.js] ts:line-numbers {1}
 // Initialize the map and center on Victoria, BC
-var map = L.map("map").setView([48.46, -123.36], 14); 
+var map = L.map("map").setView([48.46, -123.36], 14);
 
 // Add OpenStreetMap tiles
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -119,7 +115,7 @@ L.marker([48.46, -123.36])
 
 :::
 
-What you saw above is great, but it's important to remember that there are organizations out there that intentionally build applications meant to scale with demands. 
+What you saw above is great, but it's important to remember that there are organizations out there that intentionally build applications meant to scale with demands.
 If you want to scale quickly along with a team, writing a scalable web application requires structure, organization, and maintainability.
 
 Fortunately, you don't need to decide on structure and tooling yourself.
@@ -140,10 +136,11 @@ Before the [ArcGIS Maps SDK for JavaScript introduced their new library of web c
 > Web components are based on existing web standards, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.
 
 Interested in writing your own web components using a web mapping library? Check out these resources about the process:
+
 - [omarkawach/foss-gis-web-components](https://github.com/omarkawach/foss-gis-web-components)
 - [omarkawach/arcgis-web-components](https://github.com/omarkawach/arcgis-web-components)
 - [Web Components Toolkit](https://wc-toolkit.com/)
-:::
+  :::
 
 The ArcGIS Maps SDK for JavaScript's switch from an imperative API for UI to a community standards-based component library makes it easier to use in plain JavaScript and frontend frameworks. Check out the code sample below showing the SDK with imperative widgets versus declarative web components in plain JavaScript.
 
@@ -227,42 +224,66 @@ Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend fr
 
 ::: info Code sample
 Check out [this code repository](https://github.com/omarkawach/maps-sdk-react-ts) combining the ArcGIS Maps SDK for JavaScript with React, Vite, and TypeScript.
-::: 
+:::
 
 ### Rendering strategies
 
-As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR) like many existing React applications on the web today, [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) such as [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like [search engine optimization](https://en.wikipedia.org/wiki/Search_engine_optimization) (SEO), simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications. 
+As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR) like many existing React applications on the web today, [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) such as [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like [search engine optimization](https://en.wikipedia.org/wiki/Search_engine_optimization) (SEO), simplified page routing and [server-side rendering](http://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications.
 
 This is what could be done to get Leaflet to work in a SSG-based application.
 
 ::: code-group
 
-<<< @/samples/LeafletMarker.vue#setup{vue:line-numbers} [SSR]
+```vue [SSR] ts:line-numbers
+<script setup>
+  import { onMounted } from 'vue';
+  let Leaflet;
+
+  onMounted(async () => {
+    // Import dynamically to avoid window not defined error in SSR
+    Leaflet = await import('leaflet'); 
+
+    // Check if window is defined
+    if (typeof window !== 'undefined') {
+      const map = Leaflet.map('map').setView([48.43, -123.36], 14);
+
+      Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      Leaflet.marker([48.43, -123.36])
+        .addTo(map)
+        .bindPopup('Find our cafe here!')
+        .openPopup();
+    }
+  });
+</script>
+```
 
 ```vue [CSR] ts:line-numbers
 <script setup>
-import { onMounted } from 'vue';
-// Direct import in CSR
-import * as Leaflet from 'leaflet';
+  import { onMounted } from 'vue';
+  // Direct import in CSR
+  import * as Leaflet from 'leaflet';
 
-onMounted(() => {
-  const map = Leaflet.map('map').setView([48.43, -123.36], 14);
+  onMounted(() => {
+    const map = Leaflet.map('map').setView([48.43, -123.36], 14);
 
-  Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+    Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-  Leaflet.marker([48.43, -123.36])
-    .addTo(map)
-    .bindPopup('Find our cafe here!')
-    .openPopup();
-});
+    Leaflet.marker([48.43, -123.36])
+      .addTo(map)
+      .bindPopup('Find our cafe here!')
+      .openPopup();
+  });
 </script>
 ```
 
 :::
 
-You won't allows need to write this kind of workaround. 
+You won't allows need to write this kind of workaround.
 See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly) or Astro [client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) for simpler workarounds.
 
 ::: tip
@@ -274,8 +295,8 @@ If you're interested in SEO, you should read up [Vercel's research of how Google
 ## Client-side/server-side data
 
 <!-- Different caching strategies?
-JS Maps SDK client side example 
-JS Maps SDK AGO webmap example 
+JS Maps SDK client side example
+JS Maps SDK AGO webmap example
 JS Maps SDK GeoJSON request example  -->
 
 ## Test your knowledge
@@ -342,4 +363,3 @@ JS Maps SDK GeoJSON request example  -->
 ::: warning
 Exercise for how to host your own web mapping application via GitHub Pages is a work in progress.
 :::
-

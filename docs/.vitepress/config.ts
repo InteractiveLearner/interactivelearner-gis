@@ -172,7 +172,6 @@ export default defineConfig({
         date: frontmatter.date,
       });
     }
-
     writeFileSync(path.join(config.outDir, "feed.rss"), feed.rss2());
   },
 });

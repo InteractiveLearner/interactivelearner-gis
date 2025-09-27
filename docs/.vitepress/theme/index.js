@@ -11,6 +11,7 @@ import VisualVariables from "../../components/mapping/VisualVariables.vue";
 import RasterUHI from "../../components/mapping/RasterUHI.vue";
 import ReferenceMap from "../../components/mapping/ReferenceMap.vue";
 import ArcgisCalciteMap from "../../components/mapping/ArcgisCalciteMap.vue";
+import LeafletMarker from "../../components/mapping/LeafletMarker.vue";
 import BasicArcgisMap from "../../components/mapping/BasicArcgisMap.vue";
 import ClassifiedMap from "../../components/mapping/ClassifiedMap.vue";
 import VectorAndRaster from '../../components/mapping/VectorAndRaster.vue';
@@ -36,6 +37,7 @@ export default {
     app.component("ReferenceMap", ReferenceMap);
     app.component("RasterUHI", RasterUHI);
     app.component("ArcgisCalciteMap", ArcgisCalciteMap);
+    app.component("LeafletMarker", LeafletMarker);
     app.component("BasicArcgisMap", BasicArcgisMap);
     app.component("ClassifiedMap", ClassifiedMap);
     app.component("VectorAndRaster", VectorAndRaster);
