@@ -318,7 +318,7 @@ fetch('points.geojson')
 
 Server-side data is more scalable for enterprise/large company needs because it is hosted externally and accessible via APIs or services on a remote server or cloud service. 
 
-You can load web maps and other data that you make with [Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm) directly from [ArcGIS Online](https://www.arcgis.com/) or connect to your own hosted GIS services using the ArcGIS Maps SDK for JavaScript. Map Viewer is a feature of ArcGIS Online and [ArcGIS Enterprise](https://enterprise.arcgis.com/en/) that aims to simplify the creation and sharing of web maps.
+You can load web maps and other [geospatial data](https://www.esri.com/arcgis-blog/products/developers/developers/whats-special-about-geospatial-data) that you make with [Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm) directly from [ArcGIS Online](https://www.arcgis.com/) or connect to your own hosted GIS services using the ArcGIS Maps SDK for JavaScript. Map Viewer is a feature of ArcGIS Online and [ArcGIS Enterprise](https://enterprise.arcgis.com/en/) that aims to simplify the creation and sharing of web maps.
 
 ::: code-group
 
