@@ -13,29 +13,52 @@ In this exercise, we'll be covering a few basic tasks in QGIS using vector data.
 
 # QGIS Basics
 
-<h2>Creating a new project</h2>
-<p> Open QGIS and left click twice on "<b>New Empty Project</b>" under "<b>Project Templates</b>." You can also click on "<b>Project</b>" in the top left and select "<b>New</b>." Create a file somewhere on your computer to store this exercise. This file will store the data downloads as well as your overall QGIS project.</p>
+## Creating a new project
+Open QGIS and left click twice on "**New Empty Project**" under "**Project Templates**."
+You can also click on "**Project**" in the top left and select "**New**."
+Create a file somewhere on your computer to store this exercise.
+This file will store the data downloads as well as your overall QGIS project.
 
-<h2>Downloading vector data</h2>
-<p> Lets start by creating a map using vector data. This data is going to come from the website: <a href="https://www.inaturalist.org/"> City of San Diego Open Data Portal</a>. You can find the exact download file inside of the "<b>exercise_files</b>" folder. You can also click <a href="https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey"> this link</a> or follow the instructions below to find the download through the website.</p>
+## Downloading vector data
+Lets start by creating a map using vector data.
+This data is going to come from the website: [City of San Diego Open Data Portal](https://www.inaturalist.org/).
+You can find the exact download file inside of the "**exercise_files**" folder.
+You can also click [this link](https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey)
+ or follow the instructions below to find the download through the website.
 
-<p>1. In the search for data bar type: "<b>water san diego 6.3.2</b>." <br>
-2. On the left side under "<b>View Types</b>" select "<b>Maps</b>" and click on "<b>SDG Indicator 6.3.2 Map - Drinking Water</b>." <br>
-3. Click "<b>Export</b>" in the top right and for the Export Format select "<b>GeoJSON</b>." <br>
-</p>
+ <Stepper 
+  :steps="[
+    { heading: 'water san diego 6.3.2', content: 'Step 1 content.'},
+    { heading: 'Add data', content: 'Step 2 content' },
+    { heading: 'Add images', content: 'Step 3 content' },
+    { heading: 'Review', content: 'Step 4 content' }
+  ]"
+  :currentStep="2"
+/>
 
-<p>After downloading the file, open up another file window, and go to where your selected exercise file is. Drag the download into this exercise file. <br></p>
+1. In the search for data bar type: "**water san diego 6.3.2**." <br>
+2. On the left side under "**View Types**" select "**Maps**" and click on "**SDG Indicator 6.3.2 Map - Drinking Water**." <br>
+3. Click "**Export**" in the top right and for the Export Format select "**GeoJSON**."
 
-<h2>Adding a vector layer in QGIS</h2>
-<p>Go back to QGIS and find your file on the left side. This file should now have the GeoJSON file inside of it. Hold left click and drag the GeoJSON file and release it when under the <b>Layers</b> section just below. You can also right click the GeoJSON file and select "<b>Add Layer to Project</b>." You should now see something like this:</p> 
+After downloading the file, open up another file window, and go to where your selected exercise file is. 
+Drag the download into this exercise file.
+
+## Adding a vector layer in QGIS
+Go back to QGIS and find your file on the left side.
+This file should now have the GeoJSON file inside of it.
+Hold left click and drag the GeoJSON file and release it when under the **Layers** section just below.
+You can also right click the GeoJSON file and select "**Add Layer to Project**." You should now see something like this:
 
 <ContentFigure 
    :imgSrc="'/exercise_files/images/pic1.png'"
    :style="{'width': '275px' }"
 />
 
-<h2>Navigating QGIS</h2>
-<p>By default, you should already have "<b>Pan Map</b>" selected. This is the hand icon towards the top of the screen. In this mode you can hold left click, and move around to see different parts of the map. Refer to the picture below: </p>
+## Navigating QGIS
+By default, you should already have "**Pan Map**" selected.
+This is the hand icon towards the top of the screen.
+In this mode you can hold left click, and move around to see different parts of the map.
+Refer to the picture below:
 
 <ContentFigure 
    :imgSrc="'/exercise_files/images/pic4.png'"
@@ -43,13 +66,25 @@ In this exercise, we'll be covering a few basic tasks in QGIS using vector data.
    :style="{'width': '300px' }"
 />
 
-<p>In this picture, there is also a zoom in (magnifying glass with a plus) and zoom out button (magnifying glass with a minus). You can click one of these and then left click to either zoom in or zoom out. You can also zoom in and out by either moving your mouse scroll, or using CTRL + and CTRL - if on windows. Don't forget to click back on "<b>Pan Map</b>" in order to move the map around again. </p>
+In this picture, there is also a zoom in (magnifying glass with a plus) and zoom out button (magnifying glass with a minus).
+You can click one of these and then left click to either zoom in or zoom out.
+You can also zoom in and out by either moving your mouse scroll, or using CTRL + and CTRL - if on windows.
+Don't forget to click back on "**Pan Map**" in order to move the map around again.
 
-<h2>Plugins and saving</h2>
-<p> Next, in the bar towards the top of the screen, click "<b>Plugins</b>" and "<b>Manage and Install Plugins...</b>." In the search bar, type and install: "<b>QuickMapServices</b>." The author is NextGIS. Make sure it pops up on the left side under "<b>Installed</b>" to see if it is downloaded. You might need to restart QGIS to be able to use the plugin. Before restarting, make sure that you save the exercise. Click "<b>Project</b>" in the top left and "<b>save</b>." Select a location and choose a file name. The file should save as "<b>.qgz</b>." </p>
+## Plugins and saving
+Next, in the bar towards the top of the screen, click "**Plugins**" and "**Manage and Install Plugins...**"
+In the search bar, type and install: "**QuickMapServices**."
+The author is [NextGIS](https://nextgis.com/).
+Make sure it pops up on the left side under "**Installed**" to see if it is downloaded.
+You might need to restart QGIS to be able to use the plugin.
+Before restarting, make sure that you save the exercise.
+Click "**Project**" in the top left and "**save**."
+Select a location and choose a file name.
+The file should save as "**.qgz**."
 
-<h2>Create a basemap layer</h2>
-<p> Towards the top right of the screen, hover your mouse over a few of the icons and find "<b>QuickMapServices</b>." It should look like this: </p>
+## Create a basemap layer
+Towards the top right of the screen, hover your mouse over a few of the icons and find "**QuickMapServices**."
+It should look like this:
 
 <ContentFigure 
    :imgSrc="'/exercise_files/images/pic2.png'"
@@ -57,7 +92,8 @@ In this exercise, we'll be covering a few basic tasks in QGIS using vector data.
    :style="{'width': '300px' }"
 />
 
-<p>Click on it -> OSM -> OSM Standard.<br> You should now see something like this:<br>
+Click on it -> OSM -> OSM Standard.<br> 
+You should now see something like this:<br>
 
 <ContentFigure 
    :imgSrc="'/exercise_files/images/pic3.png'"
@@ -65,8 +101,13 @@ In this exercise, we'll be covering a few basic tasks in QGIS using vector data.
    :style="{'width': '275px' }"
 />
 
-In the bottom right corner, you should see something like "<b>EPSG: 4326</b>." We can change the map projection by clicking this and select: "<b>EPSG: 3857</b>." This is what most maps use. Click "<b>Apply</b>" and "<b>Okay</b>."
-</p>
+In the bottom right corner, you should see something like "**EPSG: 4326**."
+We can change the map projection by clicking this and select: "**EPSG: 3857**." This is what most maps use.
+Click "**Apply**" and "**Okay**."
 
-<h2>Formatting Data</h2>
-<p>Double click your layer, it should look something like "<b>SDG Indicator...</b>" under "<b>Layers</b>" on the left side. A new window should pop up. On the left side, click "<b>Symbology</b>." In here you can change the color of your data, the opacity, as well as choose different icons. If you are happy with your changes, click "<b>Apply</b>" and then "<b>Okay</b>." Otherwise, just click cancel.</p>
+## Formatting Data
+Double click your layer, it should look something like "**SDG Indicator...**" under "**Layers**" on the left side.
+A new window should pop up.
+On the left side, click "**Symbology**."
+In here you can change the color of your data, the opacity, as well as choose different icons.
+If you are happy with your changes, click "**Apply**" and then "**Okay**." Otherwise, just click cancel.
