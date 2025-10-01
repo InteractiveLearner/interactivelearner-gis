@@ -19,16 +19,16 @@ Web GIS can help with that, but depending on what you're trying to achieve, impl
 
 Web GIS combines the power of the browser and GIS tools for capturing, storing, and analyzing spatial data, enabling users to access spatial data from anywhere, on any device.
 
-Below are **_some_** key considerations for a successful Web GIS based mapping application:
+Below are **_some_** key considerations that we'll explore in this chapter for a successful Web GIS mapping application:
 
 - Choose a web mapping library that suits your needs
-- Decide on a frontend web development framework and build tool
-- Assuming your data has already been preprocessed and ready for publishing, consider where you will host your data
+- Decide on writing an app with plain JavaScript or a frontend web development framework and build tool
+- Assuming your data has already been preprocessed and ready for publishing on the web, consider where you will host your data
   - Client side or server side?
 
 ## Web mapping libraries
 
-To include maps in a web application, the easiest and most common way is through mapping libraries. Mapping libraries provide out-of-the-box support for visualizations and interactions in maps. Common choices are as follows:
+To include maps in a web application, the easiest and most common way is through mapping libraries. Mapping libraries provide out-of-the-box support for visualizations and interactions in maps. Here are some popular web mapping libraries:
 
 - Open-source libraries:
   - [Leaflet](https://leafletjs.com/)
@@ -48,11 +48,12 @@ Choosing the best web mapping libraries that suit end user and developer needs i
 
 ::: tip
 You should check out all the different lessons on this site for examples of a few of these libraries.
-The [projections](/lessons/projections) page uses D3, the [scale](/lessons/scale) page uses Leaflet and the [types of maps](/lessons/map-types) page uses the ArcGIS Maps SDK for JavaScript. Leaflet and the JavaScript Maps SDK were used on this page too.
+The [projections](/lessons/projections) page uses D3, the [scale](/lessons/scale) page uses Leaflet and the [types of maps](/lessons/map-types) page uses the ArcGIS Maps SDK for JavaScript at the bottom. 
+Leaflet and the ArcGIS Maps SDK for JavaScript are on this page too.
 You can **_usually_** tell which technology was used to author a web map by looking at the attribution at the bottom of the map.
 :::
 
-## Frontend frameworks
+## Frontend web development frameworks
 
 Your choice of a [frontend](https://en.wikipedia.org/wiki/Frontend_and_backend) framework can depend on the scale of the website you plan to host your web mapping application on.
 Some web maps can be quite simple like placing a point on a map to help customers find a business.
@@ -115,14 +116,17 @@ L.marker([48.46, -123.36])
 
 :::
 
-What you saw above is great, but it's important to remember that there are organizations out there that intentionally build applications meant to scale with demands.
+What you saw above is great, but it's important to remember that there are organizations out there that intentionally build applications meant to scale with demands and complexity.
 If you want to scale quickly along with a team, writing a scalable web application requires structure, organization, and maintainability.
 
 Fortunately, you don't need to decide on structure and tooling yourself.
 Frameworks make app development easier by providing more structure to the way we write applications.
-They do come with a learning curve, but in return you get a more maintainable codebase, reusable components, nice conveniences, and helpful tooling. These benefits can really pay off as your project scales.
+They do come with a learning curve, but in return you get a more maintainable codebase, reusable components, nice conveniences, and helpful tooling. 
+These benefits can really pay off as your project grows along with you and your team.
 
-There are a lot of front-end frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). There are some nuances, but generally, frontend frameworks encourage component-based/reusable code block architecture via a [top-down, one-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html). In turn, frontend frameworks promote [declarative](https://en.wikipedia.org/wiki/Declarative_programming) code writing (e.g., more HTML and less JavaScript).
+There are a lot of front-end frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). 
+There are some nuances, but generally, frontend frameworks encourage component-based/reusable code block architecture via a [top-down, one-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html) which involves passing information from parent components to their children. 
+In turn, frontend frameworks promote [declarative](https://en.wikipedia.org/wiki/Declarative_programming) code writing (e.g., more HTML and less JavaScript).
 
 ::: tip
 Be sure to read up on [Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js), [npm](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management), [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json), [dependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies), [devDependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies), and [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) before you start working with frameworks.
@@ -193,7 +197,7 @@ The ArcGIS Maps SDK for JavaScript's switch from an imperative API for UI to a c
 
 ### Framework-based mapping libraries
 
-There are a growing number of JavaScript mapping libraries as reusable/building block React, Angular, web, or Vue components. Some notable component libraries are:
+There are a growing number of JavaScript mapping libraries as reusable code blocks of React, Angular, web, or Vue components. Some notable component libraries are:
 
 - Open-source:
   - [Nivo React](https://github.com/plouc/nivo) (built on top of D3)
@@ -236,37 +240,15 @@ This is what could be done to get Leaflet to work in a SSG-based application.
 
 ```vue [SSR] ts:line-numbers
 <script setup>
-  import { onMounted } from 'vue';
-  let Leaflet;
+import { onMounted } from 'vue';
+let Leaflet;
 
-  onMounted(async () => {
-    // Import dynamically to avoid window not defined error in SSR
-    Leaflet = await import('leaflet'); 
+onMounted(async () => {
+  // Import dynamically to avoid window not defined error in SSR
+  Leaflet = await import('leaflet'); 
 
-    // Check if window is defined
-    if (typeof window !== 'undefined') {
-      const map = Leaflet.map('map').setView([48.43, -123.36], 14);
-
-      Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      Leaflet.marker([48.43, -123.36])
-        .addTo(map)
-        .bindPopup('Find our cafe here!')
-        .openPopup();
-    }
-  });
-</script>
-```
-
-```vue [CSR] ts:line-numbers
-<script setup>
-  import { onMounted } from 'vue';
-  // Direct import in CSR
-  import * as Leaflet from 'leaflet';
-
-  onMounted(() => {
+  // Check if window is defined
+  if (typeof window !== 'undefined') {
     const map = Leaflet.map('map').setView([48.43, -123.36], 14);
 
     Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -277,7 +259,29 @@ This is what could be done to get Leaflet to work in a SSG-based application.
       .addTo(map)
       .bindPopup('Find our cafe here!')
       .openPopup();
-  });
+  }
+});
+</script>
+```
+
+```vue [CSR] ts:line-numbers
+<script setup>
+import { onMounted } from 'vue';
+// Direct import in CSR
+import * as Leaflet from 'leaflet';
+
+onMounted(() => {
+  const map = Leaflet.map('map').setView([48.43, -123.36], 14);
+
+  Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  Leaflet.marker([48.43, -123.36])
+    .addTo(map)
+    .bindPopup('Find our cafe here!')
+    .openPopup();
+});
 </script>
 ```
 
@@ -294,10 +298,99 @@ If you're interested in SEO, you should read up [Vercel's research of how Google
 
 ## Client-side/server-side data
 
-<!-- Different caching strategies?
-JS Maps SDK client side example
-JS Maps SDK AGO webmap example
-JS Maps SDK GeoJSON request example  -->
+When a user visits a web mapping application, the application can load spatial data on the client-side directly in the user's browser. For example, with Leaflet, you can load a [CSV or GeoJSON](/lessons/spatial-data#vector-data) file directly into the map. This is ideal for small datasets or offline use in [disconnected/air gapped environments](https://en.wikipedia.org/wiki/Air_gap_(networking)). CSR, as covered in [rendering strategies](/lessons/web-gis#rendering-strategies) above, often uses client-side data.
+
+::: code-group
+
+```javascript [Load GeoJSON data in Leaflet] ts:line-numbers {1}
+import * as L from 'leaflet';
+
+const map = L.map("map").setView([48.43, -123.36], 14);
+
+fetch('points.geojson')
+  .then(response => response.json())
+  .then(data => {
+    L.geoJSON(data).addTo(map);
+  });
+```
+
+:::
+
+Server-side data is more scalable for enterprise/large company needs because it is hosted externally and accessible via APIs or services on a remote server or cloud service. 
+
+You can load web maps and other data that you make with [Map Viewer](https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm) directly from [ArcGIS Online](https://www.arcgis.com/) or connect to your own hosted GIS services using the ArcGIS Maps SDK for JavaScript. Map Viewer is a feature of ArcGIS Online and [ArcGIS Enterprise](https://enterprise.arcgis.com/en/) that aims to simplify the creation and sharing of web maps.
+
+::: code-group
+
+```html [index.html] ts:line-numbers {1}
+<body>
+  <arcgis-map id="map">
+    <arcgis-zoom position="top-left"></arcgis-zoom>
+  </arcgis-map>
+  <script type="module" src="main.js"></script>
+</body>
+```
+
+```javascript [main.js] ts:line-numbers {1}
+import Map from "@arcgis/core/Map.js";
+import Layer from "@arcgis/core/layers/Layer.js";
+
+const viewElement = document.getElementById("map");
+
+viewElement.addEventListener("arcgisViewReadyChange", async (event) => {
+  const layer = await Layer.fromPortalItem({
+    portalItem: {
+      id: "11e173a4e2f040ae80d39e44ee29467a",
+    },
+  });
+  viewElement.map = new Map({
+    basemap: "topo-vector",
+    layers: [layer],
+  });
+  viewElement.center = [-73.97, 40.77];
+  viewElement.zoom = 10;
+});
+```
+
+:::
+
+Self-hosting requires setting up a GIS server (such as ArcGIS Enterprise or [GeoServer](https://geoserver.org/)), caching, maintenance, publishing services, understanding [relational databases](/lessons/relational-db), and managing authentication and access, whereas loading from a paid service like ArcGIS Online is simple.
+
+Loading data from a server isn't limited to the ArcGIS Maps SDK for JavaScript. You can do something similar with [OpenLayers and GeoServer](https://openlayers.org/en/latest/apidoc/module-ol_source_Vector-VectorSource.html).
+
+::: code-group
+
+```javascript [Load data from a remote source with OpenLayers] ts:line-numbers {1}
+import Vector from 'ol/source/Vector.js';
+import GeoJSON from 'ol/format/GeoJSON.js';
+import { bbox } from 'ol/loadingstrategy.js';
+
+// Load vector data from a remote GeoServer using WFS and GeoJSON
+const vectorSource = new Vector({
+  format: new GeoJSON(),
+  loader: function(extent, resolution, projection, success, failure) {
+    const proj = projection.getCode();
+    const url = 'https://ahocevar.com/geoserver/wfs?service=WFS&' +
+      'version=1.1.0&request=GetFeature&typename=osm:water_areas&' +
+      'outputFormat=application/json&srsname=' + proj + '&' +
+      'bbox=' + extent.join(',') + ',' + proj;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const features = vectorSource.getFormat().readFeatures(data);
+        vectorSource.addFeatures(features);
+        success(features);
+      })
+      .catch(() => {
+        vectorSource.removeLoadedExtent(extent);
+        failure();
+      });
+  },
+  strategy: bbox,
+});
+```
+
+:::
 
 ## Test your knowledge
 
