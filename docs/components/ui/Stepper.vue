@@ -25,7 +25,7 @@ defineProps({
       :selected="currentStep === index + 1"
     >
       <calcite-notice width="full" open>
-        <div slot="title">{{ step.content }}</div>
+        <div slot="title" v-html="step.content"></div>
       </calcite-notice>
     </calcite-stepper-item>
   </calcite-stepper>

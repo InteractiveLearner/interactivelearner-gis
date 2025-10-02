@@ -27,7 +27,9 @@ After downloading, follow the download instructions to complete the installation
 
 ## How to collect data for your map
 Now that we have QGIS installed, how do we download data to add to our map?
-Knowing where to find good geospatial data might take some time but is important.Listed below are different websites that you can use to download data. 
+Knowing where to find good geospatial data might take some time but is important.
+We don't want to have [misleading maps](/lessons/misleading).
+Listed below are different websites that you can use to download data. 
 This data can then be used in QGIS when creating your maps.
 
 [OpenStreetMap](https://www.openstreetmap.org/") <br>

@@ -16,32 +16,35 @@ In this exercise, we'll be covering a few basic tasks in QGIS using vector data.
 ## Creating a new project
 Open QGIS and left click twice on "**New Empty Project**" under "**Project Templates**."
 You can also click on "**Project**" in the top left and select "**New**."
-Create a file somewhere on your computer to store this exercise.
-This file will store the data downloads as well as your overall QGIS project.
+Create a folder somewhere on your computer to store this exercise.
+This folder will be referred to as "**your exercise folder**."
+This folder will store the data downloads as well as your overall QGIS project.
+
+## What data are we using?
+Lets say you are working for the City of San Diego's public health department.
+You have been asked to identify areas where drinking water contaminants are higher compared to the rest of the city.
+We can map this data in QGIS and then even style the data in many different ways.
+We are going to style this data by changing the color of each area to be lighter or darker depending on the percentile of contaminants found in drinking water.
+
+What type of map this is?
+This is a **choropleth map** because we are using shaded areas to represent our (drinking water contaminants by percentile) data.
+You can also refer back to [Types of maps](/lessons/map-types#types-of-thematic-maps).
 
 ## Downloading vector data
 Lets start by creating a map using vector data.
-This data is going to come from the website: [City of San Diego Open Data Portal](https://www.inaturalist.org/).
+This data is going to come from the website: [City of San Diego Open Data Portal](https://opendata.sandag.org/).
 You can find the exact download file inside of the "**exercise_files**" folder.
 You can also click [this link](https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey)
  or follow the instructions below to find the download through the website.
 
- <Stepper 
-  :steps="[
-    { heading: 'water san diego 6.3.2', content: 'Step 1 content.'},
-    { heading: 'Add data', content: 'Step 2 content' },
-    { heading: 'Add images', content: 'Step 3 content' },
-    { heading: 'Review', content: 'Step 4 content' }
-  ]"
-  :currentStep="2"
-/>
+In the search for data bar type: "**water san diego 6.3.2**."
+On the left side under "**View Types**" select "**Maps**."
+Click on "**SDG Indicator 6.3.2 Map - Drinking Water**."
+Click "**Export**" in the top right and for the Export Format select "**GeoJSON**."
+Recall when we learned about the common vector data formats in the lesson: [Spatial data and its types](/lessons/spatial-data#types-of-spatial-data).
 
-1. In the search for data bar type: "**water san diego 6.3.2**." <br>
-2. On the left side under "**View Types**" select "**Maps**" and click on "**SDG Indicator 6.3.2 Map - Drinking Water**." <br>
-3. Click "**Export**" in the top right and for the Export Format select "**GeoJSON**."
-
-After downloading the file, open up another file window, and go to where your selected exercise file is. 
-Drag the download into this exercise file.
+After downloading the file, open up another file window, and go to where your exercise folder is. 
+Drag the download into your exercise folder.
 
 ## Adding a vector layer in QGIS
 Go back to QGIS and find your file on the left side.
@@ -111,3 +114,49 @@ A new window should pop up.
 On the left side, click "**Symbology**."
 In here you can change the color of your data, the opacity, as well as choose different icons.
 If you are happy with your changes, click "**Apply**" and then "**Okay**." Otherwise, just click cancel.
+
+<Quiz :quiz-data="{
+  questions: [
+    {
+      question: 'What type of map are we using in our exercise that shows drinking water contaminants by percentile?',
+      options: [
+        {
+          answer: 'Choropleth Map',
+          key: 1
+        },
+        {
+          answer: 'Chorochromatic Map',
+          key: 2
+        },
+        {
+          answer: 'none of the above',
+          key: 3
+        }
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'What kind of data are we downloading?',
+      options: [
+        {
+          answer: 'Raster',
+          key: 1
+        },
+        {
+          answer: 'Vector',
+          key: 2
+        }
+      ],
+      correctAnswer: 2
+    },
+  ]
+}" />
+
+**Didn't get the correct answer?**
+<Stepper 
+  :steps="[
+    { heading: 'Question 1', content: 'refer back to Types of spatial data in <a href=\'https://interactivelearner-gis-git-omar-webgis-interactive-learner.vercel.app/lessons/spatial-data\'>Spatial data and its types</a>' },
+    { heading: 'Question 2', content: 'refer back to <a href=\'https://interactivelearner-gis-git-omar-webgis-interactive-learner.vercel.app/lessons/map-types\'>Types of maps</a>' }
+  ]"
+  :currentStep="1"
+/>
