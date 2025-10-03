@@ -88,7 +88,7 @@ Next, click on the "**Mode**" drop-down and select "**Natural Breaks**."
 We should now be able to see different value ranges as well as their specified color.
 This will be a helpful way to display and separate our data.
 Instead of using every single data point, the colors represent certain ranges of data.
-For example, the lighest colored regions include values from 9 to 20. The darkest colored regions include values from 61 to 95.
+For example, the lightest colored regions include values from 9 to 20. The darkest colored regions include values from 61 to 95.
 Instead of different colors representing our data, we can associate the lighter blue areas with a less amount of contaminants found in drinking water compared to the darker areas.
 Refer back to the [Classifying data](/lessons/classification) lesson.
 
