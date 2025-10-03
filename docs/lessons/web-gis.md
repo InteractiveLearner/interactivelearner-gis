@@ -287,7 +287,7 @@ onMounted(() => {
 
 :::
 
-You won't allows need to write this kind of workaround.
+You won't need to write this kind of workaround.
 See VitePress [`<ClientOnly>`](https://vitepress.dev/guide/ssr-compat#clientonly) or Astro [client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) for simpler workarounds.
 
 ::: tip
