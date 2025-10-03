@@ -4,16 +4,15 @@ description: In this section we will be learning basic tasks in QGIS using vecto
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
-date: 2025-08-20
+date: 2025-10-02
 ---
-
-::: warning
-In this exercise, we'll be covering a few basic tasks in QGIS using vector data.
-:::
 
 # QGIS Basics
 
+In this exercise you will create a new QGIS project, add a San Diego drinking water contaminants GeoJSON layer, navigate the map (pan and zoom), install and use the [QuickMapServices plugin](https://plugins.qgis.org/plugins/quick_map_services/) to add a basemap, set the project CRS to EPSG:3857, adjust layer symbology, and review concepts (choropleth and vector data) with a short quiz.
+
 ## Creating a new project
+
 Open QGIS and left click twice on "**New Empty Project**" under "**Project Templates**."
 You can also click on "**Project**" in the top left and select "**New**."
 Create a folder somewhere on your computer to store this exercise.
@@ -21,22 +20,22 @@ This folder will be referred to as "**your exercise folder**."
 This folder will store the data downloads as well as your overall QGIS project.
 
 ## What data are we using?
+
 Lets say you are working for the City of San Diego's public health department.
 You have been asked to identify areas where drinking water contaminants are higher compared to the rest of the city.
-We can map this data in QGIS and then even style the data in many different ways.
+We can map this data in QGIS and then even style the data in different ways.
 We are going to style this data by changing the color of each area to be lighter or darker depending on the percentile of contaminants found in drinking water.
 
 What type of map this is?
 This is a **choropleth map** because we are using shaded areas to represent our (drinking water contaminants by percentile) data.
-You can also refer back to [Types of maps](/lessons/map-types#types-of-thematic-maps).
+You can also refer back to [types of maps](/lessons/map-types#types-of-thematic-maps).
 
 ## Downloading vector data
-Lets start by creating a map using vector data.
-This data is going to come from the website: [City of San Diego Open Data Portal](https://opendata.sandag.org/).
-You can find the exact download file inside of the "**exercise_files**" folder.
-You can also click [this link](https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey)
- or follow the instructions below to find the download through the website.
 
+Lets start by creating a map using vector data from the [City of San Diego Open Data Portal](https://opendata.sandag.org/).
+You can either find the exact download file inside of the "**exercise_files**" folder of this website or you can click [this link](https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey).
+
+Another option is to follow the instructions below to find the download through the website.
 In the search for data bar type: "**water san diego 6.3.2**."
 On the left side under "**View Types**" select "**Maps**."
 Click on "**SDG Indicator 6.3.2 Map - Drinking Water**."
@@ -47,6 +46,7 @@ After downloading the file, open up another file window, and go to where your ex
 Drag the download into your exercise folder.
 
 ## Adding a vector layer in QGIS
+
 Go back to QGIS and find your file on the left side.
 This file should now have the GeoJSON file inside of it.
 Hold left click and drag the GeoJSON file and release it when under the **Layers** section just below.
@@ -58,6 +58,7 @@ You can also right click the GeoJSON file and select "**Add Layer to Project**."
 />
 
 ## Navigating QGIS
+
 By default, you should already have "**Pan Map**" selected.
 This is the hand icon towards the top of the screen.
 In this mode you can hold left click, and move around to see different parts of the map.
@@ -75,6 +76,7 @@ You can also zoom in and out by either moving your mouse scroll, or using CTRL +
 Don't forget to click back on "**Pan Map**" in order to move the map around again.
 
 ## Plugins and saving
+
 Next, in the bar towards the top of the screen, click "**Plugins**" and "**Manage and Install Plugins...**"
 In the search bar, type and install: "**QuickMapServices**."
 The author is [NextGIS](https://nextgis.com/).
@@ -86,6 +88,7 @@ Select a location and choose a file name.
 The file should save as "**.qgz**."
 
 ## Create a basemap layer
+
 Towards the top right of the screen, hover your mouse over a few of the icons and find "**QuickMapServices**."
 It should look like this:
 
@@ -109,6 +112,7 @@ We can change the map projection by clicking this and select: "**EPSG: 3857**." 
 Click "**Apply**" and "**Okay**."
 
 ## Formatting Data
+
 Double click your layer, it should look something like "**SDG Indicator...**" under "**Layers**" on the left side.
 A new window should pop up.
 On the left side, click "**Symbology**."
@@ -129,7 +133,7 @@ If you are happy with your changes, click "**Apply**" and then "**Okay**." Other
           key: 2
         },
         {
-          answer: 'none of the above',
+          answer: 'None of the above',
           key: 3
         }
       ],

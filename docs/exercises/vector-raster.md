@@ -4,7 +4,7 @@ description: In this section we will be using vector data in QGIS. We will work 
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
-date: 2025-09-25
+date: 2025-10-02
 ---
 
 ::: warning
