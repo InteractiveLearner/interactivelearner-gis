@@ -123,7 +123,7 @@ This will make it so we can see more of the OSM layer as seen below:
    :style="{'width': '275px' }"
 />
 
-Next, right click the Refractored layer and go to "**Export**" and then "**Save as Layer Definition File...**"
+Next, right click the Refactored layer and go to "**Export**" and then "**Save as Layer Definition File...**"
 Click the 3 dots to the right of "**File name**" and select the save path.
 Next name the file and then click save.
 This should save as a .qlr file.
