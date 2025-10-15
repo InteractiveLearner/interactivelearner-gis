@@ -47,7 +47,11 @@ export default defineConfig({
       },
       {
         text: "Exercises",
-        items: [{ text: "Next steps", link: "/exercises/next-steps" }],
+        items: [
+          { text: "Learn QGIS", link: "/exercises/learn-qgis" },
+          { text: "QGIS Basics", link: "/exercises/qgis-basics" },
+          { text: "Vector to Raster", link: "/exercises/vector-raster" },
+        ],
       },
     ],
     footer: {
