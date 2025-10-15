@@ -4,7 +4,7 @@ description: In this section we will be learning basic tasks in QGIS using vecto
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
-date: 2025-10-02
+date: 2025-10-14
 ---
 
 # QGIS Basics
@@ -33,7 +33,7 @@ You can also refer back to [types of maps](/lessons/map-types#types-of-thematic-
 ## Downloading vector data
 
 Lets start by creating a map using vector data from the [City of San Diego Open Data Portal](https://opendata.sandag.org/).
-You can either find the exact download file inside of the "**exercise_files**" folder of this website or you can click [this link](https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey).
+You can click [this link](https://opendata.sandag.org/Sustainable-Development-Goals/SDG-Indicator-6-3-2-Map-Drinking-Water/ig5f-77ey) or find the download on this project's GitHub under the "**exercise-download**" file.
 
 Another option is to follow the instructions below to find the download through the website.
 In the search for data bar type: "**water san diego 6.3.2**."
@@ -57,6 +57,8 @@ You can also right click the GeoJSON file and select "**Add Layer to Project**."
    :style="{'width': '275px' }"
 />
 
+To read more about layers, click [this link](https://docs.qgis.org/3.40/en/docs/user_manual/managing_data_source/create_layers.html#).
+
 ## Navigating QGIS
 
 By default, you should already have "**Pan Map**" selected.
@@ -75,20 +77,34 @@ You can click one of these and then left click to either zoom in or zoom out.
 You can also zoom in and out by either moving your mouse scroll, or using CTRL + and CTRL - if on windows.
 Don't forget to click back on "**Pan Map**" in order to move the map around again.
 
-## Plugins and saving
+## Basemap layers, Plugins, and saving
 
-Next, in the bar towards the top of the screen, click "**Plugins**" and "**Manage and Install Plugins...**"
+We are going to create a basemap layer.
+This layer will go directly under our layer to give it geographic context.
+It helps us see where our data or areas are located in relation to real-world features.
+There are two different ways to add the basemap layer that we will cover.
+
+1. **Using XYZ Tiles** <br>
+Scroll down on the left side of the QGIS window where the documents are.
+Look for "**XYZ Tiles**" and double click "**OpenStreetMap**."
+
+2. **QuickMapServices plugin** <br>
+There are some very useful plugins in QGIS.
+If you would like to get some practice with plugins, let’s try adding one now: <br>
+In the bar towards the top of the screen, click "**Plugins**" and "**Manage and Install Plugins...**"
 In the search bar, type and install: "**QuickMapServices**."
 The author is [NextGIS](https://nextgis.com/).
 Make sure it pops up on the left side under "**Installed**" to see if it is downloaded.
-You might need to restart QGIS to be able to use the plugin.
-Before restarting, make sure that you save the exercise.
+
+If you are using the plugin, you may need to restart QGIS.
+**Before restarting**, let's make sure that you save the exercise.
 Click "**Project**" in the top left and "**save**."
 Select a location and choose a file name.
 The file should save as "**.qgz**."
 
-## Create a basemap layer
+## Finishing the basemap layer
 
+If you installed the plugin, continue here.
 Towards the top right of the screen, hover your mouse over a few of the icons and find "**QuickMapServices**."
 It should look like this:
 
@@ -107,9 +123,15 @@ You should now see something like this:<br>
    :style="{'width': '275px' }"
 />
 
+Lets briefly cover **coordinate reference systems (CRS)**: <br>
+The **CRS** defines how our data location corresponds to real places on Earth.
+We want to make sure all layers have the same **CRS**.
+If we don't, layers can appear shifted or misaligned.
 In the bottom right corner, you should see something like "**EPSG: 4326**."
-We can change the map projection by clicking this and select: "**EPSG: 3857**." This is what most maps use.
+Change the map projection by clicking this and select: "**EPSG: 3857**." 
+**EPSG: 3857** is what most maps use.
 Click "**Apply**" and "**Okay**."
+For more information on **CRS**, click [here](https://gis.stackexchange.com/questions/383434/changing-shapefiles-from-geographic-wgs84-to-projected-epsg2263-coordinate/383437#383437).
 
 ## Formatting Data
 
@@ -157,10 +179,9 @@ If you are happy with your changes, click "**Apply**" and then "**Okay**." Other
 }" />
 
 **Didn't get the correct answer?**
-<Stepper 
-  :steps="[
-    { heading: 'Question 1', content: 'refer back to Types of spatial data in <a href=\'https://interactivelearner-gis-git-omar-webgis-interactive-learner.vercel.app/lessons/spatial-data\'>Spatial data and its types</a>' },
-    { heading: 'Question 2', content: 'refer back to <a href=\'https://interactivelearner-gis-git-omar-webgis-interactive-learner.vercel.app/lessons/map-types\'>Types of maps</a>' }
-  ]"
-  :currentStep="1"
-/>
+
+**Question 1:** <br>
+Refer back to [Types of spatial data](/lessons/spatial-data#types-of-spatial-data).
+
+**Question 2:** <br>
+Refer back to [Types of maps](/lessons/map-types#types-of-thematic-maps).

@@ -4,12 +4,8 @@ description: In this section we will be using vector data in QGIS. We will work 
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
-date: 2025-10-02
+date: 2025-10-14
 ---
-
-::: warning
-This exercise is a work in progress.
-:::
 
 # Vector and Raster data
 
@@ -194,8 +190,13 @@ You are now able to delete the temporary "**Rasterized**" layer, as you now have
   ]
 }" />
 
-**Didn't get the correct answer?** <br>
-Read the exercise again.
+**Didn't get the correct answer?**
+
+**Question 1:** <br>
+Refer back to the **Categorized data** or **Graduated data** section of this exercise.
+
+**Question 2:** <br>
+Refer back to the **Rasterize** section of this exercise.
 
 <!--
 <p>
