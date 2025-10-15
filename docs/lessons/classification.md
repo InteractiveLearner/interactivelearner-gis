@@ -23,6 +23,8 @@ This is useful for showing population density, income levels, or other socio-eco
 You can apply the logic from choropleth maps to **proportional symbol maps**.
 Proportional symbol maps use symbols of varying sizes to represent data values, with larger symbols indicating higher values and smaller symbols indicating lower values. 
 
+See the [types of maps lesson](/lessons/map-types#types-of-thematic-maps) for more information on these map types.
+
 ## Methods for classifying data
 
 Thematic maps, such as choropleth maps, shade areas in proportion to how data are classified.
