@@ -16,6 +16,10 @@ export default defineConfig({
   },
   cleanUrls: true,
   themeConfig: {
+    editLink: {
+      pattern: "https://github.com/InteractiveLearner/interactivelearner-gis/edit/main/docs/:path",
+      text: "Edit this page on GitHub",
+    },
     outline: [2, 4],
     logo: { src: "/logo192.png", width: 28, height: 28 },
     socialLinks: [
@@ -41,8 +45,8 @@ export default defineConfig({
           { text: "Misleading maps", link: "/lessons/misleading" },
           { text: "Remote sensing", link: "/lessons/remote-sensing" },
           { text: "Relational databases", link: "/lessons/relational-db" },
+          { text: "Web GIS", link: "/lessons/web-GIS" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
-          { text: "Next Steps", link: "/lessons/NextSteps" },
         ],
       },
       {
@@ -66,6 +70,9 @@ export default defineConfig({
       useTitleFromFrontmatter: true,
       // ============ [ STYLING MENU TITLE ] ============
       capitalizeFirst: true,
+      hyphenToSpace: true,
+      includeFolderIndexFile: true,
+      collapsed: true,
       // ============ [ SORTING ] ============
       sortMenusByFrontmatterOrder: true,
       frontmatterOrderDefaultValue: 9,
@@ -172,7 +179,6 @@ export default defineConfig({
         date: frontmatter.date,
       });
     }
-
     writeFileSync(path.join(config.outDir, "feed.rss"), feed.rss2());
   },
 });

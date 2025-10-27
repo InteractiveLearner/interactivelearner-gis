@@ -48,6 +48,22 @@ The projection techniques, which affect the **longitude** (vertical lines) and *
    :anchorText="'Credit: PennState licensed under CC BY-ND 2.0'"
 />
 
+## Coordinate Reference Systems
+
+Working with any spatial data requires knowledge of [Coordinate Reference Systems](https://en.wikipedia.org/wiki/Spatial_reference_system) (CRS) and projections.
+A CRS defines how coordinate values in your GIS relate to real places on the earth.
+
+A CRS may be geographic (ellipsoid latitude/longitude) or projected (2D plane). Every geodetic (latitude/longitude) CRS is based on a datum, a mathematical model of Earth's shape, such as [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System) or [NAD 83](https://en.wikipedia.org/wiki/North_American_Datum).
+
+If two layers, like points, lines, polygons, and rasters use different CRS, they may not line up correctly on the map, negatively affecting any spatial analysis you perform such as measuring distances, creating buffers, or performing spatial joins.
+
+Any GIS workflow should start with double-checking your data's CRS and projection information.
+Different parts of the world may have their own preferred CRS for local accuracy. 
+It's all part of the challenge of turning the earth into a flat map.
+
+EPSG codes are used to identify CRS (both geographic and projected), such as EPSG:4326 for WGS 84 geographic and EPSG:3857 for Web/Pseudo Mercator, which is used by Google Maps.
+You can search for them at [epsg.io](https://epsg.io/).
+
 ## Projection explorer
 
 Try out the projection explorer below now that you've learned about projection types and techniques.

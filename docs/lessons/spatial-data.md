@@ -64,7 +64,7 @@ While [vector basemaps](https://wiki.openstreetmap.org/wiki/Vector_tiles) offer 
 
 Check out the examples below:
 
-1. This map shows U.S. states as colored polygons on top of a street/navigation basemap. You can cycle through different themes using a dropdown menu. The legend classifies what the colors represent for each theme.
+1. This map shows a U.S. states layer as colored polygons on top of a street/navigation basemap layer. You can cycle through different themes using a dropdown menu. The legend classifies what the colors represent for each theme.
 
 2. This map's raster basemap shows terrain/topography, and the map has an image [SVG](https://en.wikipedia.org/wiki/SVG) graphic on top. 
 

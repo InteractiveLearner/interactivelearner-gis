@@ -5,7 +5,7 @@ authors:
   - name: Omar Kawach
     url: https://www.linkedin.com/in/omarkawach/
 date: 2025-06-15
-order: 9
+order: 10
 ---
 
 ::: warning
@@ -73,8 +73,8 @@ Spatial clusters
 - low low (blue) indicates a low concentration when surrounding areas have more concentration
 
 Spatial outliers
-- high low (light red) indicates a high concentration when surrounding areas have low conc
-- low high (light blue) indicates a low concentration when surrounding areas have high conc
+- high low (light red) indicates a high concentration when surrounding areas have low concentration
+- low high (light blue) indicates a low concentration when surrounding areas have high concentration
 
 ### Spatiotemporal dependence (space and time)
 
