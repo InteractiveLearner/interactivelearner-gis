@@ -46,7 +46,7 @@ For these kinds of applications, the web mapping library has already packaged an
 
 ::: code-group
 
-```html [index.html] ts:line-numbers {1}
+```[index.html] html:line-numbers
 <html>
   <head>
     <!-- Page title shown in browser tab -->
@@ -70,9 +70,9 @@ For these kinds of applications, the web mapping library has already packaged an
 </html>
 ```
 
-```javascript [script.js] ts:line-numbers {1}
+```[script.js] js:line-numbers
 // Initialize the map and center on Victoria, BC
-var map = L.map("map").setView([48.46, -123.36], 14);
+const map = L.map("map").setView([48.46, -123.36], 14);
 
 // Add OpenStreetMap tiles
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -86,7 +86,7 @@ L.marker([48.46, -123.36])
   .openPopup();
 ```
 
-```css [style.css] ts:line-numbers {1}
+```[style.css] css:line-numbers
 #map {
   height: 100vh;
   width: 100%;

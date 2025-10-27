@@ -72,6 +72,7 @@ export default defineConfig({
       capitalizeFirst: true,
       hyphenToSpace: true,
       includeFolderIndexFile: true,
+      collapsed: true,
       // ============ [ SORTING ] ============
       sortMenusByFrontmatterOrder: true,
       frontmatterOrderDefaultValue: 9,
