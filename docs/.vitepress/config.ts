@@ -45,7 +45,7 @@ export default defineConfig({
           { text: "Misleading maps", link: "/lessons/misleading" },
           { text: "Remote sensing", link: "/lessons/remote-sensing" },
           { text: "Relational databases", link: "/lessons/relational-db" },
-          { text: "Web GIS", link: "/lessons/web-gis" },
+          { text: "Web GIS", link: "/lessons/web-GIS" },
           { text: "Spatial autocorrelation", link: "/lessons/spatial-stats" },
         ],
       },
@@ -66,6 +66,8 @@ export default defineConfig({
       useTitleFromFrontmatter: true,
       // ============ [ STYLING MENU TITLE ] ============
       capitalizeFirst: true,
+      hyphenToSpace: true,
+      includeFolderIndexFile: true,
       // ============ [ SORTING ] ============
       sortMenusByFrontmatterOrder: true,
       frontmatterOrderDefaultValue: 9,
