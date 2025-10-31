@@ -28,7 +28,7 @@ Be sure to read up on [Node.js](https://developer.mozilla.org/en-US/docs/Glossar
 ### Component-based mapping libraries
 
 There are a growing number of JavaScript mapping libraries as reusable React, Angular, web, or Vue components.
-These component libraries are appealing because they allow developers to quickly integrate mapping functionalities as reusable code blocking into their applications without reinventing the wheel.
+These component libraries are appealing because they allow developers to quickly integrate mapping functionalities as reusable code blocks into their applications without reinventing the wheel.
 Some notable component libraries are:
 
 - Open-source:

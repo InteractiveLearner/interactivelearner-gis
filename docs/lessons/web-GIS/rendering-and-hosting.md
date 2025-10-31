@@ -124,6 +124,8 @@ const viewElement = document.getElementById("map");
 
 viewElement.addEventListener("arcgisViewReadyChange", async (event) => {
   const layer = await Layer.fromPortalItem({
+    // Item ID of a web map created in Map Viewer 
+    // and hosted on ArcGIS Online
     portalItem: {
       id: "11e173a4e2f040ae80d39e44ee29467a",
     },

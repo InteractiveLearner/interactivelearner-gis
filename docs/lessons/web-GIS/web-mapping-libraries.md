@@ -31,7 +31,7 @@ Choosing the best web mapping libraries that suit end user and developer needs i
 ::: tip
 You should check out all the different lessons on this site for examples of a few of these libraries.
 The [projections](/lessons/projections) page uses D3, the [scale](/lessons/scale) page uses Leaflet and the [types of maps](/lessons/map-types) page uses the ArcGIS Maps SDK for JavaScript at the bottom. 
-Leaflet and the ArcGIS Maps SDK for JavaScript are on this page too.
+Leaflet is used on this page, and the ArcGIS Maps SDK for JavaScript is on the next page.
 You can **_usually_** tell which technology was used to author a web map by looking at the attribution at the bottom of the map.
 :::
 

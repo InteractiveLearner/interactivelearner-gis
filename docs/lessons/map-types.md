@@ -31,18 +31,19 @@ Thematic mapping channel selections are linked to the **expressiveness types** a
 
 ## Types of thematic maps
 
-**Choropleth maps** are useful for showing variability in data. A single classification scheme is required and statistical normalization may be necessary. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use choropleth mapping to depict population density, GDP per capita, DUIs per 10,000 persons, etc.
-Proportional Symbol Maps show that the size of a single dot within a geographic region is based on the absolute magnitude of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio.
+**Choropleth** maps are useful for showing variability in data. A single classification scheme is required and statistical normalization may be necessary. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use choropleth mapping to depict population density, GDP per capita, DUIs per 10,000 persons, etc.
 
-**Graduated Symbol** Maps show that the size of a single dot within a geographic region based on the class of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use graduated symbol mapping when your desired theme is a choropleth map, but the area attribute is not necessary.
+**Proportional Symbol** maps show that the size of a single dot within a geographic region is based on the absolute magnitude of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio.
 
-**Diagram Symbol Maps** are useful for displaying a relationship between variables / attributes. This map type is quantitative and sometimes qualitative, and may be of data type nominal, ordinal, interval or ratio. You might want to use diagram symbol maps for comparing the number of post-secondary graduates by gender in each US State by use of a bar chart.
+**Graduated Symbol** maps show that the size of a single dot within a geographic region based on the class of a quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use graduated symbol mapping when your desired theme is a choropleth map, but the area attribute is not necessary.
 
-**Dot Density Maps** are useful for depicting the geographic distribution of a variable / attribute. Many dots within a geographic region, each portraying quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use dot density maps for depicting the number of people within each US state.
+**Diagram Symbol** maps are useful for displaying a relationship between variables / attributes. This map type is quantitative and sometimes qualitative, and may be of data type nominal, ordinal, interval or ratio. You might want to use diagram symbol maps for comparing the number of post-secondary graduates by gender in each US State by use of a bar chart.
 
-**Chorochromatic Maps** are useful when there is no data hierarchy. This map type is qualitative, and is of data type categorical / nominal. You may want to use chorochromatic maps for identifying city zoning, water resource regions, and cover types.
+**Dot Density** maps are useful for depicting the geographic distribution of a variable / attribute. Many dots within a geographic region, each portraying quantity. This map type is quantitative, and may be of data type ordinal, interval or ratio. You might want to use dot density maps for depicting the number of people within each US state.
 
-**Multivariate Maps** are a combination of two or more themes.
+**Chorochromatic** maps are useful when there is no data hierarchy. This map type is qualitative, and is of data type categorical / nominal. You may want to use chorochromatic maps for identifying city zoning, water resource regions, and cover types.
+
+**Multivariate** maps are a combination of two or more themes.
 
 ## Exploration of thematic Maps
 
