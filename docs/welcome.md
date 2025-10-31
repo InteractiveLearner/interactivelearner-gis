@@ -15,21 +15,22 @@ Lessons are ordered in a way that builds on previous knowledge, so it is recomme
 
 Maps help us make sense of the world. They show us where things are, how they are connected, and allow us to investigate patterns in our environment. Geographic information systems (GIS) are effective for creating, analyzing, and sharing maps.
 
-Marks and channels are fundamental concepts in [data visualization](/lessons/data-visualization) that help to visually represent data. These concepts are used in mapping to effectively convey spatial information.
+One of the introductory lessons of this site included marks and channels which are fundamental concepts in [data visualization](/lessons/data-visualization) that help to visually represent data. 
+These concepts are used in mapping to effectively convey spatial information.
 
 - [Marks](/lessons/data-visualization#marks) like points, lines, and areas show locations, routes, and boundaries.
 - Color, size, and shape are examples of [channels](/lessons/data-visualization#channels) that aid in the recognition of differences and patterns.
 
-There are different [types of maps](/lessons/map-types), each serving a specific purpose:
+Then, we cover different [types of maps](/lessons/map-types), each serving a specific purpose:
 
 - [Reference maps](/lessons/map-types#reference-maps) show general locations, like road maps.
 - [Thematic maps](/lessons/map-types#thematic-maps) focus on specific topics, like population.
 
-To represent our round world on paper or screens, we can use [projections](/lessons/projections) that flatten the globe. Every projection comes with its own set of trade-offs and introduces some form of distortion.
+And to represent our round world on paper or screens, we can use [projections](/lessons/projections) that flatten the globe. Every projection comes with its own set of trade-offs and introduces some form of distortion.
 
-The [scale](/lessons/scale) of a map indicates how much detail it shows. For example, a map of a city block provides more detail than a map of the entire country.
+Also, the [scale](/lessons/scale) of a map indicates how much detail it shows. For example, a map of a city block provides more detail than a map of the entire country.
 
-Finally, we [classify data](/lessons/classification) into categories to make patterns easier to see, such as grouping cities by population size.
+Finally, we can [classify data](/lessons/classification) into categories to make patterns easier to see, such as grouping cities by population size.
 
 ## Discuss
 

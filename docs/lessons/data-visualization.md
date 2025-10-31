@@ -10,9 +10,11 @@ order: 1
 
 # Data visualization
 
+Cartography is considered a graphical form of communication. Communicating with maps would not be possible without the main building blocks for the visual encoding of [vector data](/lessons/spatial-data#types-of-spatial-data). The main building blocks for visual encoding are **marks** and **channels**. 
+
 ## Marks
 
-Cartography is considered a graphical form of communication. Communicating with maps would not be possible without the main building blocks for the visual encoding of [vector data](/lessons/spatial-data#types-of-spatial-data). The main building blocks for visual encoding are **marks** and **channels**. Marks are a set of geometric primitives made up of:
+Marks are a set of geometric primitives made up of:
 
 1. **Points**
    - Represent locational information

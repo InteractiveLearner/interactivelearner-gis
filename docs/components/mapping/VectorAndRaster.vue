@@ -330,6 +330,11 @@ watch(vectorStyleType, () => {
 });
 
 onMounted(async () => {
+    await Promise.all([
+        import('@esri/calcite-components/dist/components/calcite-select'),
+        import('@esri/calcite-components/dist/components/calcite-option')
+    ]);
+  
   // Dynamically import Leaflet to avoid SSR issues
   L = await import("leaflet"); 
 

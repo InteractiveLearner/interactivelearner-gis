@@ -304,6 +304,19 @@ watch(
 // watch(() => selectedData.value, renderHistogram);
 
 onMounted(async () => {
+    await Promise.all([
+        import('@esri/calcite-components/dist/components/calcite-shell'),
+        import('@esri/calcite-components/dist/components/calcite-navigation'),
+        import('@esri/calcite-components/dist/components/calcite-navigation-logo'),
+        import('@esri/calcite-components/dist/components/calcite-shell-panel'),
+        import('@esri/calcite-components/dist/components/calcite-action-bar'),
+        import('@esri/calcite-components/dist/components/calcite-action'),
+        import('@esri/calcite-components/dist/components/calcite-panel'),
+        import('@esri/calcite-components/dist/components/calcite-label'),
+        import('@esri/calcite-components/dist/components/calcite-select'),
+        import('@esri/calcite-components/dist/components/calcite-option')
+    ]);
+    
     Leaflet = await import("leaflet");
 
     map = Leaflet.map("classified-map", {
@@ -418,9 +431,6 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-@import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css";
-@import "https://js.arcgis.com/calcite-components/3.1.0/calcite.css";
-
 .histogram-container {
     width: 100%;
     height: 150px;

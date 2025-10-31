@@ -13,7 +13,7 @@ onMounted(async () => {
     item-id="11e173a4e2f040ae80d39e44ee29467a"
     style="height: 500px; width: 100%;"
   >
-    <arcgis-search position="top-right" />
-    <arcgis-legend position="bottom-left" />
+    <arcgis-search slot="top-right" />
+    <arcgis-legend slot="bottom-left" />
   </arcgis-map>
 </template>

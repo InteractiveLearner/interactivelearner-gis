@@ -10,8 +10,6 @@ order: 0
 
 # Spatial data and its types
 
-## Spatial data
-
 Spatial data have two main components that set them apart from regular data, making them suitable for mapping:
 
 - **"Where"**: Referring to the location of the data

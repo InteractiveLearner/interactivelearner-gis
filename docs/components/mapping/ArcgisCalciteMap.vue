@@ -56,9 +56,20 @@ const handleArcgisViewReadyChange = () => {
 };
 
 onMounted(async () => {
-    await import("@arcgis/map-components/dist/components/arcgis-map");
-    await import("@arcgis/map-components/dist/components/arcgis-legend");
-    await import("@arcgis/map-components/dist/components/arcgis-layer-list");
+    await Promise.all([
+        import('@esri/calcite-components/dist/components/calcite-shell'),
+        import('@esri/calcite-components/dist/components/calcite-navigation'),
+        import('@esri/calcite-components/dist/components/calcite-navigation-logo'),
+        import('@esri/calcite-components/dist/components/calcite-shell-panel'),
+        import('@esri/calcite-components/dist/components/calcite-action-bar'),
+        import('@esri/calcite-components/dist/components/calcite-action'),
+        import('@esri/calcite-components/dist/components/calcite-panel')
+    ]);
+    await Promise.all([
+        import("@arcgis/map-components/dist/components/arcgis-map"),
+        import("@arcgis/map-components/dist/components/arcgis-legend"),
+        import("@arcgis/map-components/dist/components/arcgis-layer-list")
+    ]);
     mapRef.value.addEventListener('arcgisViewReadyChange', handleArcgisViewReadyChange);
 });
 </script>
@@ -89,10 +100,6 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-/* TODO: Stylesheets */
-@import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css";
-@import "https://js.arcgis.com/calcite-components/3.1.0/calcite.css";
-
 calcite-shell {
     height: 530px;
 }

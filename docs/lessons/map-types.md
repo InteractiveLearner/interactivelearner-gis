@@ -45,7 +45,7 @@ Thematic mapping channel selections are linked to the **expressiveness types** a
 
 **Multivariate** maps are a combination of two or more themes.
 
-## Exploration of thematic Maps
+## Exploration of thematic maps
 
 Now that you've learned how thematic maps are designed, it is time to explore and learn about the types of thematic maps. Here are some suggestions to consider as you explore:
 

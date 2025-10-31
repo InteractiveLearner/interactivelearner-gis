@@ -1,9 +1,3 @@
-// Web components for global use
-import { defineCustomElements as defineCalciteElements } from "@esri/calcite-components/loader";
-
-// CDN hosted assets
-defineCalciteElements();
-
 // Vue components for global use
 import ProjectionExplorer from "../../components/mapping/ProjectionExplorer.vue";
 import ScaleMap from "../../components/mapping/ScaleMap.vue";

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 const props = defineProps({
     quizData: {
@@ -41,6 +41,12 @@ const goToPreviousQuestion = () => {
         currentQuestionIndex.value--;
     }
 };
+
+onMounted(async () => {
+    await Promise.all([
+        import('@esri/calcite-components/dist/components/calcite-card')
+    ]);
+});
 </script>
 
 <template>

@@ -47,6 +47,13 @@ const state = reactive({
 });
 
 onMounted(async () => {
+  await Promise.all([
+    import('@esri/calcite-components/dist/components/calcite-label'),
+    import('@esri/calcite-components/dist/components/calcite-select'),
+    import('@esri/calcite-components/dist/components/calcite-option'),
+    import('@esri/calcite-components/dist/components/calcite-slider')
+  ]);
+  
   try {
     const json = await d3.json(
       "https://gist.githubusercontent.com/d3indepth/f28e1c3a99ea6d84986f35ac8646fac7/raw/c58cede8dab4673c91a3db702d50f7447b373d98/ne_110m_land.json"
@@ -159,7 +166,6 @@ function updateScale(event) {
 </template>
 
 <style>
-@import "@esri/calcite-components/dist/calcite/calcite.css";
 .slider {
   max-width: 300px;
 }
