@@ -7,21 +7,29 @@
     "preinstall": "npx -y only-allow pnpm",
     "dev": "vitepress dev docs",
     "build": "NODE_OPTIONS='--max-old-space-size=6144' vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "wrangler:deploy": "wrangler deploy",
+		"wrangler:dev": "wrangler dev",
+		"wrangler:cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@arcgis/core": "~4.34.6",
     "@arcgis/map-components": "~4.34.7",
     "@esri/calcite-components": "~3.3.3",
+		"@modelcontextprotocol/sdk": "1.20.2",
+    "agents": "^0.2.19",
     "d3": "^7.9.0",
     "leaflet": "^1.9.4",
     "simple-statistics": "^7.8.8",
-    "vue": "^3.5.22"
+    "vue": "^3.5.22",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "feed": "^5.1.0",
+    "typescript": "5.9.3",
     "vitepress": "2.0.0-alpha.12",
-    "vitepress-sidebar": "^1.33.0"
+    "vitepress-sidebar": "^1.33.0",
+    "wrangler": "^4.47.0"
   },
   "packageManager": "pnpm@10.17.0",
   "engines": {

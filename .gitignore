@@ -13,6 +13,9 @@
 *build
 *dist
 
+# mcp
+.wrangler
+
 # misc
 .DS_Store
 .env.local
