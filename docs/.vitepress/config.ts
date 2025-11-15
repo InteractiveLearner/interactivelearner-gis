@@ -60,7 +60,7 @@ export default defineConfig({
     ],
     footer: {
       message: "Released under the GPL-3.0 license.",
-      copyright: "Copyright © Interactive Learner GIS 2022",
+      copyright: "Copyright © Interactive Learner GIS since 2022",
     },
     sidebar: generateSidebar({
       manualSortFileNameByPriority: ['welcome.md', 'lessons', 'exercises'],
