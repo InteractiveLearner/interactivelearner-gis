@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
     "dev": "vitepress dev docs",
-    "build": "NODE_OPTIONS='--max-old-space-size=6144' vitepress build docs",
+    "build": "vitepress build docs",
     "preview": "vitepress preview docs",
     "wrangler:deploy": "wrangler deploy",
 		"wrangler:dev": "wrangler dev",
