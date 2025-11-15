@@ -14,6 +14,10 @@ export default defineConfig({
   sitemap: {
     hostname: hostname,
   },
+  ignoreDeadLinks: [
+    /\/lessons\//,
+    /\/exercises\//,
+  ]
   cleanUrls: true,
   themeConfig: {
     editLink: {
