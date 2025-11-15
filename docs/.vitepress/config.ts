@@ -4,7 +4,7 @@ import { generateSidebar } from "vitepress-sidebar";
 import { writeFileSync } from "fs";
 import { Feed } from "feed";
 
-const hostname: string = "https://www.interactivelearner-gis.com";
+const hostname: string = "https://interactivelearner-gis.com";
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
