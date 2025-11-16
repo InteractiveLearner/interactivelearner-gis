@@ -67,5 +67,5 @@ You are now able to delete the temporary "**Rasterized**" layer, as you now have
 
 **Didn't get the correct answer?**
 
-**Question 2:** <br>
+**Question 1:** <br>
 Refer back to the **Rasterize** section of this exercise.

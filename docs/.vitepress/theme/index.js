@@ -15,6 +15,7 @@ import ContentFigure from "../../components/ui/ContentFigure.vue";
 import Sources from "../../components/ui/Sources.vue";
 import Quiz from "../../components/ui/Quiz.vue";
 import Mermaid from "./Mermaid.vue";
+import WikiTooltip from "../../components/ui/WikiTooltip.vue";
 
 // Layout
 import MyLayout from "./MyLayout.vue";
@@ -42,5 +43,6 @@ export default {
     app.component("Quiz", Quiz);
     app.component("Sources", Sources);
     app.component("Mermaid", Mermaid);
+    app.component("WikiTooltip", WikiTooltip);
   },
 };

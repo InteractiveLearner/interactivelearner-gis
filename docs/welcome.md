@@ -48,4 +48,4 @@ In addition, Interactive Learner GIS is designed to serve as a knowledge base of
 
 ## Contribute
 
-This site is [open source](https://en.wikipedia.org/wiki/Open_source), and we welcome contributions. If you find a mistake, have a suggestion for improvement, or want to add a new topic, please feel free to submit a pull request or open an issue on [GitHub](https://github.com/InteractiveLearner/interactivelearner-gis/). If you don't have a GitHub account, you can also reach out via [email](mailto:omarkawach@outlook.com)
+This site is <WikiTooltip url="https://en.wikipedia.org/wiki/Open_source">open source</WikiTooltip>, and we welcome contributions. If you find a mistake, have a suggestion for improvement, or want to add a new topic, please feel free to submit a pull request or open an issue on [GitHub](https://github.com/InteractiveLearner/interactivelearner-gis/). If you don't have a GitHub account, you can also reach out via [email](mailto:omarkawach@outlook.com)
