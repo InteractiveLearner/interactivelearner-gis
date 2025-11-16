@@ -25,6 +25,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "feed": "^5.1.0",
     "mermaid": "^11.12.1",
     "typescript": "5.9.3",
