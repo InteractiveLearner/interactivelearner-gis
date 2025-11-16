@@ -160,10 +160,25 @@ Frameworks like React or Vue extend these native web technologies.
 
 <!-- TODO: Mermaid extension to replace this image -->
 
-<ContentFigure
-  :imgSrc="'/assets/images/bundler.png'"
-  :description="'What do bundlers do?'"
-/>
+```mermaid
+%%{init: { 'flowchart': { 'nodeSpacing': 35, 'rankSpacing': 20, 'padding': 5 } }}%%
+graph LR
+  subgraph human_files["Human-readable files"]
+    direction LR
+    TS[TypeScript .ts/.tsx]
+    JS[JavaScript .js/.jsx]
+    CSS[CSS/Sass .css/.scss]
+    IMG[Assets .jpg/.json]
+  end
+  Bundler("Bundler")
+  subgraph optimized_output["Browser-optimized output"]
+    direction LR
+    O_JS[JavaScript]
+    O_CSS[CSS]
+    O_IMG[Images]
+  end
+  human_files ==> Bundler ==> optimized_output
+```
 
 Furthermore, adding [TypeScript](https://www.typescriptlang.org/) to frontend frameworks like React provides an improved developer experience. TypeScript's static typing adds a layer of safety to JavaScript development, reducing uncertainty and boosting confidence.
 

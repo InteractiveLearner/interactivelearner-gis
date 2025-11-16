@@ -48,3 +48,7 @@ Update with this configuration:
 ```
 
 Restart Claude and you should see the tools become available. 
+
+## Test locally
+
+`npx @modelcontextprotocol/inspector@latest`

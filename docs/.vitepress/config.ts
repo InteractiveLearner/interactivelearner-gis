@@ -3,6 +3,7 @@ import { defineConfig, createContentLoader, type SiteConfig } from "vitepress";
 import { generateSidebar } from "vitepress-sidebar";
 import { writeFileSync } from "fs";
 import { Feed } from "feed";
+import MermaidExample from "./mermaid-markdown-all.js";
 
 const hostname: string = "https://interactivelearner-gis.com";
 
@@ -11,13 +12,19 @@ export default defineConfig({
   lang: "en-US",
   title: "Interactive Learner GIS",
   description: "Easily learn about GIS in an interactive environment.",
+  markdown: {
+    config: (md) => {
+      MermaidExample(md);
+    },
+  },
   sitemap: {
     hostname: hostname,
   },
   cleanUrls: true,
   themeConfig: {
     editLink: {
-      pattern: "https://github.com/InteractiveLearner/interactivelearner-gis/edit/main/docs/:path",
+      pattern:
+        "https://github.com/InteractiveLearner/interactivelearner-gis/edit/main/docs/:path",
       text: "Edit this page on GitHub",
     },
     outline: [2, 4],
@@ -63,7 +70,7 @@ export default defineConfig({
       copyright: "Copyright © Interactive Learner GIS since 2022",
     },
     sidebar: generateSidebar({
-      manualSortFileNameByPriority: ['welcome.md', 'lessons', 'exercises'],
+      manualSortFileNameByPriority: ["welcome.md", "lessons", "exercises"],
       // ============ [ RESOLVING PATHS ] ============
       documentRootPath: "/docs",
       // ============ [ GETTING MENU TITLE ] ============
