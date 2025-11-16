@@ -10,7 +10,11 @@ order: 1
 
 # Data visualization
 
-Cartography is considered a graphical form of communication. Communicating with maps would not be possible without the main building blocks for the visual encoding of [vector data](/lessons/spatial-data#types-of-spatial-data). The main building blocks for visual encoding are **marks** and **channels**. 
+Data visualization is the process of turning data into visual representations, such as charts or maps, in order to make information easier to understand and use. 
+In this way, we can consider cartography as an effective form of communication. 
+
+Communicating with maps would not be possible without the main building blocks for the visual encoding of [vector data](/lessons/spatial-data#types-of-spatial-data). 
+The main building blocks for visual encoding are **marks** and **channels**. 
 
 ## Marks
 

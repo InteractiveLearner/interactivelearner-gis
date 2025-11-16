@@ -59,9 +59,10 @@ export default defineConfig({
       {
         text: "Exercises",
         items: [
-          { text: "Learn QGIS", link: "/exercises/learn-qgis" },
-          { text: "QGIS Basics", link: "/exercises/qgis-basics" },
-          { text: "Vector to Raster", link: "/exercises/vector-raster" },
+          { text: "1. Learn QGIS", link: "/exercises/desktop/learn-qgis" },
+          { text: "2. QGIS Basics", link: "/exercises/desktop/qgis-basics" },
+          { text: "3. Styling vector data", link: "/exercises/desktop/vector" },
+          { text: "4. Raster (bonus)", link: "/exercises/desktop/raster" },
         ],
       },
     ],

@@ -10,9 +10,11 @@ order: 3
 
 # Projections
 
+When it comes to presenting maps to readers, geographers must choose a projection that is appropriate for the map's purpose and location. Projections transform three-dimensional curved surfaces to two-dimensional flat surfaces. Consequently, such transformations cause distortion to the maps.
+
 ## Projection types
 
-When it comes to presenting maps to readers, geographers must choose a projection that is appropriate for the map's purpose and location. Projections transform three-dimensional curved surfaces to two-dimensional flat surfaces. Consequently, such transformations cause distortion to the maps. The following are the 4 types in which the relationship between features on a map may be distorted or preserved:
+The following are the 4 types in which the relationship between features on a map may be distorted or preserved:
 
 1. **Distance (Equidistant)**
    - Preserves distance between features

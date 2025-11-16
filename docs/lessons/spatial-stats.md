@@ -8,7 +8,7 @@ date: 2025-06-15
 order: 10
 ---
 
-::: warning
+::: warning 🔨 🚧 WARNING 🚧 🔨  
 Interactive examples are a work in progress for this page.
 :::
 

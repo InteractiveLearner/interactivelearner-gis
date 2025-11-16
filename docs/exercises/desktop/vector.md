@@ -1,23 +1,24 @@
 ---
-title: Vector and raster
-description: In this section we will be using vector data in QGIS. We will work with categorized data, graduated data, and then learn how to switch the data from vector to raster.
+title: 3. Styling vector data
+description: In this section we will be using vector data in QGIS. We will work with categorized data, graduated data.
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
 date: 2025-10-14
+order: 2
 ---
 
-# Vector and Raster data
+# Styling vector data
 
-## Styling our data
 Now that we have our map up and a basemap layer, we can work on making it look better.
 It's currently one color and it's very hard to tell how we are representing our data.
+
 Below, we are going to cover categorized data and graduated data to see how we can style our map.
 The drinking water percentile values are what we are going to focus on.
-This is because this value shows the percentile of contaminants found in drinking water. 
-We are also going to cover how to rasterize, or change our data from vector to raster.
+This is because this value will show the percentile of contaminants found in drinking water. 
 
-## Categorized data
+## Categorized data (qualitative)
+
 Double click your "**SDG Indicator...**" layer.
 A new window should pop up.
 Click "**Symbology**" on the left side.
@@ -43,7 +44,7 @@ Take a look below at the "**Random Color Ramp**" vs. "**Blues**."
 
 <ContentFigure 
    :imgSrc="'/exercise_files/images/Categorized-color.png'"
-   :description="'Categorized data (color)'"
+   :description="'Categorized data (random color)'"
    :style="{'width': '275px' }"
 />
 
@@ -56,7 +57,8 @@ Take a look below at the "**Random Color Ramp**" vs. "**Blues**."
 We are going to click cancel for now.
 This shows you how we can color the categorized data.
 
-## Graduated data
+## Graduated data (quantitative)
+
 Double click your "**SDG Indicator...**" layer again.
 Click "**Symbology**" on the left side.
 In the drop-down menu towards the top click "**Graduated**."
@@ -125,37 +127,7 @@ Next name the file and then click save.
 This should save as a .qlr file.
 This will save our layer with the changes we made.
 
-## Rasterize (vector to raster)
-**Note:** <br>
-This next step is not necessary for our exercise as we don't need to rasterize our data.
-This just shows you how to display the data in the raster format.
-
-To rasterize the data, click on "**Raster**" at the top of the screen.
-Next, go to "**Conversion**" and then click on "**Rasterize (Vector to Raster)...**"
-Make sure that you have the correct vector "**Input layer**" that you want  to rasterize.
-It should still be named "**Refactored**."
-For the "**Field to use for burn-in value**" choose "**drinking_water_percentile**." Next, change the "**Output raster size units**" to "**Pixels**," and the "**Width**" and "**Height**" to 1,000 and 1,000.
-Click "**Run**" and then "**Close**."
-Your water percentile data has now been rasterized.
-You should see something like this:
-
-<ContentFigure 
-   :imgSrc="'/exercise_files/images/pic7.png'"
-   :description="'Rasterized Layer'"
-   :style="{'width': '275px' }"
-/>
-
-If you would like to save this, right click on the "**Rasterized**" layer, go to "**Export**" and click "**Save As...**"
-Click the 3 dots to the right of "**File name**."
-First select the correct path where you would like to save it.
-It should be saved in the folder for this exercise.
-Then name the file in "**File name**."
-Then, click "**Save**."
-You should notice that the file extension is "**.tif**."
-Also, at the top, the "**Format**" says "**GeoTIFF**."
-Remember from the [Spatial data and its types](/lessons/spatial-data#types-of-spatial-data) lesson that this is correct.
-Finally, click "**OK**."
-You are now able to delete the temporary "**Rasterized**" layer, as you now have a new layer saved.
+## Test your knowledge
 
 <Quiz :quiz-data="{
   questions: [
@@ -163,29 +135,15 @@ You are now able to delete the temporary "**Rasterized**" layer, as you now have
       question: 'Which color ramp is better to use for our exercise?',
       options: [
         {
-          answer: 'random color ramp',
+          answer: 'Random color ramp',
           key: 1
         },
         {
-          answer: 'blues',
+          answer: 'Blues',
           key: 2
         }
       ],
       correctAnswer: 2
-    },
-    {
-      question: 'What does rasterized data refer to?',
-      options: [
-        {
-          answer: 'data changed from vector to raster',
-          key: 1
-        },
-        {
-          answer: 'data changed from raster to vector',
-          key: 2
-        }
-      ],
-      correctAnswer: 1
     },
   ]
 }" />
@@ -194,12 +152,3 @@ You are now able to delete the temporary "**Rasterized**" layer, as you now have
 
 **Question 1:** <br>
 Refer back to the **Categorized data** or **Graduated data** section of this exercise.
-
-**Question 2:** <br>
-Refer back to the **Rasterize** section of this exercise.
-
-<!--
-<p>
-<a href="https://www.inaturalist.org/"> iNaturalist</a>.
-</p>
--->
