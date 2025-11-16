@@ -158,8 +158,6 @@ Frameworks like React or Vue extend these native web technologies.
 
 [Bundlers](https://webreference.com/javascript/advanced/module-bundlers/) like [Vite](https://vite.dev/) optimize and prepare framework-based applications for browsers by reducing file sizes and splitting bundles.
 
-<!-- TODO: Mermaid extension to replace this image -->
-
 ```mermaid
 %%{init: { 'flowchart': { 'nodeSpacing': 35, 'rankSpacing': 20, 'padding': 5 } }}%%
 graph LR
