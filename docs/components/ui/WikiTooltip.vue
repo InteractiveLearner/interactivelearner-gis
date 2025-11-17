@@ -12,6 +12,7 @@ const cache = (globalThis.__WIKI_SUMMARY_CACHE__ ||= new Map());
 const loading = ref(true);
 const error = ref(null);
 const extract = ref("");
+const isTouch = ref(false);
 
 // Floating UI setup
 const reference = ref(null);
@@ -81,7 +82,10 @@ async function fetchSummary() {
   }
 }
 
-onMounted(fetchSummary);
+onMounted(() => {
+  isTouch.value = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  fetchSummary();
+});
 
 function openExternal() {
   if (title) {
@@ -89,6 +93,23 @@ function openExternal() {
       ? props.url
       : `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
     window.open(url, "_blank", "noopener,noreferrer");
+  }
+}
+
+function handleInteraction(event) {
+  // For touch-enabled devices
+  if (isTouch.value) {
+    // If the tooltip is already open, navigate.
+    if (isOpen.value) {
+      openExternal();
+    } else {
+      // Otherwise, prevent navigation and show the tooltip.
+      event.preventDefault();
+      isOpen.value = true;
+    }
+  } else {
+    // For non-touch devices, navigate on click.
+    openExternal();
   }
 }
 
@@ -106,12 +127,13 @@ const tooltipContent = computed(() => {
     class="wiki-tooltip"
     role="link"
     tabindex="0"
-    @click="openExternal"
+    @click="handleInteraction"
     @keydown.enter.prevent="openExternal"
-    @mouseenter="isOpen = true"
-    @mouseleave="isOpen = false"
+    @mouseenter="!isTouch && (isOpen = true)"
+    @mouseleave="!isTouch && (isOpen = false)"
     @focus="isOpen = true"
     @blur="isOpen = false"
+    @touchstart="isTouch = true"
   >
     <slot />
   </a>
