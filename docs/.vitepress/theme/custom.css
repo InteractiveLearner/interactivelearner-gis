@@ -16,34 +16,20 @@
   --vp-c-brand-2: #f0f0f0;
 }
 
-/**
- * Colors: Palette
- *
- * The primitive colors used for accent colors. These colors are referenced
- * by functional colors such as "Text", "Background", or "Brand".
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *    It must satisfy the contrast ratio with pure white (#ffffff) text on
- *    top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *    or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *    on top of it.
- *
- *    The soft color must be semi transparent alpha channel. This is crucial
- *    because it allows adding multiple "soft" colors on top of each other
- *    to create a accent, such as when having inline code block inside
- *    custom containers.
- * -------------------------------------------------------------------------- */
-
+/* Calcite CSS variables */
+.custom-calcite-overrides {
+  --calcite-link-text-color: var(--vp-c-brand-1);
+  --calcite-color-text-link: var(--vp-c-brand-1);
+  /* Base (normal) state uses brand 1; hover/press switch to brand 2 */
+  --calcite-color-brand: var(--vp-c-brand-1);
+  --calcite-color-brand-hover: var(--vp-c-brand-2);
+  --calcite-color-brand-press: var(--vp-c-brand-2);
+  --calcite-color-brand-underline: var(--vp-c-brand-1);
+  --calcite-color-focus: var(--vp-c-brand-1);
+  --calcite-color-status-info: var(--vp-c-brand-1);
+  --calcite-color-status-info-hover: var(--vp-c-brand-2);
+  --calcite-color-status-info-press: var(--vp-c-brand-2);
+}
 
 /* Custom Leaflet CSS because Leaflet elements and Vue don't play nice together*/
 

@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <DefaultTheme.Layout>
+  <DefaultTheme.Layout class="custom-calcite-overrides">
     <template #home-hero-image>
       <HomePageGlobe />
     </template>
