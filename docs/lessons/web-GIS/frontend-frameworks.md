@@ -13,13 +13,13 @@ order: 10
 If you want to scale a feature-rich web application quickly along with a team, writing a scalable application requires structure, organization, and maintainability.
 
 Fortunately, you don't need to decide on structure and tooling yourself.
-[Frontend](https://en.wikipedia.org/wiki/Frontend_and_backend) frameworks make app development easier by providing more structure to the way we write applications.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend</WikiTooltip> frameworks make app development easier by providing more structure to the way we write applications.
 They do come with a learning curve, but in return you get a more maintainable codebase, reusable components, nice conveniences, and helpful tooling. 
 These benefits can really pay off as your project grows along with you and your team.
 
 There are a lot of front-end frameworks to choose from. Some of the most popular are [React](https://react.dev/), [Vue](https://vuejs.org/), and [Angular](https://angular.dev/). 
 There are some nuances, but generally, frontend frameworks encourage component-based/reusable code block architecture via a [top-down, one-way data flow](https://jurassix.gitbooks.io/dataflow-through-react/content/data-loading/top-down.html) which involves passing information from parent components to their children. 
-In turn, frontend frameworks promote [declarative](https://en.wikipedia.org/wiki/Declarative_programming) code writing (e.g., more HTML and less JavaScript).
+In turn, frontend frameworks promote <WikiTooltip url="https://en.wikipedia.org/wiki/Declarative_programming">declarative</WikiTooltip> code writing (e.g., more HTML and less JavaScript).
 
 ::: tip
 Be sure to read up on [Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js), [npm](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management), [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json), [dependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies), [devDependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies), and [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) before you start working with frameworks, and you should also [download Node.js and npm](https://nodejs.org/en/download) on your machine before creating a framework-based application.
@@ -64,7 +64,7 @@ Interested in writing your own web components using a web mapping library? Check
 
 ### Web components in plain JavaScript and React
 
-Before the [ArcGIS Maps SDK for JavaScript introduced their new library of web components in version 4.28](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/build-gis-web-apps-with-javascript-maps-sdk-components), widgets based on proprietary technology were the only means for adding UI to your web application. Implementing widgets in an app required a lot of boilerplate code and was [imperative](https://en.wikipedia.org/wiki/Imperative_programming) in nature.
+Before the [ArcGIS Maps SDK for JavaScript introduced their new library of web components in version 4.28](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/build-gis-web-apps-with-javascript-maps-sdk-components), widgets based on proprietary technology were the only means for adding UI to your web application. Implementing widgets in an app required a lot of boilerplate code and was <WikiTooltip url="https://en.wikipedia.org/wiki/Imperative_programming">imperative</WikiTooltip> in nature.
 
 The ArcGIS Maps SDK for JavaScript's switch from an imperative API for UI to a community standards-based component library makes it easier to use in plain JavaScript and frontend frameworks. 
 Check out the code below accomplishing the same task using the SDK with imperative widgets versus declarative web components in plain JavaScript.
@@ -189,4 +189,4 @@ Check out [this code repository](https://github.com/omarkawach/maps-sdk-react-ts
 We've seen how frontend frameworks can help scale web mapping applications quickly and efficiently by promoting reusable components, maintainable codebases, and helpful tooling.
 
 The natural next step is learning implications of where your data is hosted and application rendering strategies for robust real-world success.
-Strategies to improve [search engine optimization](https://en.wikipedia.org/wiki/Search_engine_optimization), performance, and additional scalability will be covered in the next chapter.
+Strategies to improve <WikiTooltip url="https://en.wikipedia.org/wiki/Search_engine_optimization">search engine optimization</WikiTooltip>, performance, and additional scalability will be covered in the next chapter.

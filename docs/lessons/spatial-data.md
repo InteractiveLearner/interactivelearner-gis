@@ -29,7 +29,7 @@ Raster data can be described as a grid of cells (rows and columns), similar to p
 - Can be either continuous (progressive, varying data) or discrete (thematic or categorical)
 - Rectangular tessellated rasters are most commonly used due to their mathematical simplicity
 - Examples of raster data include satellite images or aerial photos
-- Most commonly seen in the [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF) file format
+- Most commonly seen in the <WikiTooltip url="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</WikiTooltip> file format
 
 ### Vector data
 
@@ -40,7 +40,7 @@ Vector data are represented as points, lines, and polygons.
 - Can be categorized into 0-dimensional, 1-dimensional, and 2-dimensional forms (geometric primitives). In the 0th dimension, coordinate points exist independently. In the 1st dimension, two points can form a line. In the 2nd dimension, three or more lines can be joined to create a polygon
 - Vector data allows for more efficient storage and manipulation
 - Can convert vectors to raster and vice versa using specialized software (e.g., ArcGIS Pro, and QGIS)
-- Common data formats include [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) (Google), [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), and [Shapefile](https://en.wikipedia.org/wiki/Shapefile) (Esri)
+- Common data formats include <WikiTooltip url="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</WikiTooltip>, <WikiTooltip url="https://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</WikiTooltip> (Google), <WikiTooltip url="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</WikiTooltip>, and <WikiTooltip url="https://en.wikipedia.org/wiki/Shapefile">Shapefile</WikiTooltip> (Esri)
 
 <ContentFigure 
    :imgSrc="'/assets/images/vector_raster.png'" 
@@ -53,7 +53,7 @@ Vector data are represented as points, lines, and polygons.
 
 Basemaps are fundamental background layers in mapping, providing critical geographical context for all overlaid data. 
 Basemaps can be raster or vector. 
-Examples of raster basemaps include [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Raster_tile_providers) and [OpenTopoMap](https://wiki.openstreetmap.org/wiki/OpenTopoMap), which provide pre-rendered map tiles in [PNG](https://en.wikipedia.org/wiki/PNG) format. 
+Examples of raster basemaps include [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Raster_tile_providers) and [OpenTopoMap](https://wiki.openstreetmap.org/wiki/OpenTopoMap), which provide pre-rendered map tiles in <WikiTooltip url="https://en.wikipedia.org/wiki/PNG">PNG</WikiTooltip> format. 
 
 Overlaying vector data, such as polygon features from a GeoJSON layer, onto a raster basemap is common to visualize specific geographic information within the broader context provided by the underlying imagery.
 
@@ -64,7 +64,7 @@ Check out the examples below:
 
 1. This map shows a U.S. states layer as colored polygons on top of a street/navigation basemap layer. You can cycle through different themes using a dropdown menu. The legend classifies what the colors represent for each theme.
 
-2. This map's raster basemap shows terrain/topography, and the map has an image [SVG](https://en.wikipedia.org/wiki/SVG) graphic on top. 
+2. This map's raster basemap shows terrain/topography, and the map has an image <WikiTooltip url="https://en.wikipedia.org/wiki/SVG">SVG</WikiTooltip> graphic on top. 
 
 <VectorAndRaster />
 

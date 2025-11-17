@@ -15,13 +15,13 @@ Interactive examples are a work in progress for this page.
 
 # Relational databases in GIS
 
-[Relational databases](https://en.wikipedia.org/wiki/Relational_database) (RDBs) are commonly used in Geographic Information Systems (GIS) to efficiently manage, store, and retrieve vast volumes of spatial data (points, lines, and polygons), as well as associated attribute data such as feature names, kinds, and descriptions. These RDBs are sometimes referred to as "[spatial databases](https://en.wikipedia.org/wiki/Spatial_database)," and if they use a [geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system), they may also be referred to as geographic databases or georeferenced spatial databases.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Relational_database">Relational databases</WikiTooltip> (RDBs) are commonly used in Geographic Information Systems (GIS) to efficiently manage, store, and retrieve vast volumes of spatial data (points, lines, and polygons), as well as associated attribute data such as feature names, kinds, and descriptions. These RDBs are sometimes referred to as "<WikiTooltip url="https://en.wikipedia.org/wiki/Spatial_database">spatial databases</WikiTooltip>," and if they use a <WikiTooltip url="https://en.wikipedia.org/wiki/Geographic_coordinate_system">geographic coordinate system</WikiTooltip>, they may also be referred to as geographic databases or georeferenced spatial databases.
 
 A RDB is a type of database management system that takes a structured approach to organizing and storing data in tables, with each table representing a certain type of information.
 
 Spatial data are maintained in spatial tables while attribute data are stored in separate attribute tables. These tables are linked by a common field, typically a unique identifier, that connects spatial and attribute data.
 
-RDBs also have a set of powerful data querying and analyzing capabilities, such as [SQL](https://en.wikipedia.org/wiki/SQL), which may be used to extract and manipulate specific subsets of data based on specific conditions.
+RDBs also have a set of powerful data querying and analyzing capabilities, such as <WikiTooltip url="https://en.wikipedia.org/wiki/SQL">SQL</WikiTooltip>, which may be used to extract and manipulate specific subsets of data based on specific conditions.
 
 RDBs, including spatial databases like [PostGIS](https://postgis.net/), can be integrated with GIS software to enable advanced spatial analysis and mapping activities. For example, a RDB can store massive volumes of spatial and attribute data, which can subsequently be queried and viewed using GIS tools like [GeoServer](https://geoserver.org/) or [QGIS](https://www.qgis.org/).
 
@@ -33,7 +33,7 @@ A one-to-many relationship connects two tables, where one record in the first ta
 
 ### Many-to-many relationship
 
-A many-to-many relationship connects two tables where multiple records in one table relate to multiple records in the other. This relationship allows each record in one table to have multiple "parents" in the other table. For instance, a RDB with two tables for points of interest and categories can form a many-to-many relationship. To manage this relationship, a [junction table](https://en.wikipedia.org/wiki/Associative_entity) is used, which contains columns for unique identifiers from both tables. This relationship is useful in spatial databases for linking spatial features with multiple categories or attributes.
+A many-to-many relationship connects two tables where multiple records in one table relate to multiple records in the other. This relationship allows each record in one table to have multiple "parents" in the other table. For instance, a RDB with two tables for points of interest and categories can form a many-to-many relationship. To manage this relationship, a <WikiTooltip url="https://en.wikipedia.org/wiki/Associative_entity">junction table</WikiTooltip> is used, which contains columns for unique identifiers from both tables. This relationship is useful in spatial databases for linking spatial features with multiple categories or attributes.
 
 ### One-to-one relationship
 

@@ -10,7 +10,7 @@ order: 7
 
 # Remote sensing
 
-The science of gathering data about the Earth's surface without making direct physical contact is known as [remote sensing](https://en.wikipedia.org/wiki/Remote_sensing), and it depends on the detection and measurement of electromagnetic energy. 
+The science of gathering data about the Earth's surface without making direct physical contact is known as <WikiTooltip url="https://en.wikipedia.org/wiki/Remote_sensing">remote sensing</WikiTooltip>, and it depends on the detection and measurement of electromagnetic energy. 
 
 Passive and active energy sources are a basic approach to classifying remote sensing systems. 
 Remote sensing is useful for environmental monitoring, disaster response, resource management, and countless other applications.
@@ -30,7 +30,7 @@ Remote sensing systems can be classified based on their spatial, spectral, tempo
 
 ### Spatial  
 
-[Spatial resolution](https://en.wikipedia.org/wiki/Spatial_resolution) is the amount of detail that can be discerned in a remote sensing [raster](/lessons/spatial-data#types-of-spatial-data) image. 
+<WikiTooltip url="https://en.wikipedia.org/wiki/Spatial_resolution">Spatial resolution</WikiTooltip> is the amount of detail that can be discerned in a remote sensing [raster](/lessons/spatial-data#types-of-spatial-data) image. 
 It is frequently described in terms of the smallest distinguishable feature on the ground. 
 Higher spatial resolution shows finer detail and smaller resolvable objects.
 
@@ -49,19 +49,19 @@ This results in less detail, making it harder to distinguish between smaller fea
 
 ### Spectral 
 
-[Spectral resolution](https://en.wikipedia.org/wiki/Spectral_resolution) refers to the width of the electromagnetic spectrum regions that a sensor can detect. 
+<WikiTooltip url="https://en.wikipedia.org/wiki/Spectral_resolution">Spectral resolution</WikiTooltip> refers to the width of the electromagnetic spectrum regions that a sensor can detect. 
 This allows for the identification of materials using distinctive spectral signatures. 
 The particular features or materials being observed—such as differentiating bodies of water or examining human infrared emissions—determine the optimal spectral resolution.
 
 ### Radiometric 
 
-[Radiometric resolution](https://en.wikipedia.org/wiki/Satellite_imagery#:~:text=Radiometric%20resolution) refers to a sensor's ability to detect very small differences in energy. 
+<WikiTooltip url="https://en.wikipedia.org/wiki/Satellite_imagery#:~:text=Radiometric%20resolution">Radiometric resolution</WikiTooltip> refers to a sensor's ability to detect very small differences in energy. 
 A sensor with finer radiometric resolution is more sensitive to subtle variations in reflected or emitted energy. 
-This characteristic is directly related to the sensor's [bit depth](https://en.wikipedia.org/wiki/Bit_depth).
+This characteristic is directly related to the sensor's <WikiTooltip url="https://en.wikipedia.org/wiki/Bit_depth">bit depth</WikiTooltip>.
 
 ### Temporal 
 
-[Temporal resolution](https://en.wikipedia.org/wiki/Temporal_resolution) refers to the discrete frequency with which a sensor acquires measurements over a specific area in relation to time. 
+<WikiTooltip url="https://en.wikipedia.org/wiki/Temporal_resolution">Temporal resolution</WikiTooltip> refers to the discrete frequency with which a sensor acquires measurements over a specific area in relation to time. 
 Temporal resolution is influenced by the sensor's swath width, configuration, and orbital characteristics.
 
 ## Passive remote sensing
@@ -95,7 +95,7 @@ Passive remote sensing systems use various types of sensors to capture different
 
 #### Multispectral
 
-[Multispectral](https://en.wikipedia.org/wiki/Multispectral_imaging) sensors provide information about the reflectance or emittance characteristics of different surface features and are commonly used for land cover classification, vegetation monitoring, and environmental change detection. 
+<WikiTooltip url="https://en.wikipedia.org/wiki/Multispectral_imaging">Multispectral</WikiTooltip> sensors provide information about the reflectance or emittance characteristics of different surface features and are commonly used for land cover classification, vegetation monitoring, and environmental change detection. 
 
 <ContentFigure
   :imgSrc="'/assets/images/multispectral.png'"
@@ -106,7 +106,7 @@ Passive remote sensing systems use various types of sensors to capture different
 
 #### Hyperspectral
 
-[Hyperspectral](https://en.wikipedia.org/wiki/Multispectral_imaging) sensors collect data in hundreds or thousands of very narrow, contiguous spectral bands, ideal for applications such as mineral exploration, agricultural crop analysis, and water quality assessment.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Multispectral_imaging">Hyperspectral</WikiTooltip> sensors collect data in hundreds or thousands of very narrow, contiguous spectral bands, ideal for applications such as mineral exploration, agricultural crop analysis, and water quality assessment.
 
 <ContentFigure
   :imgSrc="'/assets/images/hyperspectral.png'"
@@ -117,7 +117,7 @@ Passive remote sensing systems use various types of sensors to capture different
 
 #### Thermal imaging
 
-[Thermal imaging](https://en.wikipedia.org/wiki/Thermal_remote_sensing) sensors detect and measure thermal infrared radiation, allowing for the creation of thermal maps depicting temperature differences on the Earth's surface.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Thermal_remote_sensing">Thermal imaging</WikiTooltip> sensors detect and measure thermal infrared radiation, allowing for the creation of thermal maps depicting temperature differences on the Earth's surface.
 
 ## Active remote sensing
 
@@ -125,25 +125,25 @@ Passive remote sensing systems use various types of sensors to capture different
 
 ### LiDAR
 
-[LiDAR](https://en.wikipedia.org/wiki/Lidar) (light detection and ranging) uses laser pulses to measure distances to the Earth's surface, generating highly accurate three-dimensional models.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Lidar">LiDAR</WikiTooltip> (light detection and ranging) uses laser pulses to measure distances to the Earth's surface, generating highly accurate three-dimensional models.
 - High energy (short wavelength, high frequency) and cannot penetrate aerosol
 - Can be used for topographic mapping, vegetation analysis, and urban planning
 
 ### RADAR
 
-[RADAR](https://en.wikipedia.org/wiki/Radar) (radio detection and ranging) instruments transmit microwave pulses and analyze the backscattered signal to obtain information about surface roughness, moisture content, and elevation.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Radar">RADAR</WikiTooltip> (radio detection and ranging) instruments transmit microwave pulses and analyze the backscattered signal to obtain information about surface roughness, moisture content, and elevation.
 - Low energy (long wavelength, lower frequency) and can penetrate aerosol
 - Can be used for surface moisture estimation, and precipitation monitoring
 
 ### SAR
   
-[SAR](https://en.wikipedia.org/wiki/Synthetic-aperture_radar) (synthetic aperture radar) is an advanced form of radar that utilizes the motion of the sensor platform to synthesize a larger antenna, resulting in higher spatial resolution imagery.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Synthetic-aperture_radar">SAR</WikiTooltip> (synthetic aperture radar) is an advanced form of radar that utilizes the motion of the sensor platform to synthesize a larger antenna, resulting in higher spatial resolution imagery.
 - High resolution through motion and able to penetrate clouds
 - Can be used for topographic mapping and land cover classification
 
 ## Applications of remote sensing
 
-Remote sensing data, acquired through both passive and active means, enables a wide range of applications, including land cover classification, the [Normalized Difference Vegetation Index](https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index) (NDVI), and the [urban heat island](https://en.wikipedia.org/wiki/Urban_heat_island) effect. Passive multispectral and hyperspectral imagery are fundamental for land cover classification, while NDVI quantifies vegetation greenness and health based on red and near-infrared bands. These sensors help researchers and urban planners identify areas experiencing the most intense heat, understand contributing factors, and develop mitigation strategies to improve urban sustainability and human health.
+Remote sensing data, acquired through both passive and active means, enables a wide range of applications, including land cover classification, the <WikiTooltip url="https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index">Normalized Difference Vegetation Index</WikiTooltip> (NDVI), and the <WikiTooltip url="https://en.wikipedia.org/wiki/Urban_heat_island">urban heat island</WikiTooltip> effect. Passive multispectral and hyperspectral imagery are fundamental for land cover classification, while NDVI quantifies vegetation greenness and health based on red and near-infrared bands. These sensors help researchers and urban planners identify areas experiencing the most intense heat, understand contributing factors, and develop mitigation strategies to improve urban sustainability and human health.
 
 ## Explore the urban heat island effect in Montreal, Quebec
 
@@ -151,9 +151,9 @@ The urban heat island (UHI) describes the common phenomenon of urban areas being
 
 In the example below, the City of Montreal is shown to have a significant UHI effect, with the hottest areas (in red) being located in the downtown core and other densely populated areas. The data used for the 2020 UHI GeoJSON vector layer was sourced from [Données Québec](https://www.donneesquebec.ca/recherche/dataset/vmtl-ilots-de-chaleur). [Vector data](/lessons/spatial-data#vector-data) is easier to work with for this kind of thematic mapping on the web. 
 
-However, for analyzing the UHI, [surface thermography](https://donnees.montreal.ca/dataset/thermographie-surface) is crucial to maps heat patterns. Données Québec, for example, created Montreal's heat island maps by combining surface thermography, and LiDAR. LiDAR airborne and satellite imagery provided the City of Montreal's [digital surface model (DSM)](https://en.wikipedia.org/wiki/Digital_elevation_model). This imagery is generally distributed in ([Geo](https://en.wikipedia.org/wiki/GeoTIFF))[TIFF](https://en.wikipedia.org/wiki/TIFF) format.
+However, for analyzing the UHI, [surface thermography](https://donnees.montreal.ca/dataset/thermographie-surface) is crucial to maps heat patterns. Données Québec, for example, created Montreal's heat island maps by combining surface thermography, and LiDAR. LiDAR airborne and satellite imagery provided the City of Montreal's <WikiTooltip url="https://en.wikipedia.org/wiki/Digital_elevation_model">digital surface model (DSM)</WikiTooltip>. This imagery is generally distributed in (<WikiTooltip url="https://en.wikipedia.org/wiki/GeoTIFF">Geo</WikiTooltip>)<WikiTooltip url="https://en.wikipedia.org/wiki/TIFF">TIFF</WikiTooltip> format.
 
-[Lossless](https://en.wikipedia.org/wiki/Lossless_compression) TIFF is preferable for scientific analysis than [JPEG](https://en.wikipedia.org/wiki/JPEG) since it preserves data and image quality, which is highly beneficial for accurate pixel temperature readings.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Lossless_compression">Lossless</WikiTooltip> TIFF is preferable for scientific analysis than <WikiTooltip url="https://en.wikipedia.org/wiki/JPEG">JPEG</WikiTooltip> since it preserves data and image quality, which is highly beneficial for accurate pixel temperature readings.
 High quality TIFF raster images are essential for in-depth spatial analysis of heat distribution and change detection, allowing [principal component analysis](https://spss.espaceweb.usherbrooke.ca/analyse-en-composantes-principales-2/) to compare thermal behavior over time, but they are less suitable for interactive web-based demonstrations than vector data. 
 
 This is more apparent when you look at an imprecise geo-rectified image of Montreal West's surface thermography taken at night in 2016, shown below.

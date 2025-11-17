@@ -10,11 +10,11 @@ order: 11
 
 # Application rendering and data hosting strategies
 
-When building web mapping applications, you might need to consider how the application is rendered for [search engine optimization](https://en.wikipedia.org/wiki/Search_engine_optimization) (SEO) and where the spatial data is hosted. These decisions can significantly impact performance, discoverability, scalability, and user experience.
+When building web mapping applications, you might need to consider how the application is rendered for <WikiTooltip url="https://en.wikipedia.org/wiki/Search_engine_optimization">search engine optimization</WikiTooltip> (SEO) and where the spatial data is hosted. These decisions can significantly impact performance, discoverability, scalability, and user experience.
 
 ## Application rendering strategies
 
-As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR) like many existing React applications on the web today, [static site generators](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) such as [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like SEO, simplified page routing and [server-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications.
+As opposed to [client-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/CSR) (CSR) like many existing React applications on the web today, <WikiTooltip url="https://en.wikipedia.org/wiki/Static_site_generator">static site generators</WikiTooltip> (SSG) such as [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), and [Next.js](https://nextjs.org/) offer advantages like SEO, simplified page routing and [server-side rendering](https://developer.mozilla.org/en-US/docs/Glossary/SSR) (SSR). However, mapping libraries are often problematic when integrated with SSR environments due to their reliance on the browser's [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, which is unavailable during SSR. You might find yourself needing to write workarounds when trying to use web mapping functionalities within SSG-based applications.
 
 The SSR example below shows a workaround that had to be done in order to get Leaflet to work in a SSG-based application.
 If the CSR Vue component is rendered on the server, it will throw an error because `window` is not defined.
@@ -83,7 +83,7 @@ Afterwards, try passing your website through Google Search Console's [URL Inspec
 
 ## Client-side/server-side data
 
-When a user visits a web mapping application, the application can load spatial data on the client-side directly in the user's browser. For example, with Leaflet, you can load a [CSV or GeoJSON](/lessons/spatial-data#vector-data) file directly into the map. This is ideal for small datasets or offline use in [disconnected/air gapped environments](https://en.wikipedia.org/wiki/Air_gap_(networking)). CSR, as covered in [rendering strategies](/lessons/web-GIS/rendering-and-hosting#application-rendering-strategies) above, often uses client-side data.
+When a user visits a web mapping application, the application can load spatial data on the client-side directly in the user's browser. For example, with Leaflet, you can load a [CSV or GeoJSON](/lessons/spatial-data#vector-data) file directly into the map. This is ideal for small datasets or offline use in <WikiTooltip url="https://en.wikipedia.org/wiki/Air_gap_(networking)">disconnected/air gapped environments</WikiTooltip>. CSR, as covered in [rendering strategies](/lessons/web-GIS/rendering-and-hosting#application-rendering-strategies) above, often uses client-side data.
 
 ::: code-group
 

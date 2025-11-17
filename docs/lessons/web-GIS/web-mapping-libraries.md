@@ -40,7 +40,7 @@ You can **_usually_** tell which technology was used to author a web map by look
 When building your first web mapping application, you can use plain JavaScript, HTML and CSS without any tooling or complex setup to get started quickly.
 Some web mapping applications can be as simple as placing a point on a map to help customers find your business.
 
-For these kinds of applications, the web mapping library has already packaged and optimized the code to run in your browser by simply including a `script` tag in your HTML file pointing to a [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) URL.
+For these kinds of applications, the web mapping library has already packaged and optimized the code to run in your browser by simply including a `script` tag in your HTML file pointing to a <WikiTooltip url="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</WikiTooltip> (CDN) URL.
 
 <LeafletMarker/>
 
@@ -105,4 +105,4 @@ No further setup, accounts, or tools are required for the user to simply land on
 
 What you saw above is great, but it's important to remember that there are companies out there that intentionally build applications meant to scale with demands and complexity.
 
-In the next chapter, we'll dive into the importance of [frontend](https://en.wikipedia.org/wiki/Frontend_and_backend) web development frameworks and their role on the scale of the website you plan to host your web mapping application on.
+In the next chapter, we'll dive into the importance of <WikiTooltip url="https://en.wikipedia.org/wiki/Frontend_and_backend">frontend</WikiTooltip> web development frameworks and their role on the scale of the website you plan to host your web mapping application on.

@@ -23,14 +23,14 @@ For example, if the values of a variable are clustered together in one area and 
 ## Types of spatial autocorrelation statistics
 
 There are two main types of spatial autocorrelation statistics: **global** statistics and **local** statistics. 
-Global statistics, like [**Global Moran's I**](https://en.wikipedia.org/wiki/Moran%27s_I), summarize the overall pattern of spatial autocorrelation in a dataset. 
+Global statistics, like <WikiTooltip url="https://en.wikipedia.org/wiki/Moran%27s_I">**Global Moran's I**</WikiTooltip>, summarize the overall pattern of spatial autocorrelation in a dataset. 
 In contrast, local statistics, such as **Local Moran's I**, provide information on the spatial autocorrelation of values within specific geographic areas.
 
 ## Considerations
 
-Spatial autocorrelation statistics follow **Tobler's first law of Geography** ([TFL](https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography)) where near things are more related than distant things.
+Spatial autocorrelation statistics follow **Tobler's first law of Geography** (<WikiTooltip url="https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography">TFL</WikiTooltip>) where near things are more related than distant things.
 When conducting statistical analysis, the outcome of the correlation coefficient from Moran's I can explain the relationship between two values (or multiple locations).
-The relationship between two values ([bivariate](https://en.wikipedia.org/wiki/Bivariate_analysis)) can either be by chance or correlated. 
+The relationship between two values (<WikiTooltip url="https://en.wikipedia.org/wiki/Bivariate_analysis">bivariate</WikiTooltip>) can either be by chance or correlated. 
 This is where you would reject or accept a hypothesis and show that the distribution is/isn't random, which is the same as cause and effect in data. 
 
 ### Moran's I
@@ -84,7 +84,7 @@ Spatiotemporal dependence combines both spatial dependence and temporal dependen
 Spatial dependence signifies that values of a variable at one location can depend on values of that same variable at other locations.
 It's worth mentioning that there are issues related to spatial dependance that impact statistical tests:
 
-- Modifiable Areal Unit Problem ([MAUP](https://en.wikipedia.org/wiki/Modifiable_areal_unit_problem)) can introduce bias
+- Modifiable Areal Unit Problem (<WikiTooltip url="https://en.wikipedia.org/wiki/Modifiable_areal_unit_problem">MAUP</WikiTooltip>) can introduce bias
     - Boundaries impact statistical tests (most importantly, look at standard deviation)
     - Location of boundaries used to aggregate data can influence results of statistical tests (Moran's I)
     - Gerrymandering is a good example of this
@@ -93,13 +93,13 @@ It's worth mentioning that there are issues related to spatial dependance that i
         :anchorHref="'https://www.scientificamerican.com/article/geometry-reveals-the-tricks-behind-gerrymandering/'"
         :anchorText="'Credit: Spektrum der Wissenschaft/Manon Bischoff'"
     />
-- [Ecological fallacy](https://en.wikipedia.org/wiki/Ecological_fallacy) can result in weak inferences
+- <WikiTooltip url="https://en.wikipedia.org/wiki/Ecological_fallacy">Ecological fallacy</WikiTooltip> can result in weak inferences
     - Individuals vs populations
     - Cant take aggregated results and apply them to individuals
     - Statistical test results change based on data aggregation
 - Sampling methods such as [random](https://www.scribbr.com/methodology/simple-random-sampling/), [stratified random](https://www.scribbr.com/methodology/stratified-sampling/#:~:text=What%20is%20stratified%20sampling%3F,using%20another%20probability%20sampling%20method.), and [systematic sampling](https://www.scribbr.com/methodology/systematic-sampling/) can dictate sampling bias
     - For a good amount of spatial representation and to avoid bias, use stratified random sampling
-- [Boundary problem](https://en.wikipedia.org/wiki/Boundary_problem_(spatial_analysis)) might lead to loss of information
+- <WikiTooltip url="https://en.wikipedia.org/wiki/Boundary_problem_(spatial_analysis)">Boundary problem</WikiTooltip> might lead to loss of information
 
 ## Interaction
 

@@ -15,11 +15,11 @@ Making a beautiful map takes considerable effort.
 If your map is only for illustration, a printed or static digital version may be enough, but expectations have changed.
 
 People now want maps that are engaging, interactive, and accessible from anywhere, on any device with internet.
-[Web GIS](https://en.wikipedia.org/wiki/Web_GIS) can help with that because it combines the power of the browser and GIS tools for capturing, storing, analyzing spatial data, and encouraging exploration to provide deeper insight.
+<WikiTooltip url="https://en.wikipedia.org/wiki/Web_GIS">Web GIS</WikiTooltip> can help with that because it combines the power of the browser and GIS tools for capturing, storing, analyzing spatial data, and encouraging exploration to provide deeper insight.
 
-Creating your own [web mapping](https://en.wikipedia.org/wiki/Web_mapping) applications can be a rewarding experience, but depending on your goals and company's needs, it can get quite technical.
+Creating your own <WikiTooltip url="https://en.wikipedia.org/wiki/Web_mapping">web mapping</WikiTooltip> applications can be a rewarding experience, but depending on your goals and company's needs, it can get quite technical.
 
-However, the barrier to entry has lowered significantly in recent years thanks to the rise of various web mapping libraries, [cloud services](https://en.wikipedia.org/wiki/Cloud_computing), evolution of the modern web browser, [frontend web development frameworks](https://en.wikipedia.org/wiki/Front-end_web_development), and [artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence).
+However, the barrier to entry has lowered significantly in recent years thanks to the rise of various web mapping libraries, <WikiTooltip url="https://en.wikipedia.org/wiki/Cloud_computing">cloud services</WikiTooltip>, evolution of the modern web browser, <WikiTooltip url="https://en.wikipedia.org/wiki/Front-end_web_development">frontend web development frameworks</WikiTooltip>, and <WikiTooltip url="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</WikiTooltip>.
 
 In the next few chapters, we'll cover some key considerations for creating your very own successful web mapping application by:
 
