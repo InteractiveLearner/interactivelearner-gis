@@ -20,7 +20,7 @@ If you have a GitHub account, you can skip this section.
 
 First, you will need to make a GitHub account.
 Go to: [GitHub.com](https://github.com/) and create an account.
-After you create an acoount, the next step is to create a repository, or a repo for short.
+After you create an account, the next step is to create a repository, or a repo for short.
 To learn more about GitHub and repositories, click [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories).
 
 ## GitHub repository
@@ -38,7 +38,7 @@ You will see your GitHub name with an empty repository name.
 Create an appropriate name for your project here.
 Next, create a small description of your project in the "**description**" text box.
 Make sure that we are on "Public" under "**Choose visibility**."
-After, click the on switch to turn on "**Add README**."
+After, click the button to turn on "**Add README**."
 Finally, click the green "**Create repository**" button towards the bottom.
 
 ## Uploading files to our repository
@@ -166,7 +166,8 @@ Under "**Branch**" select "**main**" and then "**root**" for the folder.
 Click save.
 Towards the top of the screen, click on the "**Actions**" tab.
 Here we should see something like: "Pages build and deployment."
-If there is a yellow loading circle, wait or refresh the page, and it should turn into a green check. 
+If there is a yellow loading circle, wait for a moment.
+If it takes a while, refresh the page and it should turn into a green check. 
 This will show that the build is successful.
 
 **Note:**
