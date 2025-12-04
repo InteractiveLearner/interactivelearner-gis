@@ -4,7 +4,7 @@ description: Learn how to use GitHub Pages to host your map online. This will al
 authors:
   - name: Nick Sandburg
     url: https://www.linkedin.com/in/nicksandburg/
-date: 2025-12-3
+date: 2025-12-03
 order: 0
 ---
 
