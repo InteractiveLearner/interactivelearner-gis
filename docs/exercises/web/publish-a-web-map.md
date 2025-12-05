@@ -29,7 +29,7 @@ To learn more about GitHub and repositories, click [here](https://docs.github.co
 **What is a GitHub repository?** <br>
 A repository is like the central hub for a project.
 The repository will contain all of your files for the project.
-By making a repository, you can: track changes to your project, allow for multiple people to collaboration on your project, allow you to show different versions of your project, and you can even make it public or private.
+By making a repository, you can: track changes to your project, allow for multiple people to collaborate on your project, allow you to show different versions of your project, and you can even make it public or private.
 
 **Create your repository** <br>
 Let's start by creating a GitHub repository.
