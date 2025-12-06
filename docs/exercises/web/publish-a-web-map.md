@@ -181,7 +181,7 @@ If it takes a while, refresh the page and it should turn into a green check.
 This will show that the build is successful.
 
 **Note:**
-If nothing pops up, go back to Pages and click "none" for the branch, then switch back to "main" to reset it
+If nothing pops up, go back to Pages and click "**none**" for the branch, then switch back to "**main**" to reset it.
 
 After the build is successful, go back to "**Settings**" and "**Pages**."
 Towards the top, we should now see that your site is live.
