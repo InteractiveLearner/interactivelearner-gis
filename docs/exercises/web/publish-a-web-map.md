@@ -10,13 +10,10 @@ order: 0
 
 # Sharing your map
 
-Now that you have a map, you probably want to learn how to share it!
-In this exercise, we will be learning how to do this with GitHub Pages.
-GitHub Pages allows you to host your map online for anyone to view.
-
-**Note:**
-If you haven't downloaded the GeoJson map used in the desktop exercises, go back to the [QGIS basics](/exercises/desktop/qgis-basics#Downloading-vector-data) exercise and download it.
-You will find it under the "**Downloading vector data**" section. 
+In this exercise, we will be learning how to share a map on the web with GitHub Pages.
+GitHub Pages allows you to host your website at no cost for anyone to view.
+We'll be using the GeoJSON data from the [QGIS basics](/exercises/desktop/qgis-basics#Downloading-vector-data) desktop exercise.
+You can follow the instruction from the linked exercise to download the necessary data. 
 
 ## GitHub account
 
