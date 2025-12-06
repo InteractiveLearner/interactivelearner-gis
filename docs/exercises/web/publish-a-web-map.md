@@ -75,7 +75,7 @@ If for some reason this .geojson file is inside of a folder, you will need to mo
 You will need Visual Studio Code or some type of text editor.
 
 We will use [Leaflet](https://leafletjs.com/), a JavaScript library to display our map.
-Refer back to the [web mapping libraries](/lessons/web-GIS/web-mapping-libraries) section for more information and more open-source libraries.
+Refer back to the [web mapping libraries](/lessons/web-GIS/web-mapping-libraries) lesson for more information and more open-source libraries.
 
 We will need to create 3 files:
 1. index.html - contains the structure of our map and text or headings
