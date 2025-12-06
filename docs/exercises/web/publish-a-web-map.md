@@ -61,7 +61,7 @@ Add only this file by dragging it to where it says, "Drag files here to add them
 Next, click on the green "**Commit changes**" button after the file has loaded.
 
 **If you have NOT followed the previous exercises:** <br>
-Find the .geojson file that you downloaded earlier in this exercise.
+Find the .geojson file that you downloaded at the beginning of this exercise.
 It should be under downloads if it has recently been downloaded.
 Drag this file in, then commit the changes.
 
