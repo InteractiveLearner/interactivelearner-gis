@@ -10,9 +10,10 @@ order: 0
 
 # Sharing your map
 
-Now that you have a map, you probably want to learn how to share it!
-In this exercise, we will be learning how to do this with GitHub Pages.
-GitHub Pages allows you to host your map online for anyone to view.
+In this exercise, we will be learning how to share a map on the web with GitHub Pages.
+GitHub Pages allows you to host your website at no cost for anyone to view.
+We'll be using the GeoJSON data from the [QGIS basics](/exercises/desktop/qgis-basics#Downloading-vector-data) desktop exercise.
+You can follow the instruction from the linked exercise to download the necessary data. 
 
 ## GitHub account
 
@@ -47,12 +48,19 @@ Finally, click the green "**Create repository**" button towards the bottom.
 Now that we have an empty project repository, we want to upload our files into it.
 Click the "**Add file**" or "**+**" button next to the green "**<> Code**" button.
 Next, click "upload files" and go to your files on your computer.
+
+**If you have followed the previous exercises:**<br>
 Find the folder containing all of your project files.
 This file should contain your QGIS save file (ending with the .qgz extension), .geojson, along with other saved layers.
+We don't need all of these files, We will only need the .geojson file that we downloaded from the [City of San Diego Open Data Portal](https://opendata.sandag.org/).
 
-We don't need all of these files, We will only need our .geojson file.
 Add only this file by dragging it to where it says, "Drag files here to add them to your repository."
 Next, click on the green "**Commit changes**" button after the file has loaded.
+
+**If you have NOT followed the previous exercises:** <br>
+Find the .geojson file that you downloaded at the beginning of this exercise.
+It should be under downloads if it has recently been downloaded.
+Drag this file in, then commit the changes.
 
 **Note:**
 Make sure that this .geojson file is not inside a folder on GitHub, otherwise the map will not show up when we make our page.
@@ -64,7 +72,7 @@ If for some reason this .geojson file is inside of a folder, you will need to mo
 You will need Visual Studio Code or some type of text editor.
 
 We will use [Leaflet](https://leafletjs.com/), a JavaScript library to display our map.
-Refer back to the web mapping libraries [web mapping libraries](/lessons/web-GIS/web-mapping-libraries) section.
+Refer back to the [web mapping libraries](/lessons/web-GIS/web-mapping-libraries) lesson for more information and more open-source libraries.
 
 We will need to create 3 files:
 1. index.html - contains the structure of our map and text or headings
@@ -170,7 +178,7 @@ If it takes a while, refresh the page and it should turn into a green check.
 This will show that the build is successful.
 
 **Note:**
-If nothing pops up, go back to Pages, and click "**none**" for the branch and then back to "**main**" to reset it.
+If nothing pops up, go back to Pages and click "**none**" for the branch, then switch back to "**main**" to reset it.
 
 After the build is successful, go back to "**Settings**" and "**Pages**."
 Towards the top, we should now see that your site is live.
@@ -287,11 +295,13 @@ body {
 
 :::
 
-Your page should now look like this:
 <ContentFigure 
    :imgSrc="'/exercise_files/images/map2pages.png'"
    :description="'GitHub Page with the map and text'"
-   :style="{'width': '600px' }"
+   :style="{
+      'max-width': '600px',
+      'width': '100%'
+   }"
 />
 
 Have you noticed that the map is only one shade of blue? 
