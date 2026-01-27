@@ -67,7 +67,7 @@ export default defineConfig({
       },
     ],
     footer: {
-      message: "Released under the GPL-3.0 license.",
+      message: "Released under the MIT license.",
       copyright: "Copyright © Interactive Learner GIS since 2022",
     },
     sidebar: generateSidebar({

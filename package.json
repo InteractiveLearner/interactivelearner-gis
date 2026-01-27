@@ -8,17 +8,17 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
-    "wrangler:deploy": "wrangler deploy",
-    "wrangler:dev": "wrangler dev",
-    "wrangler:cf-typegen": "wrangler types"
+    "mcp:dev": "wrangler dev",
+    "mcp:deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@arcgis/core": "~4.34.6",
     "@arcgis/map-components": "~4.34.7",
     "@esri/calcite-components": "~3.3.3",
     "@floating-ui/vue": "^1.1.9",
-    "@modelcontextprotocol/sdk": "1.20.2",
-    "agents": "^0.2.19",
+    "@modelcontextprotocol/sdk": "1.25.2",
+    "agents": "^0.3.1",
     "d3": "^7.9.0",
     "leaflet": "^1.9.4",
     "simple-statistics": "^7.8.8",
@@ -26,13 +26,14 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260124.0",
     "@types/node": "^24.10.1",
     "feed": "^5.1.0",
     "mermaid": "^11.12.1",
     "typescript": "5.9.3",
     "vitepress": "2.0.0-alpha.12",
     "vitepress-sidebar": "^1.33.0",
-    "wrangler": "^4.47.0"
+    "wrangler": "^4.60.0"
   },
   "packageManager": "pnpm@10.17.0",
   "engines": {
