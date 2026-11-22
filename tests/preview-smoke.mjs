@@ -146,8 +146,10 @@ try {
   });
   await check('Mermaid diagram and frontend example', async () => {
     await open('/lessons/web-GIS/frontend-frameworks');
-    await page.locator('svg[id^="mermaid-"]').first().waitFor({ state: 'visible' });
-    assert.ok(await page.locator('svg[id^="mermaid-"] path').count());
+    // Mermaid creates a temporary SVG while rendering. Wait for the finished
+    // drawing inside the lesson, rather than that intermediate document node.
+    await page.locator('.vp-doc svg[id^="mermaid-"] path').first().waitFor({ state: 'attached' });
+    assert.ok(await page.locator('.vp-doc svg[id^="mermaid-"] path').count());
   });
   assert.deepEqual(report.pageErrors, [], 'Unexpected browser runtime errors');
   assert.deepEqual(report.failedSiteRequests, [], 'Site resources should load successfully');
