@@ -1,6 +1,8 @@
 <!-- Inspired by https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 -->
 <!-- Repo https://github.com/axismaps/colorbrewer -->
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { ref, computed, watch, onMounted } from "vue";
 import { colorSchemes } from "./utils/ColorSchemes";
 import statesJSON from "../../data/us-states.json";
@@ -112,6 +114,7 @@ function handleActionBarClick(event) {
 };
 
 function createLegend() {
+    if (!map) return;
     if (legend) {
         legend.remove();
     }
@@ -270,6 +273,7 @@ function getFeatureStyle(feature) {
 // }
 
 function updateMapColors() {
+    if (!geojsonLayer) return;
     if (geojsonLayer) {
         geojsonLayer.setStyle(getFeatureStyle);
     }
@@ -350,6 +354,24 @@ onMounted(async () => {
 
     //   renderHistogram();
 });
+
+useLeafletVisualization('classified-map', 'Compare classification methods, data variables and color schemes for US states.', () => map, {
+  controls: { variable: { type: 'string', enum: ['population', 'area_sqkm', 'density'] }, method: { type: 'string', enum: ['equalInterval', 'quantile', 'naturalBreaks'] }, colorType: { type: 'string', enum: Object.keys(colorSchemes) }, scheme: { type: 'string', enum: Object.values(colorSchemes).flatMap(t => t.schemes.map(s => s.name)) }, classes: { type: 'integer', minimum: 3, maximum: 12 } },
+  read: () => ({ variable: selectedData.value, method: selectedClassification.value, colorType: selectedType.value, scheme: selectedSchemeName.value, classes: selectedClasses.value, availableClasses: availableClasses.value, legend: legend?.getContainer()?.textContent?.replace(/\s+/g, ' ').trim() }),
+  update: c => {
+    const type = c.colorType || selectedType.value;
+    const schemeName = c.scheme || (c.colorType ? colorSchemes[type].schemes[0].name : selectedSchemeName.value);
+    const scheme = colorSchemes[type].schemes.find(s => s.name === schemeName);
+    if (!scheme || (c.classes !== undefined && !getAvailableClasses(scheme).includes(c.classes))) throw new Error('Scheme or class count is unavailable for this color type.');
+    if (c.variable) selectedData.value = c.variable;
+    if (c.method) selectedClassification.value = c.method;
+    if (c.colorType) changeType(c.colorType);
+    if (c.scheme) changeScheme(c.scheme);
+    if (c.classes !== undefined) changeClasses(c.classes);
+    if (filterRef.value) filterRef.value.hidden = false;
+  },
+});
+onBeforeUnmount(() => { map?.remove(); });
 </script>
 
 <template>

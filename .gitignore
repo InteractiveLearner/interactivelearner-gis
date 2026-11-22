@@ -41,3 +41,6 @@ src/views/content/Primitives.mdx
 src/views/content/RelationalDatabases.mdx
 src/views/content/Statistics.mdx
 src/views/content/Techniques.mdx
+
+# Generated from lesson sources
+/mcp/generated/

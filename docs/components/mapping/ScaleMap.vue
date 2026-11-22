@@ -3,6 +3,8 @@
 </template>
 
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { ref, onMounted } from "vue";
 
 const map = ref(null);
@@ -46,6 +48,9 @@ function addButtonToMap(zoom, center, title) {
 
     map.value.addControl(new customControl({ position: "bottomright" }));
 }
+
+useLeafletVisualization('scale-map', 'Compare small and large map scales.', () => map.value);
+onBeforeUnmount(() => { map.value?.remove(); });
 </script>
 
 <style scoped>

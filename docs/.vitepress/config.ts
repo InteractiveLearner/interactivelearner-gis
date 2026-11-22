@@ -4,6 +4,7 @@ import { generateSidebar } from "vitepress-sidebar";
 import { writeFileSync } from "fs";
 import { Feed } from "feed";
 import MermaidExample from "./mermaid-markdown-all.js";
+import { aiContentPlugin, writeMarkdown } from './ai/plugin.ts';
 
 const hostname: string = "https://interactivelearner-gis.com";
 
@@ -21,6 +22,10 @@ export default defineConfig({
     hostname: hostname,
   },
   cleanUrls: true,
+  vite: { plugins: [aiContentPlugin()] },
+  transformHead({ pageData }) {
+    return [['link', { rel: 'alternate', type: 'text/markdown', href: '/' + pageData.relativePath }]];
+  },
   themeConfig: {
     editLink: {
       pattern:
@@ -99,6 +104,8 @@ export default defineConfig({
     },
   },
   head: [
+    ['link', { rel: 'api-catalog', href: '/.well-known/api-catalog' }],
+    ['link', { rel: 'service-doc', href: '/ai' }],
     ["link", { rel: "icon", type: "image/png", href: "/logo192.png" }],
     ["meta", { name: "theme-color", content: "#144d1e" }],
     // Open Graph
@@ -147,6 +154,7 @@ export default defineConfig({
   ],
   // Credit to https://laros.io/generating-an-rss-feed-with-vitepress for the guide
   buildEnd: async (config: SiteConfig) => {
+    writeMarkdown(config.outDir);
     const feed = new Feed({
       title: "Interactive Learner GIS",
       description: "Easily learn about GIS in an interactive environment.",

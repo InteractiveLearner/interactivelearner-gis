@@ -3,6 +3,8 @@
 </template>
 
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { onMounted } from "vue";
 import montrealUHI from "../../data/uhi2020.json";
 import thermographyImage from "/src/assets/images/thermographie-surface-2016-montreal-ouest-nuit.png";
@@ -84,6 +86,7 @@ function createLegend(map) {
   legend.addTo(map);
 }
 
+let agentMap = null;
 onMounted(async () => {
   Leaflet = await import("leaflet"); // window not defined error if not imported here
   const map = Leaflet.map("map", { zoomControl: false }).setView(
@@ -91,6 +94,7 @@ onMounted(async () => {
     13
   );
 
+  agentMap = map;
   const basemap = Leaflet.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
@@ -108,14 +112,14 @@ onMounted(async () => {
     [45.46036894381611, -73.63257647690578],
   ];
 
-  const img = L.imageOverlay(thermographyImage, imageBounds, {
+  const img = Leaflet.imageOverlay(thermographyImage, imageBounds, {
     pane: "imagePane",
     interactive: true,
   })
     .addTo(map)
     .bindPopup("Surface thermography of Montreal West @night");
 
-  const uhi = L.geoJSON(montrealUHI, {
+  const uhi = Leaflet.geoJSON(montrealUHI, {
     style: (feature) => styleVectorFeature(feature),
     onEachFeature: (feature, layer) => {
       layer.bindPopup(
@@ -137,8 +141,11 @@ onMounted(async () => {
     ["Urban heat island"]: uhi,
   };
 
-  L.control.layers(baseLayers, overlays).addTo(map);
+  Leaflet.control.layers(baseLayers, overlays).addTo(map);
 });
+
+useLeafletVisualization('urban-heat-island', 'Explore urban heat island data and surface thermography.', () => agentMap);
+onBeforeUnmount(() => { agentMap?.remove(); });
 </script>
 
 <style scoped>

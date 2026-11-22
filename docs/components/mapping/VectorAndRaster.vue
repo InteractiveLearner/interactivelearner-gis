@@ -29,6 +29,8 @@
 </template>
 
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { ref, onMounted, watch, toRaw } from "vue";
 import statesJSON from "../../data/us-states.json";
 let L;
@@ -358,6 +360,9 @@ onMounted(async () => {
     );
   });
 });
+
+useLeafletVisualization('vector-and-raster', 'Compare synchronized vector and raster maps.', () => vectorMap.value, { controls: { variable: { type: 'string', enum: ['population', 'area', 'density'] } }, read: () => ({ variable: vectorStyleType.value }), update: c => { if (c.variable) vectorStyleType.value = c.variable; } });
+onBeforeUnmount(() => { vectorMap.value?.off(); rasterMap.value?.off(); vectorMap.value?.remove(); rasterMap.value?.remove(); });
 </script>
 
 <style scoped>

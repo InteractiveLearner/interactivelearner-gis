@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, useId } from 'vue';
+import { useQuizResults } from '../../.vitepress/ai/registry';
 
 const props = defineProps({
     quizData: {
@@ -10,6 +11,29 @@ const props = defineProps({
 
 const currentQuestionIndex = ref(0);
 const userAnswers = ref({});
+const attempts = ref({});
+const quizId = `quiz-${useId()}`;
+
+useQuizResults(quizId, () => ({
+    id: quizId,
+    total: props.quizData.questions.length,
+    answered: Object.keys(userAnswers.value).length,
+    correct: correctAnswersCount.value,
+    currentQuestion: currentQuestionIndex.value + 1,
+    questions: props.quizData.questions.map((question, index) => {
+        const selected = question.options.find(o => o.key === userAnswers.value[index]);
+        const answered = !!selected;
+        return {
+            number: index + 1, question: question.question,
+            status: answered ? (selected.key === question.correctAnswer ? 'correct' : 'incorrect') : 'unanswered',
+            ...(answered ? {
+                selectedAnswer: selected.answer,
+                correctAnswer: question.options.find(o => o.key === question.correctAnswer)?.answer,
+                attempts: attempts.value[index] || [],
+            } : {}),
+        };
+    }),
+}));
 
 const currentQuestion = computed(() => props.quizData.questions[currentQuestionIndex.value]);
 
@@ -28,6 +52,9 @@ const allQuestionsAnsweredCorrectly = computed(() =>
 
 const selectAnswer = (optionKey) => {
     userAnswers.value[currentQuestionIndex.value] = optionKey;
+    const question = currentQuestion.value;
+    const history = attempts.value[currentQuestionIndex.value] ||= [];
+    history.push({ answer: question.options.find(o => o.key === optionKey)?.answer, correct: optionKey === question.correctAnswer });
 };
 
 const goToNextQuestion = () => {

@@ -3,6 +3,8 @@
 </template>
 
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { onMounted } from 'vue';
 
 import pin from '/assets/icons/pin.png';
@@ -18,6 +20,7 @@ import roadsData from '../../data/Highways.json';
 const options = [pin, icon, pie, hospital];
 let pointsCollection = [];
 let current = 1;
+let selectedSymbol = 0;
 
 let Leaflet;
 
@@ -77,6 +80,7 @@ const createControl = (title, data) => {
             panelDiv.addEventListener('click', () => {
                 if (current === 4) current = 0;
 
+                selectedSymbol = current;
                 data.forEach((layer) => {
                     layer.setIcon(
                         Leaflet.icon({
@@ -96,10 +100,12 @@ const createControl = (title, data) => {
     return new MapInfo({ position: 'bottomright' });
 };
 
+let agentMap = null;
 onMounted(async () => {
     Leaflet = await import('leaflet'); // window not defined error if not imported here
     const map = Leaflet.map('map').setView([45.279716962875604, -75.78658103340784], 9);
 
+  agentMap = map;
     Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
@@ -141,6 +147,9 @@ onMounted(async () => {
 
     Leaflet.control.scale({ position: 'bottomleft' }).addTo(map);
 });
+
+useLeafletVisualization('visual-variables', 'Explore hospital symbols and geographic features.', () => agentMap, { controls: { symbol: { type: 'integer', minimum: 0, maximum: 3, description: '0 pin, 1 icon, 2 pie, 3 hospital' } }, read: () => ({ symbol: selectedSymbol }), update: c => { if (c.symbol !== undefined) { selectedSymbol = c.symbol; current = (c.symbol + 1) % 4; pointsCollection.forEach(layer => layer.setIcon(Leaflet.icon({ iconSize: [38, 38], iconUrl: options[c.symbol] }))); } } });
+onBeforeUnmount(() => { agentMap?.remove(); });
 </script>
 
 <style scoped>
