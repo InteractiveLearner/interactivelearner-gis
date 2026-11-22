@@ -130,6 +130,7 @@ try {
   });
   await check('ArcGIS Maps SDK and map panels', async () => {
     await open('/lessons/map-types');
+    await page.locator('#chorochromatic').scrollIntoViewIfNeeded();
     await poll(async () => {
       const data = await call('list_visualizations');
       return data.visualizations.some(v => v.id === 'chorochromatic' && v.ready);
@@ -137,7 +138,10 @@ try {
     const changed = await call('update_visualization', { id: 'chorochromatic', changes: { zoom: 5, panel: 'legend' } });
     assert.equal(changed.state.panel, 'legend');
     assert.equal(changed.state.zoom, 5);
-    await page.locator('#chorochromatic').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => {
+      const view = document.querySelector('#chorochromatic')?.view;
+      return view?.ready && !view.suspended && !view.updating && view.map.layers.length > 0;
+    }, undefined, { timeout: 90000 });
     await screenshot('arcgis');
   });
   await check('Mermaid diagram and frontend example', async () => {
