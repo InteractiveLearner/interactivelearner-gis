@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
 import * as d3 from "d3";
+import world from "../../data/world.json";
+import { useVisualization } from "../../.vitepress/ai/registry";
 
 const DefaultProjection = "Azimuthal Equal Area";
 const projectionTypes = [
@@ -60,15 +62,8 @@ onMounted(async () => {
     import('@esri/calcite-components/dist/components/calcite-slider')
   ]);
 
-  try {
-    const json = await d3.json(
-      "https://gist.githubusercontent.com/d3indepth/f28e1c3a99ea6d84986f35ac8646fac7/raw/c58cede8dab4673c91a3db702d50f7447b373d98/ne_110m_land.json"
-    );
-    geojson.value = json;
-    updateProjection();
-  } catch (error) {
-    console.error('Error loading JSON:', error);
-  }
+  geojson.value = world;
+  updateProjection();
 });
 
 watch(state, () => {
@@ -76,6 +71,7 @@ watch(state, () => {
 });
 
 function updateProjection() {
+  if (!geojson.value) return;
   const projection = d3["geo" + state.type.replace(/\s/g, "")]();
   GeoGenerator.projection(projection);
   projection
@@ -122,6 +118,14 @@ function updateCenterLon(event) {
 function updateCenterLat(event) {
   state.centerLat = event.target.value;
 }
+
+useVisualization({
+  id: 'projection-explorer', description: 'Compare projection distortion using the world outline, graticule and equal-sized circles.',
+  controls: { type: { type: 'string', enum: projectionTypes }, scale: { type: 'number', minimum: 0, maximum: 400 }, centerLon: { type: 'number', minimum: -180, maximum: 180 }, centerLat: { type: 'number', minimum: -89, maximum: 89 }, },
+  ready: () => !!geojson.value,
+  read: () => ({ type: state.type, scale: state.scale, centerLon: state.centerLon, centerLat: state.centerLat }),
+  update: changes => Object.assign(state, changes),
+});
 </script>
 
 <template>

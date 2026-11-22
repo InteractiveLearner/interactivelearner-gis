@@ -3,12 +3,15 @@
 </template>
 
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { onMounted, ref } from "vue";
 import graffitiData from "../../data/VancouverGraffitiCount.json";
 import { jenks } from "simple-statistics";
 let L;
 let jenksBreaks = [];
 let legend;
+let reversed = false;
 
 const colorRamp = ["#bd0026", "#f03b20", "#fd8d3c", "#fecc5c", "#ffffb2"];
 
@@ -59,6 +62,7 @@ const createLegend = (map) => {
     legend.addTo(map);
 };
 
+let agentMap = null;
 onMounted(async () => {
     L = await import("leaflet");
 
@@ -70,6 +74,7 @@ onMounted(async () => {
         zoomControl: false,
     });
 
+  agentMap = map;
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -96,6 +101,7 @@ function addButtonToMap(map) {
         button.innerHTML = "<button>Reverse color ramp</button>";
 
         L.DomEvent.on(button, "click", () => {
+            reversed = !reversed;
             colorRamp.reverse();
 
             map.eachLayer((layer) => {
@@ -112,6 +118,9 @@ function addButtonToMap(map) {
 
     buttonControl.addTo(map);
 }
+
+useLeafletVisualization('misleading-theme', 'Compare how reversing a color ramp changes perception of graffiti counts.', () => agentMap, { controls: { reversed: { type: 'boolean' } }, read: () => ({ reversed }), update: c => { if (c.reversed !== undefined && c.reversed !== reversed) { reversed = c.reversed; colorRamp.reverse(); agentMap.eachLayer(layer => { if (layer.feature) layer.setStyle(styleFeature(layer.feature)); }); createLegend(agentMap); } } });
+onBeforeUnmount(() => { agentMap?.remove(); });
 </script>
 
 <style scoped>

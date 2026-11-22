@@ -3,9 +3,12 @@
 </template>
 
 <script setup>
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
 import { onMounted } from "vue";
 let Leaflet;
 
+let agentMap = null;
 onMounted(async () => {
   // Import dynamically to avoid window not defined error in SSR
   Leaflet = await import("leaflet");
@@ -14,6 +17,7 @@ onMounted(async () => {
   if (typeof window !== "undefined") {
     const map = Leaflet.map("map").setView([48.43, -123.36], 14);
 
+  agentMap = map;
     Leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -25,6 +29,9 @@ onMounted(async () => {
       .openPopup();
   }
 });
+
+useLeafletVisualization('leaflet-marker', 'Explore the marker example.', () => agentMap);
+onBeforeUnmount(() => { agentMap?.remove(); });
 </script>
 
 <style scoped>

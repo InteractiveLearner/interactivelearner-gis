@@ -1,5 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+import { useVisualization } from '../../.vitepress/ai/registry';
 
 const props = defineProps({
     itemId: String,
@@ -71,6 +73,25 @@ onMounted(async () => {
         import("@arcgis/map-components/dist/components/arcgis-layer-list")
     ]);
     mapRef.value.addEventListener('arcgisViewReadyChange', handleArcgisViewReadyChange);
+});
+
+useVisualization({
+  id: props.mapId, description: props.title,
+  controls: { zoom: { type: 'number', minimum: 2, maximum: 18 }, panel: { type: 'string', enum: ['legend', 'layers', 'none'] } },
+  ready: () => !!mapRef.value?.view?.ready,
+  read: () => ({ zoom: mapRef.value?.view?.zoom, panel: activeWidget }),
+  update: c => {
+    if (c.zoom !== undefined) mapRef.value.view.zoom = c.zoom;
+    if (c.panel) {
+      togglePanelVisibility('legend', c.panel === 'legend');
+      togglePanelVisibility('layers', c.panel === 'layers');
+      activeWidget = c.panel === 'none' ? null : c.panel;
+    }
+  },
+});
+onBeforeUnmount(() => {
+  actionBarRef.value?.removeEventListener('click', handleActionBarClick);
+  actionBarRef.value?.removeEventListener('calciteActionBarToggle', handleActionBarToggle);
 });
 </script>
 

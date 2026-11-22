@@ -29,7 +29,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, toRaw } from "vue";
+import { useLeafletVisualization } from "../../.vitepress/ai/leaflet";
+import { onBeforeUnmount } from "vue";
+import { ref, shallowRef, onMounted, watch, toRaw } from "vue";
 import statesJSON from "../../data/us-states.json";
 let L;
 
@@ -139,15 +141,17 @@ const defaultMapConfig = {
   minZoom: 2,
   maxZoom: 18,
   zoomControl: false,
+  zoomAnimation: false,
 };
 
-const vectorMap = ref(null);
-const rasterMap = ref(null);
-const vectorGeoJsonLayer = ref(null);
+const vectorMap = shallowRef(null);
+const rasterMap = shallowRef(null);
+const vectorGeoJsonLayer = shallowRef(null);
 const vectorStyleType = ref("population");
-const rasterLayers = ref({});
-const currentRasterLayer = ref(null);
-const vectorLegend = ref(null);
+const rasterLayers = shallowRef({});
+const currentRasterLayer = shallowRef(null);
+const vectorLegend = shallowRef(null);
+const mapsReady = ref(false);
 
 const updateVectorStyle = (event) => {
   vectorStyleType.value = event.target.value;
@@ -282,7 +286,7 @@ const addGeoJSONLayer = () => {
     },
   }).addTo(toRaw(vectorMap.value));
 
-  vectorMap.value.fitBounds(vectorGeoJsonLayer.value.getBounds());
+  vectorMap.value.fitBounds(vectorGeoJsonLayer.value.getBounds(), { animate: false });
 };
 
 const initRasterMap = () => {
@@ -312,7 +316,7 @@ const initRasterMap = () => {
     [32, -130],
     [13, -100],
   ]);
-  rasterMap.value.fitBounds(latLngBounds);
+  rasterMap.value.fitBounds(latLngBounds, { animate: false });
 
   L.svgOverlay(svgElement, latLngBounds, {
     opacity: 0.7,
@@ -341,23 +345,30 @@ onMounted(async () => {
   initVectorMap();
   initRasterMap();
 
-  // Always synchronize maps
+  // Leaflet emits move synchronously. Prevent the receiving map from sending
+  // an intermediate view back to the map the learner or agent is changing.
+  let synchronizing = false;
+  const synchronize = (source, target) => {
+    if (synchronizing) return;
+    synchronizing = true;
+    try {
+      target.setView(source.getCenter(), source.getZoom(), { animate: false });
+    } finally {
+      synchronizing = false;
+    }
+  };
   vectorMap.value.on("move", () => {
-    rasterMap.value.setView(
-      vectorMap.value.getCenter(),
-      vectorMap.value.getZoom(),
-      { animate: false }
-    );
+    synchronize(vectorMap.value, rasterMap.value);
   });
 
   rasterMap.value.on("move", () => {
-    vectorMap.value.setView(
-      rasterMap.value.getCenter(),
-      rasterMap.value.getZoom(),
-      { animate: false }
-    );
+    synchronize(rasterMap.value, vectorMap.value);
   });
+  mapsReady.value = true;
 });
+
+useLeafletVisualization('vector-and-raster', 'Compare synchronized vector and raster maps.', () => vectorMap.value, { ready: () => mapsReady.value, controls: { variable: { type: 'string', enum: ['population', 'area', 'density'] } }, read: () => ({ variable: vectorStyleType.value }), update: c => { if (c.variable) vectorStyleType.value = c.variable; } });
+onBeforeUnmount(() => { vectorMap.value?.off(); rasterMap.value?.off(); vectorMap.value?.remove(); rasterMap.value?.remove(); });
 </script>
 
 <style scoped>

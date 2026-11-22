@@ -5,6 +5,9 @@ import { watch, onMounted } from 'vue';
 import HomePageGlobe from '../../components/mapping/HomePageGlobe.vue'
 import Authors from "../../components/ui/Authors.vue"
 import Comments from '../../components/ui/Comments.vue'
+import { useWebMCP } from '../ai/webmcp';
+
+useWebMCP();
 
 const { isDark } = useData();
 
