@@ -12,15 +12,25 @@ const browser = await chromium.launch({
   ...(process.env.PLAYWRIGHT_CHANNEL ? { channel: process.env.PLAYWRIGHT_CHANNEL } : process.platform === 'darwin' ? { channel: 'chrome' } : {}),
   headless: true, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
 });
-const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-page.setDefaultTimeout(30000);
-page.on('pageerror', error => report.pageErrors.push(error.message));
-page.on('console', message => { if (message.type() === 'error') report.consoleErrors.push(message.text()); });
-page.on('response', response => {
-  if (response.status() >= 400 && new URL(response.url()).origin === origin) report.failedSiteRequests.push({ url: response.url(), status: response.status() });
-});
+async function newPage() {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  page.setDefaultTimeout(30000);
+  page.on('pageerror', error => report.pageErrors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') report.consoleErrors.push(message.text()); });
+  page.on('response', response => {
+    if (response.status() >= 400 && new URL(response.url()).origin === origin) report.failedSiteRequests.push({ url: response.url(), status: response.status() });
+  });
+  return page;
+}
+let page = await newPage();
 
 async function open(route) {
+  // Independent stories get a fresh document/context; the classification story
+  // separately exercises an in-app navigation with the existing tool lifecycle.
+  if (page.url() !== 'about:blank') {
+    await page.close();
+    page = await newPage();
+  }
   const response = await page.goto(origin + route);
   assert.equal(response.status(), 200, route);
   await page.waitForFunction(async () => {
