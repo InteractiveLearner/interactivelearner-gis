@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { setTimeout as delay } from 'node:timers/promises';
 import { chromium } from '@playwright/test';
 
 if (!process.env.PREVIEW_URL) throw new Error('Set PREVIEW_URL to the Cloudflare preview URL.');
@@ -24,6 +25,15 @@ async function newPage() {
 }
 let page = await newPage();
 
+async function poll(predicate, message, timeout = 30000) {
+  const deadline = Date.now() + timeout;
+  while (Date.now() < deadline) {
+    if (await predicate()) return;
+    await delay(100);
+  }
+  throw new Error(message);
+}
+
 async function open(route) {
   // Independent stories get a fresh document/context; the classification story
   // separately exercises an in-app navigation with the existing tool lifecycle.
@@ -33,14 +43,14 @@ async function open(route) {
   }
   const response = await page.goto(origin + route);
   assert.equal(response.status(), 200, route);
-  await page.waitForFunction(async () => {
+  await poll(() => page.evaluate(async () => {
     if (!document.modelContext) return false;
     const names = (await document.modelContext.getTools()).map(t => t.name);
     return ['get_page_markdown', 'list_visualizations', 'update_visualization', 'read_quiz_results'].every(name => names.includes(name));
-  });
+  }), 'Learning tools did not register.');
 }
 async function call(name, input = {}) {
-  await page.waitForFunction(async name => document.modelContext && (await document.modelContext.getTools()).some(tool => tool.name === name), name);
+  await poll(() => page.evaluate(async name => document.modelContext && (await document.modelContext.getTools()).some(tool => tool.name === name), name), 'Tool did not register: ' + name);
   return page.evaluate(async ({ name, input }) => {
     const tools = await document.modelContext.getTools();
     const tool = tools.find(t => t.name === name);
@@ -120,13 +130,10 @@ try {
   });
   await check('ArcGIS Maps SDK and map panels', async () => {
     await open('/lessons/map-types');
-    await page.waitForFunction(async () => {
-      if (!document.modelContext) return false;
-      const tools = await document.modelContext.getTools();
-      const tool = tools.find(t => t.name === 'list_visualizations');
-      const data = JSON.parse(await document.modelContext.executeTool(tool, {}));
+    await poll(async () => {
+      const data = await call('list_visualizations');
       return data.visualizations.some(v => v.id === 'chorochromatic' && v.ready);
-    }, undefined, { timeout: 90000 });
+    }, 'ArcGIS map did not become ready.', 90000);
     const changed = await call('update_visualization', { id: 'chorochromatic', changes: { zoom: 5, panel: 'legend' } });
     assert.equal(changed.state.panel, 'legend');
     assert.equal(changed.state.zoom, 5);
